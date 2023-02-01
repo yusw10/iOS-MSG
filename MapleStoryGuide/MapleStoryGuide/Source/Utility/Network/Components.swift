@@ -6,8 +6,8 @@
 //
 
 enum Query {
-    case jsonQuery // 고정된 값 사용
-    case imageQuery(query: String) // 상황에 따라 달라짐
+    case jsonQuery
+    case imageQuery(query: String)
     
     var value: String {
         switch self {
@@ -25,4 +25,8 @@ enum HTTPMethod: String {
 
 enum RequestError: Error {
     case badURL
+}
+
+enum FetchError: Error {
+    case badResponse
 }

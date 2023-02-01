@@ -18,6 +18,7 @@
 		72CDF3A4298A4C4300918C1A /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CDF3A3298A4C4300918C1A /* EndPoint.swift */; };
 		72CDF3A6298A53BE00918C1A /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CDF3A5298A53BE00918C1A /* APIRequest.swift */; };
 		72CDF3A8298A53E100918C1A /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CDF3A7298A53E100918C1A /* Components.swift */; };
+		72CDF3AA298A576B00918C1A /* URLSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CDF3A9298A576B00918C1A /* URLSessionManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		72CDF3A3298A4C4300918C1A /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		72CDF3A5298A53BE00918C1A /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		72CDF3A7298A53E100918C1A /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
+		72CDF3A9298A576B00918C1A /* URLSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 		45ACA2882988D9BB00BD9935 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				72CDF3A9298A576B00918C1A /* URLSessionManager.swift */,
 				72CDF3A3298A4C4300918C1A /* EndPoint.swift */,
 				72CDF3A5298A53BE00918C1A /* APIRequest.swift */,
 				72CDF3A7298A53E100918C1A /* Components.swift */,
@@ -217,6 +220,7 @@
 			files = (
 				45ACA26A2988D75C00BD9935 /* ViewController.swift in Sources */,
 				72CDF3A8298A53E100918C1A /* Components.swift in Sources */,
+				72CDF3AA298A576B00918C1A /* URLSessionManager.swift in Sources */,
 				72CDF3A4298A4C4300918C1A /* EndPoint.swift in Sources */,
 				45ACA2662988D75C00BD9935 /* AppDelegate.swift in Sources */,
 				72CDF3A6298A53BE00918C1A /* APIRequest.swift in Sources */,
