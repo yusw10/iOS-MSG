@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Then
 
-final class SkillListViewCell: UICollectionViewCell {
+final class SkillListViewCell: UICollectionViewListCell {
     
     // MARK: - Properties
     
@@ -43,7 +43,6 @@ final class SkillListViewCell: UICollectionViewCell {
         
         addSubViews()
         setLayouts()
-        setCellLayout()
     }
     
     required init?(coder: NSCoder) {
@@ -90,23 +89,5 @@ extension SkillListViewCell {
         }
     }
     
-    // MARK: - Set Cell Layout
-    
-    private func setCellLayout() {
-        self.contentView.backgroundColor = .white
-        layer.shadowColor = UIColor.lightGray.cgColor
-        layer.shadowOffset = CGSize(width: 0, height: 2.0)
-        layer.shadowRadius = 5.0
-        layer.shadowOpacity = 1.0
-        layer.masksToBounds = false
-        layer.shadowPath = UIBezierPath(
-            roundedRect: bounds,
-            cornerRadius: self.contentView.layer.cornerRadius
-        ).cgPath
-        layer.backgroundColor = UIColor.clear.cgColor
-        
-        self.contentView.layer.masksToBounds = true
-        self.contentView.layer.cornerRadius = 15
-    }
 }
 

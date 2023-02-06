@@ -15,9 +15,7 @@ final class JobImageViewCell: UICollectionViewCell {
     
     static let id = "JobImageViewCell"
     
-    let imageView = UIImageView().then {
-        $0.layer.cornerRadius = 15
-        $0.clipsToBounds = true
+    private let imageView = UIImageView().then {
         $0.contentMode = .scaleAspectFill
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
@@ -29,7 +27,6 @@ final class JobImageViewCell: UICollectionViewCell {
         
         addSubViews()
         setLayouts()
-        setCellLayout()
     }
     
     required init?(coder: NSCoder) {
@@ -63,25 +60,8 @@ extension JobImageViewCell {
     private func setLayouts() {
         imageView.snp.makeConstraints { make in
             make.left.right.bottom.top.equalTo(self.contentView)
+            make.height.equalTo(contentView.snp.width).multipliedBy(0.4)
         }
     }
-    
-    // MARK: - Set Cell Layout
-    
-    private func setCellLayout() {
-        self.contentView.backgroundColor = .white
-        layer.shadowColor = UIColor.lightGray.cgColor
-        layer.shadowOffset = CGSize(width: 0, height: 2.0)
-        layer.shadowRadius = 5.0
-        layer.shadowOpacity = 1.0
-        layer.masksToBounds = false
-        layer.shadowPath = UIBezierPath(
-            roundedRect: bounds,
-            cornerRadius: self.contentView.layer.cornerRadius
-        ).cgPath
-        layer.backgroundColor = UIColor.clear.cgColor
         
-        self.contentView.layer.masksToBounds = true
-        self.contentView.layer.cornerRadius = 15
-    }
 }

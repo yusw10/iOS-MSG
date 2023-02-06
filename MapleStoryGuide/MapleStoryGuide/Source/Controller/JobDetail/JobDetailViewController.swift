@@ -15,7 +15,7 @@ final class JobDetailViewController: UIViewController {
     
     private var dataSource = MockData.dataSource
     
-    private let jobDetailView = JobDetailView()
+    private lazy var jobDetailView = JobDetailView()
     
     // MARK: - App LifeCycle
     
@@ -50,7 +50,7 @@ extension JobDetailViewController {
             make.bottom.equalTo(self.view.snp.bottom)
         }
     }
-        
+    
 }
 
 // MARK: - CollectionView DataSource Methods
@@ -88,19 +88,22 @@ extension JobDetailViewController: UICollectionViewDataSource {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SkillListViewCell.id, for: indexPath) as! SkillListViewCell
             let item = skills[indexPath.item]
             cell.prepare(title: item.title, image: item.image)
-            
+            cell.accessories = [.disclosureIndicator()]
+
             return cell
         case let .reinforce(skills):
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SkillListViewCell.id, for: indexPath) as! SkillListViewCell
             let item = skills[indexPath.item]
             cell.prepare(title: item.title, image: item.image)
-            
+            cell.accessories = [.disclosureIndicator()]
+
             return cell
         case let .matrix(skills):
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SkillListViewCell.id, for: indexPath) as! SkillListViewCell
             let item = skills[indexPath.item]
             cell.prepare(title: item.title, image: item.image)
-            
+            cell.accessories = [.disclosureIndicator()]
+
             return cell
         }
     }
@@ -116,9 +119,9 @@ extension JobDetailViewController: UICollectionViewDataSource {
             if indexPath.section == 1 {
                 header.prepare(titleText: "링크 스킬")
             } else if indexPath.section == 2 {
-                header.prepare(titleText: "직업 코어 강화")
+                header.prepare(titleText: "직업 코어 스킬")
             } else if indexPath.section == 3 {
-                header.prepare(titleText: "5차 코어 강화")
+                header.prepare(titleText: "5차 코어 스킬")
             }
             return header
         default:

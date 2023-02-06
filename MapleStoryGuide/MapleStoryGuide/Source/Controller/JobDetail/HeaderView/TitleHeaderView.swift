@@ -22,7 +22,7 @@ final class TitleHeaderView: UICollectionReusableView {
     }
     
     private let titleLabel = UILabel().then {
-        $0.font = UIFont.preferredFont(forTextStyle: .title1)
+        $0.font = UIFont.boldSystemFont(ofSize: 20)
         $0.numberOfLines = 1
         $0.translatesAutoresizingMaskIntoConstraints = false
     }

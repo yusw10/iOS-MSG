@@ -17,7 +17,7 @@ final class JobDetailView: UIView {
     
     lazy var collectionView = UICollectionView(
         frame: .zero,
-        collectionViewLayout: self.setCollectionViewSectionLayout()
+        collectionViewLayout: UICollectionViewLayout()
     )
     
     // MARK: - initializer
@@ -48,14 +48,22 @@ extension JobDetailView {
     
     private func setLayouts() {
         collectionView.snp.makeConstraints { make in
-            make.top.equalTo(self.safeAreaLayoutGuide.snp.top).offset(10)
-            make.left.equalTo(self.safeAreaLayoutGuide.snp.left).offset(10)
-            make.right.equalTo(self.safeAreaLayoutGuide.snp.right).offset(-10)
+            make.top.equalTo(self.safeAreaLayoutGuide.snp.top)
+            make.left.equalTo(self.safeAreaLayoutGuide.snp.left)
+            make.right.equalTo(self.safeAreaLayoutGuide.snp.right)
             make.bottom.equalTo(self.safeAreaLayoutGuide.snp.bottom)
         }
     }
     
     private func setCollectionView() {
+        
+        var listConfiguration = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
+
+        listConfiguration.headerMode = .supplementary
+        let listLayout = UICollectionViewCompositionalLayout.list(using: listConfiguration)
+        
+        collectionView.collectionViewLayout = listLayout
+        
         collectionView.contentInset = .zero
         collectionView.backgroundColor = .secondarySystemBackground
         collectionView.isScrollEnabled = true
@@ -77,116 +85,6 @@ extension JobDetailView {
             withReuseIdentifier: TitleHeaderView.id
         )
     }
-    
-    private func setCollectionViewSectionLayout() -> UICollectionViewLayout {
-        return UICollectionViewCompositionalLayout { section, env -> NSCollectionLayoutSection? in
-            switch self.dataSource[section] {
-                
-            case .mainImage:
-                return self.getLayoutMainImageSection()
-            case .link:
-                return self.getLayoutLinkSkillSection()
-            case .reinforce:
-                return self.getLayoutReinforceSection()
-            case .matrix:
-                return self.getLayoutReinforceSection()
-            }
-        }
-    }
-    
-    private func getLayoutMainImageSection() -> NSCollectionLayoutSection {
-        let itemSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
-            heightDimension: .fractionalHeight(1.0)
-        )
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets(top: 12, leading: 8, bottom: 12, trailing: 8)
-        
-        let groupSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
-            heightDimension: .fractionalHeight(0.3)
-        )
-        let group = NSCollectionLayoutGroup.horizontal(
-            layoutSize: groupSize,
-            subitems: [item]
-        )
-        
-        let section = NSCollectionLayoutSection(group: group)
-        section.orthogonalScrollingBehavior = .continuous
-        
-        return section
-    }
-    
-    private func getLayoutLinkSkillSection() -> NSCollectionLayoutSection {
-        let itemSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
-            heightDimension: .fractionalHeight(1.0)
-        )
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets(top: 12, leading: 8, bottom: 12, trailing: 8)
-        
-        let groupSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
-            heightDimension: .fractionalHeight(1.0/8.0)
-        )
-        let group = NSCollectionLayoutGroup.vertical(
-            layoutSize: groupSize,
-            subitem: item,
-            count: 1
-        )
-        
-        let headerSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
-            heightDimension: .fractionalWidth(0.2)
-        )
-        let header = NSCollectionLayoutBoundarySupplementaryItem(
-            layoutSize: headerSize,
-            elementKind: UICollectionView.elementKindSectionHeader,
-            alignment: .top
-        )
-        header.contentInsets = NSDirectionalEdgeInsets(top: 12, leading: 8, bottom: 12, trailing: 8)
-        
-        let section = NSCollectionLayoutSection(group: group)
-        section.orthogonalScrollingBehavior = .none
-        section.boundarySupplementaryItems = [header]
-        
-        return section
-    }
-    
-    private func getLayoutReinforceSection() -> NSCollectionLayoutSection {
-        let itemSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
-            heightDimension: .fractionalHeight(1.0)
-        )
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets(top: 12, leading: 8, bottom: 12, trailing: 8)
-        
-        let groupSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
-            heightDimension: .fractionalHeight(0.5)
-        )
-        let group = NSCollectionLayoutGroup.vertical(
-            layoutSize: groupSize,
-            subitem: item,
-            count: 4
-        )
-        
-        let headerSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
-            heightDimension: .fractionalWidth(0.2)
-        )
-        let header = NSCollectionLayoutBoundarySupplementaryItem(
-            layoutSize: headerSize,
-            elementKind: UICollectionView.elementKindSectionHeader,
-            alignment: .top
-        )
-        header.contentInsets = NSDirectionalEdgeInsets(top: 12, leading: 8, bottom: -12, trailing: 8)
-        
-        let section = NSCollectionLayoutSection(group: group)
-        section.orthogonalScrollingBehavior = .none
-        section.boundarySupplementaryItems = [header]
-        
-        return section
-    }
+
     
 }
