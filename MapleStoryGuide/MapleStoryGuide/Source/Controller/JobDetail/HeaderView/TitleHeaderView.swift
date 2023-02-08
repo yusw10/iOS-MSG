@@ -46,10 +46,10 @@ final class TitleHeaderView: UICollectionReusableView {
     override func prepareForReuse() {
         super.prepareForReuse()
         
-        self.prepare(titleText: nil)
+        self.configure(titleText: nil)
     }
     
-    func prepare(titleText: String?) {
+    func configure(titleText: String?) {
         self.titleLabel.text = titleText
     }
     
@@ -71,7 +71,8 @@ extension TitleHeaderView {
     
     private func setLayouts() {
         verticalStackView.snp.makeConstraints { make in
-            make.top.left.right.bottom.equalTo(self)
+            make.top.left.right.equalTo(self)
+            make.bottom.equalTo(self).offset(-10)
         }
     }
     
