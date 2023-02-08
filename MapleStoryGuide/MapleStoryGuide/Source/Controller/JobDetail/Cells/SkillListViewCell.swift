@@ -54,10 +54,10 @@ final class SkillListViewCell: UICollectionViewListCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         
-        self.prepare(title: "", image: nil)
+        self.configure(title: "", image: nil)
     }
     
-    func prepare(title: String, image: UIImage?) {
+    func configure(title: String, image: UIImage?) {
         titleLabel.text = title
         imageView.image = image
     }

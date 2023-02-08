@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Then
 
-final class JobImageViewCell: UICollectionViewCell {
+final class JobImageViewCell: UICollectionViewListCell {
     
     // MARK: - Properties
     
@@ -38,10 +38,10 @@ final class JobImageViewCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         
-        self.prepare(image: nil)
+        self.configure(image: nil)
     }
     
-    func prepare(image: UIImage?) {
+    func configure(image: UIImage?) {
         self.imageView.image = image
     }
     
