@@ -14,14 +14,16 @@ class ViewController: UIViewController {
         //TODO: 임시
         view.backgroundColor = .red
         
-        let endPoint = EndPoint(query: .jsonQuery)
-        let urlSessionManager = URLSessionManager(endpoint: endPoint)
-        let jsonManager = JSONManager()
+        let repository: APIJobInfoRepository = DefaultJobInfoRepository()
+//        let useCase = CommonJobInfoUseCase(repository: repository)
+        let viewModel = JobInfoViewModel(repository: repository)
+        
+        viewModel.jobListInfo.bind { jobinfo in
+            print(jobinfo)
+        }
+        
         let task = Task {
-            let data = try await urlSessionManager.fetchData()
-            let jsonData: [JobInfo] = jsonManager.decodeToInfoList(from: data)!
-            
-            print(jsonData)
+            await viewModel.trigger(query: .jsonQuery)
         }
     }
 

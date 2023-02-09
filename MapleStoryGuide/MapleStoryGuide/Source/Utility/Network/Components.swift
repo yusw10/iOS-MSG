@@ -29,4 +29,5 @@ enum RequestError: Error {
 
 enum FetchError: Error {
     case badResponse
+    case failureParse
 }

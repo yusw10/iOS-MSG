@@ -8,7 +8,10 @@
 import Foundation
 
 class JSONManager {
+    static let shared = JSONManager()
     private let decoder = JSONDecoder()
+    
+    private init() { }
     
     func decodeToInfoList<T: Decodable>(from data: Data) -> [T]? {
         do {
