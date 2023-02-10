@@ -4,7 +4,6 @@
 //
 //  Created by 유한석 on 2023/01/31.
 //
-
 import UIKit
 import SideMenu
 import Then
@@ -52,7 +51,6 @@ final class MainViewController: ContentViewController {
 }
 
 // MARK: - MainCollectionView Delegate, DataSource
-
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         mainViewBannerList.count
