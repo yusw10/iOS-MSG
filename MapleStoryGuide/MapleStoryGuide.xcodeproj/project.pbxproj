@@ -15,6 +15,13 @@
 		45ACA27B2988D80400BD9935 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 45ACA27A2988D80400BD9935 /* Then */; };
 		45ACA27E2988D86100BD9935 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 45ACA27D2988D86100BD9935 /* SnapKit */; };
 		45ACA2812988D8BD00BD9935 /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 45ACA2802988D8BD00BD9935 /* SideMenu */; };
+		A3278BAE2988E4330004C278 /* JobDetailCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3278BAD2988E4330004C278 /* JobDetailCollectionViewController.swift */; };
+		A3278BB229890A0A0004C278 /* SkillListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3278BB129890A0A0004C278 /* SkillListViewCell.swift */; };
+		A3278BB5298A31CD0004C278 /* MockSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3278BB4298A31CD0004C278 /* MockSection.swift */; };
+		A3278BDB298B59140004C278 /* JobImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3278BDA298B59140004C278 /* JobImageViewCell.swift */; };
+		A3278BDD298B5B430004C278 /* TitleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3278BDC298B5B430004C278 /* TitleHeaderView.swift */; };
+		A3278BE0298B93060004C278 /* SkillDetaillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3278BDF298B93060004C278 /* SkillDetaillViewController.swift */; };
+		A3278BE2298BE1A80004C278 /* SkillDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3278BE1298BE1A80004C278 /* SkillDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +32,13 @@
 		45ACA26E2988D76000BD9935 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45ACA2712988D76000BD9935 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		45ACA2732988D76000BD9935 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A3278BAD2988E4330004C278 /* JobDetailCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailCollectionViewController.swift; sourceTree = "<group>"; };
+		A3278BB129890A0A0004C278 /* SkillListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillListViewCell.swift; sourceTree = "<group>"; };
+		A3278BB4298A31CD0004C278 /* MockSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MockSection.swift; path = MapleStoryGuide/Source/Model/MockSection.swift; sourceTree = SOURCE_ROOT; };
+		A3278BDA298B59140004C278 /* JobImageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobImageViewCell.swift; sourceTree = "<group>"; };
+		A3278BDC298B5B430004C278 /* TitleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleHeaderView.swift; sourceTree = "<group>"; };
+		A3278BDF298B93060004C278 /* SkillDetaillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillDetaillViewController.swift; sourceTree = "<group>"; };
+		A3278BE1298BE1A80004C278 /* SkillDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,20 +81,13 @@
 			path = MapleStoryGuide;
 			sourceTree = "<group>";
 		};
-		45ACA2822988D8FF00BD9935 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		45ACA2832988D90500BD9935 /* Source */ = {
 			isa = PBXGroup;
 			children = (
 				45ACA2652988D75C00BD9935 /* AppDelegate.swift */,
 				45ACA2672988D75C00BD9935 /* SceneDelegate.swift */,
 				45ACA2852988D97B00BD9935 /* Controller */,
-				45ACA2822988D8FF00BD9935 /* Model */,
+				A3278C09298FCAED0004C278 /* Model */,
 				45ACA2872988D9A600BD9935 /* ViewModel */,
 				45ACA2862988D99F00BD9935 /* Utility */,
 			);
@@ -100,6 +107,8 @@
 			isa = PBXGroup;
 			children = (
 				45ACA2692988D75C00BD9935 /* ViewController.swift */,
+				A3278BDE298B92EE0004C278 /* SkillDetail */,
+				A3278BAC2988E4190004C278 /* JobDetail */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -124,6 +133,50 @@
 			children = (
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		A3278BAC2988E4190004C278 /* JobDetail */ = {
+			isa = PBXGroup;
+			children = (
+				A3278BAD2988E4330004C278 /* JobDetailCollectionViewController.swift */,
+				A3278C08298F884E0004C278 /* HeaderView */,
+				A3278C07298F883C0004C278 /* Cells */,
+			);
+			path = JobDetail;
+			sourceTree = "<group>";
+		};
+		A3278BDE298B92EE0004C278 /* SkillDetail */ = {
+			isa = PBXGroup;
+			children = (
+				A3278BDF298B93060004C278 /* SkillDetaillViewController.swift */,
+				A3278BE1298BE1A80004C278 /* SkillDetailView.swift */,
+			);
+			path = SkillDetail;
+			sourceTree = "<group>";
+		};
+		A3278C07298F883C0004C278 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A3278BDA298B59140004C278 /* JobImageViewCell.swift */,
+				A3278BB129890A0A0004C278 /* SkillListViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		A3278C08298F884E0004C278 /* HeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				A3278BDC298B5B430004C278 /* TitleHeaderView.swift */,
+			);
+			path = HeaderView;
+			sourceTree = "<group>";
+		};
+		A3278C09298FCAED0004C278 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A3278BB4298A31CD0004C278 /* MockSection.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,8 +260,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				45ACA26A2988D75C00BD9935 /* ViewController.swift in Sources */,
+				A3278BAE2988E4330004C278 /* JobDetailCollectionViewController.swift in Sources */,
 				45ACA2662988D75C00BD9935 /* AppDelegate.swift in Sources */,
+				A3278BB5298A31CD0004C278 /* MockSection.swift in Sources */,
+				A3278BE2298BE1A80004C278 /* SkillDetailView.swift in Sources */,
+				A3278BB229890A0A0004C278 /* SkillListViewCell.swift in Sources */,
+				A3278BE0298B93060004C278 /* SkillDetaillViewController.swift in Sources */,
 				45ACA2682988D75C00BD9935 /* SceneDelegate.swift in Sources */,
+				A3278BDD298B5B430004C278 /* TitleHeaderView.swift in Sources */,
+				A3278BDB298B59140004C278 /* JobImageViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,9 +405,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = R86M48N8C3;
+				DEVELOPMENT_TEAM = B99296K282;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MapleStoryGuide/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = MSG;
@@ -364,6 +425,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hs.MapleStoryGuide;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -378,9 +440,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = R86M48N8C3;
+				DEVELOPMENT_TEAM = B99296K282;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MapleStoryGuide/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = MSG;
@@ -397,6 +460,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hs.MapleStoryGuide;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
