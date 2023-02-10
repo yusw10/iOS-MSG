@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		45ACA2662988D75C00BD9935 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ACA2652988D75C00BD9935 /* AppDelegate.swift */; };
 		45ACA2682988D75C00BD9935 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ACA2672988D75C00BD9935 /* SceneDelegate.swift */; };
-		45ACA26A2988D75C00BD9935 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ACA2692988D75C00BD9935 /* ViewController.swift */; };
+		45ACA26A2988D75C00BD9935 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ACA2692988D75C00BD9935 /* MainViewController.swift */; };
 		45ACA26F2988D76000BD9935 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45ACA26E2988D76000BD9935 /* Assets.xcassets */; };
 		45ACA2722988D76000BD9935 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45ACA2702988D76000BD9935 /* LaunchScreen.storyboard */; };
 		45ACA27B2988D80400BD9935 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 45ACA27A2988D80400BD9935 /* Then */; };
@@ -31,13 +31,27 @@
 		72ECFFEB298BA6B70045ADBB /* JobInfoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72ECFFEA298BA6B70045ADBB /* JobInfoDTO.swift */; };
 		72ECFFED298BC2100045ADBB /* JobInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72ECFFEC298BC2100045ADBB /* JobInfoViewModel.swift */; };
 		72ECFFF0298BC9060045ADBB /* JSONManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72ECFFEF298BC9060045ADBB /* JSONManager.swift */; };
+		45ACA28E298A2A2A00BD9935 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ACA28D298A2A2A00BD9935 /* SideMenuViewController.swift */; };
+		45ACA290298B003A00BD9935 /* SideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ACA28F298B003A00BD9935 /* SideMenuCell.swift */; };
+		45ACA294298C866F00BD9935 /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ACA293298C866E00BD9935 /* MainCollectionViewCell.swift */; };
+		45ACA299298F2C6D00BD9935 /* JobListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ACA298298F2C6D00BD9935 /* JobListViewController.swift */; };
+		45ACA29E298F2CE800BD9935 /* ItemCombinationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ACA29D298F2CE800BD9935 /* ItemCombinationViewController.swift */; };
+		45ACA2A0298F2D0900BD9935 /* EquipmentCalcViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ACA29F298F2D0900BD9935 /* EquipmentCalcViewController.swift */; };
+		45ACA2A229900D7000BD9935 /* JobListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ACA2A129900D7000BD9935 /* JobListCollectionViewCell.swift */; };
+		45ACA2A5299016D100BD9935 /* JobListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ACA2A4299016D100BD9935 /* JobListHeaderView.swift */; };
+		45ACA2A82991AEE200BD9935 /* ContainerViewComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ACA2A72991AEE200BD9935 /* ContainerViewComposer.swift */; };
+		45ACA2AA2991FFE700BD9935 /* ViewControllerPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ACA2A92991FFE700BD9935 /* ViewControllerPresentation.swift */; };
+		45ACA2AC2992002000BD9935 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ACA2AB2992002000BD9935 /* ContentViewController.swift */; };
+		45ACA2AE2992187C00BD9935 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ACA2AD2992187C00BD9935 /* ContainerViewController.swift */; };
+		45ACA2B029921ABD00BD9935 /* SideMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ACA2AF29921ABD00BD9935 /* SideMenuItem.swift */; };
+		45ACA2B229921D3700BD9935 /* SideMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ACA2B129921D3700BD9935 /* SideMenuDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		45ACA2622988D75C00BD9935 /* MapleStoryGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapleStoryGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45ACA2652988D75C00BD9935 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45ACA2672988D75C00BD9935 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		45ACA2692988D75C00BD9935 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		45ACA2692988D75C00BD9935 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		45ACA26E2988D76000BD9935 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45ACA2712988D76000BD9935 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		45ACA2732988D76000BD9935 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -57,6 +71,20 @@
 		72ECFFEA298BA6B70045ADBB /* JobInfoDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JobInfoDTO.swift; path = MapleStoryGuide/Source/Model/JobInfoDTO.swift; sourceTree = SOURCE_ROOT; };
 		72ECFFEC298BC2100045ADBB /* JobInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobInfoViewModel.swift; sourceTree = "<group>"; };
 		72ECFFEF298BC9060045ADBB /* JSONManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONManager.swift; sourceTree = "<group>"; };
+		45ACA28D298A2A2A00BD9935 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		45ACA28F298B003A00BD9935 /* SideMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuCell.swift; sourceTree = "<group>"; };
+		45ACA293298C866E00BD9935 /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
+		45ACA298298F2C6D00BD9935 /* JobListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobListViewController.swift; sourceTree = "<group>"; };
+		45ACA29D298F2CE800BD9935 /* ItemCombinationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCombinationViewController.swift; sourceTree = "<group>"; };
+		45ACA29F298F2D0900BD9935 /* EquipmentCalcViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentCalcViewController.swift; sourceTree = "<group>"; };
+		45ACA2A129900D7000BD9935 /* JobListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobListCollectionViewCell.swift; sourceTree = "<group>"; };
+		45ACA2A4299016D100BD9935 /* JobListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobListHeaderView.swift; sourceTree = "<group>"; };
+		45ACA2A72991AEE200BD9935 /* ContainerViewComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewComposer.swift; sourceTree = "<group>"; };
+		45ACA2A92991FFE700BD9935 /* ViewControllerPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPresentation.swift; sourceTree = "<group>"; };
+		45ACA2AB2992002000BD9935 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
+		45ACA2AD2992187C00BD9935 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		45ACA2AF29921ABD00BD9935 /* SideMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuItem.swift; sourceTree = "<group>"; };
+		45ACA2B129921D3700BD9935 /* SideMenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +164,11 @@
 				45ACA2692988D75C00BD9935 /* ViewController.swift */,
 				A3278BDE298B92EE0004C278 /* SkillDetail */,
 				A3278BAC2988E4190004C278 /* JobDetail */,
+				45ACA2B329923F1C00BD9935 /* BasicViewController */,
+				45ACA291298C828700BD9935 /* SideMenu */,
+				45ACA28A298995C300BD9935 /* MainView */,
+				45ACA29C298F2CD400BD9935 /* itemCombinationView */,
+				45ACA29B298F2CC500BD9935 /* EquipmentCalcView */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -144,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				72ECFFEE298BC8E70045ADBB /* JSON */,
+				45ACA2A62991AECE00BD9935 /* SideMenuManager */,
 				45ACA2882988D9BB00BD9935 /* Network */,
 			);
 			path = Utility;
@@ -219,6 +253,71 @@
 				72ECFFEF298BC9060045ADBB /* JSONManager.swift */,
 			);
 			path = JSON;
+			sourceTree = "<group>";
+		};
+		45ACA28A298995C300BD9935 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				45ACA2692988D75C00BD9935 /* MainViewController.swift */,
+				45ACA293298C866E00BD9935 /* MainCollectionViewCell.swift */,
+				45ACA295298F213E00BD9935 /* JobListView */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		45ACA291298C828700BD9935 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				45ACA28D298A2A2A00BD9935 /* SideMenuViewController.swift */,
+				45ACA28F298B003A00BD9935 /* SideMenuCell.swift */,
+				45ACA2AF29921ABD00BD9935 /* SideMenuItem.swift */,
+				45ACA2B129921D3700BD9935 /* SideMenuDelegate.swift */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		45ACA295298F213E00BD9935 /* JobListView */ = {
+			isa = PBXGroup;
+			children = (
+				45ACA298298F2C6D00BD9935 /* JobListViewController.swift */,
+				45ACA2A129900D7000BD9935 /* JobListCollectionViewCell.swift */,
+				45ACA2A4299016D100BD9935 /* JobListHeaderView.swift */,
+			);
+			path = JobListView;
+			sourceTree = "<group>";
+		};
+		45ACA29B298F2CC500BD9935 /* EquipmentCalcView */ = {
+			isa = PBXGroup;
+			children = (
+				45ACA29F298F2D0900BD9935 /* EquipmentCalcViewController.swift */,
+			);
+			path = EquipmentCalcView;
+			sourceTree = "<group>";
+		};
+		45ACA29C298F2CD400BD9935 /* itemCombinationView */ = {
+			isa = PBXGroup;
+			children = (
+				45ACA29D298F2CE800BD9935 /* ItemCombinationViewController.swift */,
+			);
+			path = itemCombinationView;
+			sourceTree = "<group>";
+		};
+		45ACA2A62991AECE00BD9935 /* SideMenuManager */ = {
+			isa = PBXGroup;
+			children = (
+				45ACA2A72991AEE200BD9935 /* ContainerViewComposer.swift */,
+			);
+			path = SideMenuManager;
+			sourceTree = "<group>";
+		};
+		45ACA2B329923F1C00BD9935 /* BasicViewController */ = {
+			isa = PBXGroup;
+			children = (
+				45ACA2AD2992187C00BD9935 /* ContainerViewController.swift */,
+				45ACA2AB2992002000BD9935 /* ContentViewController.swift */,
+				45ACA2A92991FFE700BD9935 /* ViewControllerPresentation.swift */,
+			);
+			path = BasicViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -320,6 +419,23 @@
 				72CDF3A6298A53BE00918C1A /* APIRequest.swift in Sources */,
 				72ECFFED298BC2100045ADBB /* JobInfoViewModel.swift in Sources */,
 				72ECFFEB298BA6B70045ADBB /* JobInfoDTO.swift in Sources */,
+				45ACA26A2988D75C00BD9935 /* MainViewController.swift in Sources */,
+				45ACA2B229921D3700BD9935 /* SideMenuDelegate.swift in Sources */,
+				45ACA2A82991AEE200BD9935 /* ContainerViewComposer.swift in Sources */,
+				45ACA299298F2C6D00BD9935 /* JobListViewController.swift in Sources */,
+				45ACA294298C866F00BD9935 /* MainCollectionViewCell.swift in Sources */,
+				45ACA290298B003A00BD9935 /* SideMenuCell.swift in Sources */,
+				45ACA2AA2991FFE700BD9935 /* ViewControllerPresentation.swift in Sources */,
+				45ACA2B029921ABD00BD9935 /* SideMenuItem.swift in Sources */,
+				45ACA2AC2992002000BD9935 /* ContentViewController.swift in Sources */,
+				45ACA2AE2992187C00BD9935 /* ContainerViewController.swift in Sources */,
+				45ACA2A229900D7000BD9935 /* JobListCollectionViewCell.swift in Sources */,
+				45ACA2662988D75C00BD9935 /* AppDelegate.swift in Sources */,
+				45ACA28E298A2A2A00BD9935 /* SideMenuViewController.swift in Sources */,
+				45ACA2682988D75C00BD9935 /* SceneDelegate.swift in Sources */,
+				45ACA2A0298F2D0900BD9935 /* EquipmentCalcViewController.swift in Sources */,
+				45ACA2A5299016D100BD9935 /* JobListHeaderView.swift in Sources */,
+				45ACA29E298F2CE800BD9935 /* ItemCombinationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
