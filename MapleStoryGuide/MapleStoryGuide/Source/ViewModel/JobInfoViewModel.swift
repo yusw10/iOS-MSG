@@ -17,15 +17,27 @@ protocol APIJobInfoRepository {
 class DefaultJobInfoRepository: APIJobInfoRepository {
     private let urlSessionManager = URLSessionManager.shared
     private let jsonManager = JSONManager.shared
+    private var dataStroe = [String: Data]()
     
     func fetchData(query: Query) async throws -> [JobInfo] {
         let endpoint = EndPoint(query: query)
-        let data = try await self.urlSessionManager.fetchData(endpoint: endpoint)
-        guard let responseDTO: [JobInfoDTO] = self.jsonManager.decodeToInfoList(from: data) else {
-            throw FetchError.failureParse
-        }
         
-        return responseDTO.map { $0.toDomain() }
+        if let storeData = dataStroe[query.value] {
+            guard let responseDTO: [JobInfoDTO] = self.jsonManager.decodeToInfoList(from: storeData) else {
+                throw FetchError.failureParse
+            }
+            
+            return responseDTO.map { $0.toDomain() }
+        } else {
+            let data = try await self.urlSessionManager.fetchData(endpoint: endpoint)
+            dataStroe.updateValue(data, forKey: query.value)
+            
+            guard let responseDTO: [JobInfoDTO] = self.jsonManager.decodeToInfoList(from: data) else {
+                throw FetchError.failureParse
+            }
+            
+            return responseDTO.map { $0.toDomain() }
+        }
     }
 }
 
@@ -68,7 +80,10 @@ class JobInfoViewModel {
 
 
 // MARK: Use Main View & Job List View
+// 데이터(jobListInfo) 바인딩 하는 과정에서 그냥 데이터를 넣어줘도 상관없다고 생각합니다.(Section의 수와 각 Section의 Item 수를 결정하기 어려움)
+// 함수 이용(fetchJobGroup)
 extension JobInfoViewModel {
+    // 최초 데이터를 가져올 때 사용
     func trigger(query: Query) async {
         do {
             let data = try await self.useCase.excute(query: query)
@@ -78,22 +93,54 @@ extension JobInfoViewModel {
         }
     }
     
+    // 특정 직업을 골라서 DetailView로 넘어갈 때 사용
     func selectJob(_ index: Int) {
         jobInfo.value = self.jobListInfo.value[index]
     }
     
-    func fetchJobInfo() -> [JobInfo] {
-        return self.jobListInfo.value
+    // JobGroup이 필요하다면 사용 (문제점 : 하드코딩을 없애기 위해 딕셔너리 사용 과정에서 순서를 보장할 수 없습니다.)
+    func fetchJobGroup() -> [JobGroup] {
+        var jobList = [JobGroup]()
+        var dict = [String: [Job]]()
+        
+        self.jobListInfo.value.forEach { info in
+            let job = Job(title: info.name, jobImage: info.imageQuery)
+            
+            if var data = dict[info.type] {
+                data.append(job)
+                dict.updateValue(data, forKey: info.type)
+            } else {
+                dict.updateValue([job], forKey: info.type)
+            }
+        }
+        
+        for (key, value) in dict {
+            let jobGroup = JobGroup(jobGroupTitle: key, jobs: value)
+            jobList.append(jobGroup)
+        }
+        
+        return jobList
     }
     
-    func searchJobOrClass(_ text: String) -> [JobInfo] {
-        return self.jobListInfo.value.filter { jobinfo in
+    // 검색할 때 사용
+    // 만약 검색 결과가 없다면 다시 데이터를 불러옴 ( 아마 여기서 trigger 메서드는 api 통신 없이 데이터를 가져 올 겁니다. Repository에서 캐싱을 대충 구현 )
+    func searchJobOrClass(_ text: String) async {
+        let filterData = self.jobListInfo.value.filter { jobinfo in
             return jobinfo.name.contains(text) || jobinfo.type.contains(text)
+        }
+        
+        if filterData.isEmpty {
+            await self.trigger(query: .jsonQuery)
+        } else {
+            self.jobListInfo.value = filterData
         }
     }
 }
 
 // MARK: Use Detail Job View & Skill View
+// 데이터(jobinfo) 바인딩 하는 과정에서 그냥 데이터를 넣어줘도 상관없다고 생각합니다. -> 아래 함수 사용할 필요 없을 수도 있음
+// 바인딩에서 사용되는 value에서 각각 프로퍼티에 접근해 snapshot에 넣어 주면 됨
+// 바인딩이 정상 적으로 동작하지 않는다면 해당 함수 사용 + Delegate 패턴 사용 ListViewController 에서 index를 전달 받아 대신 수행 하는 방식
 extension JobInfoViewModel {
     func selectLinkSkill() -> [Skill]? {
         return self.jobInfo.value?.linkSkill
@@ -106,4 +153,14 @@ extension JobInfoViewModel {
     func selectReinforceSkill(_ index: Int) -> ReinforceSkillCore? {
         return self.jobInfo.value?.reinforceSkillCore[index]
     }
+}
+
+struct JobGroup {
+    let jobGroupTitle: String
+    let jobs: [Job]
+}
+
+struct Job {
+    let title: String
+    let jobImage: String
 }

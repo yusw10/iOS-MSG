@@ -144,15 +144,15 @@ struct MockData {
     var type: [JobGroup]
 }
 
-struct JobGroup {
-    let jobGroupTitle: String
-    let jobs: [Job]
-}
-
-struct Job {
-    let title: String
-    let jobImage: String
-}
+//struct JobGroup {
+//    let jobGroupTitle: String
+//    let jobs: [Job]
+//}
+//
+//struct Job {
+//    let title: String
+//    let jobImage: String
+//}
 
 let JobList = MockData(type: [
     JobGroup(
