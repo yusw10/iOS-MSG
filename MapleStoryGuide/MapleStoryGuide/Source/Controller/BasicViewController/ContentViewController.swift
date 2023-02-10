@@ -7,9 +7,8 @@
 
 import UIKit
 
-
-
 class ContentViewController: UIViewController {
+    
     weak var delegate: SideMenuDelegate?
     var barButtonImage: UIImage? = UIImage(systemName: "line.horizontal.3")
 
@@ -20,8 +19,7 @@ class ContentViewController: UIViewController {
 
     private func configureView() {
         let barButtonItem = UIBarButtonItem(image: barButtonImage, style: .plain, target: self, action: #selector(menuTapped))
-        barButtonItem.tintColor = .white
-//        navigationItem.setLeftBarButton(barButtonItem, animated: false)
+        barButtonItem.tintColor = .black
         navigationItem.setRightBarButton(barButtonItem, animated: false)
     }
 

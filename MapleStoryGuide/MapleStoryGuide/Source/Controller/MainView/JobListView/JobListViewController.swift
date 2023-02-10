@@ -10,28 +10,24 @@ import Then
 import SnapKit
 
 final class JobListViewController: UIViewController {
-    
+ 
     //MARK: - ViewController Properties
-    
-    let jobList = JobList
+    //TODO: 뷰모델로부터 받는 데이터로 갈아끼우기
+    var jobList = JobList
 
     private lazy var jobListCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
+        $0.backgroundColor = .secondarySystemBackground
         $0.register(JobListHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "JobListHeaderViewReuse")
         
         $0.register(JobListCollectionViewCell.self, forCellWithReuseIdentifier: "JobListCollectionViewCell")
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.backgroundColor = .green
     }
     
     //MARK: - View Life Cycle Method
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupJobListCollectionView()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+        setupNavigationBar()
     }
     
     //MARK: - ViewController Private method
@@ -47,16 +43,55 @@ final class JobListViewController: UIViewController {
             make.trailing.bottom.equalToSuperview()
         }
     }
+    
+    private func setupNavigationBar() {
+        navigationItem.title = "직업 소개"
+        navigationItem.largeTitleDisplayMode = .automatic
+        
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchBar.placeholder = "직업 이름을 입력하세요."
+        searchController.searchResultsUpdater = self
+        searchController.delegate = self
+        
+        navigationItem.searchController = searchController
+    }
 }
 
+//MARK: - JobListViewController SearchController Delegate
+
+extension JobListViewController: UISearchResultsUpdating, UISearchControllerDelegate {
+    func updateSearchResults(for searchController: UISearchController) {
+        
+        guard let text = searchController.searchBar.text?.lowercased() else { return }
+        //TODO: 이부분은 뷰모델 필터링 메서드 호출하는걸로 변경해야함.
+        if text == "" {
+            jobList = JobList
+            jobListCollectionView.reloadData()
+        } else {
+            var updatedJobList = MockData(type: [])
+            JobList.type.forEach { currentGroup in
+                let filteredJobGroup = currentGroup.jobs.filter { Job in
+                    return Job.title.lowercased().contains(text)
+                }
+                let jobGroup = JobGroup(jobGroupTitle: currentGroup.jobGroupTitle, jobs: filteredJobGroup)
+                if jobGroup.jobs.count > 0 {
+                    updatedJobList.type.append(jobGroup)
+                }
+            }
+            jobList = updatedJobList
+            jobListCollectionView.reloadData()
+        }
+    }
+}
+
+//MARK: - JobListCollectionView delegate, datasource
 extension JobListViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "JobListCollectionViewCell", for: indexPath) as? JobListCollectionViewCell else {
-            print("??")
             return UICollectionViewCell()
         }
-        print(jobList.type[indexPath.section].jobs[indexPath.row].jobImage)
+        
         cell.setupCellImage(title: jobList.type[indexPath.section].jobs[indexPath.row].jobImage)
         
         return cell
@@ -91,18 +126,22 @@ extension JobListViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        print(jobList.type.count)
         return jobList.type.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(jobList.type[section].jobs.count)
         return jobList.type[section].jobs.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return CGFloat(20)
     }
 }
 
+//MARK: - Mock Data
+
 struct MockData {
-    let type: [JobGroup]
+    var type: [JobGroup]
 }
 
 struct JobGroup {

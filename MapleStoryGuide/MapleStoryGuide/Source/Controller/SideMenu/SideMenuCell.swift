@@ -12,17 +12,25 @@ import SnapKit
 final class SideMenuTableViewCell: UITableViewCell {
     
     //MARK: - TableViewCell Properties
-    
-    let sideMenuMarkImageView = UIImageView().then {
-        $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.backgroundColor = .black
-        $0.clipsToBounds = true
+    private let sideMenuButtonShadowView = UIView().then {
+        $0.layer.cornerRadius = 10
+        $0.backgroundColor = .systemBackground
+        $0.layer.borderWidth = 2
+        $0.layer.borderColor = UIColor.systemGray.cgColor
     }
     
-    let menuTitle = UILabel().then {
-        $0.font = .preferredFont(forTextStyle: .title3, compatibleWith: .none)
+    private let sideMenuButton = UIButton().then {
+        $0.isUserInteractionEnabled = false
+        
+        var configuration = UIButton.Configuration.plain()
+        configuration.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
+        $0.configuration = configuration
+        
+        //UIEdgeInsets(top: 10, left: 10, bottom: -10, right: -10)
+        $0.contentHorizontalAlignment = .leading
+        $0.setTitleColor(.black, for: .normal)
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.textAlignment = .right
+        
     }
     
     //MARK: - TableViewCell Initialize
@@ -39,31 +47,23 @@ final class SideMenuTableViewCell: UITableViewCell {
     //MARK: - TableViewCell Setup Method
     
     private func setupDefault() {
-        contentView.addSubview(sideMenuMarkImageView)
-        contentView.addSubview(menuTitle)
+        contentView.addSubview(sideMenuButtonShadowView)
         
-        sideMenuMarkImageView.snp.makeConstraints { make in
-            make.top.leading.equalToSuperview().offset(5)
-            make.bottom.equalToSuperview().offset(-5)
-            make.trailing.equalTo(menuTitle.snp.leading).offset(5)
-            make.width.equalTo(sideMenuMarkImageView.snp.height)
+        sideMenuButtonShadowView.addSubview(sideMenuButton)
+        
+        sideMenuButtonShadowView.snp.makeConstraints { make in
+            make.top.leading.equalToSuperview().offset(10)
+            make.trailing.bottom.equalToSuperview().offset(-10)
         }
         
-        menuTitle.snp.makeConstraints({ make in
-            make.top.equalToSuperview().offset(5)
-            make.trailing.bottom.equalToSuperview().offset(-5)
-        })
+        sideMenuButton.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
     }
     
     func setupCellData(title: String, imageName: String?) {
-        if let imageName = imageName {
-            sideMenuMarkImageView.image = UIImage(systemName: imageName)
-            print("?")
-        } else {
-            sideMenuMarkImageView.image = UIImage(systemName: "staroflife.fill")
-        }
-        
-        menuTitle.text = title
+        sideMenuButton.setTitle(title, for: .normal)
+        sideMenuButton.setImage(UIImage(systemName: imageName!) ?? UIImage(), for: .normal)
     }
 }
 

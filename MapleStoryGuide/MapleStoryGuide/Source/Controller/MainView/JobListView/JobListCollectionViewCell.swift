@@ -13,7 +13,18 @@ final class JobListCollectionViewCell: UICollectionViewCell {
     
     //MARK: - CollectionViewCell Properties
     
+    let jobImageShadowView = UIView().then {
+        $0.layer.shadowOffset = CGSize(width: 5, height: 5)
+        $0.layer.shadowOpacity = 0.7
+        $0.layer.shadowRadius = 5
+
+        $0.layer.shadowColor = UIColor.gray.cgColor
+        $0.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
     let jobImage = UIImageView().then {
+        $0.layer.cornerRadius = 10
+        $0.contentMode = .scaleAspectFill
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.clipsToBounds = true
     }
@@ -21,7 +32,6 @@ final class JobListCollectionViewCell: UICollectionViewCell {
     //MARK: - CollectionViewCell Initialize
     override init(frame: CGRect) {
         super.init(frame: frame)
-        contentView.backgroundColor = .systemPink
         setupDefault()
     }
     
@@ -33,7 +43,8 @@ final class JobListCollectionViewCell: UICollectionViewCell {
     //MARK: - CollectionViewCell Setup Method
     
     private func setupDefault() {
-        contentView.addSubview(jobImage)
+        contentView.addSubview(jobImageShadowView)
+        jobImageShadowView.addSubview(jobImage)
         
         jobImage.snp.makeConstraints({ make in
             make.top.leading.bottom.trailing.equalTo(contentView)

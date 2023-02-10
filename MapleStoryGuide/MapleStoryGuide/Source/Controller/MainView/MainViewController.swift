@@ -33,28 +33,11 @@ final class MainViewController: ContentViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        setupNavigationBar()
-        //setupSideMenu()
+
         setupMainCollectionView()
     }
     
     //MARK: - ViewController Setup Method
-    
-//    private func setupNavigationBar() {
-//        let rightBarButton = UIBarButtonItem(title: "Menu", style: .plain, target: self, action: #selector(didTapMenu))
-//        navigationItem.rightBarButtonItem = rightBarButton
-//    }
-    
-//    private func setupSideMenu() {
-//        let sideMenuViewController = SideMenuViewController()
-//        sideMenuViewController.originalNavigationController = navigationController
-//
-//        menu = SideMenuNavigationController(rootViewController: sideMenuViewController)
-//        menu?.leftSide = true
-//        menu?.presentationStyle = .menuSlideIn
-//        SideMenuManager.default.addPanGestureToPresent(toView: self.view)
-//    }
     
     private func setupMainCollectionView() {
         mainCollectionView.delegate = self
@@ -66,17 +49,6 @@ final class MainViewController: ContentViewController {
             make.top.leading.trailing.bottom.equalToSuperview()
         }
     }
-    
-    
-//    //MARK: - @objc Method
-//
-//    @objc private func didTapMenu() {
-//        guard let menu = SideMenuViewManager.shared.menu else {
-//            return
-//        }
-//
-//        present(menu, animated: true)
-//    }
 }
 
 // MARK: - MainCollectionView Delegate, DataSource
@@ -110,5 +82,9 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         case .bossInfo:
             print("push bossInfoViewController")
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return CGFloat(30)
     }
 }

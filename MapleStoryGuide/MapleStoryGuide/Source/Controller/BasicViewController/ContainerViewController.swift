@@ -11,6 +11,7 @@ import SideMenu
 final class ContainerViewController: UIViewController {
     
     private var sideMenuViewController: SideMenuViewController!
+    
     private var navigator: UINavigationController!
     private var rootViewController: ContentViewController! {
         didSet {
@@ -49,18 +50,14 @@ final class ContainerViewController: UIViewController {
         addChild(navigator)
         view.addSubview(navigator.view)
         navigator.didMove(toParent: self)
-
-        addChild(sideMenuViewController)
-        view.addSubview(sideMenuViewController.view)
-        sideMenuViewController.didMove(toParent: self)
     }
 }
 
 extension ContainerViewController: SideMenuDelegate {
     func menuButtonTapped() {
-        let sideMenuViewController = SideMenuNavigationController(rootViewController: self)
-        
-        present(sideMenuViewController, animated: true)
+        let sideMenuNavigationController = SideMenuNavigationController(rootViewController: sideMenuViewController)
+        sideMenuNavigationController.presentationStyle = .menuSlideIn
+        present(sideMenuNavigationController, animated: true)
     }
 
     func itemSelected(item: ContentViewControllerPresentation) {

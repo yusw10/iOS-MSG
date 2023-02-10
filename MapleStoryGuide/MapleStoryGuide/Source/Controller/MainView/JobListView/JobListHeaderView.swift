@@ -15,7 +15,7 @@ final class JobListHeaderView: UICollectionReusableView {
     
     private let titleLabel = UILabel().then { label in
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .preferredFont(forTextStyle: .headline)
+        label.font = .preferredFont(forTextStyle: .title3)
     }
     
     //MARK: - JobList HeaderView Initializer
@@ -35,7 +35,9 @@ final class JobListHeaderView: UICollectionReusableView {
         addSubview(titleLabel)
         
         titleLabel.snp.makeConstraints { make in
-            make.top.leading.trailing.bottom.equalTo(layoutMarginsGuide)
+            make.top.bottom.equalToSuperview()
+            make.leading.equalTo(layoutMarginsGuide.snp.leading).offset(20)
+            make.trailing.equalTo(layoutMarginsGuide.snp.trailing).offset(-20)
         }
     }
     

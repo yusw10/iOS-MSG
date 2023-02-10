@@ -127,9 +127,7 @@
 		45ACA2852988D97B00BD9935 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				45ACA2AD2992187C00BD9935 /* ContainerViewController.swift */,
-				45ACA2AB2992002000BD9935 /* ContentViewController.swift */,
-				45ACA2A92991FFE700BD9935 /* ViewControllerPresentation.swift */,
+				45ACA2B329923F1C00BD9935 /* BasicViewController */,
 				45ACA291298C828700BD9935 /* SideMenu */,
 				45ACA28A298995C300BD9935 /* MainView */,
 				45ACA29C298F2CD400BD9935 /* itemCombinationView */,
@@ -214,6 +212,16 @@
 				45ACA2A72991AEE200BD9935 /* ContainerViewComposer.swift */,
 			);
 			path = SideMenuManager;
+			sourceTree = "<group>";
+		};
+		45ACA2B329923F1C00BD9935 /* BasicViewController */ = {
+			isa = PBXGroup;
+			children = (
+				45ACA2AD2992187C00BD9935 /* ContainerViewController.swift */,
+				45ACA2AB2992002000BD9935 /* ContentViewController.swift */,
+				45ACA2A92991FFE700BD9935 /* ViewControllerPresentation.swift */,
+			);
+			path = BasicViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
