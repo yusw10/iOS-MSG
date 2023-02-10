@@ -15,6 +15,15 @@
 		45ACA27B2988D80400BD9935 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 45ACA27A2988D80400BD9935 /* Then */; };
 		45ACA27E2988D86100BD9935 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 45ACA27D2988D86100BD9935 /* SnapKit */; };
 		45ACA2812988D8BD00BD9935 /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 45ACA2802988D8BD00BD9935 /* SideMenu */; };
+		72CDF3A4298A4C4300918C1A /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CDF3A3298A4C4300918C1A /* EndPoint.swift */; };
+		72CDF3A6298A53BE00918C1A /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CDF3A5298A53BE00918C1A /* APIRequest.swift */; };
+		72CDF3A8298A53E100918C1A /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CDF3A7298A53E100918C1A /* Components.swift */; };
+		72CDF3AA298A576B00918C1A /* URLSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CDF3A9298A576B00918C1A /* URLSessionManager.swift */; };
+		72E728F629939CE100427640 /* JobInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E728F529939CE100427640 /* JobInfo.swift */; };
+		72E728F829939D0E00427640 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E728F729939D0E00427640 /* Observable.swift */; };
+		72ECFFEB298BA6B70045ADBB /* JobInfoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72ECFFEA298BA6B70045ADBB /* JobInfoDTO.swift */; };
+		72ECFFED298BC2100045ADBB /* JobInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72ECFFEC298BC2100045ADBB /* JobInfoViewModel.swift */; };
+		72ECFFF0298BC9060045ADBB /* JSONManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72ECFFEF298BC9060045ADBB /* JSONManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +34,15 @@
 		45ACA26E2988D76000BD9935 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45ACA2712988D76000BD9935 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		45ACA2732988D76000BD9935 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		72CDF3A3298A4C4300918C1A /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		72CDF3A5298A53BE00918C1A /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		72CDF3A7298A53E100918C1A /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
+		72CDF3A9298A576B00918C1A /* URLSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionManager.swift; sourceTree = "<group>"; };
+		72E728F529939CE100427640 /* JobInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobInfo.swift; sourceTree = "<group>"; };
+		72E728F729939D0E00427640 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		72ECFFEA298BA6B70045ADBB /* JobInfoDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JobInfoDTO.swift; path = MapleStoryGuide/Source/Model/JobInfoDTO.swift; sourceTree = SOURCE_ROOT; };
+		72ECFFEC298BC2100045ADBB /* JobInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobInfoViewModel.swift; sourceTree = "<group>"; };
+		72ECFFEF298BC9060045ADBB /* JSONManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +88,8 @@
 		45ACA2822988D8FF00BD9935 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				72ECFFEA298BA6B70045ADBB /* JobInfoDTO.swift */,
+				72E728F529939CE100427640 /* JobInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -107,6 +127,7 @@
 		45ACA2862988D99F00BD9935 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				72ECFFEE298BC8E70045ADBB /* JSON */,
 				45ACA2882988D9BB00BD9935 /* Network */,
 			);
 			path = Utility;
@@ -115,6 +136,8 @@
 		45ACA2872988D9A600BD9935 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				72ECFFEC298BC2100045ADBB /* JobInfoViewModel.swift */,
+				72E728F729939D0E00427640 /* Observable.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -122,8 +145,20 @@
 		45ACA2882988D9BB00BD9935 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				72CDF3A9298A576B00918C1A /* URLSessionManager.swift */,
+				72CDF3A3298A4C4300918C1A /* EndPoint.swift */,
+				72CDF3A5298A53BE00918C1A /* APIRequest.swift */,
+				72CDF3A7298A53E100918C1A /* Components.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		72ECFFEE298BC8E70045ADBB /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				72ECFFEF298BC9060045ADBB /* JSONManager.swift */,
+			);
+			path = JSON;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,8 +242,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				45ACA26A2988D75C00BD9935 /* ViewController.swift in Sources */,
+				72CDF3A8298A53E100918C1A /* Components.swift in Sources */,
+				72CDF3AA298A576B00918C1A /* URLSessionManager.swift in Sources */,
+				72ECFFF0298BC9060045ADBB /* JSONManager.swift in Sources */,
+				72E728F829939D0E00427640 /* Observable.swift in Sources */,
+				72E728F629939CE100427640 /* JobInfo.swift in Sources */,
+				72CDF3A4298A4C4300918C1A /* EndPoint.swift in Sources */,
 				45ACA2662988D75C00BD9935 /* AppDelegate.swift in Sources */,
+				72CDF3A6298A53BE00918C1A /* APIRequest.swift in Sources */,
 				45ACA2682988D75C00BD9935 /* SceneDelegate.swift in Sources */,
+				72ECFFED298BC2100045ADBB /* JobInfoViewModel.swift in Sources */,
+				72ECFFEB298BA6B70045ADBB /* JobInfoDTO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
