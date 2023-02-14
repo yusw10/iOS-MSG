@@ -98,14 +98,58 @@ extension JobInfoViewModel {
         jobInfo.value = self.jobListInfo.value[index]
     }
     
-    func fetchJobInfo() -> [JobInfo] {
-        return self.jobListInfo.value
+    func fetchJobGroup() -> [JobGroup] {
+        let jobDictionary = createJobDict()
+        var typeList = [String]()
+        var jobGroupList = [JobGroup]()
+        
+        self.jobListInfo.value.forEach { info in
+            if !typeList.contains(info.type) {
+                typeList.append(info.type)
+            }
+        }
+        
+        for type in typeList {
+            guard let jobList = jobDictionary[type] else {
+                break
+            }
+            
+            let jobGroup = JobGroup(jobGroupTitle: type, jobs: jobList)
+            jobGroupList.append(jobGroup)
+        }
+        
+        return jobGroupList
     }
     
-    func searchJobOrClass(_ text: String) -> [JobInfo] {
-        return self.jobListInfo.value.filter { jobinfo in
-            return jobinfo.name.contains(text) || jobinfo.type.contains(text)
+    // 검색할 때 사용
+    // 만약 검색 결과가 없다면 다시 데이터를 불러옴 ( 아마 여기서 trigger 메서드는 api 통신 없이 데이터를 가져 올 겁니다. Repository에서 캐싱을 대충 구현 )
+    func searchJob(_ text: String) async {
+        let filterData = self.jobListInfo.value.filter { jobinfo in
+            return jobinfo.name.lowercased().contains(text)
         }
+        
+        if filterData.isEmpty {
+            await self.trigger(query: .fileName)
+        } else {
+            self.jobListInfo.value = filterData
+        }
+    }
+    
+    private func createJobDict() -> [String: [Job]] {
+        var dict = [String: [Job]]()
+        
+        self.jobListInfo.value.forEach { info in
+            let job = Job(title: info.name, jobImage: info.name + "_배너")
+            
+            if var data = dict[info.type] {
+                data.append(job)
+                dict.updateValue(data, forKey: info.type)
+            } else {
+                dict.updateValue([job], forKey: info.type)
+            }
+        }
+        
+        return dict
     }
 }
 

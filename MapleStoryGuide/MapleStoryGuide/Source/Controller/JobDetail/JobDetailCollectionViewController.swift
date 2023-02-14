@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 import Then
-
+/*
 final class JobDetailCollectionViewController: UICollectionViewController {
     
     // MARK: - Properties
@@ -263,3 +263,4 @@ extension JobDetailCollectionViewController {
     }
     
 }
+*/
