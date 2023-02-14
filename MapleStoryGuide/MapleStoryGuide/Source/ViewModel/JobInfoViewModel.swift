@@ -10,11 +10,11 @@ import Foundation
 // MARK: Repository
 // 추상 Repository를 만들고 여기서 Entity를 가져와 Model로 Mapping
 // DTO를 저장하는 저장소는 필요가 없어 보여 생략
-protocol APIJobInfoRepository {
+protocol JobInfoRepository {
     func fetchData(query: Query) async throws -> [JobInfo]
 }
 
-class DefaultJobInfoRepository: APIJobInfoRepository {
+class APIJobInfoRepository: JobInfoRepository {
     private let urlSessionManager = URLSessionManager.shared
     private let jsonManager = JSONManager.shared
     
@@ -29,15 +29,31 @@ class DefaultJobInfoRepository: APIJobInfoRepository {
     }
 }
 
+class AssetJobInfoRepository: JobInfoRepository {
+    private let jsonManager = JSONManager.shared
+    
+    func fetchData(query: Query) async throws -> [JobInfo] {
+        guard let fileLocation = Bundle.main.url(forResource: query.value, withExtension: "json") else {
+            throw FetchError.failureLoadLocation
+        }
+        let data = try Data(contentsOf: fileLocation)
+        guard let responseDTO: [JobInfoDTO] = self.jsonManager.decodeToInfoList(from: data) else {
+            throw FetchError.failureParse
+        }
+        
+        return responseDTO.map { $0.toDomain() }
+    }
+}
+
 // MARK: UseCase
 // 변하지 않는 비즈니스 로직에 대해서만 UseCase로 정의
 // Model을 변화시켜 처리해야 하는 로직 같은 경우 UseCase에서 처리하면 각각의 UseCase가 Model을 가지고 있어야 하고 많은 UseCase를 생성해야 한다.
 // Model을 싱글톤 패턴으로 만들면 가능하긴 함 (모든 UseCase가 같은 Model을 가지고 있다고 보장한다.)
 class CommonJobInfoUseCase {
-    private let repository: APIJobInfoRepository
+    private let repository: JobInfoRepository
     
     init(
-        repository: APIJobInfoRepository
+        repository: JobInfoRepository
     ) {
         self.repository = repository
     }
@@ -59,7 +75,7 @@ class JobInfoViewModel {
     }
     
     convenience init(
-        repository: APIJobInfoRepository
+        repository: JobInfoRepository
     ) {
         let useCase = CommonJobInfoUseCase(repository: repository)
         self.init(useCase: useCase)

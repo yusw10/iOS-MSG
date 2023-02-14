@@ -7,7 +7,7 @@
 
 // MARK: Model
 struct JobInfo {
-    let name, type, jobClass, imageQuery: String
+    let name, type, jobClass: String // 직업 이미지 쿼리는 제거
     let unionEffect: String
     let keyword: [Keyword]
     let linkSkill: [Skill]

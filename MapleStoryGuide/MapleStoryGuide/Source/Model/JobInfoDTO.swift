@@ -6,7 +6,7 @@
 //
 
 struct JobInfoDTO: Decodable {
-    let name, type, jobClass, imageQuery: String
+    let name, type, jobClass: String
     let unionEffect: String
     let keyword: [KeywordDTO]
     let linkSkill: SkillDTO
@@ -16,7 +16,6 @@ struct JobInfoDTO: Decodable {
     enum CodingKeys: String, CodingKey {
         case name, type
         case jobClass = "class"
-        case imageQuery = "image_query"
         case unionEffect = "union_effect"
         case keyword
         case linkSkill = "link_skill"
@@ -29,7 +28,6 @@ struct JobInfoDTO: Decodable {
             name: self.name,
             type: self.type,
             jobClass: self.jobClass,
-            imageQuery: self.imageQuery,
             unionEffect: self.unionEffect,
             keyword: self.keyword.map{ Keyword(name: $0.name) },
             linkSkill: [Skill(
