@@ -30,7 +30,8 @@ final class SkillDetailView: UIView {
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    private let descriptionLabel = UITextView().then {
+    private let descriptionTextView = UITextView().then {
+        $0.isEditable = false
         $0.backgroundColor = .secondarySystemBackground
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
@@ -53,7 +54,7 @@ final class SkillDetailView: UIView {
     func configure(image: UIImage, title: String, description: String) {
         imageView.image = image
         titleLabel.text = title
-        descriptionLabel.text = description
+        descriptionTextView.text = description
     }
     
 }
@@ -67,7 +68,7 @@ extension SkillDetailView {
     private func addSubViews() {
         self.addSubview(verticalStackView)
         
-        [imageView, titleLabel, descriptionLabel].forEach { view in
+        [imageView, titleLabel, descriptionTextView].forEach { view in
             verticalStackView.addArrangedSubview(view)
         }
     }
@@ -78,7 +79,7 @@ extension SkillDetailView {
         }
         
         imageView.snp.makeConstraints { make in
-            make.height.equalTo(self.snp.width).multipliedBy(0.3)
+            make.width.height.equalTo(self.snp.width).multipliedBy(0.3)
         }
     }
     
