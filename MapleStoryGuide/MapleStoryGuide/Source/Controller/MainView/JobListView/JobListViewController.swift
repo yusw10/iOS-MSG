@@ -137,14 +137,21 @@ extension JobListViewController: UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return CGFloat(20)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        var index = indexPath.item
+        
+        for section in 0..<indexPath.section {
+            index += collectionView.numberOfItems(inSection: section)
+        }
+        
+        self.viewModel.selectJob(index)
+        let detailViewController = JobDetailCollectionViewController(viewModel: self.viewModel)
+        self.navigationController?.pushViewController(detailViewController, animated: true)
+    }
 }
 
 //MARK: - Mock Data
-
-//struct MockData {
-//    var type: [JobGroup]
-//}
-
 struct JobGroup {
     let jobGroupTitle: String
     let jobs: [Job]
@@ -154,38 +161,3 @@ struct Job {
     let title: String
     let jobImage: String
 }
-
-//let JobList = MockData(type: [
-//    JobGroup(
-//        jobGroupTitle: "모험가",
-//        jobs: [
-//            Job(title: "히어로", jobImage: "jobList"),
-//            Job(title: "다크나이트", jobImage: "additionalOption"),
-//            Job(title: "팔라딘", jobImage: "bossInfo")
-//        ]
-//    ),
-//    JobGroup(
-//        jobGroupTitle: "시그너스",
-//        jobs: [
-//            Job(title: "윈드브레이커", jobImage: "jobList"),
-//            Job(title: "소울마스터", jobImage: "additionalOption"),
-//            Job(title: "플레임위자드", jobImage: "bossInfo")
-//        ]
-//    ),
-//    JobGroup(
-//        jobGroupTitle: "레프",
-//        jobs: [
-//            Job(title: "칼리", jobImage: "jobList"),
-//            Job(title: "일리움", jobImage: "additionalOption"),
-//            Job(title: "아크", jobImage: "bossInfo")
-//        ]
-//    ),
-//    JobGroup(
-//        jobGroupTitle: "아니마",
-//        jobs: [
-//            Job(title: "호영", jobImage: "jobList"),
-//            Job(title: "라라", jobImage: "additionalOption")
-//        ]
-//    )
-//])
-

@@ -6,7 +6,7 @@
 //
 
 // MARK: Model
-struct JobInfo {
+struct JobInfo: Hashable {
     let name, type, jobClass: String // 직업 이미지 쿼리는 제거
     let unionEffect: String
     let keyword: [Keyword]
@@ -16,17 +16,17 @@ struct JobInfo {
 }
 
 // MARK: - Keyword
-struct Keyword {
+struct Keyword: Hashable {
     let name: String
 }
 
 // MARK: - Skill
-struct Skill {
+struct Skill: Hashable {
     let name, description, imageQuery: String
 }
 
 // MARK: - ReinforceSkillCore
-struct ReinforceSkillCore {
+struct ReinforceSkillCore: Hashable {
     let name: String
     let description20: String
     let description40: String

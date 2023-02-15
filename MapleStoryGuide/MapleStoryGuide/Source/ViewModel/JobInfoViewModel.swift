@@ -94,6 +94,7 @@ extension JobInfoViewModel {
         }
     }
     
+    // TODO: 로직 변경 (Section이 존재하기 때문에 단순히 index로 접근 불가)
     func selectJob(_ index: Int) {
         jobInfo.value = self.jobListInfo.value[index]
     }
