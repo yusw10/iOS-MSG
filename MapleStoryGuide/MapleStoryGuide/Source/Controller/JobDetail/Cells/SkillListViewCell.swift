@@ -76,12 +76,13 @@ extension SkillListViewCell {
     
     private func setLayouts() {
         horizontalStackView.snp.makeConstraints { make in
-            make.top.left.equalTo(self.contentView).offset(10)
-            make.right.bottom.equalTo(self.contentView).offset(-10)
+            make.top.equalTo(self.contentView.snp.top).offset(10)
+            make.leading.equalTo(self.contentView.snp.leading).offset(10)
         }
         
         imageView.snp.makeConstraints { make in
-            make.height.width.equalTo(self.contentView.snp.width).multipliedBy(0.1)
+            make.width.equalTo(self.contentView.snp.width).multipliedBy(0.1)
+            make.height.equalTo(self.contentView.snp.width).multipliedBy(0.1)
         }
     }
     
