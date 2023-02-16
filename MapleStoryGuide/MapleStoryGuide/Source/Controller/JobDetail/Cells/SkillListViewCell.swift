@@ -17,6 +17,7 @@ final class SkillListViewCell: UICollectionViewListCell {
     
     private let horizontalStackView = UIStackView().then {
         $0.spacing = 10
+        $0.alignment = .center
         $0.axis = .horizontal
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
@@ -76,8 +77,7 @@ extension SkillListViewCell {
     
     private func setLayouts() {
         horizontalStackView.snp.makeConstraints { make in
-            make.top.equalTo(self.contentView.snp.top).offset(10)
-            make.leading.equalTo(self.contentView.snp.leading).offset(10)
+            make.top.leading.bottom.equalTo(self.contentView).inset(5)
         }
         
         imageView.snp.makeConstraints { make in
