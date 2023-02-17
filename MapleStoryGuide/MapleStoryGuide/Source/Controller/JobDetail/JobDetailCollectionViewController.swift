@@ -72,14 +72,14 @@ final class JobDetailCollectionViewController: UICollectionViewController {
         
         self.viewModel.jobInfo.bind { [self] info in
             guard let info = info else { return }
-            
+
             var snapshot = self.diffableDataSource.snapshot()
             snapshot.appendSections([.jobImage, .linkSkill, .matrixSkillCore, .reinforceSkillCore])
             snapshot.appendItems([info], toSection: .jobImage)
             snapshot.appendItems(info.linkSkill, toSection: .linkSkill)
             snapshot.appendItems(info.matrixSkillCore, toSection: .matrixSkillCore)
             snapshot.appendItems(info.reinforceSkillCore, toSection: .reinforceSkillCore)
-            
+
             diffableDataSource.apply(snapshot, animatingDifferences: false)
         }
     }
