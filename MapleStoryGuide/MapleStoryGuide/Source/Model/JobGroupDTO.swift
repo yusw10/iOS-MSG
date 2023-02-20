@@ -20,7 +20,7 @@ struct JobGroupDTO: Decodable {
                     name: info.name,
                     jobClass: info.jobClass,
                     imageURL: info.imageURL,
-                    unionEffect: info.unionEffect,
+                    unionEffect: UnionEffect(name: info.unionEffect),
                     linkSkill: Skill(name: info.linkSkill.name, description: info.linkSkill.description, imageURL: info.linkSkill.imageURL),
                     reinforceSkillCore: info.reinforceSkillCore.map{ skillInfo in
                         return ReinforceSkillCore(name: skillInfo.name, description20: skillInfo.description20, description40: skillInfo.description40, imageURL: skillInfo.imageURL)
@@ -112,7 +112,7 @@ struct Job: Hashable {
     let name: String
     let jobClass: String
     let imageURL: String
-    let unionEffect: String
+    let unionEffect: UnionEffect
     let linkSkill: Skill
     let reinforceSkillCore: [ReinforceSkillCore]
     let matrixSkillCore: [Skill]
@@ -120,6 +120,10 @@ struct Job: Hashable {
     func hasText(_ text: String) -> Bool {
         return self.name.lowercased().contains(text) || self.jobClass.lowercased().contains(text)
     }
+}
+
+struct UnionEffect: Hashable {
+    let name: String
 }
 
 struct Skill: Hashable {

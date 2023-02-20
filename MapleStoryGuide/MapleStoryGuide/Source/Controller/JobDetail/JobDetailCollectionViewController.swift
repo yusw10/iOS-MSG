@@ -14,6 +14,7 @@ final class JobDetailCollectionViewController: UICollectionViewController {
     // MARK: - Properties
     enum Section: CaseIterable {
         case jobImage
+        case unionEffect
         case linkSkill
         case reinforceSkillCore
         case matrixSkillCore
@@ -26,6 +27,11 @@ final class JobDetailCollectionViewController: UICollectionViewController {
         if let object = object as? Job {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: JobImageViewCell.id, for: indexPath) as! JobImageViewCell
             cell.configure(imageURL: object.imageURL)
+            
+            return cell
+        } else if let object = object as? UnionEffect {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SkillListViewCell.id, for: indexPath) as! SkillListViewCell
+            cell.configure(title: object.name, imageURL: "")
             
             return cell
         } else if let object = object as? Skill {
@@ -69,8 +75,10 @@ final class JobDetailCollectionViewController: UICollectionViewController {
             guard let info = info else { return }
 
             var snapshot = self.diffableDataSource.snapshot()
-            snapshot.appendSections([.jobImage, .linkSkill, .matrixSkillCore, .reinforceSkillCore])
+            snapshot.appendSections([.jobImage, .unionEffect, .linkSkill, .matrixSkillCore, .reinforceSkillCore])
+            
             snapshot.appendItems([info], toSection: .jobImage)
+            snapshot.appendItems([info.unionEffect], toSection: .unionEffect)
             snapshot.appendItems([info.linkSkill], toSection: .linkSkill)
             snapshot.appendItems(info.matrixSkillCore, toSection: .matrixSkillCore)
             snapshot.appendItems(info.reinforceSkillCore, toSection: .reinforceSkillCore)
