@@ -33,7 +33,7 @@ final class JobListViewController: UIViewController {
         
         viewModel = JobInfoViewModel(repository: repository)
         Task {
-            await viewModel.trigger(query: .fileName)
+            await viewModel.trigger(query: .newJson)
             
             viewModel.jobListInfo.bind { [self] _ in
                 self.jobList = viewModel.fetchJobGroup()
@@ -93,7 +93,7 @@ extension JobListViewController: UICollectionViewDelegate, UICollectionViewDataS
             return UICollectionViewCell()
         }
         
-        cell.setupCellImage(title: jobList[indexPath.section].jobs[indexPath.row].jobImage)
+        cell.setupCellImage(title: jobList[indexPath.section].jobs[indexPath.item].imageURL)
         
         return cell
     }
@@ -119,7 +119,7 @@ extension JobListViewController: UICollectionViewDelegate, UICollectionViewDataS
                 return UICollectionReusableView()
             }
 
-            headerView.setupTitle(title: jobList[indexPath.section].jobGroupTitle)
+            headerView.setupTitle(title: jobList[indexPath.section].type)
             return headerView
         default:
             return UICollectionReusableView()
@@ -145,19 +145,8 @@ extension JobListViewController: UICollectionViewDelegate, UICollectionViewDataS
             index += collectionView.numberOfItems(inSection: section)
         }
         
-        self.viewModel.selectJob(index)
+        self.viewModel.selectJob(indexPath.section, indexPath.row)
         let detailViewController = JobDetailCollectionViewController(viewModel: self.viewModel)
         self.navigationController?.pushViewController(detailViewController, animated: true)
     }
-}
-
-//MARK: - Mock Data
-struct JobGroup {
-    let jobGroupTitle: String
-    let jobs: [Job]
-}
-
-struct Job {
-    let title: String
-    let jobImage: String
 }

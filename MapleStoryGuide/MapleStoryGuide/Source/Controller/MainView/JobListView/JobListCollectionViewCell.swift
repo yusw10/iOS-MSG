@@ -10,6 +10,7 @@ import Then
 import SnapKit
 
 final class JobListCollectionViewCell: UICollectionViewCell {
+    var task: Task<Void, Never>?
     
     //MARK: - CollectionViewCell Properties
     
@@ -41,6 +42,10 @@ final class JobListCollectionViewCell: UICollectionViewCell {
     }
     
     //MARK: - CollectionViewCell Setup Method
+    override func prepareForReuse() {
+        self.jobImage.image = nil
+        task?.cancel() // cancel을 해주지 않으면 task.isCancelled는 false로 출력된다.
+    }
     
     private func setupDefault() {
         contentView.addSubview(jobImageShadowView)
@@ -52,6 +57,24 @@ final class JobListCollectionViewCell: UICollectionViewCell {
     }
     
     func setupCellImage(title: String) {
-        jobImage.image = UIImage(named: title)
+        task = Task {
+            await jobImage.fetchImage(title)
+        }
+    }
+}
+
+// TODO: Task cancel 적용 시키기
+extension UIImageView {
+    func fetchImage(_ url: String) async {
+        guard let url = URL(string: url) else {
+            return
+        }
+        
+        do {
+            let (data, _) = try await URLSession.shared.data(from: url)
+            self.image = UIImage(data: data)
+        } catch {
+            // 에러 처리
+        }
     }
 }

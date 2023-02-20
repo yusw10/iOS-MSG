@@ -38,11 +38,13 @@ final class JobImageViewCell: UICollectionViewListCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         
-        self.configure(image: nil)
+        self.imageView.image = nil
     }
     
-    func configure(image: UIImage?) {
-        self.imageView.image = image
+    func configure(imageURL: String) {
+        Task {
+            await self.imageView.fetchImage(imageURL)
+        }
     }
     
 }

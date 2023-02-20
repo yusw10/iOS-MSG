@@ -23,24 +23,18 @@ final class JobDetailCollectionViewController: UICollectionViewController {
 
     private lazy var diffableDataSource: UICollectionViewDiffableDataSource<Section, AnyHashable> = .init(collectionView: self.collectionView) { (collectionView, indexPath, object) -> UICollectionViewListCell? in
         
-        if let object = object as? JobInfo {
+        if let object = object as? Job {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: JobImageViewCell.id, for: indexPath) as! JobImageViewCell
-            cell.configure(image: UIImage(named: object.name + "_배너"))
+            cell.configure(imageURL: object.imageURL)
             return cell
         } else if let object = object as? Skill {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SkillListViewCell.id, for: indexPath) as! SkillListViewCell
-            Task {
-                let skillImage = await UIImage.fetchImage(from: .imageQuery(query: object.imageQuery))
-                cell.configure(title: object.name, image: skillImage)
-            }
+            cell.configure(title: object.name, imageURL: object.imageURL)
             cell.accessories = [.disclosureIndicator()]
             return cell
         } else if let object = object as? ReinforceSkillCore {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SkillListViewCell.id, for: indexPath) as! SkillListViewCell
-            Task {
-                let skillImage = await UIImage.fetchImage(from: .imageQuery(query: object.imageQuery))
-                cell.configure(title: object.name, image: skillImage)
-            }
+            cell.configure(title: object.name, imageURL: object.imageURL)
             cell.accessories = [.disclosureIndicator()]
             return cell
         }
@@ -76,7 +70,7 @@ final class JobDetailCollectionViewController: UICollectionViewController {
             var snapshot = self.diffableDataSource.snapshot()
             snapshot.appendSections([.jobImage, .linkSkill, .matrixSkillCore, .reinforceSkillCore])
             snapshot.appendItems([info], toSection: .jobImage)
-            snapshot.appendItems(info.linkSkill, toSection: .linkSkill)
+            snapshot.appendItems([info.linkSkill], toSection: .linkSkill)
             snapshot.appendItems(info.matrixSkillCore, toSection: .matrixSkillCore)
             snapshot.appendItems(info.reinforceSkillCore, toSection: .reinforceSkillCore)
 
@@ -185,16 +179,4 @@ extension JobDetailCollectionViewController {
         }
     }
     
-}
-
-extension UIImage {
-    static func fetchImage(from query: Query) async -> UIImage? {
-        let endPoint = EndPoint(query: query)
-        do {
-            let data = try await URLSessionManager.shared.fetchData(endpoint: endPoint)
-            return UIImage(data: data)
-        } catch {
-            return nil
-        }
-    }
 }
