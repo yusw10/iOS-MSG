@@ -28,7 +28,7 @@ final class SkillListViewCell: UICollectionViewListCell {
     }
     
     private let titleLabel = UILabel().then {
-        $0.numberOfLines = 0
+        $0.numberOfLines = 1
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
@@ -87,6 +87,7 @@ extension SkillListViewCell {
         horizontalStackView.snp.makeConstraints { make in
             make.top.equalTo(self.contentView.snp.top)
             make.leading.equalTo(self.contentView.snp.leading).offset(10)
+            make.trailing.equalTo(self.contentView.snp.trailing).offset(-10)
         }
         
         imageView.snp.makeConstraints { make in
