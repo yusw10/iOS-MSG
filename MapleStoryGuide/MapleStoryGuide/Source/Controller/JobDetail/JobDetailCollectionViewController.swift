@@ -176,7 +176,9 @@ extension JobDetailCollectionViewController {
             let object = self.diffableDataSource.itemIdentifier(for: indexPath)
             let section = snapshot.sectionIdentifier(containingItem: object!)!
             
-            if section == .linkSkill {
+            if section == .unionEffect {
+                header.configure(titleText: "유니온 효과")
+            } else if section == .linkSkill {
                 header.configure(titleText: "링크 스킬")
             } else if section == .matrixSkillCore {
                 header.configure(titleText: "5차 스킬 코어")
