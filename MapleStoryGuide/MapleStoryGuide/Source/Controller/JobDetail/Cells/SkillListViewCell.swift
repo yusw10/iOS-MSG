@@ -56,8 +56,13 @@ final class SkillListViewCell: UICollectionViewListCell {
     
     func configure(title: String, imageURL: String) {
         titleLabel.text = title
-        Task {
-            await self.imageView.fetchImage(imageURL)
+       
+        if imageURL == "" {
+            imageView.isHidden = true
+        } else {
+            Task {
+                await self.imageView.fetchImage(imageURL)
+            }
         }
     }
     
@@ -80,12 +85,20 @@ extension SkillListViewCell {
     
     private func setLayouts() {
         horizontalStackView.snp.makeConstraints { make in
-            make.top.leading.bottom.equalTo(self.contentView).inset(5)
+            make.top.equalTo(self.contentView.snp.top)
+            make.leading.equalTo(self.contentView.snp.leading).offset(10)
         }
         
         imageView.snp.makeConstraints { make in
-            make.width.equalTo(self.contentView.snp.width).multipliedBy(0.1)
-            make.height.equalTo(self.contentView.snp.width).multipliedBy(0.1)
+            make.top.equalTo(self.horizontalStackView.snp.top).offset(5)
+            make.bottom.equalTo(self.horizontalStackView.snp.bottom).offset(-5)
+
+            make.width.height.equalTo(self.contentView.snp.width).multipliedBy(0.1)
+        }
+        
+        titleLabel.snp.makeConstraints { make in
+            make.top.equalTo(self.horizontalStackView.snp.top).offset(5)
+            make.bottom.equalTo(self.horizontalStackView.snp.bottom).offset(-5)
         }
     }
     
