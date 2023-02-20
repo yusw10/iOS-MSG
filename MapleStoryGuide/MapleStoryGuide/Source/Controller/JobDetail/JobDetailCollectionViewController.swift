@@ -26,16 +26,17 @@ final class JobDetailCollectionViewController: UICollectionViewController {
         if let object = object as? Job {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: JobImageViewCell.id, for: indexPath) as! JobImageViewCell
             cell.configure(imageURL: object.imageURL)
+            
             return cell
         } else if let object = object as? Skill {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SkillListViewCell.id, for: indexPath) as! SkillListViewCell
             cell.configure(title: object.name, imageURL: object.imageURL)
-            cell.accessories = [.disclosureIndicator()]
+            
             return cell
         } else if let object = object as? ReinforceSkillCore {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SkillListViewCell.id, for: indexPath) as! SkillListViewCell
             cell.configure(title: object.name, imageURL: object.imageURL)
-            cell.accessories = [.disclosureIndicator()]
+            
             return cell
         }
         
