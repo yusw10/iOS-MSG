@@ -15,7 +15,7 @@ final class TitleHeaderView: UICollectionReusableView {
     
     static let id = "TitleHeaderView"
     
-    private let verticalStackView = UIStackView().then {
+    private let horizontalStackView = UIStackView().then {
         $0.alignment = .leading
         $0.axis = .horizontal
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -68,29 +68,18 @@ extension TitleHeaderView {
     // MARK: - Add View, Set Layout
     
     private func addSubViews() {
-        self.addSubview(verticalStackView)
+        self.addSubview(horizontalStackView)
         
         [titleLabel, myButton].forEach { view in
-            verticalStackView.addArrangedSubview(view)
+            horizontalStackView.addArrangedSubview(view)
         }
     }
     
     private func setLayouts() {
-        verticalStackView.snp.makeConstraints { make in
+        horizontalStackView.snp.makeConstraints { make in
             make.top.left.right.equalTo(self)
             make.bottom.equalTo(self).offset(-10)
         }
     }
     
-}
-
-final class TitleHeaderViewController: UIViewController {
-    
-    let titleHeaderView = TitleHeaderView()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        self.view = titleHeaderView
-    }
 }
