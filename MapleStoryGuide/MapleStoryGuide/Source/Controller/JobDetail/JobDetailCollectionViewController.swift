@@ -19,6 +19,8 @@ final class JobDetailCollectionViewController: UICollectionViewController {
         case reinforceSkillCore
         case matrixSkillCore
     }
+    
+    private var skillCoreData: [AnyHashable] = []
     private var reinforceSkillCoreData: [AnyHashable] = []
 
     private let viewModel: JobInfoViewModel
@@ -171,10 +173,15 @@ extension JobDetailCollectionViewController {
                
             } else if section == .matrixSkillCore {
                 header.configure(titleText: "5차 스킬 코어")
-               
+                header.screenTransitionButton.addTarget(self, action: #selector(self.skillCoreSectionTapAction), for: .touchUpInside)
+                
+                for index in 0...(snapshot.numberOfItems(inSection: section) - 1) {
+                    let sectionData = self.diffableDataSource.itemIdentifier(for: IndexPath(item: index, section: indexPath.section)) as? Skill
+                    self.skillCoreData.append(sectionData)
+                }
             } else if section == .reinforceSkillCore {
                 header.configure(titleText: "추천 직업 스킬 코어 강화")
-                header.screenTransitionButton.addTarget(self, action: #selector(self.didTapAction), for: .touchUpInside)
+                header.screenTransitionButton.addTarget(self, action: #selector(self.reinforceSkillCoreSectionTapAction), for: .touchUpInside)
 
                 for index in 0...(snapshot.numberOfItems(inSection: section) - 1) {
                     let sectionData = self.diffableDataSource.itemIdentifier(for: IndexPath(item: index, section: indexPath.section)) as? ReinforceSkillCore
@@ -186,7 +193,14 @@ extension JobDetailCollectionViewController {
         }
     }
     
-    @objc func didTapAction() {
+    @objc func skillCoreSectionTapAction() {
+        let skillDetailTableViewController = SkillDetailTableViewController()
+
+        navigationController?.pushViewController(skillDetailTableViewController, animated: true)
+        skillDetailTableViewController.configure(data: skillCoreData)
+    }
+    
+    @objc func reinforceSkillCoreSectionTapAction() {
         let skillDetailTableViewController = SkillDetailTableViewController()
 
         navigationController?.pushViewController(skillDetailTableViewController, animated: true)

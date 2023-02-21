@@ -17,8 +17,16 @@ final class SkillDetailTableViewController: UITableViewController {
     
     private lazy var diffableDataSource: UITableViewDiffableDataSource<Section, AnyHashable> = .init(tableView: tableView) { (tableView, indexPath, object) -> UITableViewCell? in
         
-        if let object = object as? ReinforceSkillCore {
+        if let object = object as? Skill {
             let cell = tableView.dequeueReusableCell(withIdentifier: SkillDetailViewCell.id, for: indexPath) as! SkillDetailViewCell
+            cell.configure(
+                imageURL: object.imageURL,
+                title: object.name,
+                description: object.description
+            )
+            return cell
+        } else if let object = object as? ReinforceSkillCore {
+            let cell = tableView.dequeueReusableCell(withIdentifier: ReinforceSkillDetailViewCell.id, for: indexPath) as! ReinforceSkillDetailViewCell
             cell.configure(
                 imageURL: object.imageURL,
                 title: object.name,
@@ -77,11 +85,12 @@ extension SkillDetailTableViewController {
     
     private func setTableView() {
         tableView = UITableView(
-            frame: view.bounds,
-            style: .insetGrouped
+            frame: view.bounds
         )
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        
+        tableView.rowHeight  = UITableView.automaticDimension
+
+        tableView.register(ReinforceSkillDetailViewCell.self, forCellReuseIdentifier: ReinforceSkillDetailViewCell.id)
         tableView.register(SkillDetailViewCell.self, forCellReuseIdentifier: SkillDetailViewCell.id)
     }
 }

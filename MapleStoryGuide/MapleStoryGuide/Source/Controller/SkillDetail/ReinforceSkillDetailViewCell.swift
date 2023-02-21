@@ -1,16 +1,18 @@
 //
-//  SkillDetailViewCell.swift
+//  ReinforceSkillDetailViewCell.swift
 //  MapleStoryGuide
 //
-//  Created by brad on 2023/02/21.
+//  Created by brad on 2023/02/02.
 //
 
 import UIKit
+import SnapKit
+import Then
 
-final class SkillDetailViewCell: UITableViewCell {
+final class ReinforceSkillDetailViewCell: UITableViewCell {
     
     // MARK: - Properties
-    static let id = "SkillDetailViewCell"
+    static let id = "ReinforceSkillDetailViewCell"
 
     private lazy var horizontalStackView = UIStackView().then {
         $0.spacing = 10
@@ -24,22 +26,25 @@ final class SkillDetailViewCell: UITableViewCell {
     }
     
     private lazy var verticalStackView = UIStackView().then {
-        $0.distribution = .equalSpacing
-        $0.spacing = 5
+        $0.spacing = 10
+        $0.distribution = .fillProportionally
         $0.axis = .vertical
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
     private lazy var titleLabel = UILabel().then {
-        $0.setContentHuggingPriority(.defaultHigh, for: .vertical)
         $0.font = .preferredFont(forTextStyle: .title3, compatibleWith: UITraitCollection(legibilityWeight: .bold))
         $0.numberOfLines = 0
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    private lazy var descriptionLabel = UILabel().then {
+    private lazy var description20Label = UILabel().then {
         $0.font = .preferredFont(forTextStyle: .caption2)
-        $0.numberOfLines = 0
+        $0.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    private lazy var description40Label = UILabel().then {
+        $0.font = .preferredFont(forTextStyle: .caption2)
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
         
@@ -58,19 +63,20 @@ final class SkillDetailViewCell: UITableViewCell {
     
     // MARK: - Methods
     
-    func configure(imageURL: String, title: String, description: String) {
-        titleLabel.text = title
-        descriptionLabel.text = description
+    func configure(imageURL: String, title: String, description20: String, description40: String) {
         Task {
             await self.skillImageView.fetchImage(imageURL)
         }
+        titleLabel.text = title
+        description20Label.text = "20레벨: \(description20)"
+        description40Label.text = "40레벨: \(description40)"
     }
     
 }
 
 // MARK: - Private Methods
 
-extension SkillDetailViewCell {
+extension ReinforceSkillDetailViewCell {
     
     // MARK: - Add View, Set Layout
     
@@ -81,7 +87,7 @@ extension SkillDetailViewCell {
             horizontalStackView.addArrangedSubview(view)
         }
         
-        [titleLabel, descriptionLabel].forEach { view in
+        [titleLabel, description20Label, description40Label].forEach { view in
             verticalStackView.addArrangedSubview(view)
         }
     }
@@ -100,11 +106,7 @@ extension SkillDetailViewCell {
         }
         
         titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(verticalStackView.snp.top).priority(750)
-        }
-        
-        descriptionLabel.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).priority(750)
+            make.top.equalTo(skillImageView.snp.top).priority(750)
         }
     }
     
