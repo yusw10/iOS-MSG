@@ -15,15 +15,21 @@ final class TitleHeaderView: UICollectionReusableView {
     
     static let id = "TitleHeaderView"
     
-    private let verticalStackView = UIStackView().then {
+    private let horizontalStackView = UIStackView().then {
         $0.alignment = .leading
-        $0.axis = .vertical
+        $0.axis = .horizontal
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
     private let titleLabel = UILabel().then {
         $0.font = UIFont.boldSystemFont(ofSize: 20)
         $0.numberOfLines = 1
+        $0.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    let screenTransitionButton = UIButton().then {
+        $0.setTitle("상세보기", for: .normal)
+        $0.setTitleColor(.systemBlue, for: .normal)
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
@@ -62,15 +68,15 @@ extension TitleHeaderView {
     // MARK: - Add View, Set Layout
     
     private func addSubViews() {
-        self.addSubview(verticalStackView)
+        self.addSubview(horizontalStackView)
         
-        [titleLabel].forEach { view in
-            verticalStackView.addArrangedSubview(view)
+        [titleLabel, screenTransitionButton].forEach { view in
+            horizontalStackView.addArrangedSubview(view)
         }
     }
     
     private func setLayouts() {
-        verticalStackView.snp.makeConstraints { make in
+        horizontalStackView.snp.makeConstraints { make in
             make.top.left.right.equalTo(self)
             make.bottom.equalTo(self).offset(-10)
         }

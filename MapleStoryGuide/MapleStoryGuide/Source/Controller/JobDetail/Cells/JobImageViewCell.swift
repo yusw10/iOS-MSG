@@ -38,11 +38,13 @@ final class JobImageViewCell: UICollectionViewListCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         
-        self.configure(image: nil)
+        self.imageView.image = nil
     }
     
-    func configure(image: UIImage?) {
-        self.imageView.image = image
+    func configure(imageURL: String) {
+        Task {
+            await self.imageView.fetchImage(imageURL)
+        }
     }
     
 }
@@ -60,7 +62,7 @@ extension JobImageViewCell {
     private func setLayouts() {
         imageView.snp.makeConstraints { make in
             make.left.right.bottom.top.equalTo(self.contentView)
-            make.height.equalTo(contentView.snp.width).multipliedBy(0.4)
+            make.height.equalTo(imageView.snp.width).multipliedBy(0.4).priority(750)
         }
     }
         

@@ -6,29 +6,29 @@
 //
 
 // MARK: Model
-struct JobInfo {
-    let name, type, jobClass, imageQuery: String
-    let unionEffect: String
-    let keyword: [Keyword]
-    let linkSkill: [Skill]
-    let reinforceSkillCore: [ReinforceSkillCore]
-    let matrixSkillCore: [Skill]
-}
+//struct JobInfo: Hashable {
+//    let name, type, jobClass: String // 직업 이미지 쿼리는 제거
+//    let unionEffect: String
+//    let keyword: [Keyword]
+//    let linkSkill: [Skill]
+//    let reinforceSkillCore: [ReinforceSkillCore]
+//    let matrixSkillCore: [Skill]
+//}
 
 // MARK: - Keyword
-struct Keyword {
-    let name: String
-}
+//struct Keyword: Hashable {
+//    let name: String
+//}
 
 // MARK: - Skill
-struct Skill {
-    let name, description, imageQuery: String
-}
+//struct Skill: Hashable {
+//    let name, description, imageQuery: String
+//}
 
 // MARK: - ReinforceSkillCore
-struct ReinforceSkillCore {
-    let name: String
-    let description20: String
-    let description40: String
-    let imageQuery: String
-}
+//struct ReinforceSkillCore: Hashable {
+//    let name: String
+//    let description20: String
+//    let description40: String
+//    let imageQuery: String
+//}

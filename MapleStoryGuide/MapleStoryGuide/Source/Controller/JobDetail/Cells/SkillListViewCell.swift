@@ -17,6 +17,7 @@ final class SkillListViewCell: UICollectionViewListCell {
     
     private let horizontalStackView = UIStackView().then {
         $0.spacing = 10
+        $0.alignment = .center
         $0.axis = .horizontal
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
@@ -26,13 +27,8 @@ final class SkillListViewCell: UICollectionViewListCell {
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    private let verticalStackView = UIStackView().then {
-        $0.axis = .vertical
-        $0.translatesAutoresizingMaskIntoConstraints = false
-    }
-    
     private let titleLabel = UILabel().then {
-        $0.numberOfLines = 0
+        $0.numberOfLines = 1
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
@@ -54,12 +50,20 @@ final class SkillListViewCell: UICollectionViewListCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         
-        self.configure(title: "", image: nil)
+        self.titleLabel.text = ""
+        self.imageView.image = nil
     }
     
-    func configure(title: String, image: UIImage?) {
+    func configure(title: String, imageURL: String) {
         titleLabel.text = title
-        imageView.image = image
+       
+        if imageURL == "" {
+            imageView.isHidden = true
+        } else {
+            Task {
+                await self.imageView.fetchImage(imageURL)
+            }
+        }
     }
     
 }
@@ -73,19 +77,29 @@ extension SkillListViewCell {
     private func addSubViews() {
         self.contentView.addSubview(horizontalStackView)
         
-        [imageView, verticalStackView].forEach { view in
+        [imageView, titleLabel].forEach { view in
             horizontalStackView.addArrangedSubview(view)
         }
-        
-        [titleLabel].forEach { view in
-            verticalStackView.addArrangedSubview(view)
-        }
+       
     }
     
     private func setLayouts() {
         horizontalStackView.snp.makeConstraints { make in
-            make.top.left.equalTo(self.contentView).offset(10)
-            make.right.bottom.equalTo(self.contentView).offset(-10)
+            make.top.equalTo(self.contentView.snp.top)
+            make.leading.equalTo(self.contentView.snp.leading).offset(10)
+            make.trailing.equalTo(self.contentView.snp.trailing).offset(-10)
+        }
+        
+        imageView.snp.makeConstraints { make in
+            make.top.equalTo(self.horizontalStackView.snp.top).offset(5)
+            make.bottom.equalTo(self.horizontalStackView.snp.bottom).offset(-5)
+
+            make.width.height.equalTo(self.contentView.snp.width).multipliedBy(0.1)
+        }
+        
+        titleLabel.snp.makeConstraints { make in
+            make.top.equalTo(self.horizontalStackView.snp.top).offset(5)
+            make.bottom.equalTo(self.horizontalStackView.snp.bottom).offset(-5)
         }
     }
     

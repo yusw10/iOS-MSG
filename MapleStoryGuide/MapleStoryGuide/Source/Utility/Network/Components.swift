@@ -8,6 +8,8 @@
 enum Query {
     case jsonQuery
     case imageQuery(query: String)
+    case fileName
+    case newJson
     
     var value: String {
         switch self {
@@ -15,6 +17,10 @@ enum Query {
             return "1-SR5SFykHmNGkkyysXow1Cty8ENJQ6SZ"
         case .imageQuery(query: let query):
             return query
+        case .fileName:
+            return "jobs_Asset"
+        case .newJson:
+            return "newJobs_test"
         }
     }
 }
@@ -30,4 +36,5 @@ enum RequestError: Error {
 enum FetchError: Error {
     case badResponse
     case failureParse
+    case failureLoadLocation
 }
