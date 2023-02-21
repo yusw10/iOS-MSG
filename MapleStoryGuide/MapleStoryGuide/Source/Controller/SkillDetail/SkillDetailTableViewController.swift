@@ -88,7 +88,6 @@ extension SkillDetailTableViewController {
             frame: view.bounds
         )
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.rowHeight  = UITableView.automaticDimension
 
         tableView.register(ReinforceSkillDetailViewCell.self, forCellReuseIdentifier: ReinforceSkillDetailViewCell.id)
         tableView.register(SkillDetailViewCell.self, forCellReuseIdentifier: SkillDetailViewCell.id)
