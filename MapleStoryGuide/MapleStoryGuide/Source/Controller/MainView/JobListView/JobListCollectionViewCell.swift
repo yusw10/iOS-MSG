@@ -66,15 +66,47 @@ final class JobListCollectionViewCell: UICollectionViewCell {
 // TODO: Task cancel 적용 시키기
 extension UIImageView {
     func fetchImage(_ url: String) async {
-        guard let url = URL(string: url) else {
+        if let thumbnail = await ImageCacheManager.shared.getCachedImage(url: url) {
+            self.image = thumbnail
+            return
+        }
+        
+        guard let newURL = URL(string: url) else {
             return
         }
         
         do {
-            let (data, _) = try await URLSession.shared.data(from: url)
-            self.image = UIImage(data: data)
+            let (data, _) = try await URLSession(configuration: .ephemeral).data(from: newURL)
+            guard let thumbnail = UIImage(data: data) else {
+                return
+            }
+            ImageCacheManager.shared.saveCache(image: thumbnail, url: url)
+            self.image = thumbnail
         } catch {
             // 에러 처리
         }
+    }
+}
+
+class ImageCacheManager {
+    static let shared = ImageCacheManager()
+    private let cache = NSCache<NSString, UIImage>()
+    
+    var cacheManger: NSCache<NSString, UIImage> {
+        self.cache.countLimit = 10
+        self.cache.totalCostLimit = 10
+        return cache
+    }
+    
+    private init() { }
+    
+    func getCachedImage(url: String) async -> UIImage? {
+        let key = NSString(string: url)
+        return cacheManger.object(forKey: key)
+    }
+    
+    func saveCache(image: UIImage, url: String) {
+        let key = NSString(string: url)
+        cacheManger.setObject(image, forKey: key)
     }
 }
