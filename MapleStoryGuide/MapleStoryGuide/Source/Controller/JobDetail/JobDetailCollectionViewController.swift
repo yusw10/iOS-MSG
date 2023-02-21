@@ -73,7 +73,7 @@ final class JobDetailCollectionViewController: UICollectionViewController {
         addSubViews()
         setLayouts()
         setCollectionView()
-        setdiffableDataSource()
+        setHeaderView()
         
         self.viewModel.jobInfo.bind { [self] info in
             guard let info = info else { return }
@@ -150,7 +150,7 @@ extension JobDetailCollectionViewController {
        
     }
     
-    private func setdiffableDataSource() {
+    private func setHeaderView() {
         diffableDataSource.supplementaryViewProvider = { (collectionView, elementKind, indexPath) -> UICollectionReusableView? in
             let header = collectionView.dequeueReusableSupplementaryView(
                 ofKind: elementKind,
@@ -199,21 +199,21 @@ extension JobDetailCollectionViewController {
         }
     }
     
-    @objc func linkSkillSectionTapAction() {
+    @objc private func linkSkillSectionTapAction() {
         let skillDetailTableViewController = SkillDetailTableViewController()
 
         navigationController?.pushViewController(skillDetailTableViewController, animated: true)
         skillDetailTableViewController.configure(data: linkSkillData)
     }
     
-    @objc func skillCoreSectionTapAction() {
+    @objc private func skillCoreSectionTapAction() {
         let skillDetailTableViewController = SkillDetailTableViewController()
 
         navigationController?.pushViewController(skillDetailTableViewController, animated: true)
         skillDetailTableViewController.configure(data: skillCoreData)
     }
     
-    @objc func reinforceSkillCoreSectionTapAction() {
+    @objc private func reinforceSkillCoreSectionTapAction() {
         let skillDetailTableViewController = SkillDetailTableViewController()
 
         navigationController?.pushViewController(skillDetailTableViewController, animated: true)
