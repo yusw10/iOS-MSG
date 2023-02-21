@@ -20,6 +20,7 @@ final class JobDetailCollectionViewController: UICollectionViewController {
         case matrixSkillCore
     }
     
+    private var linkSkillData: [AnyHashable] = []
     private var skillCoreData: [AnyHashable] = []
     private var reinforceSkillCoreData: [AnyHashable] = []
 
@@ -170,7 +171,12 @@ extension JobDetailCollectionViewController {
                 
             } else if section == .linkSkill {
                 header.configure(titleText: "링크 스킬")
-               
+                header.screenTransitionButton.addTarget(self, action: #selector(self.linkSkillSectionTapAction), for: .touchUpInside)
+
+                for index in 0...(snapshot.numberOfItems(inSection: section) - 1) {
+                    let sectionData = self.diffableDataSource.itemIdentifier(for: IndexPath(item: index, section: indexPath.section)) as? Skill
+                    self.linkSkillData.append(sectionData)
+                }
             } else if section == .matrixSkillCore {
                 header.configure(titleText: "5차 스킬 코어")
                 header.screenTransitionButton.addTarget(self, action: #selector(self.skillCoreSectionTapAction), for: .touchUpInside)
@@ -191,6 +197,13 @@ extension JobDetailCollectionViewController {
             
             return header
         }
+    }
+    
+    @objc func linkSkillSectionTapAction() {
+        let skillDetailTableViewController = SkillDetailTableViewController()
+
+        navigationController?.pushViewController(skillDetailTableViewController, animated: true)
+        skillDetailTableViewController.configure(data: linkSkillData)
     }
     
     @objc func skillCoreSectionTapAction() {
