@@ -27,6 +27,7 @@ final class SkillDetailViewCell: UITableViewCell {
     
     private let verticalStackView = UIStackView().then {
         $0.spacing = 10
+        $0.distribution = .fillEqually
         $0.axis = .vertical
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
@@ -37,11 +38,14 @@ final class SkillDetailViewCell: UITableViewCell {
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    private let descriptionTextView = UITextView().then {
-        $0.isEditable = false
+    private let description20Label = UILabel().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
+    private let description40Label = UILabel().then {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+    }
+        
     // MARK: - initializer
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -57,10 +61,13 @@ final class SkillDetailViewCell: UITableViewCell {
     
     // MARK: - Methods
     
-    func configure(image: UIImage, title: String, description: String) {
-        skillImageView.image = image
+    func configure(imageURL: String, title: String, description20: String, description40: String) {
+        Task {
+            await self.skillImageView.fetchImage(imageURL)
+        }
         titleLabel.text = title
-        descriptionTextView.text = description
+        description20Label.text = description20
+        description40Label.text = description40
     }
     
 }
@@ -78,7 +85,7 @@ extension SkillDetailViewCell {
             horizontalStackView.addArrangedSubview(view)
         }
         
-        [titleLabel, descriptionTextView].forEach { view in
+        [titleLabel, description20Label, description40Label].forEach { view in
             verticalStackView.addArrangedSubview(view)
         }
     }

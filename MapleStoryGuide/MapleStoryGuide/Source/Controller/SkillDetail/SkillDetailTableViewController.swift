@@ -19,7 +19,12 @@ final class SkillDetailTableViewController: UITableViewController {
         
         if let object = object as? ReinforceSkillCore {
             let cell = tableView.dequeueReusableCell(withIdentifier: SkillDetailViewCell.id, for: indexPath) as! SkillDetailViewCell
-            cell.configure(image: UIImage(named: "파쇄 연권")!, title: object.name, description: object.description20)
+            cell.configure(
+                imageURL: object.imageURL,
+                title: object.name,
+                description20: object.description20,
+                description40: object.description40
+            )
             return cell
         }
         
@@ -35,15 +40,27 @@ final class SkillDetailTableViewController: UITableViewController {
         setTableView()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        if self.isMovingFromParent {
+            var snapshot = self.diffableDataSource.snapshot()
+            snapshot.deleteAllItems()
+            diffableDataSource.apply(snapshot, animatingDifferences: false)
+        }
+    }
+    
     // MARK: - Methods
     
-    func configure(data: AnyHashable) {
+    func configure(data: [AnyHashable]) {
         var snapshot = self.diffableDataSource.snapshot()
         
         snapshot.appendSections([.reinforceSkillCore])
-        snapshot.appendItems([data], toSection: .reinforceSkillCore)
+        for datum in data {
+            snapshot.appendItems([datum], toSection: .reinforceSkillCore)
+        }
 
-        diffableDataSource.apply(snapshot, animatingDifferences: false)
+        diffableDataSource.apply(snapshot, animatingDifferences: true)
     }
 }
 
@@ -64,13 +81,6 @@ extension SkillDetailTableViewController {
             style: .insetGrouped
         )
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        
-//        var layoutConfig = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
-//        layoutConfig.headerMode = .supplementary
-//
-//        let listLayout = UICollectionViewCompositionalLayout.list(using: layoutConfig)
-//
-//        collectionView.collectionViewLayout = listLayout
         
         tableView.register(SkillDetailViewCell.self, forCellReuseIdentifier: SkillDetailViewCell.id)
     }

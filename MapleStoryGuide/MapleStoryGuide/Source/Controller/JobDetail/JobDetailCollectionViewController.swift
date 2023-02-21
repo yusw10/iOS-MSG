@@ -19,7 +19,8 @@ final class JobDetailCollectionViewController: UICollectionViewController {
         case reinforceSkillCore
         case matrixSkillCore
     }
-    
+    var testData: [AnyHashable] = []
+
     private let viewModel: JobInfoViewModel
 
     private lazy var diffableDataSource: UICollectionViewDiffableDataSource<Section, AnyHashable> = .init(collectionView: self.collectionView) { (collectionView, indexPath, object) -> UICollectionViewListCell? in
@@ -97,24 +98,6 @@ final class JobDetailCollectionViewController: UICollectionViewController {
         }
     }
     
-    // MARK: - Methods
-
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let object = diffableDataSource.itemIdentifier(for: indexPath)
-        let skillDetailViewController = SkillDetailViewController()
-        
-        if object is Skill {
-            navigationController?.pushViewController(skillDetailViewController, animated: true)
-            
-        }  else if object is Skill {
-            navigationController?.pushViewController(skillDetailViewController, animated: true)
-
-        } else if object is ReinforceSkillCore {
-            navigationController?.pushViewController(skillDetailViewController, animated: true)
-
-        }
-    }
-    
 }
 
 // MARK: - Private Methods
@@ -171,12 +154,15 @@ extension JobDetailCollectionViewController {
                 withReuseIdentifier: TitleHeaderView.id,
                 for: indexPath
             ) as! TitleHeaderView
-            
+            header.myButton.addTarget(self, action: #selector(self.didTapAction), for: .touchUpInside)
+
             let snapshot = self.diffableDataSource.snapshot()
             let object = self.diffableDataSource.itemIdentifier(for: indexPath)
             let section = snapshot.sectionIdentifier(containingItem: object!)!
             
-            if section == .unionEffect {
+            if section == .jobImage {
+                header.myButton.isHidden = true
+            } else if section == .unionEffect {
                 header.configure(titleText: "유니온 효과")
             } else if section == .linkSkill {
                 header.configure(titleText: "링크 스킬")
@@ -184,10 +170,20 @@ extension JobDetailCollectionViewController {
                 header.configure(titleText: "5차 스킬 코어")
             } else if section == .reinforceSkillCore {
                 header.configure(titleText: "추천 직업 스킬 코어 강화")
+                for index in 0...(snapshot.numberOfItems(inSection: section) - 1) {
+                     self.testData.append(self.diffableDataSource.itemIdentifier(for: IndexPath(item: index, section: indexPath.section)) as? ReinforceSkillCore)
+                }
             }
             
             return header
         }
     }
     
+    @objc func didTapAction() {
+        let skillDetailTableViewController = SkillDetailTableViewController()
+
+        navigationController?.pushViewController(skillDetailTableViewController, animated: true)
+        skillDetailTableViewController.configure(data: testData)
+    }
+
 }

@@ -17,13 +17,19 @@ final class TitleHeaderView: UICollectionReusableView {
     
     private let verticalStackView = UIStackView().then {
         $0.alignment = .leading
-        $0.axis = .vertical
+        $0.axis = .horizontal
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
     private let titleLabel = UILabel().then {
         $0.font = UIFont.boldSystemFont(ofSize: 20)
         $0.numberOfLines = 1
+        $0.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    let myButton = UIButton().then {
+        $0.setTitle("상세보기", for: .normal)
+        $0.setTitleColor(.systemBlue, for: .normal)
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
@@ -64,7 +70,7 @@ extension TitleHeaderView {
     private func addSubViews() {
         self.addSubview(verticalStackView)
         
-        [titleLabel].forEach { view in
+        [titleLabel, myButton].forEach { view in
             verticalStackView.addArrangedSubview(view)
         }
     }
@@ -76,4 +82,15 @@ extension TitleHeaderView {
         }
     }
     
+}
+
+final class TitleHeaderViewController: UIViewController {
+    
+    let titleHeaderView = TitleHeaderView()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.view = titleHeaderView
+    }
 }
