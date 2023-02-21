@@ -31,7 +31,8 @@ final class JobDetailCollectionViewController: UICollectionViewController {
         if let object = object as? Job {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: JobImageViewCell.id, for: indexPath) as! JobImageViewCell
             cell.configure(imageURL: object.imageURL)
-            
+            self.navigationController?.navigationBar.topItem?.title = object.name
+
             return cell
         } else if let object = object as? UnionEffect {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SkillListViewCell.id, for: indexPath) as! SkillListViewCell
