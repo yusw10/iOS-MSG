@@ -27,13 +27,14 @@ final class SkillDetailViewCell: UITableViewCell {
     
     private let verticalStackView = UIStackView().then {
         $0.spacing = 10
-        $0.distribution = .fillEqually
+        $0.alignment = .leading
+        $0.distribution = .fillProportionally
         $0.axis = .vertical
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
     private let titleLabel = UILabel().then {
-        $0.textAlignment = .center
+        $0.font = UIFont.boldSystemFont(ofSize: 15)
         $0.numberOfLines = 0
         $0.translatesAutoresizingMaskIntoConstraints = false
     }

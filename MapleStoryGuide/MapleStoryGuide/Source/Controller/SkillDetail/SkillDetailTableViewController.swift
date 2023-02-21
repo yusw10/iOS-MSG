@@ -60,7 +60,7 @@ final class SkillDetailTableViewController: UITableViewController {
             snapshot.appendItems([datum], toSection: .reinforceSkillCore)
         }
 
-        diffableDataSource.apply(snapshot, animatingDifferences: true)
+        diffableDataSource.apply(snapshot, animatingDifferences: false)
     }
 }
 

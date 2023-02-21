@@ -19,7 +19,7 @@ final class JobDetailCollectionViewController: UICollectionViewController {
         case reinforceSkillCore
         case matrixSkillCore
     }
-    var testData: [AnyHashable] = []
+    private var reinforceSkillCoreData: [AnyHashable] = []
 
     private let viewModel: JobInfoViewModel
 
@@ -154,24 +154,31 @@ extension JobDetailCollectionViewController {
                 withReuseIdentifier: TitleHeaderView.id,
                 for: indexPath
             ) as! TitleHeaderView
-            header.myButton.addTarget(self, action: #selector(self.didTapAction), for: .touchUpInside)
 
             let snapshot = self.diffableDataSource.snapshot()
             let object = self.diffableDataSource.itemIdentifier(for: indexPath)
             let section = snapshot.sectionIdentifier(containingItem: object!)!
             
             if section == .jobImage {
-                header.myButton.isHidden = true
+                header.screenTransitionButton.isHidden = true
+                
             } else if section == .unionEffect {
                 header.configure(titleText: "유니온 효과")
+                header.screenTransitionButton.isHidden = true
+                
             } else if section == .linkSkill {
                 header.configure(titleText: "링크 스킬")
+               
             } else if section == .matrixSkillCore {
                 header.configure(titleText: "5차 스킬 코어")
+               
             } else if section == .reinforceSkillCore {
                 header.configure(titleText: "추천 직업 스킬 코어 강화")
+                header.screenTransitionButton.addTarget(self, action: #selector(self.didTapAction), for: .touchUpInside)
+
                 for index in 0...(snapshot.numberOfItems(inSection: section) - 1) {
-                     self.testData.append(self.diffableDataSource.itemIdentifier(for: IndexPath(item: index, section: indexPath.section)) as? ReinforceSkillCore)
+                    let sectionData = self.diffableDataSource.itemIdentifier(for: IndexPath(item: index, section: indexPath.section)) as? ReinforceSkillCore
+                    self.reinforceSkillCoreData.append(sectionData)
                 }
             }
             
@@ -183,7 +190,7 @@ extension JobDetailCollectionViewController {
         let skillDetailTableViewController = SkillDetailTableViewController()
 
         navigationController?.pushViewController(skillDetailTableViewController, animated: true)
-        skillDetailTableViewController.configure(data: testData)
+        skillDetailTableViewController.configure(data: reinforceSkillCoreData)
     }
 
 }

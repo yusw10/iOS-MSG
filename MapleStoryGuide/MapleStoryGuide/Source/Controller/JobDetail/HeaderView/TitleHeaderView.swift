@@ -27,7 +27,7 @@ final class TitleHeaderView: UICollectionReusableView {
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    let myButton = UIButton().then {
+    let screenTransitionButton = UIButton().then {
         $0.setTitle("상세보기", for: .normal)
         $0.setTitleColor(.systemBlue, for: .normal)
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -70,7 +70,7 @@ extension TitleHeaderView {
     private func addSubViews() {
         self.addSubview(horizontalStackView)
         
-        [titleLabel, myButton].forEach { view in
+        [titleLabel, screenTransitionButton].forEach { view in
             horizontalStackView.addArrangedSubview(view)
         }
     }
