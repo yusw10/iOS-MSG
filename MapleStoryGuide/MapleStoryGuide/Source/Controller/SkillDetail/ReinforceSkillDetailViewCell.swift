@@ -39,12 +39,12 @@ final class ReinforceSkillDetailViewCell: UITableViewCell {
     }
     
     private lazy var description20Label = UILabel().then {
-        $0.font = .preferredFont(forTextStyle: .caption2)
+        $0.font = .preferredFont(forTextStyle: .footnote)
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
     private lazy var description40Label = UILabel().then {
-        $0.font = .preferredFont(forTextStyle: .caption2)
+        $0.font = .preferredFont(forTextStyle: .footnote)
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
         

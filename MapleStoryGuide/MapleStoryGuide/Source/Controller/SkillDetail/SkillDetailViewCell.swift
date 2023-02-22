@@ -24,6 +24,7 @@ final class SkillDetailViewCell: UITableViewCell {
     }
     
     private lazy var verticalStackView = UIStackView().then {
+        $0.sizeToFit()
         $0.distribution = .equalSpacing
         $0.spacing = 5
         $0.axis = .vertical
@@ -38,7 +39,8 @@ final class SkillDetailViewCell: UITableViewCell {
     }
     
     private lazy var descriptionLabel = UILabel().then {
-        $0.font = .preferredFont(forTextStyle: .caption2)
+        $0.sizeToFit()
+        $0.font = .preferredFont(forTextStyle: .footnote)
         $0.numberOfLines = 0
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
