@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Then
 
-final class JobDetailCollectionViewController: UICollectionViewController {
+final class JobDetailCollectionViewController: ContentCollectionViewController {
     
     // MARK: - Properties
     enum Section: CaseIterable {
@@ -203,21 +203,24 @@ extension JobDetailCollectionViewController {
     @objc private func linkSkillSectionTapAction() {
         let skillDetailTableViewController = SkillDetailTableViewController()
 
-        navigationController?.pushViewController(skillDetailTableViewController, animated: true)
+        //navigationController?.pushViewController(skillDetailTableViewController, animated: true)
+        containerViewController?.pushTableViewController(skillDetailTableViewController)
         skillDetailTableViewController.configure(data: linkSkillData)
     }
     
     @objc private func skillCoreSectionTapAction() {
         let skillDetailTableViewController = SkillDetailTableViewController()
 
-        navigationController?.pushViewController(skillDetailTableViewController, animated: true)
+//        navigationController?.pushViewController(skillDetailTableViewController, animated: true)
+        containerViewController?.pushTableViewController(skillDetailTableViewController)
         skillDetailTableViewController.configure(data: skillCoreData)
     }
     
     @objc private func reinforceSkillCoreSectionTapAction() {
         let skillDetailTableViewController = SkillDetailTableViewController()
 
-        navigationController?.pushViewController(skillDetailTableViewController, animated: true)
+//        navigationController?.pushViewController(skillDetailTableViewController, animated: true)
+        containerViewController?.pushTableViewController(skillDetailTableViewController)
         skillDetailTableViewController.configure(data: reinforceSkillCoreData)
     }
 

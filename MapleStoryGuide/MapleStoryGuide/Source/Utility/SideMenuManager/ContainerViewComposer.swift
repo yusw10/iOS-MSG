@@ -26,7 +26,7 @@ final class ContainerViewComposer {
         let sideMenuViewController = SideMenuViewController(sideMenuItems: sideMenuItems)
         let container = ContainerViewController(sideMenuViewController: sideMenuViewController,
                                                 rootViewController: mainViewController)
-
+        
         return container
     }
 }

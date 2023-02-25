@@ -9,14 +9,15 @@ import UIKit
 import Then
 import SnapKit
 
-final class JobListViewController: UIViewController {
- 
+final class JobListViewController: ContentViewController {
+    
     let repository = AssetJobInfoRepository()
     var viewModel: JobInfoViewModel! = nil
+    
     //MARK: - ViewController Properties
-    //TODO: 뷰모델로부터 받는 데이터로 갈아끼우기
+    
     var jobList = [JobGroup]()
-
+    
     private lazy var jobListCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
         $0.backgroundColor = .secondarySystemBackground
         $0.register(JobListHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "JobListHeaderViewReuse")
@@ -65,20 +66,23 @@ final class JobListViewController: UIViewController {
         
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchBar.placeholder = "직업 이름을 입력하세요."
-        searchController.searchResultsUpdater = self
-        searchController.delegate = self
+        searchController.searchBar.delegate = self
         
         navigationItem.searchController = searchController
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
 }
 
 //MARK: - JobListViewController SearchController Delegate
 
-extension JobListViewController: UISearchResultsUpdating, UISearchControllerDelegate {
-    func updateSearchResults(for searchController: UISearchController) {
+extension JobListViewController: UISearchControllerDelegate, UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
-        guard let text = searchController.searchBar.text?.lowercased() else { return }
-        //TODO: 이부분은 뷰모델 필터링 메서드 호출하는걸로 변경해야함.
+        guard let text = searchBar.text?.lowercased() else { return }
+        
         Task {
             await self.viewModel.searchJob(text)
         }
@@ -108,9 +112,9 @@ extension JobListViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-
+        
         switch kind {
-
+            
         case UICollectionView.elementKindSectionHeader :
             guard let headerView = collectionView.dequeueReusableSupplementaryView(
                 ofKind: kind, withReuseIdentifier: "JobListHeaderViewReuse",
@@ -147,6 +151,6 @@ extension JobListViewController: UICollectionViewDelegate, UICollectionViewDataS
         
         self.viewModel.selectJob(indexPath.section, indexPath.row)
         let detailViewController = JobDetailCollectionViewController(viewModel: self.viewModel)
-        self.navigationController?.pushViewController(detailViewController, animated: true)
+        containerViewController?.pushCollectionViewController(detailViewController)
     }
 }

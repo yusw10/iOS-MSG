@@ -19,47 +19,68 @@ final class ContainerViewController: UIViewController {
             navigator.setViewControllers([rootViewController], animated: false)
         }
     }
-
+    
     convenience init(sideMenuViewController: SideMenuViewController, rootViewController: ContentViewController) {
         self.init()
         self.sideMenuViewController = sideMenuViewController
         self.rootViewController = rootViewController
         self.navigator = UINavigationController(rootViewController: rootViewController)
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
     }
-
+    
     private func configureView() {
         addChildViewControllers()
         configureDelegates()
     }
-
+    
     private func configureDelegates() {
         sideMenuViewController.delegate = self
         rootViewController.delegate = self
     }
-
+    
     func updateRootViewController(_ viewController: ContentViewController) {
+        viewController.containerViewController = self
         rootViewController = viewController
     }
-
+    
     private func addChildViewControllers() {
         addChild(navigator)
         view.addSubview(navigator.view)
         navigator.didMove(toParent: self)
     }
+    
+    func pushViewController(_ viewController: ContentViewController) {
+        viewController.containerViewController = self
+        viewController.delegate = self
+        navigator.pushViewController(viewController, animated: true)
+    }
+    
+    func pushCollectionViewController(_ viewController: ContentCollectionViewController) {
+        viewController.containerViewController = self
+        viewController.delegate = self
+        navigator.pushViewController(viewController, animated: true)
+    }
+    
+    func pushTableViewController(_ viewController: ContentTableViewController) {
+        viewController.containerViewController = self
+        viewController.delegate = self
+        navigator.pushViewController(viewController, animated: true)
+    }
+    
 }
 
 extension ContainerViewController: SideMenuDelegate {
     func menuButtonTapped() {
+        print("ASd??")
         let sideMenuNavigationController = SideMenuNavigationController(rootViewController: sideMenuViewController)
         sideMenuNavigationController.presentationStyle = .menuSlideIn
         present(sideMenuNavigationController, animated: true)
     }
-
+    
     func itemSelected(item: ContentViewControllerPresentation) {
         switch item {
         case let .embed(viewController):

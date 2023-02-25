@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class SkillDetailTableViewController: UITableViewController {
+final class SkillDetailTableViewController: ContentTableViewController {
     
     // MARK: - Properties
     enum Section: CaseIterable {

@@ -41,6 +41,7 @@ final class SideMenuViewController: UIViewController {
         view.backgroundColor = .systemBackground
         setupMainTitle()
         setupTableView()
+        print("side menu load")
     }
     
     //MARK: - ViewController Initializer

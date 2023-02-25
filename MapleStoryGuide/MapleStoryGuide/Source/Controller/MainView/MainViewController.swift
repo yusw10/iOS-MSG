@@ -5,7 +5,6 @@
 //  Created by 유한석 on 2023/01/31.
 //
 import UIKit
-import SideMenu
 import Then
 import SnapKit
 
@@ -18,9 +17,7 @@ enum MainViewBannerList: String, CaseIterable {
 final class MainViewController: ContentViewController {
     
     //MARK: - ViewController Properies
-    
-    //var menu: SideMenuNavigationController?
-    
+        
     private var mainViewBannerList = MainViewBannerList.allCases
     
     private let mainCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
@@ -74,7 +71,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         switch selectedBanner {
         case .jobList:
             let jobListViewController = JobListViewController()
-            navigationController?.pushViewController(jobListViewController, animated: true)
+            containerViewController?.pushViewController(jobListViewController)
         case .additionalOption:
             print("push additionalOptionViewController")
         case .bossInfo:
