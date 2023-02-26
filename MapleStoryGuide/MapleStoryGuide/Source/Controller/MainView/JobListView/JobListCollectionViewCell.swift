@@ -44,7 +44,7 @@ final class JobListCollectionViewCell: UICollectionViewCell {
     //MARK: - CollectionViewCell Setup Method
     override func prepareForReuse() {
         self.jobImage.image = nil
-        task?.cancel() // cancel을 해주지 않으면 task.isCancelled는 false로 출력된다.
+        task?.cancel()
     }
     
     private func setupDefault() {
@@ -61,29 +61,54 @@ final class JobListCollectionViewCell: UICollectionViewCell {
             await jobImage.fetchImage(title)
         }
     }
+    
+    func setupImage(by image: UIImage) {
+        self.jobImage.image = image
+    }
 }
 
-// TODO: Task cancel 적용 시키기
 extension UIImageView {
     func fetchImage(_ url: String) async {
-        if let thumbnail = await ImageCacheManager.shared.getCachedImage(url: url) {
-            self.image = thumbnail
-            return
-        }
+//        if let thumbnail = await ImageCacheManager.shared.getCachedImage(url: url) {
+//            self.image = thumbnail
+//            return
+//        }
         
         guard let newURL = URL(string: url) else {
             return
         }
         
         do {
-            let (data, _) = try await URLSession(configuration: .ephemeral).data(from: newURL)
-            guard let thumbnail = UIImage(data: data) else {
+            let (data, _) = try await URLSession(configuration: .default).data(from: newURL)
+            guard let thumbnail = UIImage(data: data)?.downSampling(for: self.bounds.size) else {
                 return
             }
-            ImageCacheManager.shared.saveCache(image: thumbnail, url: url)
+//            ImageCacheManager.shared.saveCache(image: thumbnail, url: url)
             self.image = thumbnail
         } catch {
             // 에러 처리
+        }
+    }
+}
+
+extension UIImage {
+    func downSampling(for size: CGSize) -> UIImage? {
+        let render = UIGraphicsImageRenderer(size: size)
+        return render.image { _ in
+            self.draw(in: CGRect(origin: .zero, size: size))
+        }
+    }
+    
+    static func fetchImage(from url: String) async -> UIImage? {
+        guard let url = URL(string: url) else {
+            return nil
+        }
+        
+        do {
+            let (data, _) = try await URLSession(configuration: .ephemeral).data(from: url)
+            return UIImage(data: data)
+        } catch {
+            return nil
         }
     }
 }
@@ -93,14 +118,14 @@ class ImageCacheManager {
     private let cache = NSCache<NSString, UIImage>()
     
     var cacheManger: NSCache<NSString, UIImage> {
-        self.cache.countLimit = 10
-        self.cache.totalCostLimit = 10
+        self.cache.countLimit = 5
+        self.cache.totalCostLimit = 5
         return cache
     }
     
     private init() { }
     
-    func getCachedImage(url: String) async -> UIImage? {
+    func getCachedImage(url: String) -> UIImage? {
         let key = NSString(string: url)
         return cacheManger.object(forKey: key)
     }

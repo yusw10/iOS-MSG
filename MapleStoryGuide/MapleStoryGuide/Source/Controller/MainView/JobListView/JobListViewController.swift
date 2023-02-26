@@ -11,11 +11,13 @@ import SnapKit
 
 final class JobListViewController: UIViewController {
  
-    let repository = AssetJobInfoRepository()
-    var viewModel: JobInfoViewModel! = nil
     //MARK: - ViewController Properties
-    //TODO: 뷰모델로부터 받는 데이터로 갈아끼우기
-    var jobList = [JobGroup]()
+    private let repository = AssetJobInfoRepository()
+    private var viewModel: JobInfoViewModel! = nil
+    private var prefetchTask: Task<Void, Never>?
+    private var jobList = [JobGroup]()
+    private var selectedSection = 0
+    private var selectedRow = 0
 
     private lazy var jobListCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
         $0.backgroundColor = .secondarySystemBackground
@@ -32,16 +34,23 @@ final class JobListViewController: UIViewController {
         setupNavigationBar()
         
         viewModel = JobInfoViewModel(repository: repository)
+        viewModel.jobListInfo.subscribe(on: self) { [self] _ in
+            self.jobList = viewModel.fetchJobGroup()
+            
+            DispatchQueue.main.async {
+                self.jobListCollectionView.reloadData()
+            }
+        }
+        
         Task {
             await viewModel.trigger(query: .newJson)
-            
-            viewModel.jobListInfo.bind { [self] _ in
-                self.jobList = viewModel.fetchJobGroup()
-                
-                DispatchQueue.main.async {
-                    self.jobListCollectionView.reloadData()
-                }
-            }
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        if self.isMovingFromParent {
+            viewModel.jobListInfo.unsunscribe(observer: self)
+            ImageCacheManager.shared.cacheManger.removeAllObjects()
         }
     }
     
@@ -50,6 +59,7 @@ final class JobListViewController: UIViewController {
     private func setupJobListCollectionView() {
         jobListCollectionView.delegate = self
         jobListCollectionView.dataSource = self
+        jobListCollectionView.prefetchDataSource = self
         
         view.addSubview(jobListCollectionView)
         
@@ -78,7 +88,6 @@ extension JobListViewController: UISearchResultsUpdating, UISearchControllerDele
     func updateSearchResults(for searchController: UISearchController) {
         
         guard let text = searchController.searchBar.text?.lowercased() else { return }
-        //TODO: 이부분은 뷰모델 필터링 메서드 호출하는걸로 변경해야함.
         Task {
             await self.viewModel.searchJob(text)
         }
@@ -93,7 +102,12 @@ extension JobListViewController: UICollectionViewDelegate, UICollectionViewDataS
             return UICollectionViewCell()
         }
         
-        cell.setupCellImage(title: jobList[indexPath.section].jobs[indexPath.item].imageURL)
+        let url = jobList[indexPath.section].jobs[indexPath.item].imageURL
+        if let image = ImageCacheManager.shared.getCachedImage(url: url)?.downSampling(for: cell.jobImage.bounds.size) {
+            cell.setupImage(by: image)
+        } else {
+            cell.setupCellImage(title: jobList[indexPath.section].jobs[indexPath.item].imageURL)
+        }
         
         return cell
     }
@@ -145,8 +159,36 @@ extension JobListViewController: UICollectionViewDelegate, UICollectionViewDataS
             index += collectionView.numberOfItems(inSection: section)
         }
         
-        self.viewModel.selectJob(indexPath.section, indexPath.row)
+        self.selectedSection = indexPath.section
+        self.selectedRow = indexPath.row
         let detailViewController = JobDetailCollectionViewController(viewModel: self.viewModel)
+        detailViewController.delegate = self
         self.navigationController?.pushViewController(detailViewController, animated: true)
+    }
+}
+
+extension JobListViewController: UICollectionViewDataSourcePrefetching {
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        let imageCache = ImageCacheManager.shared
+        
+        prefetchTask = Task {
+            for indexPath in indexPaths {
+                let url = jobList[indexPath.section].jobs[indexPath.row].imageURL
+                guard let image = await UIImage.fetchImage(from: url) else { return }
+                if imageCache.getCachedImage(url: url) == nil {
+                    imageCache.saveCache(image: image, url: url)
+                }
+            }
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cancelPrefetchingForItemsAt indexPaths: [IndexPath]) {
+        prefetchTask?.cancel()
+    }
+}
+
+extension JobListViewController: JobDetailControllerDelegate {
+    func selectJobDetail() {
+        self.viewModel.selectJob(selectedSection, selectedRow)
     }
 }

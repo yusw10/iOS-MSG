@@ -10,6 +10,7 @@ import SnapKit
 import Then
 
 final class JobDetailCollectionViewController: UICollectionViewController {
+    weak var delegate: JobDetailControllerDelegate?
     
     // MARK: - Properties
     enum Section: CaseIterable {
@@ -64,7 +65,7 @@ final class JobDetailCollectionViewController: UICollectionViewController {
         setCollectionView()
         setdiffableDataSource()
         
-        self.viewModel.jobInfo.bind { [self] info in
+        self.viewModel.jobInfo.subscribe(on: self) { [self] info in
             guard let info = info else { return }
 
             var snapshot = self.diffableDataSource.snapshot()
@@ -76,6 +77,8 @@ final class JobDetailCollectionViewController: UICollectionViewController {
 
             diffableDataSource.apply(snapshot, animatingDifferences: false)
         }
+        
+        delegate?.selectJobDetail()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -85,6 +88,7 @@ final class JobDetailCollectionViewController: UICollectionViewController {
             var snapshot = self.diffableDataSource.snapshot()
             snapshot.deleteAllItems()
             diffableDataSource.apply(snapshot, animatingDifferences: false)
+            viewModel.jobInfo.unsunscribe(observer: self)
         }
     }
     
@@ -179,4 +183,8 @@ extension JobDetailCollectionViewController {
         }
     }
     
+}
+
+protocol JobDetailControllerDelegate: AnyObject {
+    func selectJobDetail()
 }
