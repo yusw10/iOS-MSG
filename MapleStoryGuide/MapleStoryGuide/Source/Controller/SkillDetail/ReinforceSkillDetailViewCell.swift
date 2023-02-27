@@ -81,11 +81,8 @@ extension ReinforceSkillDetailViewCell {
     // MARK: - Add View, Set Layout
     
     private func addSubViews() {
-        self.contentView.addSubview(horizontalStackView)
-        
-        [skillImageView, verticalStackView].forEach { view in
-            horizontalStackView.addArrangedSubview(view)
-        }
+        self.contentView.addSubview(skillImageView)
+        self.contentView.addSubview(verticalStackView)
         
         [titleLabel, description20Label, description40Label].forEach { view in
             verticalStackView.addArrangedSubview(view)
@@ -93,20 +90,22 @@ extension ReinforceSkillDetailViewCell {
     }
     
     private func setLayouts() {
-        horizontalStackView.snp.makeConstraints { make in
-            make.top.equalTo(self.contentView.snp.top).offset(10)
-            make.bottom.equalTo(self.contentView.snp.bottom).offset(-10)
+        skillImageView.snp.makeConstraints { make in
             make.leading.equalTo(self.contentView.snp.leading).offset(10)
-            make.trailing.equalTo(self.contentView.snp.trailing).offset(-10)
+            make.centerY.equalTo(self.contentView.snp.centerY)
+            make.width.equalTo(self.contentView.snp.width).multipliedBy(0.15)
+            make.height.equalTo(self.skillImageView.snp.width)
         }
         
-        skillImageView.snp.makeConstraints { make in
-            make.width.equalTo(self.contentView.snp.width).multipliedBy(0.15).priority(750)
-            make.height.greaterThanOrEqualTo(self.contentView.snp.width).multipliedBy(0.15).priority(750)
+        verticalStackView.snp.makeConstraints { make in
+            make.leading.equalTo(self.skillImageView.snp.trailing).offset(10)
+            make.trailing.equalTo(self.contentView.snp.trailing).offset(-10)
+            make.top.equalTo(self.contentView.snp.top).offset(10)
+            make.centerY.equalTo(self.skillImageView.snp.centerY)
         }
         
         titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(skillImageView.snp.top).priority(750)
+            make.top.equalTo(verticalStackView.snp.top).priority(750)
         }
     }
     
