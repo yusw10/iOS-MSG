@@ -34,7 +34,6 @@ final class JobListViewController: ContentViewController {
         setupNavigationBar()
         
         viewModel = JobInfoViewModel(repository: repository)
-        viewModel = JobInfoViewModel(repository: repository)
         viewModel.jobListInfo.subscribe(on: self) { [self] _ in
             self.jobList = viewModel.fetchJobGroup()
             
@@ -51,6 +50,7 @@ final class JobListViewController: ContentViewController {
     override func viewWillDisappear(_ animated: Bool) {
         if self.isMovingFromParent {
             viewModel.jobListInfo.unsunscribe(observer: self)
+            prefetchTask?.cancel()
         }
     }
     
@@ -185,14 +185,9 @@ extension JobListViewController: UICollectionViewDataSourcePrefetching {
             for indexPath in indexPaths {
                 let url = jobList[indexPath.section].jobs[indexPath.row].imageURL
                 guard let image = await UIImage.fetchImage(from: url) else { return }
-                if imageCache.getCachedImage(url: url) == nil {
-                    imageCache.saveCache(image: image, url: url)
-                }
+                imageCache.saveCache(image: image, url: url)
             }
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, cancelPrefetchingForItemsAt indexPaths: [IndexPath]) {
-        prefetchTask?.cancel()
-    }
 }

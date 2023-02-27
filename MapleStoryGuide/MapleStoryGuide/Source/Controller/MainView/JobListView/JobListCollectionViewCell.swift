@@ -43,8 +43,10 @@ final class JobListCollectionViewCell: UICollectionViewCell {
     
     //MARK: - CollectionViewCell Setup Method
     override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        task?.cancel()
         self.jobImage.image = nil
-        task?.cancel() // cancel을 해주지 않으면 task.isCancelled는 false로 출력된다.
     }
     
     private func setupDefault() {
@@ -70,11 +72,6 @@ final class JobListCollectionViewCell: UICollectionViewCell {
 // TODO: Task cancel 적용 시키기
 extension UIImageView {
     func fetchImage(_ url: String) async {
-//        if let thumbnail = await ImageCacheManager.shared.getCachedImage(url: url) {
-//            self.image = thumbnail
-//            return
-//        }
-        
         guard let newURL = URL(string: url) else {
             return
         }
@@ -84,7 +81,6 @@ extension UIImageView {
             guard let thumbnail = UIImage(data: data)?.downSampling(for: self.bounds.size) else {
                 return
             }
-//            ImageCacheManager.shared.saveCache(image: thumbnail, url: url)
             self.image = thumbnail
         } catch {
             // 에러 처리
@@ -119,8 +115,6 @@ class ImageCacheManager {
     private let cache = NSCache<NSString, UIImage>()
     
     var cacheManger: NSCache<NSString, UIImage> {
-        self.cache.countLimit = 5
-        self.cache.totalCostLimit = 5
         return cache
     }
     

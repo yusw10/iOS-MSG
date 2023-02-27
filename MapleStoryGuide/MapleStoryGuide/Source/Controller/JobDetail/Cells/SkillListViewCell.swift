@@ -57,12 +57,8 @@ final class SkillListViewCell: UICollectionViewListCell {
     func configure(title: String, imageURL: String) {
         titleLabel.text = title
        
-        if imageURL == "" {
-            imageView.isHidden = true
-        } else {
-            Task {
-                await self.imageView.fetchImage(imageURL)
-            }
+        Task {
+            await self.imageView.fetchImage(imageURL)
         }
     }
     

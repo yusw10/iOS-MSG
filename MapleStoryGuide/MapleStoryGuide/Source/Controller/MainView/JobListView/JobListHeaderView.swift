@@ -15,7 +15,8 @@ final class JobListHeaderView: UICollectionReusableView {
     
     private let titleLabel = UILabel().then { label in
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .preferredFont(forTextStyle: .title3)
+        label.font = UIFont.boldSystemFont(ofSize: 20)
+//        label.font = .preferredFont(forTextStyle: .title3)
     }
     
     //MARK: - JobList HeaderView Initializer
