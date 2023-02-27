@@ -6,20 +6,35 @@
 //
 
 class Observable<T> {
-    private var listener: ((T) -> Void)?
+    
+    struct Observer<T> {
+        weak var observer: AnyObject?
+        let listener: (T) -> Void
+    }
     
     var value: T {
         didSet {
-            listener?(value)
+            notifyObservers()
         }
     }
+    
+    private var observers = [Observer<T>]()
     
     init(_ value: T) {
         self.value = value
     }
     
-    func bind(_ closure: @escaping (T) -> Void) {
-        closure(value)
-        listener = closure
+    func subscribe(on observer: AnyObject, _ closure: @escaping (T) -> Void) {
+        observers.append(Observer(observer: observer, listener: closure))
+    }
+    
+    func unsunscribe(observer: AnyObject) {
+        observers = observers.filter { $0.observer !== observer }
+    }
+    
+    private func notifyObservers() {
+        for observer in observers {
+            observer.listener(value)
+        }
     }
 }

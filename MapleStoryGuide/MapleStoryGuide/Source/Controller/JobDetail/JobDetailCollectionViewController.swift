@@ -10,8 +10,6 @@ import SnapKit
 import Then
 
 final class JobDetailCollectionViewController: ContentCollectionViewController {
-    
-    // MARK: - Properties
     enum Section: CaseIterable {
         case jobImage
         case unionEffect
@@ -20,11 +18,12 @@ final class JobDetailCollectionViewController: ContentCollectionViewController {
         case matrixSkillCore
     }
     
+    // MARK: - Properties
+    weak var jobDelegate: JobDetailControllerDelegate?
+    private let viewModel: JobInfoViewModel
     private var linkSkillData: [AnyHashable] = []
     private var skillCoreData: [AnyHashable] = []
     private var reinforceSkillCoreData: [AnyHashable] = []
-
-    private let viewModel: JobInfoViewModel
 
     private lazy var diffableDataSource: UICollectionViewDiffableDataSource<Section, AnyHashable> = .init(collectionView: self.collectionView) { (collectionView, indexPath, object) -> UICollectionViewListCell? in
         
@@ -76,20 +75,20 @@ final class JobDetailCollectionViewController: ContentCollectionViewController {
         setCollectionView()
         setHeaderView()
         
-        self.viewModel.jobInfo.bind { [self] info in
+        self.viewModel.jobInfo.subscribe(on: self) { [self] info in
             guard let info = info else { return }
 
             var snapshot = self.diffableDataSource.snapshot()
-            snapshot.appendSections([.jobImage, .unionEffect, .linkSkill, .matrixSkillCore, .reinforceSkillCore])
-            
+            snapshot.appendSections([.jobImage, .linkSkill, .matrixSkillCore, .reinforceSkillCore])
             snapshot.appendItems([info], toSection: .jobImage)
-            snapshot.appendItems([info.unionEffect], toSection: .unionEffect)
             snapshot.appendItems([info.linkSkill], toSection: .linkSkill)
             snapshot.appendItems(info.matrixSkillCore, toSection: .matrixSkillCore)
             snapshot.appendItems(info.reinforceSkillCore, toSection: .reinforceSkillCore)
 
             diffableDataSource.apply(snapshot, animatingDifferences: false)
         }
+        
+        jobDelegate?.selectJobDetail()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -99,6 +98,7 @@ final class JobDetailCollectionViewController: ContentCollectionViewController {
             var snapshot = self.diffableDataSource.snapshot()
             snapshot.deleteAllItems()
             diffableDataSource.apply(snapshot, animatingDifferences: false)
+            viewModel.jobInfo.unsunscribe(observer: self)
         }
     }
     
@@ -202,26 +202,27 @@ extension JobDetailCollectionViewController {
     
     @objc private func linkSkillSectionTapAction() {
         let skillDetailTableViewController = SkillDetailTableViewController()
-
-        //navigationController?.pushViewController(skillDetailTableViewController, animated: true)
-        containerViewController?.pushTableViewController(skillDetailTableViewController)
         skillDetailTableViewController.configure(data: linkSkillData)
+        containerViewController?.pushTableViewController(skillDetailTableViewController)
     }
     
     @objc private func skillCoreSectionTapAction() {
         let skillDetailTableViewController = SkillDetailTableViewController()
-
-//        navigationController?.pushViewController(skillDetailTableViewController, animated: true)
-        containerViewController?.pushTableViewController(skillDetailTableViewController)
         skillDetailTableViewController.configure(data: skillCoreData)
+        containerViewController?.pushTableViewController(skillDetailTableViewController)
     }
     
     @objc private func reinforceSkillCoreSectionTapAction() {
         let skillDetailTableViewController = SkillDetailTableViewController()
-
-//        navigationController?.pushViewController(skillDetailTableViewController, animated: true)
-        containerViewController?.pushTableViewController(skillDetailTableViewController)
         skillDetailTableViewController.configure(data: reinforceSkillCoreData)
+        containerViewController?.pushTableViewController(skillDetailTableViewController)
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
+        return false
+    }
+}
 
+protocol JobDetailControllerDelegate: AnyObject {
+    func selectJobDetail()
 }

@@ -16,6 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         let container = ContainerViewComposer.makeContainer()
+        container.updateRootViewController(MainViewController())
         window?.rootViewController = container
         window?.makeKeyAndVisible()
     }

@@ -92,4 +92,8 @@ extension SkillDetailTableViewController {
         tableView.register(ReinforceSkillDetailViewCell.self, forCellReuseIdentifier: ReinforceSkillDetailViewCell.id)
         tableView.register(SkillDetailViewCell.self, forCellReuseIdentifier: SkillDetailViewCell.id)
     }
+    
+    override func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+        return false
+    }
 }

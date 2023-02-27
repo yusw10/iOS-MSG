@@ -11,12 +11,12 @@ import SnapKit
 
 final class JobListViewController: ContentViewController {
     
-    let repository = AssetJobInfoRepository()
-    var viewModel: JobInfoViewModel! = nil
-    
     //MARK: - ViewController Properties
-    
-    var jobList = [JobGroup]()
+    private let repository = AssetJobInfoRepository()
+    private var viewModel: JobInfoViewModel! = nil
+    private var jobList = [JobGroup]()
+    private var selectedSection = 0
+    private var selectedRow = 0
     
     private lazy var jobListCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
         $0.backgroundColor = .secondarySystemBackground
@@ -33,16 +33,23 @@ final class JobListViewController: ContentViewController {
         setupNavigationBar()
         
         viewModel = JobInfoViewModel(repository: repository)
+        viewModel = JobInfoViewModel(repository: repository)
+        viewModel.jobListInfo.subscribe(on: self) { [self] _ in
+            self.jobList = viewModel.fetchJobGroup()
+            
+            DispatchQueue.main.async {
+                self.jobListCollectionView.reloadData()
+            }
+        }
+        
         Task {
             await viewModel.trigger(query: .newJson)
-            
-            viewModel.jobListInfo.bind { [self] _ in
-                self.jobList = viewModel.fetchJobGroup()
-                
-                DispatchQueue.main.async {
-                    self.jobListCollectionView.reloadData()
-                }
-            }
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        if self.isMovingFromParent {
+            viewModel.jobListInfo.unsunscribe(observer: self)
         }
     }
     
@@ -149,8 +156,16 @@ extension JobListViewController: UICollectionViewDelegate, UICollectionViewDataS
             index += collectionView.numberOfItems(inSection: section)
         }
         
-        self.viewModel.selectJob(indexPath.section, indexPath.row)
+        self.selectedSection = indexPath.section
+        self.selectedRow = indexPath.row
         let detailViewController = JobDetailCollectionViewController(viewModel: self.viewModel)
-        containerViewController?.pushCollectionViewController(detailViewController)
+        detailViewController.jobDelegate = self
+        self.containerViewController?.pushCollectionViewController(detailViewController)
+    }
+}
+
+extension JobListViewController: JobDetailControllerDelegate {
+    func selectJobDetail() {
+        self.viewModel.selectJob(selectedSection, selectedRow)
     }
 }
