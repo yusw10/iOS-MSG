@@ -20,7 +20,7 @@ enum Query {
         case .fileName:
             return "jobs_Asset"
         case .newJson:
-            return "newJobs_test"
+            return "newJobs_jpg"
         }
     }
 }

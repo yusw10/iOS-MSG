@@ -61,6 +61,10 @@ final class JobListCollectionViewCell: UICollectionViewCell {
             await jobImage.fetchImage(title)
         }
     }
+    
+    func setupImage(by image: UIImage) {
+        self.jobImage.image = image
+    }
 }
 
 // TODO: Task cancel 적용 시키기

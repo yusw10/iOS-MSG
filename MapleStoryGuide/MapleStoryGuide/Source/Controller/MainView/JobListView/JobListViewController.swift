@@ -14,6 +14,7 @@ final class JobListViewController: ContentViewController {
     //MARK: - ViewController Properties
     private let repository = AssetJobInfoRepository()
     private var viewModel: JobInfoViewModel! = nil
+    private var prefetchTask: Task<Void, Never>?
     private var jobList = [JobGroup]()
     private var selectedSection = 0
     private var selectedRow = 0
@@ -58,6 +59,7 @@ final class JobListViewController: ContentViewController {
     private func setupJobListCollectionView() {
         jobListCollectionView.delegate = self
         jobListCollectionView.dataSource = self
+        jobListCollectionView.prefetchDataSource = self
         
         view.addSubview(jobListCollectionView)
         
@@ -104,7 +106,12 @@ extension JobListViewController: UICollectionViewDelegate, UICollectionViewDataS
             return UICollectionViewCell()
         }
         
-        cell.setupCellImage(title: jobList[indexPath.section].jobs[indexPath.item].imageURL)
+        let url = jobList[indexPath.section].jobs[indexPath.item].imageURL
+        if let image = ImageCacheManager.shared.getCachedImage(url: url)?.downSampling(for: cell.jobImage.bounds.size) {
+            cell.setupImage(by: image)
+        } else {
+            cell.setupCellImage(title: jobList[indexPath.section].jobs[indexPath.item].imageURL)
+        }
         
         return cell
     }
@@ -167,5 +174,25 @@ extension JobListViewController: UICollectionViewDelegate, UICollectionViewDataS
 extension JobListViewController: JobDetailControllerDelegate {
     func selectJobDetail() {
         self.viewModel.selectJob(selectedSection, selectedRow)
+    }
+}
+
+extension JobListViewController: UICollectionViewDataSourcePrefetching {
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        let imageCache = ImageCacheManager.shared
+        
+        prefetchTask = Task {
+            for indexPath in indexPaths {
+                let url = jobList[indexPath.section].jobs[indexPath.row].imageURL
+                guard let image = await UIImage.fetchImage(from: url) else { return }
+                if imageCache.getCachedImage(url: url) == nil {
+                    imageCache.saveCache(image: image, url: url)
+                }
+            }
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cancelPrefetchingForItemsAt indexPaths: [IndexPath]) {
+        prefetchTask?.cancel()
     }
 }
