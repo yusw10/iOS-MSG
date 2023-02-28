@@ -96,6 +96,14 @@ extension JobListViewController: UISearchControllerDelegate, UISearchBarDelegate
             await self.viewModel.searchJob(text)
         }
     }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        print("search bar cancel button clicked")
+        
+        Task {
+            await self.viewModel.trigger(query: .newJson)
+        }
+    }
 }
 
 //MARK: - JobListCollectionView delegate, datasource
