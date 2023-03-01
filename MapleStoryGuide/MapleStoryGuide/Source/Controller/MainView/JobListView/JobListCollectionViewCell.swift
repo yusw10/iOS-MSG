@@ -59,12 +59,15 @@ final class JobListCollectionViewCell: UICollectionViewCell {
     }
     
     func setupCellImage(title: String) {
+        guard let url = URL(string: title) else { return }
+        let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad)
+        
         task = Task {
-            await jobImage.fetchImage(title)
+            await jobImage.fetchJobImage(request)
         }
     }
     
-    func setupImage(by image: UIImage) {
+    func setupImage(by image: UIImage?) {
         self.jobImage.image = image
     }
 }
@@ -86,47 +89,62 @@ extension UIImageView {
             // 에러 처리
         }
     }
+    
+    func fetchJobImage(_ urlRequest: URLRequest) async {
+        if let response = URLCache.shared.cachedResponse(for: urlRequest) {
+            self.image = UIImage(data: response.data)?.downSampling(for: self.bounds.size)
+        }
+        
+        do {
+            let (data, _) = try await URLSession(configuration: .ephemeral).data(for: urlRequest)
+            self.image = UIImage(data: data)?.downSampling(for: self.bounds.size)
+        } catch {
+            return
+        }
+    }
 }
 
 extension UIImage {
     func downSampling(for size: CGSize) -> UIImage? {
         let render = UIGraphicsImageRenderer(size: size)
-        return render.image { _ in
-            self.draw(in: CGRect(origin: .zero, size: size))
+        return render.image { [weak self] _ in
+            self?.draw(in: CGRect(origin: .zero, size: size))
         }
     }
     
-    static func fetchImage(from url: String) async -> UIImage? {
+    static func fetchImage(from url: String, size: CGSize) async -> UIImage? {
         guard let url = URL(string: url) else {
             return nil
         }
         
+        let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad)
+        
         do {
-            let (data, _) = try await URLSession(configuration: .ephemeral).data(from: url)
-            return UIImage(data: data)
+            let (data, _) = try await URLSession(configuration: .ephemeral).data(for: request)
+            return UIImage(data: data)?.downSampling(for: size)
         } catch {
             return nil
         }
     }
 }
 
-class ImageCacheManager {
-    static let shared = ImageCacheManager()
-    private let cache = NSCache<NSString, UIImage>()
-    
-    var cacheManger: NSCache<NSString, UIImage> {
-        return cache
-    }
-    
-    private init() { }
-    
-    func getCachedImage(url: String) -> UIImage? {
-        let key = NSString(string: url)
-        return cacheManger.object(forKey: key)
-    }
-    
-    func saveCache(image: UIImage, url: String) {
-        let key = NSString(string: url)
-        cacheManger.setObject(image, forKey: key)
-    }
-}
+//class ImageCacheManager {
+//    static let shared = ImageCacheManager()
+//    private let cache = NSCache<NSString, UIImage>()
+//
+//    var cacheManger: NSCache<NSString, UIImage> {
+//        return cache
+//    }
+//
+//    private init() { }
+//
+//    func getCachedImage(url: String) -> UIImage? {
+//        let key = NSString(string: url)
+//        return cacheManger.object(forKey: key)
+//    }
+//
+//    func saveCache(image: UIImage, url: String) {
+//        let key = NSString(string: url)
+//        cacheManger.setObject(image, forKey: key)
+//    }
+//}

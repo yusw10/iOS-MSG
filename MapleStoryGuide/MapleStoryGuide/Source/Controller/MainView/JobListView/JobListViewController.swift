@@ -15,6 +15,7 @@ final class JobListViewController: ContentViewController {
     private let repository = AssetJobInfoRepository()
     private var viewModel: JobInfoViewModel! = nil
     private var prefetchTask: Task<Void, Never>?
+    private var imageLoadTask: Task<Void, Never>?
     private var jobList = [JobGroup]()
     private var selectedSection = 0
     private var selectedRow = 0
@@ -114,12 +115,8 @@ extension JobListViewController: UICollectionViewDelegate, UICollectionViewDataS
             return UICollectionViewCell()
         }
         
-        let url = jobList[indexPath.section].jobs[indexPath.item].imageURL
-        if let image = ImageCacheManager.shared.getCachedImage(url: url)?.downSampling(for: cell.jobImage.bounds.size) {
-            cell.setupImage(by: image)
-        } else {
-            cell.setupCellImage(title: jobList[indexPath.section].jobs[indexPath.item].imageURL)
-        }
+        let urlString = jobList[indexPath.section].jobs[indexPath.item].imageURL
+        cell.setupCellImage(title: urlString)
         
         return cell
     }
@@ -187,15 +184,25 @@ extension JobListViewController: JobDetailControllerDelegate {
 
 extension JobListViewController: UICollectionViewDataSourcePrefetching {
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
-        let imageCache = ImageCacheManager.shared
-        
-        prefetchTask = Task {
-            for indexPath in indexPaths {
-                let url = jobList[indexPath.section].jobs[indexPath.row].imageURL
-                guard let image = await UIImage.fetchImage(from: url) else { return }
-                imageCache.saveCache(image: image, url: url)
+
+        for indexPath in indexPaths {
+            let urlString = jobList[indexPath.section].jobs[indexPath.row].imageURL
+            guard let url = URL(string: urlString) else { return }
+            let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad)
+            
+            if URLCache.shared.cachedResponse(for: request) != nil {
+                return
+            }
+            
+            prefetchTask = Task {
+                do {
+                    let (data, response) = try await URLSession(configuration: .ephemeral).data(for: request)
+                    let cacheResponse = CachedURLResponse(response: response, data: data)
+                    URLCache.shared.storeCachedResponse(cacheResponse, for: request)
+                } catch {
+                    return
+                }
             }
         }
     }
-    
 }
