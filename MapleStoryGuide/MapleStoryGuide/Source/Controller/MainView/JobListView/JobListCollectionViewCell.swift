@@ -93,6 +93,7 @@ extension UIImageView {
     func fetchJobImage(_ urlRequest: URLRequest) async {
         if let response = URLCache.shared.cachedResponse(for: urlRequest) {
             self.image = UIImage(data: response.data)?.downSampling(for: self.bounds.size)
+            return // 메모리 부분에서 차이가 큼 (주의)
         }
         
         do {
