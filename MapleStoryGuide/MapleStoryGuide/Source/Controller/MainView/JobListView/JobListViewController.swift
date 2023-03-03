@@ -184,7 +184,6 @@ extension JobListViewController: JobDetailControllerDelegate {
 
 extension JobListViewController: UICollectionViewDataSourcePrefetching {
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
-
         for indexPath in indexPaths {
             let urlString = jobList[indexPath.section].jobs[indexPath.row].imageURL
             guard let url = URL(string: urlString) else { return }
@@ -204,9 +203,5 @@ extension JobListViewController: UICollectionViewDataSourcePrefetching {
                 }
             }
         }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cancelPrefetchingForItemsAt indexPaths: [IndexPath]) {
-        prefetchTask?.cancel()
     }
 }

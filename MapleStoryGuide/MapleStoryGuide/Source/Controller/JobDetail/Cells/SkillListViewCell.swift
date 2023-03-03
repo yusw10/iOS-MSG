@@ -14,6 +14,7 @@ final class SkillListViewCell: UICollectionViewListCell {
     // MARK: - Properties
     
     static let id = "SkillListViewCell"
+    private var task: Task<Void, Never>?
     
     private let horizontalStackView = UIStackView().then {
         $0.spacing = 10
@@ -52,12 +53,13 @@ final class SkillListViewCell: UICollectionViewListCell {
         
         self.titleLabel.text = ""
         self.imageView.image = nil
+        task?.cancel()
     }
     
     func configure(title: String, imageURL: String) {
         titleLabel.text = title
        
-        Task {
+        task = Task {
             await self.imageView.fetchImage(imageURL)
         }
     }
