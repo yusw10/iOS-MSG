@@ -33,6 +33,8 @@
 		45ACA2C02995D70F00BD9935 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ACA2BF2995D70F00BD9935 /* MainViewController.swift */; };
 		725400FD29AC6F96005A7420 /* newJobs_jpg.json in Resources */ = {isa = PBXBuildFile; fileRef = 725400FC29AC6F96005A7420 /* newJobs_jpg.json */; };
 		72AD922A29A1C0BA00047D35 /* JobGroupDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AD922929A1C0BA00047D35 /* JobGroupDTO.swift */; };
+		72CB8BD829BF000D00A34A36 /* BossInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CB8BD729BF000D00A34A36 /* BossInfo.swift */; };
+		72CB8BDA29BF047700A34A36 /* bossInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 72CB8BD929BF047700A34A36 /* bossInfo.json */; };
 		72CDF3A4298A4C4300918C1A /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CDF3A3298A4C4300918C1A /* EndPoint.swift */; };
 		72CDF3A6298A53BE00918C1A /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CDF3A5298A53BE00918C1A /* APIRequest.swift */; };
 		72CDF3A8298A53E100918C1A /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CDF3A7298A53E100918C1A /* Components.swift */; };
@@ -71,11 +73,13 @@
 		45ACA2AD2992187C00BD9935 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		45ACA2AF29921ABD00BD9935 /* SideMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuItem.swift; sourceTree = "<group>"; };
 		45ACA2B129921D3700BD9935 /* SideMenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuDelegate.swift; sourceTree = "<group>"; };
-		45ACA2BB2995D62E00BD9935 /* JobInfoDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JobInfoDTO.swift; path = MapleStoryGuide/Source/Model/JobInfoDTO.swift; sourceTree = SOURCE_ROOT; };
-		45ACA2BC2995D62E00BD9935 /* JobInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JobInfo.swift; path = MapleStoryGuide/Source/Model/JobInfo.swift; sourceTree = SOURCE_ROOT; };
+		45ACA2BB2995D62E00BD9935 /* JobInfoDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JobInfoDTO.swift; path = MapleStoryGuide/Source/Model/JobInfo/JobInfoDTO.swift; sourceTree = SOURCE_ROOT; };
+		45ACA2BC2995D62E00BD9935 /* JobInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JobInfo.swift; path = MapleStoryGuide/Source/Model/JobInfo/JobInfo.swift; sourceTree = SOURCE_ROOT; };
 		45ACA2BF2995D70F00BD9935 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		725400FC29AC6F96005A7420 /* newJobs_jpg.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = newJobs_jpg.json; sourceTree = "<group>"; };
 		72AD922929A1C0BA00047D35 /* JobGroupDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobGroupDTO.swift; sourceTree = "<group>"; };
+		72CB8BD729BF000D00A34A36 /* BossInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BossInfo.swift; sourceTree = "<group>"; };
+		72CB8BD929BF047700A34A36 /* bossInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bossInfo.json; sourceTree = "<group>"; };
 		72CDF3A3298A4C4300918C1A /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		72CDF3A5298A53BE00918C1A /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		72CDF3A7298A53E100918C1A /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
@@ -85,7 +89,7 @@
 		72ECFFEF298BC9060045ADBB /* JSONManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONManager.swift; sourceTree = "<group>"; };
 		A3278BAD2988E4330004C278 /* JobDetailCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailCollectionViewController.swift; sourceTree = "<group>"; };
 		A3278BB129890A0A0004C278 /* SkillListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillListViewCell.swift; sourceTree = "<group>"; };
-		A3278BB4298A31CD0004C278 /* MockSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MockSection.swift; path = MapleStoryGuide/Source/Model/MockSection.swift; sourceTree = SOURCE_ROOT; };
+		A3278BB4298A31CD0004C278 /* MockSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MockSection.swift; path = MapleStoryGuide/Source/Model/JobInfo/MockSection.swift; sourceTree = SOURCE_ROOT; };
 		A3278BDA298B59140004C278 /* JobImageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobImageViewCell.swift; sourceTree = "<group>"; };
 		A3278BDC298B5B430004C278 /* TitleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleHeaderView.swift; sourceTree = "<group>"; };
 		A3278BDF298B93060004C278 /* SkillDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillDetailTableViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				725400FC29AC6F96005A7420 /* newJobs_jpg.json */,
+				72CB8BD929BF047700A34A36 /* bossInfo.json */,
 				45ACA26E2988D76000BD9935 /* Assets.xcassets */,
 				45ACA2702988D76000BD9935 /* LaunchScreen.storyboard */,
 			);
@@ -273,6 +278,25 @@
 			name = "Recovered References";
 			sourceTree = "<group>";
 		};
+		72CB8BD529BEFFE600A34A36 /* JobInfo */ = {
+			isa = PBXGroup;
+			children = (
+				45ACA2BC2995D62E00BD9935 /* JobInfo.swift */,
+				45ACA2BB2995D62E00BD9935 /* JobInfoDTO.swift */,
+				A3278BB4298A31CD0004C278 /* MockSection.swift */,
+				72AD922929A1C0BA00047D35 /* JobGroupDTO.swift */,
+			);
+			path = JobInfo;
+			sourceTree = "<group>";
+		};
+		72CB8BD629BEFFF900A34A36 /* BossInfo */ = {
+			isa = PBXGroup;
+			children = (
+				72CB8BD729BF000D00A34A36 /* BossInfo.swift */,
+			);
+			path = BossInfo;
+			sourceTree = "<group>";
+		};
 		72ECFFEE298BC8E70045ADBB /* JSON */ = {
 			isa = PBXGroup;
 			children = (
@@ -321,10 +345,8 @@
 		A3278C09298FCAED0004C278 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				45ACA2BC2995D62E00BD9935 /* JobInfo.swift */,
-				45ACA2BB2995D62E00BD9935 /* JobInfoDTO.swift */,
-				A3278BB4298A31CD0004C278 /* MockSection.swift */,
-				72AD922929A1C0BA00047D35 /* JobGroupDTO.swift */,
+				72CB8BD629BEFFF900A34A36 /* BossInfo */,
+				72CB8BD529BEFFE600A34A36 /* JobInfo */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -397,6 +419,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72CB8BDA29BF047700A34A36 /* bossInfo.json in Resources */,
 				45ACA2722988D76000BD9935 /* LaunchScreen.storyboard in Resources */,
 				725400FD29AC6F96005A7420 /* newJobs_jpg.json in Resources */,
 				45ACA26F2988D76000BD9935 /* Assets.xcassets in Resources */,
@@ -422,6 +445,7 @@
 				72CDF3A8298A53E100918C1A /* Components.swift in Sources */,
 				72CDF3AA298A576B00918C1A /* URLSessionManager.swift in Sources */,
 				72ECFFF0298BC9060045ADBB /* JSONManager.swift in Sources */,
+				72CB8BD829BF000D00A34A36 /* BossInfo.swift in Sources */,
 				72E728F829939D0E00427640 /* Observable.swift in Sources */,
 				72CDF3A4298A4C4300918C1A /* EndPoint.swift in Sources */,
 				45ACA2C02995D70F00BD9935 /* MainViewController.swift in Sources */,
