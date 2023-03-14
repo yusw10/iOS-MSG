@@ -60,7 +60,37 @@ private extension WeeklyBossCalculatorViewController {
     }
     
     @objc func TappedAddButton() {
-        present(UIViewController(), animated: true)
+        let alert = UIAlertController(
+            title: "캐릭터 등록",
+            message: "닉네임과 월드를 기입해주세요.",
+            preferredStyle: .alert
+        )
+        
+        alert.addTextField { textField in
+            textField.placeholder = "닉네임"
+        }
+        alert.addTextField { textField in
+            textField.placeholder = "월드"
+        }
+        
+        let ok = UIAlertAction(
+            title: "OK",
+            style: .default
+        ) { (ok) in
+            
+        }
+        
+        let cancel = UIAlertAction(
+            title: "cancel",
+            style: .cancel
+        ) { (cancel) in
+            
+        }
+        
+        alert.addAction(ok)
+        alert.addAction(cancel)
+        
+        self.present(alert, animated: true, completion: nil)
     }
     
 }
