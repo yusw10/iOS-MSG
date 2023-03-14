@@ -13,7 +13,7 @@ final class WeeklyBossCalculatorCollectionViewController: ContentCollectionViewC
     init() {
         let item = NSCollectionLayoutItem(
             layoutSize: .init(
-                widthDimension: .fractionalWidth(1/3),
+                widthDimension: .fractionalWidth(1/2),
                 heightDimension: .fractionalHeight(1))
         )
         item.contentInsets.top = 16
@@ -22,7 +22,7 @@ final class WeeklyBossCalculatorCollectionViewController: ContentCollectionViewC
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: .init(
                 widthDimension: .fractionalWidth(1),
-                heightDimension: .absolute(200)
+                heightDimension: .absolute(150)
             ),
             subitems: [item]
         )

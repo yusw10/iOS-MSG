@@ -19,23 +19,15 @@ final class CharacterViewCell: UICollectionViewCell {
         $0.axis = .vertical
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
-    
-    private lazy var thumbnailImageView = UIImageView().then {
-        $0.contentMode = .scaleAspectFit
-        $0.image = UIImage(systemName: "photo.artframe")
-        $0.layer.cornerRadius = 15
-        $0.clipsToBounds = true
+
+    private lazy var nameLabel = UILabel().then {
+        $0.text = "디아런라딘"
+        $0.numberOfLines = 1
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
     private lazy var worldLabel = UILabel().then {
         $0.text = "엘리시움"
-        $0.numberOfLines = 1
-        $0.translatesAutoresizingMaskIntoConstraints = false
-    }
-    
-    private lazy var nameLabel = UILabel().then {
-        $0.text = "디아런라딘"
         $0.numberOfLines = 1
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
@@ -67,7 +59,7 @@ private extension CharacterViewCell {
         self.contentView.layer.masksToBounds = true
         self.contentView.addSubview(verticalStackView)
         
-        [thumbnailImageView, worldLabel, nameLabel, totalPriceLabel].forEach { view in
+        [nameLabel, worldLabel, totalPriceLabel].forEach { view in
             verticalStackView.addArrangedSubview(view)
         }
     }
@@ -75,11 +67,6 @@ private extension CharacterViewCell {
     func setupLayout() {
         verticalStackView.snp.makeConstraints { make in
             make.top.bottom.leading.trailing.equalTo(self.contentView).inset(10)
-        }
-        
-        thumbnailImageView.snp.makeConstraints { make in
-            make.width.equalTo(verticalStackView.snp.width)
-            make.height.equalTo(verticalStackView.snp.width).multipliedBy(0.8)
         }
     }
     
