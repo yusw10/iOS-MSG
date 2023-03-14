@@ -48,6 +48,9 @@
 		A3278BE0298B93060004C278 /* SkillDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3278BDF298B93060004C278 /* SkillDetailTableViewController.swift */; };
 		A3278BE2298BE1A80004C278 /* ReinforceSkillDetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3278BE1298BE1A80004C278 /* ReinforceSkillDetailViewCell.swift */; };
 		A3282F8429A4A29100FA5BE1 /* SkillDetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3282F8329A4A29100FA5BE1 /* SkillDetailViewCell.swift */; };
+		A3900B9229BC51FC00B7C409 /* WeeklyBossCalculatorCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3900B9129BC51FC00B7C409 /* WeeklyBossCalculatorCollectionViewController.swift */; };
+		A3900BBE29C0489C00B7C409 /* WeeklyBossCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3900BBD29C0489C00B7C409 /* WeeklyBossCalculatorViewController.swift */; };
+		A3900BC129C0495D00B7C409 /* CharacterViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3900BC029C0495D00B7C409 /* CharacterViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +94,9 @@
 		A3278BDF298B93060004C278 /* SkillDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillDetailTableViewController.swift; sourceTree = "<group>"; };
 		A3278BE1298BE1A80004C278 /* ReinforceSkillDetailViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReinforceSkillDetailViewCell.swift; sourceTree = "<group>"; };
 		A3282F8329A4A29100FA5BE1 /* SkillDetailViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillDetailViewCell.swift; sourceTree = "<group>"; };
+		A3900B9129BC51FC00B7C409 /* WeeklyBossCalculatorCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyBossCalculatorCollectionViewController.swift; sourceTree = "<group>"; };
+		A3900BBD29C0489C00B7C409 /* WeeklyBossCalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyBossCalculatorViewController.swift; sourceTree = "<group>"; };
+		A3900BC029C0495D00B7C409 /* CharacterViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +166,7 @@
 		45ACA2852988D97B00BD9935 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A3900B9029BC51D600B7C409 /* WeeklyBossCalculator */,
 				A3278BDE298B92EE0004C278 /* SkillDetail */,
 				A3278BAC2988E4190004C278 /* JobDetail */,
 				45ACA2B329923F1C00BD9935 /* BasicViewController */,
@@ -329,6 +336,32 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		A3900B9029BC51D600B7C409 /* WeeklyBossCalculator */ = {
+			isa = PBXGroup;
+			children = (
+				A3900BBD29C0489C00B7C409 /* WeeklyBossCalculatorViewController.swift */,
+				A3900BBF29C0492F00B7C409 /* CollectionView */,
+			);
+			path = WeeklyBossCalculator;
+			sourceTree = "<group>";
+		};
+		A3900BBF29C0492F00B7C409 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				A3900B9129BC51FC00B7C409 /* WeeklyBossCalculatorCollectionViewController.swift */,
+				A3900BC229C0499800B7C409 /* Cells */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		A3900BC229C0499800B7C409 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A3900BC029C0495D00B7C409 /* CharacterViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -419,6 +452,7 @@
 				45ACA2682988D75C00BD9935 /* SceneDelegate.swift in Sources */,
 				A3278BDD298B5B430004C278 /* TitleHeaderView.swift in Sources */,
 				A3278BDB298B59140004C278 /* JobImageViewCell.swift in Sources */,
+				A3900BBE29C0489C00B7C409 /* WeeklyBossCalculatorViewController.swift in Sources */,
 				72CDF3A8298A53E100918C1A /* Components.swift in Sources */,
 				72CDF3AA298A576B00918C1A /* URLSessionManager.swift in Sources */,
 				72ECFFF0298BC9060045ADBB /* JSONManager.swift in Sources */,
@@ -442,6 +476,8 @@
 				45ACA2A229900D7000BD9935 /* JobListCollectionViewCell.swift in Sources */,
 				45ACA2662988D75C00BD9935 /* AppDelegate.swift in Sources */,
 				45ACA28E298A2A2A00BD9935 /* SideMenuViewController.swift in Sources */,
+				A3900B9229BC51FC00B7C409 /* WeeklyBossCalculatorCollectionViewController.swift in Sources */,
+				A3900BC129C0495D00B7C409 /* CharacterViewCell.swift in Sources */,
 				45ACA2682988D75C00BD9935 /* SceneDelegate.swift in Sources */,
 				45ACA2A0298F2D0900BD9935 /* EquipmentCalcViewController.swift in Sources */,
 				45ACA2A5299016D100BD9935 /* JobListHeaderView.swift in Sources */,
