@@ -15,14 +15,14 @@ final class CharacterViewCell: UICollectionViewCell {
     
     private lazy var verticalStackView = UIStackView().then {
         $0.alignment = .center
-        $0.spacing = 10
+        $0.distribution = .equalSpacing
         $0.axis = .vertical
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
     private lazy var thumbnailImageView = UIImageView().then {
         $0.contentMode = .scaleAspectFit
-        $0.image = UIImage(named: "phone.circle.fill")
+        $0.image = UIImage(systemName: "photo.artframe")
         $0.layer.cornerRadius = 15
         $0.clipsToBounds = true
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -79,6 +79,7 @@ private extension CharacterViewCell {
         
         thumbnailImageView.snp.makeConstraints { make in
             make.width.equalTo(verticalStackView.snp.width)
+            make.height.equalTo(verticalStackView.snp.width).multipliedBy(0.8)
         }
     }
     
