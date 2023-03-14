@@ -30,11 +30,19 @@ final class CharacterViewCell: UICollectionViewCell {
     
     private lazy var worldLabel = UILabel().then {
         $0.text = "엘리시움"
+        $0.numberOfLines = 1
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
     private lazy var nameLabel = UILabel().then {
         $0.text = "디아런라딘"
+        $0.numberOfLines = 1
+        $0.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    private lazy var totalPriceLabel = UILabel().then {
+        $0.text = "총 가격"
+        $0.numberOfLines = 1
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
@@ -59,7 +67,7 @@ private extension CharacterViewCell {
         self.contentView.layer.masksToBounds = true
         self.contentView.addSubview(verticalStackView)
         
-        [thumbnailImageView, worldLabel, nameLabel].forEach { view in
+        [thumbnailImageView, worldLabel, nameLabel, totalPriceLabel].forEach { view in
             verticalStackView.addArrangedSubview(view)
         }
     }
