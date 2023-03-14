@@ -75,7 +75,8 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         case .additionalOption:
             print("push additionalOptionViewController")
         case .bossInfo:
-            print("push bossInfoViewController")
+            let weeklyBossCalculatorViewController = WeeklyBossCalculatorViewController()
+            containerViewController?.pushViewController(weeklyBossCalculatorViewController)
         }
     }
     
