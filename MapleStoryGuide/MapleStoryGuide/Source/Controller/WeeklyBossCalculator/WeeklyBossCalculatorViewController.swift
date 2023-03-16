@@ -11,7 +11,12 @@ import Then
 
 final class WeeklyBossCalculatorViewController: ContentViewController {
     
-    private let weeklyBossCalculatorCollectionViewController = WeeklyBossCalculatorCollectionViewController()
+    private lazy var collectionView = UICollectionView(
+        frame: .zero,
+        collectionViewLayout: self.setupCollectionViewLayout()
+    ).then {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+    }
     
     private lazy var addButton = UIButton().then {
         $0.layer.cornerRadius = 30
@@ -25,6 +30,7 @@ final class WeeklyBossCalculatorViewController: ContentViewController {
         
         setupView()
         setupLayout()
+        setupCollectionView()
         setupButton()
     }
     
@@ -33,12 +39,13 @@ final class WeeklyBossCalculatorViewController: ContentViewController {
 private extension WeeklyBossCalculatorViewController {
     
     func setupView() {
-        self.view.addSubview(weeklyBossCalculatorCollectionViewController.collectionView)
-        self.view.addSubview(addButton)
+        [collectionView, addButton].forEach { view in
+            self.view.addSubview(view)
+        }
     }
     
     func setupLayout() {
-        weeklyBossCalculatorCollectionViewController.collectionView.snp.makeConstraints { make in
+        collectionView.snp.makeConstraints { make in
             make.top.leading.trailing.bottom.equalTo(self.view)
         }
         
@@ -47,6 +54,46 @@ private extension WeeklyBossCalculatorViewController {
             
             make.width.height.equalTo(self.view.snp.width).multipliedBy(0.2)
         }
+    }
+    
+    func setupCollectionView() {
+        collectionView.backgroundColor = .secondarySystemBackground
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
+        collectionView.register(
+            CharacterViewCell.self,
+            forCellWithReuseIdentifier: CharacterViewCell.id
+        )
+    }
+    
+    func setupCollectionViewLayout() -> UICollectionViewCompositionalLayout {
+        let item = NSCollectionLayoutItem(
+            layoutSize: .init(
+                widthDimension: .fractionalWidth(1/2),
+                heightDimension: .fractionalHeight(1))
+        )
+        item.contentInsets.top = 16
+        item.contentInsets.trailing = 16
+
+        let group = NSCollectionLayoutGroup.horizontal(
+            layoutSize: .init(
+                widthDimension: .fractionalWidth(1),
+                heightDimension: .absolute(150)
+            ),
+            subitems: [item]
+        )
+        let section = NSCollectionLayoutSection(
+            group: group
+        )
+        section.contentInsets.leading = 16
+        
+        let layout = UICollectionViewCompositionalLayout(
+            section: section
+        )
+        
+        return layout
     }
     
     func setupButton() {
@@ -91,6 +138,21 @@ private extension WeeklyBossCalculatorViewController {
         alert.addAction(cancel)
         
         self.present(alert, animated: true, completion: nil)
+    }
+    
+}
+
+extension WeeklyBossCalculatorViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CharacterViewCell.id, for: indexPath)
+
+        return cell
     }
     
 }
