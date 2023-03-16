@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Then
 
-final class CharacterViewCell: UICollectionViewCell {
+final class CharacterViewCell: UICollectionViewListCell {
     
     static let id = "CharacterViewCell"
     
@@ -49,12 +49,17 @@ final class CharacterViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func configure(with charcter: MyCharacter) {
+        nameLabel.text = charcter.name
+        worldLabel.text = charcter.world
+        totalPriceLabel.text = charcter.totalRevenue
+    }
+    
 }
 
 private extension CharacterViewCell {
     
     func setupView() {
-        self.contentView.backgroundColor = .white
         self.contentView.layer.cornerRadius = 15
         self.contentView.layer.masksToBounds = true
         self.contentView.addSubview(verticalStackView)

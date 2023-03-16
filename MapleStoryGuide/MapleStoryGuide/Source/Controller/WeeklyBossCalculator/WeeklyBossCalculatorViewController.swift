@@ -11,12 +11,11 @@ import Then
 
 final class WeeklyBossCalculatorViewController: ContentViewController {
     
-    private lazy var collectionView = UICollectionView(
-        frame: .zero,
-        collectionViewLayout: self.setupCollectionViewLayout()
-    ).then {
-        $0.translatesAutoresizingMaskIntoConstraints = false
+    enum Section: CaseIterable {
+        case main
     }
+    
+    private var collectionView: UICollectionView!
     
     private lazy var addButton = UIButton().then {
         $0.layer.cornerRadius = 30
@@ -25,18 +24,62 @@ final class WeeklyBossCalculatorViewController: ContentViewController {
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
+    private lazy var diffableDataSource: UICollectionViewDiffableDataSource<Section, MyCharacter> = .init(collectionView: self.collectionView) { (collectionView, indexPath, object) -> UICollectionViewListCell? in
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CharacterViewCell.id, for: indexPath) as! CharacterViewCell
+        cell.layer.cornerRadius = 15
+        cell.clipsToBounds = true
+        
+        cell.configure(with: self.myCharacter[indexPath.row])
+
+        return cell
+    }
+    
+    private var myCharacter: [MyCharacter] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupCollectionView()
         setupView()
         setupLayout()
-        setupCollectionView()
         setupButton()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        updateSnapShot()
+    }
+    
+}
+
+extension WeeklyBossCalculatorViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(myCharacter[indexPath.row])
+        let weeklyBossListViewController = WeeklyBossListViewController()
+        weeklyBossListViewController.configure(with: myCharacter[indexPath.row])
+        navigationController?.pushViewController(weeklyBossListViewController, animated: true)
     }
     
 }
 
 private extension WeeklyBossCalculatorViewController {
+    
+    func setupCollectionView() {
+        collectionView = UICollectionView(
+            frame: .zero,
+            collectionViewLayout: setupCollectionViewLayout()
+        )
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        
+        collectionView.backgroundColor = .secondarySystemBackground
+        collectionView.delegate = self
+        
+        collectionView.register(
+            CharacterViewCell.self,
+            forCellWithReuseIdentifier: CharacterViewCell.id
+        )
+    }
     
     func setupView() {
         [collectionView, addButton].forEach { view in
@@ -55,19 +98,7 @@ private extension WeeklyBossCalculatorViewController {
             make.width.height.equalTo(self.view.snp.width).multipliedBy(0.2)
         }
     }
-    
-    func setupCollectionView() {
-        collectionView.backgroundColor = .secondarySystemBackground
-        
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        
-        collectionView.register(
-            CharacterViewCell.self,
-            forCellWithReuseIdentifier: CharacterViewCell.id
-        )
-    }
-    
+
     func setupCollectionViewLayout() -> UICollectionViewCompositionalLayout {
         let item = NSCollectionLayoutItem(
             layoutSize: .init(
@@ -76,7 +107,7 @@ private extension WeeklyBossCalculatorViewController {
         )
         item.contentInsets.top = 16
         item.contentInsets.trailing = 16
-
+        
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: .init(
                 widthDimension: .fractionalWidth(1),
@@ -106,6 +137,16 @@ private extension WeeklyBossCalculatorViewController {
         addButton.addTarget(self, action: #selector(TappedAddButton), for: .touchUpInside)
     }
     
+    func updateSnapShot() {
+        myCharacter = CoreDatamanager.shared.read()
+        
+        var snapshot = NSDiffableDataSourceSnapshot<Section, MyCharacter>()
+        snapshot.appendSections([.main])
+        
+        snapshot.appendItems(myCharacter, toSection: .main)
+        diffableDataSource.apply(snapshot, animatingDifferences: true)
+    }
+    
     @objc func TappedAddButton() {
         let alert = UIAlertController(
             title: "캐릭터 등록",
@@ -124,7 +165,14 @@ private extension WeeklyBossCalculatorViewController {
             title: "OK",
             style: .default
         ) { (ok) in
-            
+            CoreDatamanager.shared.create(
+                person: MyCharacter(
+                    name: alert.textFields?[0].text ?? "",
+                    world: alert.textFields?[1].text ?? "",
+                    totalRevenue: "0"
+                )
+            )
+            self.updateSnapShot()
         }
         
         let cancel = UIAlertAction(
@@ -138,21 +186,6 @@ private extension WeeklyBossCalculatorViewController {
         alert.addAction(cancel)
         
         self.present(alert, animated: true, completion: nil)
-    }
-    
-}
-
-extension WeeklyBossCalculatorViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CharacterViewCell.id, for: indexPath)
-
-        return cell
     }
     
 }
