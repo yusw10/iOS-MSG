@@ -11,14 +11,16 @@ import Then
 
 final class WeeklyBossListViewController: UIViewController {
     
+    var charcter = CharacterInfo()
+    
+    private var collectionView: UICollectionView!
+
     private lazy var totalPriceLabel = UILabel().then {
         $0.textAlignment = .center
         $0.text = "총 가격:"
         $0.backgroundColor = .white
     }
-    
-    private var collectionView: UICollectionView!
-        
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,9 +29,11 @@ final class WeeklyBossListViewController: UIViewController {
         setupLayout()
     }
     
-    func configure(with charcter: MyCharacter) {
+    func configure(with charcter: CharacterInfo) {
         navigationItem.title = charcter.name
         totalPriceLabel.text = charcter.totalRevenue
+        
+        self.charcter = charcter
     }
     
 }
@@ -47,6 +51,12 @@ extension WeeklyBossListViewController: UICollectionViewDataSource {
             for: indexPath
         ) as! WeeklyBossListViewCell
         
+        cell.clearCheckSwitch.addTarget(
+            self,
+            action: #selector(onClickSwitch(sender:)),
+            for: UIControl.Event.valueChanged
+        )
+
         return cell
     }
     
@@ -76,7 +86,6 @@ private extension WeeklyBossListViewController {
     }
     
     func setupLayout() {
-        
         collectionView.snp.makeConstraints { make in
             make.top.leading.trailing.equalTo(self.view)
             make.bottom.equalTo(totalPriceLabel.snp.top)
@@ -116,5 +125,14 @@ private extension WeeklyBossListViewController {
         
         return layout
     }
+    
+    @objc func onClickSwitch(sender: UISwitch) {
+        if sender.isOn {
+            CoreDatamanager.shared.update(charcter, inform: "3")
+        } else {
+            CoreDatamanager.shared.update(charcter, inform: "2")
+        }
+    }
+   
     
 }

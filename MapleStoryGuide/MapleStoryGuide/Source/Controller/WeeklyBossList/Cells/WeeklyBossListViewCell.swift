@@ -43,9 +43,8 @@ final class WeeklyBossListViewCell: UICollectionViewCell {
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    private lazy var clearCheckSwitch = UISwitch().then {
-        $0.addTarget(self, action: #selector(onClickSwitch(sender:)), for: UIControl.Event.valueChanged)
-
+    lazy var clearCheckSwitch = UISwitch().then {
+        $0.isOn = true
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
@@ -92,14 +91,6 @@ private extension WeeklyBossListViewCell {
         
         clearCheckSwitch.snp.makeConstraints { make in
             make.trailing.equalTo(horizontalStackView.snp.trailing)
-        }
-    }
-    
-    @objc func onClickSwitch(sender: UISwitch) {
-        if sender.isOn {
-            print("on")
-        } else {
-            print("off")
         }
     }
     
