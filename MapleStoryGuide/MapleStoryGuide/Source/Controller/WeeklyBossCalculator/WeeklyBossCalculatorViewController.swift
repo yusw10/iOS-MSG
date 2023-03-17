@@ -24,18 +24,14 @@ final class WeeklyBossCalculatorViewController: ContentViewController {
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    private lazy var diffableDataSource: UICollectionViewDiffableDataSource<Section, MyCharacter> = .init(collectionView: self.collectionView) { (collectionView, indexPath, object) -> UICollectionViewListCell? in
+    private lazy var diffableDataSource: UICollectionViewDiffableDataSource<Section, CharacterInfo> = .init(collectionView: self.collectionView) { (collectionView, indexPath, object) -> UICollectionViewListCell? in
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CharacterViewCell.id, for: indexPath) as! CharacterViewCell
-        cell.layer.cornerRadius = 15
-        cell.clipsToBounds = true
         
-        cell.configure(with: self.myCharacter[indexPath.row])
-
+        cell.configure(with: self.characterInfo[indexPath.row])
+        
         return cell
     }
-    
-    private var myCharacter: [MyCharacter] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,10 +40,12 @@ final class WeeklyBossCalculatorViewController: ContentViewController {
         setupView()
         setupLayout()
         setupButton()
+        
+        updateSnapShot()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        updateSnapShot()
+        collectionView.reloadData()
     }
     
 }
@@ -55,9 +53,9 @@ final class WeeklyBossCalculatorViewController: ContentViewController {
 extension WeeklyBossCalculatorViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(myCharacter[indexPath.row])
         let weeklyBossListViewController = WeeklyBossListViewController()
-        weeklyBossListViewController.configure(with: myCharacter[indexPath.row])
+        
+        weeklyBossListViewController.configure(with: characterInfo[indexPath.row])
         navigationController?.pushViewController(weeklyBossListViewController, animated: true)
     }
     
@@ -67,9 +65,21 @@ private extension WeeklyBossCalculatorViewController {
     
     func setupCollectionView() {
         collectionView = UICollectionView(
-            frame: .zero,
-            collectionViewLayout: setupCollectionViewLayout()
+            frame: view.bounds,
+            collectionViewLayout: UICollectionViewFlowLayout()
         )
+        
+        var layoutConfig = UICollectionLayoutListConfiguration(
+            appearance: .insetGrouped
+        )
+        layoutConfig.trailingSwipeActionsConfigurationProvider = makeSwipeActions
+        
+        
+        let listLayout = UICollectionViewCompositionalLayout.list(
+            using: layoutConfig
+        )
+        
+        collectionView.collectionViewLayout = listLayout
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         
         collectionView.backgroundColor = .secondarySystemBackground
@@ -97,34 +107,6 @@ private extension WeeklyBossCalculatorViewController {
             
             make.width.height.equalTo(self.view.snp.width).multipliedBy(0.2)
         }
-    }
-
-    func setupCollectionViewLayout() -> UICollectionViewCompositionalLayout {
-        let item = NSCollectionLayoutItem(
-            layoutSize: .init(
-                widthDimension: .fractionalWidth(1/2),
-                heightDimension: .fractionalHeight(1))
-        )
-        item.contentInsets.top = 16
-        item.contentInsets.trailing = 16
-        
-        let group = NSCollectionLayoutGroup.horizontal(
-            layoutSize: .init(
-                widthDimension: .fractionalWidth(1),
-                heightDimension: .absolute(150)
-            ),
-            subitems: [item]
-        )
-        let section = NSCollectionLayoutSection(
-            group: group
-        )
-        section.contentInsets.leading = 16
-        
-        let layout = UICollectionViewCompositionalLayout(
-            section: section
-        )
-        
-        return layout
     }
     
     func setupButton() {
@@ -186,6 +168,20 @@ private extension WeeklyBossCalculatorViewController {
         alert.addAction(cancel)
         
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    func makeSwipeActions(for indexPath: IndexPath?) -> UISwipeActionsConfiguration? {
+        guard let indexPath = indexPath, let id = diffableDataSource.itemIdentifier(for: indexPath) else {
+            return nil
+        }
+        let deleteActionTitle = NSLocalizedString("Delete", comment: "Delete action title")
+        let deleteAction = UIContextualAction(style: .destructive, title: deleteActionTitle) { [weak self] _, _, completion in
+            self?.coreDataManager.deleteContact(id)
+            self?.updateSnapShot()
+            
+            completion(false)
+        }
+        return UISwipeActionsConfiguration(actions: [deleteAction])
     }
     
 }
