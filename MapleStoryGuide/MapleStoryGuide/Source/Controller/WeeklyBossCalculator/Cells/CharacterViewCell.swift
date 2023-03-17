@@ -13,27 +13,24 @@ final class CharacterViewCell: UICollectionViewListCell {
     
     static let id = "CharacterViewCell"
     
-    private lazy var verticalStackView = UIStackView().then {
+    private lazy var horizontalStackView = UIStackView().then {
         $0.alignment = .center
         $0.distribution = .equalSpacing
-        $0.axis = .vertical
+        $0.axis = .horizontal
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
 
     private lazy var nameLabel = UILabel().then {
-        $0.text = "디아런라딘"
         $0.numberOfLines = 1
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
     private lazy var worldLabel = UILabel().then {
-        $0.text = "엘리시움"
         $0.numberOfLines = 1
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
     private lazy var totalPriceLabel = UILabel().then {
-        $0.text = "총 가격"
         $0.numberOfLines = 1
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
@@ -49,7 +46,7 @@ final class CharacterViewCell: UICollectionViewListCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(with charcter: MyCharacter) {
+    func configure(with charcter: CharacterInfo) {
         nameLabel.text = charcter.name
         worldLabel.text = charcter.world
         totalPriceLabel.text = charcter.totalRevenue
@@ -60,17 +57,15 @@ final class CharacterViewCell: UICollectionViewListCell {
 private extension CharacterViewCell {
     
     func setupView() {
-        self.contentView.layer.cornerRadius = 15
-        self.contentView.layer.masksToBounds = true
-        self.contentView.addSubview(verticalStackView)
+        self.contentView.addSubview(horizontalStackView)
         
-        [nameLabel, worldLabel, totalPriceLabel].forEach { view in
-            verticalStackView.addArrangedSubview(view)
+        [worldLabel, nameLabel, totalPriceLabel].forEach { view in
+            horizontalStackView.addArrangedSubview(view)
         }
     }
     
     func setupLayout() {
-        verticalStackView.snp.makeConstraints { make in
+        horizontalStackView.snp.makeConstraints { make in
             make.top.bottom.leading.trailing.equalTo(self.contentView).inset(10)
         }
     }
