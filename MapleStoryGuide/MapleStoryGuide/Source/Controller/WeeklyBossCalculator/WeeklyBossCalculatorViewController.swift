@@ -15,6 +15,18 @@ final class WeeklyBossCalculatorViewController: ContentViewController {
         case main
     }
     
+    private let coreDataManager = CoreDatamanager.shared
+    private let pickerList = [
+        "스카니아", "베라", "루나", "제니스", "크로아", "유니온", "엘리시움", "이노시스", "레드", "오로라", "아케인", "노바", "리부트", "리부트2"
+    ]
+    private var typeValue = ""
+    
+    private var characterInfo: [CharacterInfo] = []
+
+    private let worldPickerView = UIPickerView(
+        frame: CGRect(x: 5, y: 50, width: 260, height: 160)
+    )
+    
     private var collectionView: UICollectionView!
     
     private lazy var addButton = UIButton().then {
@@ -40,6 +52,7 @@ final class WeeklyBossCalculatorViewController: ContentViewController {
         setupView()
         setupLayout()
         setupButton()
+        setupPickerView()
         
         updateSnapShot()
     }
@@ -57,6 +70,52 @@ extension WeeklyBossCalculatorViewController: UICollectionViewDelegate {
         
         weeklyBossListViewController.configure(with: characterInfo[indexPath.row])
         navigationController?.pushViewController(weeklyBossListViewController, animated: true)
+    }
+    
+}
+
+extension WeeklyBossCalculatorViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return self.pickerList.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerList[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+
+        if row == 0 {
+            typeValue = "스카니아"
+        } else if row == 1 {
+            typeValue = "베라"
+        } else if row == 2 {
+            typeValue = "루나"
+        } else if row == 3 {
+            typeValue = "제니스"
+        } else if row == 4 {
+            typeValue = "유니온"
+        } else if row == 5 {
+            typeValue = "엘리시움"
+        } else if row == 6 {
+            typeValue = "이노시스"
+        } else if row == 7 {
+            typeValue = "레드"
+        } else if row == 8 {
+            typeValue = "오로라"
+        } else if row == 9 {
+            typeValue = "아케인"
+        } else if row == 10 {
+            typeValue = "노바"
+        } else if row == 11 {
+            typeValue = "리부트"
+        } else if row == 12 {
+            typeValue = "리부트2"
+        }
     }
     
 }
@@ -119,42 +178,63 @@ private extension WeeklyBossCalculatorViewController {
         addButton.addTarget(self, action: #selector(TappedAddButton), for: .touchUpInside)
     }
     
+    func setupPickerView() {
+        typeValue = pickerList[pickerList.count/2]
+        
+        worldPickerView.delegate = self
+        worldPickerView.dataSource = self
+        worldPickerView.selectRow(pickerList.count/2, inComponent: 0, animated: true)
+    }
+    
     func updateSnapShot() {
-        myCharacter = CoreDatamanager.shared.read()
+        characterInfo = coreDataManager.read()
         
-        var snapshot = NSDiffableDataSourceSnapshot<Section, MyCharacter>()
+        var snapshot = NSDiffableDataSourceSnapshot<Section, CharacterInfo>()
         snapshot.appendSections([.main])
+        snapshot.appendItems(characterInfo)
         
-        snapshot.appendItems(myCharacter, toSection: .main)
-        diffableDataSource.apply(snapshot, animatingDifferences: true)
+        diffableDataSource.apply(snapshot, animatingDifferences: false)
     }
     
     @objc func TappedAddButton() {
         let alert = UIAlertController(
             title: "캐릭터 등록",
-            message: "닉네임과 월드를 기입해주세요.",
+            message: "\n\n\n\n\n\n\n\n\n",
             preferredStyle: .alert
         )
-        
+        alert.view.addSubview(worldPickerView)
+
         alert.addTextField { textField in
             textField.placeholder = "닉네임"
-        }
-        alert.addTextField { textField in
-            textField.placeholder = "월드"
         }
         
         let ok = UIAlertAction(
             title: "OK",
             style: .default
         ) { (ok) in
-            CoreDatamanager.shared.create(
-                person: MyCharacter(
-                    name: alert.textFields?[0].text ?? "",
-                    world: alert.textFields?[1].text ?? "",
-                    totalRevenue: "0"
+            
+            if alert.textFields?[0].text == "" {
+                let alert = UIAlertController(
+                    title: "캐릭터 닉네임은 필수 입력 입니다.",
+                    message: "최소 한글자 이상 입력해주세요.",
+                    preferredStyle: .alert
                 )
-            )
-            self.updateSnapShot()
+                let ok = UIAlertAction(
+                    title: "ok",
+                    style: .cancel
+                ) { (cancel) in
+                    
+                }
+                alert.addAction(ok)
+
+                self.present(alert, animated: true, completion: nil)
+            } else {
+                self.coreDataManager.create(
+                    name: alert.textFields?[0].text ?? "",
+                    world: self.typeValue
+                )
+                self.updateSnapShot()
+            }
         }
         
         let cancel = UIAlertAction(
@@ -163,7 +243,6 @@ private extension WeeklyBossCalculatorViewController {
         ) { (cancel) in
             
         }
-        
         alert.addAction(ok)
         alert.addAction(cancel)
         
