@@ -18,10 +18,9 @@ final class WeeklyBossCalculatorViewController: ContentViewController {
     private let pickerList = [
         "스카니아", "베라", "루나", "제니스", "크로아", "유니온", "엘리시움", "이노시스", "레드", "오로라", "아케인", "노바", "리부트", "리부트2"
     ]
-    private var typeValue = ""
     
-    private var characterInfo: [CharacterInfo] = []
     private var typeValue = ""
+    private var characterInfo = [CharacterInfo]()
 
     private let worldPickerView = UIPickerView(
         frame: CGRect(x: 5, y: 50, width: 260, height: 160)
@@ -38,9 +37,23 @@ final class WeeklyBossCalculatorViewController: ContentViewController {
     
     private lazy var diffableDataSource: UICollectionViewDiffableDataSource<Section, CharacterInfo> = .init(collectionView: self.collectionView) { (collectionView, indexPath, object) -> UICollectionViewListCell? in
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CharacterViewCell.id, for: indexPath) as! CharacterViewCell
+        let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: CharacterViewCell.id,
+            for: indexPath
+        ) as! CharacterViewCell
         
-        cell.configure(with: self.characterInfo[indexPath.row])
+        var myCount = 0
+        CoreDatamanager.shared.readBossList(characterInfo: self.characterInfo[indexPath.row]).forEach({ element in
+            if element.checkClear {
+                myCount += 1
+            }
+        })
+        
+        cell.configure(
+            name: self.characterInfo[indexPath.row].name ?? "",
+            world: self.characterInfo[indexPath.row].world ?? "",
+            totalCount: ("\(myCount) / \(self.characterInfo[indexPath.row].bossInfos?.count ?? 0)")
+        )
         
         return cell
     }
@@ -53,12 +66,10 @@ final class WeeklyBossCalculatorViewController: ContentViewController {
         setupLayout()
         setupButton()
         setupPickerView()
-        
-        updateSnapShot()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        collectionView.reloadData()
+        updateSnapShot()
     }
     
 }
@@ -66,9 +77,8 @@ final class WeeklyBossCalculatorViewController: ContentViewController {
 extension WeeklyBossCalculatorViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let weeklyBossListViewController = WeeklyBossListViewController()
+        let weeklyBossListViewController = WeeklyBossListViewController(characterInfo: characterInfo[indexPath.row])
         
-        weeklyBossListViewController.configure(with: characterInfo[indexPath.row])
         navigationController?.pushViewController(weeklyBossListViewController, animated: true)
     }
     
@@ -193,7 +203,7 @@ private extension WeeklyBossCalculatorViewController {
     }
     
     func updateSnapShot() {
-        characterInfo = coreDataManager.read()
+        characterInfo = CoreDatamanager.shared.readCharter()
         
         var snapshot = NSDiffableDataSourceSnapshot<Section, CharacterInfo>()
         snapshot.appendSections([.main])
@@ -235,10 +245,10 @@ private extension WeeklyBossCalculatorViewController {
 
                 self.present(alert, animated: true, completion: nil)
             } else {
-                self.coreDataManager.create(
-                    name: alert.textFields?[0].text ?? "",
-                    world: self.typeValue
-                )
+                CoreDatamanager.shared.createCharacter(
+                                    name: alert.textFields?[0].text ?? "",
+                                    world: self.typeValue
+                                )
                 self.updateSnapShot()
             }
         }
@@ -256,12 +266,16 @@ private extension WeeklyBossCalculatorViewController {
     }
     
     func makeSwipeActions(for indexPath: IndexPath?) -> UISwipeActionsConfiguration? {
-        guard let indexPath = indexPath, let id = diffableDataSource.itemIdentifier(for: indexPath) else {
+        guard let indexPath = indexPath,
+              let id = diffableDataSource.itemIdentifier(for: indexPath) else {
             return nil
         }
         let deleteActionTitle = NSLocalizedString("Delete", comment: "Delete action title")
-        let deleteAction = UIContextualAction(style: .destructive, title: deleteActionTitle) { [weak self] _, _, completion in
-            self?.coreDataManager.deleteContact(id)
+        let deleteAction = UIContextualAction(
+            style: .destructive,
+            title: deleteActionTitle
+        ) { [weak self] _, _, completion in
+            CoreDatamanager.shared.deleteCharacter(id)
             self?.updateSnapShot()
             
             completion(false)

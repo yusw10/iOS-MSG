@@ -46,10 +46,10 @@ final class CharacterViewCell: UICollectionViewListCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(with charcter: CharacterInfo) {
-        nameLabel.text = charcter.name
-        worldLabel.text = charcter.world
-        totalPriceLabel.text = charcter.totalRevenue
+    func configure(name: String, world: String, totalCount: String) {
+        nameLabel.text = name
+        worldLabel.text = world
+        totalPriceLabel.text = totalCount
     }
     
 }
