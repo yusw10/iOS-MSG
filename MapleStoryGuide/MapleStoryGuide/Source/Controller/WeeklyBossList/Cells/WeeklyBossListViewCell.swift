@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Then
 
-final class WeeklyBossListViewCell: UICollectionViewCell {
+final class WeeklyBossListViewCell: UICollectionViewListCell {
     
     static let id = "WeeklyBossListViewCell"
     
@@ -44,7 +44,6 @@ final class WeeklyBossListViewCell: UICollectionViewCell {
     }
     
     lazy var clearCheckSwitch = UISwitch().then {
-        $0.isOn = true
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
@@ -57,6 +56,12 @@ final class WeeklyBossListViewCell: UICollectionViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func configure(bossLevel: String, bossCrystalStone: String, bossClear: Bool) {
+        self.bossLevel.text = bossLevel
+        self.bossCrystalStone.text = bossCrystalStone
+        self.clearCheckSwitch.isOn = bossClear
     }
     
 }

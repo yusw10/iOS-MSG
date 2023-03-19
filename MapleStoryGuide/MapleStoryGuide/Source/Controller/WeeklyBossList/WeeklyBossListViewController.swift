@@ -11,71 +11,98 @@ import Then
 
 final class WeeklyBossListViewController: UIViewController {
     
-    var charcter = CharacterInfo()
+    enum Section: CaseIterable {
+        case main
+    }
     
-    private var collectionView: UICollectionView!
+    private var bossList = [BossInfo]()
+    private var characterInfo: CharacterInfo?
+    
+    private lazy var collectionView = UICollectionView(
+        frame: .zero,
+        collectionViewLayout: self.setupCollectionViewLayout()
+    ).then {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.backgroundColor = .secondarySystemBackground
+        $0.register(
+            WeeklyBossListViewCell.self,
+            forCellWithReuseIdentifier: WeeklyBossListViewCell.id
+        )
+    }
 
     private lazy var totalPriceLabel = UILabel().then {
         $0.textAlignment = .center
-        $0.text = "총 가격:"
         $0.backgroundColor = .white
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        setupCollectionView()
-        setupView()
-        setupLayout()
-    }
     
-    func configure(with charcter: CharacterInfo) {
-        navigationItem.title = charcter.name
-        totalPriceLabel.text = charcter.totalRevenue
-        
-        self.charcter = charcter
-    }
-    
-}
-
-extension WeeklyBossListViewController: UICollectionViewDataSource {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    private lazy var diffableDataSource: UICollectionViewDiffableDataSource<Section, BossInfo> = .init(collectionView: self.collectionView) { (collectionView, indexPath, object) -> UICollectionViewListCell? in
         
         let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: WeeklyBossListViewCell.id,
             for: indexPath
         ) as! WeeklyBossListViewCell
         
+        cell.clipsToBounds = true
+        cell.layer.cornerRadius = 15
+        
         cell.clearCheckSwitch.addTarget(
             self,
-            action: #selector(onClickSwitch(sender:)),
+            action: #selector(self.onClickSwitch(sender:)),
             for: UIControl.Event.valueChanged
         )
+        cell.clearCheckSwitch.tag = indexPath.row
 
+        cell.configure(
+            bossLevel: self.bossList[indexPath.row].name ?? "",
+            bossCrystalStone: self.bossList[indexPath.row].crystalStonePrice ?? "",
+            bossClear: self.bossList[indexPath.row].checkClear
+        )
         return cell
     }
     
+    init(characterInfo: CharacterInfo) {
+        self.characterInfo = characterInfo
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    
+        setupView()
+        setupLayout()
+        setupNavigation()
+        
+        updateSnapShot()
+        updateLabel()
+    }
+
+    func updateLabel() {
+        var myPrice = 0
+        
+        bossList.forEach({ element in
+            if element.checkClear {
+                myPrice += Int(element.crystalStonePrice ?? "0") ?? 0
+            }
+        })
+        totalPriceLabel.text = myPrice.description
+    }
+
 }
 
 private extension WeeklyBossListViewController {
     
-    func setupCollectionView() {
-        collectionView = UICollectionView(
-            frame: .zero,
-            collectionViewLayout: setupCollectionViewLayout()
-        )
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.dataSource = self
-        collectionView.backgroundColor = .secondarySystemBackground
-        
-        collectionView.register(
-            WeeklyBossListViewCell.self,
-            forCellWithReuseIdentifier: WeeklyBossListViewCell.id
+    func setupNavigation() {
+        navigationItem.title = characterInfo?.name
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            title: "보스 추가",
+            style: .plain,
+            target: self,
+            action: #selector(addTapped)
         )
     }
     
@@ -122,17 +149,37 @@ private extension WeeklyBossListViewController {
         let layout = UICollectionViewCompositionalLayout(
             section: section
         )
-        
         return layout
+    }
+    
+    func updateSnapShot() {
+        bossList = CoreDatamanager.shared.readBossList(characterInfo: characterInfo ?? CharacterInfo())
+        
+        var snapshot = NSDiffableDataSourceSnapshot<Section, BossInfo>()
+        snapshot.appendSections([.main])
+        snapshot.appendItems(bossList)
+        
+        diffableDataSource.apply(snapshot, animatingDifferences: true)
     }
     
     @objc func onClickSwitch(sender: UISwitch) {
         if sender.isOn {
-            CoreDatamanager.shared.update(charcter, inform: "3")
+            CoreDatamanager.shared.updateBossClear(bossList[sender.tag], clear: true)
         } else {
-            CoreDatamanager.shared.update(charcter, inform: "2")
+            CoreDatamanager.shared.updateBossClear(bossList[sender.tag], clear: false)
         }
+        updateLabel()
     }
-   
+    
+    @objc func addTapped() {
+        CoreDatamanager.shared.createBoss(
+            name: "테스트 입니다.",
+            price: "10000",
+            character: characterInfo ?? CharacterInfo()
+        )
+        updateSnapShot()
+    }
     
 }
+
+
