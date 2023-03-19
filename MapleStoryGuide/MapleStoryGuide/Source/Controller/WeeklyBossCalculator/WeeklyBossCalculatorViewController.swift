@@ -15,13 +15,13 @@ final class WeeklyBossCalculatorViewController: ContentViewController {
         case main
     }
     
-    private let coreDataManager = CoreDatamanager.shared
     private let pickerList = [
         "스카니아", "베라", "루나", "제니스", "크로아", "유니온", "엘리시움", "이노시스", "레드", "오로라", "아케인", "노바", "리부트", "리부트2"
     ]
     private var typeValue = ""
     
     private var characterInfo: [CharacterInfo] = []
+    private var typeValue = ""
 
     private let worldPickerView = UIPickerView(
         frame: CGRect(x: 5, y: 50, width: 260, height: 160)
@@ -98,22 +98,24 @@ extension WeeklyBossCalculatorViewController: UIPickerViewDelegate, UIPickerView
         } else if row == 3 {
             typeValue = "제니스"
         } else if row == 4 {
-            typeValue = "유니온"
+            typeValue = "크로아"
         } else if row == 5 {
-            typeValue = "엘리시움"
+            typeValue = "유니온"
         } else if row == 6 {
-            typeValue = "이노시스"
+            typeValue = "엘리시움"
         } else if row == 7 {
-            typeValue = "레드"
+            typeValue = "이노시스"
         } else if row == 8 {
-            typeValue = "오로라"
+            typeValue = "레드"
         } else if row == 9 {
-            typeValue = "아케인"
+            typeValue = "오로라"
         } else if row == 10 {
-            typeValue = "노바"
+            typeValue = "아케인"
         } else if row == 11 {
-            typeValue = "리부트"
+            typeValue = "노바"
         } else if row == 12 {
+            typeValue = "리부트"
+        } else if row == 13 {
             typeValue = "리부트2"
         }
     }
@@ -183,7 +185,11 @@ private extension WeeklyBossCalculatorViewController {
         
         worldPickerView.delegate = self
         worldPickerView.dataSource = self
-        worldPickerView.selectRow(pickerList.count/2, inComponent: 0, animated: true)
+        worldPickerView.selectRow(
+            pickerList.count/2,
+            inComponent: 0,
+            animated: true
+        )
     }
     
     func updateSnapShot() {
