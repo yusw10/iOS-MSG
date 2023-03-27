@@ -62,6 +62,7 @@ class BossInfoViewModel {
 }
 
 extension BossInfoViewModel {
+    @MainActor
     func trigger(query: Query) async {
         do {
             let data = try await self.useCase.excute(query: query)
@@ -70,12 +71,25 @@ extension BossInfoViewModel {
             // 에러 처리
         }
     }
+    /*
+     This application is modifying the autolayout engine from a background thread after the engine was accessed from the main thread. This can lead to engine corruption and weird crashes.
+     
+     trigger method에 MainActor를 적용하면 해당 에러가 출력되지 않는다.
+     */
     
-    func selectJob(_ index: Int) {
+    func selectBoss(_ index: Int) {
         bossInfo.value = self.bossListInfo.value[index]
     }
     
-    func countMainSectionModeLevel(_ index: Int) -> Int {
-        return self.bossListInfo.value[index].basicInfo.level.count
+    func filterItem() -> [RewardItem] {
+        var filteredItem = [RewardItem]()
+        
+        if let info = self.bossInfo.value {
+            filteredItem = info.rewardItem.filter { item in
+                return item.description != nil
+            }
+        }
+        
+        return filteredItem
     }
 }

@@ -5,53 +5,45 @@
 //  Created by dhoney96 on 2023/03/13.
 //
 
-struct BossInfo {
+struct BossInfo: Hashable {
     let name: String
-    let basicInfo: MainSection
+    let imageURL: String
+    let level: [ModeLevel]
     let force: Force?
     let rewardPrice: [RewardPrice]
     let rewardItem: [RewardItem]
     
-    init(name: String, basicInfo: MainSection, force: Force? = nil, rewardPrice: [RewardPrice], rewardItem: [RewardItem]) {
+    init(name: String, imageURL: String, level: [ModeLevel], force: Force? = nil, rewardPrice: [RewardPrice], rewardItem: [RewardItem]) {
         self.name = name
-        self.basicInfo = basicInfo
+        self.imageURL = imageURL
+        self.level = level
         self.force = force
         self.rewardPrice = rewardPrice
         self.rewardItem = rewardItem
     }
 }
 
-struct MainSection {
-    let imageURL: String
-    let level: [ModeLevel]
-    
-    init(imageURL: String, level: [ModeLevel]) {
-        self.imageURL = imageURL
-        self.level = level
-    }
-}
-
-struct ModeLevel {
+struct ModeLevel: Hashable {
     let mode: String
     let level: Int
 }
 
-struct Force {
+struct Force: Hashable {
     let type: String
     let modeForce: [ModeForce]
 }
 
-struct ModeForce {
+struct ModeForce: Hashable {
     let mode: String
     let force: Int
 }
 
-struct RewardPrice {
+struct RewardPrice: Hashable {
     let mode: String
     let price: Int
 }
 
-struct RewardItem {
+struct RewardItem: Hashable {
     let name: String
     let imageURL: String
     let description: String?
@@ -79,9 +71,10 @@ struct BossInfoDTO: Decodable {
         if let force = self.force {
             return BossInfo(
                 name: self.name,
-                basicInfo: MainSection(imageURL: self.imageURL, level: self.modeLevel.map { DTO in
+                imageURL: self.imageURL,
+                level: self.modeLevel.map{ DTO in
                     ModeLevel(mode: DTO.mode, level: DTO.level)
-                }),
+                },
                 force: Force(type: force.type, modeForce: force.modeForce.map { DTO in
                     return ModeForce(mode: DTO.mode, force: DTO.force)
                 }),
@@ -95,9 +88,10 @@ struct BossInfoDTO: Decodable {
         } else {
             return BossInfo(
                 name: self.name,
-                basicInfo: MainSection(imageURL: self.imageURL, level: self.modeLevel.map { DTO in
+                imageURL: self.imageURL,
+                level: self.modeLevel.map{ DTO in
                     ModeLevel(mode: DTO.mode, level: DTO.level)
-                }),
+                },
                 rewardPrice: self.rewardPrice.map { DTO in
                     return RewardPrice(mode: DTO.mode, price: DTO.price)
                 },
