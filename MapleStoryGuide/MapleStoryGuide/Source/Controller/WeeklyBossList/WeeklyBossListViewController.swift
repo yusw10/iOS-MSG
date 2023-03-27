@@ -16,7 +16,7 @@ final class WeeklyBossListViewController: UIViewController {
     }
     
     private var characterInfo: CharacterInfo?
-    private var bossList = [BossInfo]()
+    private var bossList = [BossInformation]()
 
     private var collectionView = UICollectionView(
         frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()
@@ -31,7 +31,7 @@ final class WeeklyBossListViewController: UIViewController {
         $0.backgroundColor = .white
     }
     
-    private lazy var diffableDataSource: UICollectionViewDiffableDataSource<Section, BossInfo> = .init(collectionView: self.collectionView) { (collectionView, indexPath, object) -> UICollectionViewListCell? in
+    private lazy var diffableDataSource: UICollectionViewDiffableDataSource<Section, BossInformation> = .init(collectionView: self.collectionView) { (collectionView, indexPath, object) -> UICollectionViewListCell? in
         
         let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: WeeklyBossListViewCell.id,
@@ -167,7 +167,7 @@ private extension WeeklyBossListViewController {
     func applySnapShot() {
         bossList = CoreDatamanager.shared.readBossList(characterInfo: characterInfo ?? CharacterInfo())
         
-        var snapshot = NSDiffableDataSourceSnapshot<Section, BossInfo>()
+        var snapshot = NSDiffableDataSourceSnapshot<Section, BossInformation>()
         snapshot.appendSections([.main])
         snapshot.appendItems(bossList)
         

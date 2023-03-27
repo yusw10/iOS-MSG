@@ -55,7 +55,7 @@ final class WeeklyBossCalculatorViewController: ContentViewController {
         cell.configure(
             name: self.characterInfo[indexPath.row].name ?? "",
             world: self.characterInfo[indexPath.row].world ?? "",
-            totalCount: ("\(bossClearCount) / \(self.characterInfo[indexPath.row].bossInfos?.count ?? 0)")
+            totalCount: ("\(bossClearCount) / \(self.characterInfo[indexPath.row].bossInformations?.count ?? 0)")
         )
         return cell
     }

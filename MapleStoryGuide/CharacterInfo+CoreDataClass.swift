@@ -2,7 +2,7 @@
 //  CharacterInfo+CoreDataClass.swift
 //  MapleStoryGuide
 //
-//  Created by brad on 2023/03/22.
+//  Created by brad on 2023/03/27.
 //
 //
 

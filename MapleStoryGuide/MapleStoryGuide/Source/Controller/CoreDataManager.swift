@@ -45,8 +45,8 @@ class CoreDatamanager {
         }
     }
     
-    func readBossList(characterInfo: CharacterInfo) -> [BossInfo] {
-        let readRequest: NSFetchRequest<BossInfo> = BossInfo.fetchRequest()
+    func readBossList(characterInfo: CharacterInfo) -> [BossInformation] {
+        let readRequest: NSFetchRequest<BossInformation> = BossInformation.fetchRequest()
          readRequest.predicate = NSPredicate(format: "charcterInfo = %@", characterInfo)
         do {
             let bossList = try context.fetch(readRequest)
@@ -72,14 +72,14 @@ class CoreDatamanager {
     }
     
     func createBoss(name: String, thumnailImageURL: String, difficulty: String, price: String, character: CharacterInfo) {
-        let bossInfo = BossInfo(context: context)
+        let bossInfo = BossInformation(context: context)
         bossInfo.name = name
         bossInfo.thumnailImageURL = thumnailImageURL
         bossInfo.difficulty = difficulty
         bossInfo.crystalStonePrice = price
         bossInfo.checkClear = false
         
-        character.addToBossInfos(bossInfo)
+        character.addToBossInformations(bossInfo)
         
         do {
             try context.save()
@@ -88,7 +88,7 @@ class CoreDatamanager {
         }
     }
     
-    func updateBossClear(_ contact: BossInfo, clear: Bool) {
+    func updateBossClear(_ contact: BossInformation, clear: Bool) {
         contact.checkClear = clear
         saveContext()
     }
@@ -98,7 +98,7 @@ class CoreDatamanager {
         saveContext()
     }
     
-    func deleteBoss(_ boss: BossInfo) {
+    func deleteBoss(_ boss: BossInformation) {
         context.delete(boss)
         saveContext()
     }

@@ -2,7 +2,7 @@
 //  CharacterInfo+CoreDataProperties.swift
 //  MapleStoryGuide
 //
-//  Created by brad on 2023/03/22.
+//  Created by brad on 2023/03/27.
 //
 //
 
@@ -20,24 +20,24 @@ extension CharacterInfo {
     @NSManaged public var totalRevenue: String?
     @NSManaged public var uuid: String?
     @NSManaged public var world: String?
-    @NSManaged public var bossInfos: NSSet?
+    @NSManaged public var bossInformations: NSSet?
 
 }
 
-// MARK: Generated accessors for bossInfos
+// MARK: Generated accessors for bossInformations
 extension CharacterInfo {
 
-    @objc(addBossInfosObject:)
-    @NSManaged public func addToBossInfos(_ value: BossInfo)
+    @objc(addBossInformationsObject:)
+    @NSManaged public func addToBossInformations(_ value: BossInformation)
 
-    @objc(removeBossInfosObject:)
-    @NSManaged public func removeFromBossInfos(_ value: BossInfo)
+    @objc(removeBossInformationsObject:)
+    @NSManaged public func removeFromBossInformations(_ value: BossInformation)
 
-    @objc(addBossInfos:)
-    @NSManaged public func addToBossInfos(_ values: NSSet)
+    @objc(addBossInformations:)
+    @NSManaged public func addToBossInformations(_ values: NSSet)
 
-    @objc(removeBossInfos:)
-    @NSManaged public func removeFromBossInfos(_ values: NSSet)
+    @objc(removeBossInformations:)
+    @NSManaged public func removeFromBossInformations(_ values: NSSet)
 
 }
 
