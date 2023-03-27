@@ -71,9 +71,11 @@ class CoreDatamanager {
         }
     }
     
-    func createBoss(name: String, price: String, character: CharacterInfo) {
+    func createBoss(name: String, thumnailImageURL: String, difficulty: String, price: String, character: CharacterInfo) {
         let bossInfo = BossInfo(context: context)
         bossInfo.name = name
+        bossInfo.thumnailImageURL = thumnailImageURL
+        bossInfo.difficulty = difficulty
         bossInfo.crystalStonePrice = price
         bossInfo.checkClear = false
         
@@ -93,6 +95,11 @@ class CoreDatamanager {
     
     func deleteCharacter(_ character: CharacterInfo) {
         context.delete(character)
+        saveContext()
+    }
+    
+    func deleteBoss(_ boss: BossInfo) {
+        context.delete(boss)
         saveContext()
     }
     
