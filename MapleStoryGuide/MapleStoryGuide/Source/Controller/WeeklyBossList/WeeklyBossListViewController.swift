@@ -15,22 +15,18 @@ final class WeeklyBossListViewController: UIViewController {
         case main
     }
     
-    private var bossList = [BossInfo]()
     private var characterInfo: CharacterInfo?
-    
-    private lazy var collectionView = UICollectionView(
-        frame: .zero,
-        collectionViewLayout: self.setupCollectionViewLayout()
-    ).then {
-        $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.backgroundColor = .secondarySystemBackground
-        $0.register(
-            WeeklyBossListViewCell.self,
-            forCellWithReuseIdentifier: WeeklyBossListViewCell.id
-        )
-    }
+    private var bossList = [BossInfo]()
+
+    private var collectionView = UICollectionView(
+        frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()
+    )
 
     private lazy var totalPriceLabel = UILabel().then {
+        $0.font = .preferredFont(
+            forTextStyle: .title2,
+            compatibleWith: UITraitCollection(legibilityWeight: .bold)
+        )
         $0.textAlignment = .center
         $0.backgroundColor = .white
     }
@@ -52,18 +48,30 @@ final class WeeklyBossListViewController: UIViewController {
         )
         cell.clearCheckSwitch.tag = indexPath.row
 
-        cell.configure(
-            bossLevel: self.bossList[indexPath.row].name ?? "",
-            bossCrystalStone: self.bossList[indexPath.row].crystalStonePrice ?? "",
-            bossClear: self.bossList[indexPath.row].checkClear
-        )
+        if (self.characterInfo?.world?.contains("리부트") ?? true) {
+            cell.configure(
+                bossName: self.bossList[indexPath.row].name ?? "",
+                bossDifficulty: self.bossList[indexPath.row].difficulty ?? "",
+                thumnailImageURL: self.bossList[indexPath.row].thumnailImageURL ?? "",
+                bossCrystalStone: self.bossList[indexPath.row].crystalStonePrice?.rebootPrice ?? "",
+                bossClear: self.bossList[indexPath.row].checkClear
+            )
+        } else {
+            cell.configure(
+                bossName: self.bossList[indexPath.row].name ?? "",
+                bossDifficulty: self.bossList[indexPath.row].difficulty ?? "",
+                thumnailImageURL: self.bossList[indexPath.row].thumnailImageURL ?? "",
+                bossCrystalStone: self.bossList[indexPath.row].crystalStonePrice ?? "",
+                bossClear: self.bossList[indexPath.row].checkClear
+            )
+        }
         return cell
     }
     
     init(characterInfo: CharacterInfo) {
-        self.characterInfo = characterInfo
-        
         super.init(nibName: nil, bundle: nil)
+
+        self.characterInfo = characterInfo
     }
     
     required init?(coder: NSCoder) {
@@ -73,28 +81,40 @@ final class WeeklyBossListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        setupCollectionView()
         setupView()
         setupLayout()
         setupNavigation()
-        
-        updateSnapShot()
-        updateLabel()
     }
-
-    func updateLabel() {
-        var myPrice = 0
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        bossList.forEach({ element in
-            if element.checkClear {
-                myPrice += Int(element.crystalStonePrice ?? "0") ?? 0
-            }
-        })
-        totalPriceLabel.text = myPrice.description
+        applySnapShot()
+        applyCrystalStonePrice()
     }
 
 }
 
 private extension WeeklyBossListViewController {
+    
+    func setupCollectionView() {
+        var layoutConfig = UICollectionLayoutListConfiguration(
+            appearance: .plain
+        )
+        layoutConfig.trailingSwipeActionsConfigurationProvider = setupSwipeActions
+
+        let listLayout = UICollectionViewCompositionalLayout.list(
+            using: layoutConfig
+        )
+        collectionView.collectionViewLayout = listLayout
+        
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.register(
+            WeeklyBossListViewCell.self,
+            forCellWithReuseIdentifier: WeeklyBossListViewCell.id
+        )
+    }
     
     func setupNavigation() {
         navigationItem.title = characterInfo?.name
@@ -102,7 +122,7 @@ private extension WeeklyBossListViewController {
             title: "보스 추가",
             style: .plain,
             target: self,
-            action: #selector(addTapped)
+            action: #selector(didTapAddBossButton)
         )
     }
     
@@ -126,33 +146,25 @@ private extension WeeklyBossListViewController {
         }
     }
     
-    func setupCollectionViewLayout() -> UICollectionViewCompositionalLayout {
-        let item = NSCollectionLayoutItem(
-            layoutSize: .init(
-                widthDimension: .fractionalWidth(1),
-                heightDimension: .fractionalWidth(0.25))
-        )
-        item.contentInsets.trailing = 16
-
-        let group = NSCollectionLayoutGroup.horizontal(
-            layoutSize: .init(
-                widthDimension: .fractionalWidth(1),
-                heightDimension: .absolute(120)
-            ),
-            subitems: [item]
-        )
-        let section = NSCollectionLayoutSection(
-            group: group
-        )
-        section.contentInsets.leading = 16
-        
-        let layout = UICollectionViewCompositionalLayout(
-            section: section
-        )
-        return layout
+    func setupSwipeActions(for indexPath: IndexPath?) -> UISwipeActionsConfiguration? {
+        guard let indexPath = indexPath,
+              let id = diffableDataSource.itemIdentifier(for: indexPath) else {
+            return nil
+        }
+        let deleteActionTitle = NSLocalizedString("Delete", comment: "Delete action title")
+        let deleteAction = UIContextualAction(
+            style: .destructive,
+            title: deleteActionTitle
+        ) { [weak self] _, _, completion in
+            CoreDatamanager.shared.deleteBoss(id)
+            self?.applySnapShot()
+            
+            completion(false)
+        }
+        return UISwipeActionsConfiguration(actions: [deleteAction])
     }
     
-    func updateSnapShot() {
+    func applySnapShot() {
         bossList = CoreDatamanager.shared.readBossList(characterInfo: characterInfo ?? CharacterInfo())
         
         var snapshot = NSDiffableDataSourceSnapshot<Section, BossInfo>()
@@ -162,24 +174,40 @@ private extension WeeklyBossListViewController {
         diffableDataSource.apply(snapshot, animatingDifferences: true)
     }
     
-    @objc func onClickSwitch(sender: UISwitch) {
+    func applyCrystalStonePrice() {
+        var crystalStonePrice = 0
+        
+        bossList.forEach({ element in
+            if element.checkClear {
+                crystalStonePrice += Int(element.crystalStonePrice ?? "0") ?? 0
+            }
+        })
+        if characterInfo!.world!.contains("리부트") {
+            totalPriceLabel.text = crystalStonePrice.description.rebootPrice.insertComma
+        } else {
+            totalPriceLabel.text = crystalStonePrice.description.insertComma
+        }
+    }
+    
+}
+
+@objc private extension WeeklyBossListViewController {
+    
+    func onClickSwitch(sender: UISwitch) {
         if sender.isOn {
             CoreDatamanager.shared.updateBossClear(bossList[sender.tag], clear: true)
         } else {
             CoreDatamanager.shared.updateBossClear(bossList[sender.tag], clear: false)
         }
-        updateLabel()
+        applyCrystalStonePrice()
     }
     
-    @objc func addTapped() {
-        CoreDatamanager.shared.createBoss(
-            name: "테스트 입니다.",
-            price: "10000",
-            character: characterInfo ?? CharacterInfo()
+    func didTapAddBossButton() {
+        let weeklyBossAddViewController = WeeklyBossAddViewController(
+            characterInfo: self.characterInfo ?? CharacterInfo()
         )
-        updateSnapShot()
+        
+        navigationController?.pushViewController(weeklyBossAddViewController, animated: true)
     }
     
 }
-
-

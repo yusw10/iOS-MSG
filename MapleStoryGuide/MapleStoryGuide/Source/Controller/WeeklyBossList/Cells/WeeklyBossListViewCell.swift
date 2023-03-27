@@ -20,20 +20,39 @@ final class WeeklyBossListViewCell: UICollectionViewListCell {
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    private lazy var thumbnailImageView = UIImageView().then {
-        $0.layer.cornerRadius = 15
-        $0.clipsToBounds = true
-        $0.backgroundColor = .red
+    private lazy var subHorizontalStackView = UIStackView().then {
+        $0.axis = .horizontal
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    private lazy var bossLevel = UILabel().then {
-        $0.text = "난이도: Normal"
+    private lazy var thumbnailImageView = UIImageView().then {
+        $0.contentMode = .scaleAspectFill
+        $0.layer.cornerRadius = 15
+        $0.clipsToBounds = true
+        $0.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    private lazy var bossName = UILabel().then {
+        $0.font = .preferredFont(
+            forTextStyle: .title3,
+            compatibleWith: UITraitCollection(legibilityWeight: .bold)
+        )
+        $0.numberOfLines = 0
+        $0.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    private lazy var bossDifficulty = UILabel().then {
+        $0.textAlignment = .left
+        $0.font = .preferredFont(
+            forTextStyle: .title3,
+            compatibleWith: UITraitCollection(legibilityWeight: .bold)
+        )
+        $0.numberOfLines = 0
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
     private lazy var bossCrystalStone = UILabel().then {
-        $0.text = "결정석: 100"
+        $0.textAlignment = .left
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
@@ -58,10 +77,31 @@ final class WeeklyBossListViewCell: UICollectionViewListCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(bossLevel: String, bossCrystalStone: String, bossClear: Bool) {
-        self.bossLevel.text = bossLevel
-        self.bossCrystalStone.text = bossCrystalStone
+    func configure(bossName: String, bossDifficulty: String, thumnailImageURL: String, bossCrystalStone: String, bossClear: Bool) {
+        self.bossName.text = "\(bossName) (\(bossDifficulty). 2인)"
+        self.bossDifficulty.text = nil
+        self.bossDifficulty.isHidden = true
+        self.bossCrystalStone.text = bossCrystalStone.insertComma
         self.clearCheckSwitch.isOn = bossClear
+        
+        let request = URLRequest(url: URL(string: thumnailImageURL)!)
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+            guard let data = data, let image = UIImage(data: data) else {
+                DispatchQueue.main.async {
+                    self.thumbnailImageView.image = UIImage(systemName: "xmark.circle")
+                    self.thumbnailImageView.contentMode = .scaleAspectFit
+                }
+                return
+            }
+            DispatchQueue.main.async {
+                self.thumbnailImageView.image = image
+            }
+        }
+        task.resume()
     }
     
 }
@@ -76,7 +116,11 @@ private extension WeeklyBossListViewCell {
             horizontalStackView.addArrangedSubview(view)
         }
         
-        [bossLevel, bossCrystalStone].forEach { view in
+        [bossName, bossDifficulty].forEach { view in
+            subHorizontalStackView.addArrangedSubview(view)
+        }
+        
+        [subHorizontalStackView, bossCrystalStone].forEach { view in
             verticalStackView.addArrangedSubview(view)
         }
     }
@@ -90,7 +134,7 @@ private extension WeeklyBossListViewCell {
         }
         
         thumbnailImageView.snp.makeConstraints { make in
-            make.width.equalTo(self.contentView.snp.width).multipliedBy(0.3)
+            make.width.equalTo(self.contentView.snp.width).multipliedBy(0.25)
             make.height.equalTo(self.contentView.snp.width).multipliedBy(0.2)
         }
         
@@ -98,5 +142,5 @@ private extension WeeklyBossListViewCell {
             make.trailing.equalTo(horizontalStackView.snp.trailing)
         }
     }
-    
+
 }
