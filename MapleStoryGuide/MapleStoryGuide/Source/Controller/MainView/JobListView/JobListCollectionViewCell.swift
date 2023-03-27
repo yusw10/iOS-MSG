@@ -61,14 +61,10 @@ final class JobListCollectionViewCell: UICollectionViewCell {
     func setupCellImage(title: String) {
         guard let url = URL(string: title) else { return }
         let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad)
-        
+
         task = Task {
             await jobImage.fetchJobImage(request)
         }
-    }
-    
-    func setupImage(by image: UIImage?) {
-        self.jobImage.image = image
     }
 }
 
@@ -81,7 +77,7 @@ extension UIImageView {
         
         do {
             let (data, _) = try await URLSession(configuration: .default).data(from: newURL)
-            guard let thumbnail = UIImage(data: data)?.downSampling(for: self.bounds.size) else {
+            guard let thumbnail = UIImage(data: data)?.downSampling(for: self.frame.size) else {
                 return
             }
             self.image = thumbnail
@@ -90,15 +86,20 @@ extension UIImageView {
         }
     }
     
+    // MARK: 교착 상태 발생
+    // 중간에 있는 await이 있는 지점에서 해당 쓰레드에 대한 제어권을 시스템에 넘기기 때문에 해당 쓰레드에서 다른 작업을 수행할 수 있다.
+    // 함수를 Task에서 실행시키는 동안 쓰레드 내부에서 다른 context도 동시에 실행 -> 현재 쓰레드 충돌의 원인?
     func fetchJobImage(_ urlRequest: URLRequest) async {
         if let response = URLCache.shared.cachedResponse(for: urlRequest) {
-            self.image = UIImage(data: response.data)?.downSampling(for: self.bounds.size)
-            return // 메모리 부분에서 차이가 큼 (주의)
+            self.image = UIImage(data: response.data)?.downSampling(for: self.frame.size)
+            return
         }
         
         do {
-            let (data, _) = try await URLSession(configuration: .ephemeral).data(for: urlRequest)
-            self.image = UIImage(data: data)?.downSampling(for: self.bounds.size)
+            let (data, response) = try await URLSession(configuration: .ephemeral).data(for: urlRequest)
+            self.image = UIImage(data: data)?.downSampling(for: self.frame.size)
+            let cacheResponse = CachedURLResponse(response: response, data: data)
+            URLCache.shared.storeCachedResponse(cacheResponse, for: urlRequest)
         } catch {
             return
         }
@@ -112,40 +113,29 @@ extension UIImage {
             self?.draw(in: CGRect(origin: .zero, size: size))
         }
     }
+}
+
+
+actor ImageLoader {
+    static let shared = ImageLoader()
     
-    static func fetchImage(from url: String, size: CGSize) async -> UIImage? {
-        guard let url = URL(string: url) else {
-            return nil
-        }
-        
+    var cache = URLCache.shared
+    
+    func fetchImage(from urlString: String) async -> UIImage? {
+        guard let url = URL(string: urlString) else { return nil }
         let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad)
         
-        do {
-            let (data, _) = try await URLSession(configuration: .ephemeral).data(for: request)
-            return UIImage(data: data)?.downSampling(for: size)
-        } catch {
-            return nil
+        if let response = cache.cachedResponse(for: request) {
+            return UIImage(data: response.data)
+        } else {
+            do {
+                let (data, response) = try await URLSession(configuration: .ephemeral).data(for: request)
+                let cacheResponse = CachedURLResponse(response: response, data: data)
+                cache.storeCachedResponse(cacheResponse, for: request)
+                return UIImage(data: data)
+            } catch {
+                return nil
+            }
         }
     }
 }
-
-//class ImageCacheManager {
-//    static let shared = ImageCacheManager()
-//    private let cache = NSCache<NSString, UIImage>()
-//
-//    var cacheManger: NSCache<NSString, UIImage> {
-//        return cache
-//    }
-//
-//    private init() { }
-//
-//    func getCachedImage(url: String) -> UIImage? {
-//        let key = NSString(string: url)
-//        return cacheManger.object(forKey: key)
-//    }
-//
-//    func saveCache(image: UIImage, url: String) {
-//        let key = NSString(string: url)
-//        cacheManger.setObject(image, forKey: key)
-//    }
-//}

@@ -13,10 +13,16 @@ final class JobListHeaderView: UICollectionReusableView {
     
     //MARK: - JobList HeaderView Properites
     
+    private let containerView = UIView().then { view in
+        view.layer.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.9).cgColor
+        view.layer.cornerRadius = 7
+        view.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
     private let titleLabel = UILabel().then { label in
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .white
         label.font = UIFont.boldSystemFont(ofSize: 20)
-//        label.font = .preferredFont(forTextStyle: .title3)
     }
     
     //MARK: - JobList HeaderView Initializer
@@ -33,12 +39,19 @@ final class JobListHeaderView: UICollectionReusableView {
     //MARK: - JobList HeaderView Setup Method
     
     private func setupHeaderView() {
-        addSubview(titleLabel)
+        addSubview(containerView)
+        self.containerView.addSubview(titleLabel)
+        
+        containerView.snp.makeConstraints { make in
+            make.top.equalTo(self.snp.top).offset(10)
+            make.bottom.equalTo(self.snp.bottom).offset(-10)
+            make.leading.equalTo(self.snp.leading).offset(20)
+            make.trailing.equalTo(self.snp.trailing).offset(-20)
+        }
         
         titleLabel.snp.makeConstraints { make in
-            make.top.bottom.equalToSuperview()
-            make.leading.equalTo(layoutMarginsGuide.snp.leading).offset(20)
-            make.trailing.equalTo(layoutMarginsGuide.snp.trailing).offset(-20)
+            make.centerY.equalToSuperview()
+            make.leading.equalTo(self.containerView.snp.leading).offset(10)
         }
     }
     

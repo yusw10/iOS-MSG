@@ -16,20 +16,22 @@ final class TitleHeaderView: UICollectionReusableView {
     static let id = "TitleHeaderView"
     
     private let horizontalStackView = UIStackView().then {
-        $0.alignment = .leading
         $0.axis = .horizontal
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
     private let titleLabel = UILabel().then {
         $0.font = UIFont.boldSystemFont(ofSize: 20)
+        $0.textAlignment = .left
         $0.numberOfLines = 1
+        $0.setContentHuggingPriority(.defaultLow, for: .horizontal)
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
     let screenTransitionButton = UIButton().then {
         $0.setTitle("상세보기", for: .normal)
         $0.setTitleColor(.systemBlue, for: .normal)
+        $0.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
