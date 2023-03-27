@@ -40,10 +40,12 @@
 		72E728F829939D0E00427640 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E728F729939D0E00427640 /* Observable.swift */; };
 		72ECFFED298BC2100045ADBB /* JobInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72ECFFEC298BC2100045ADBB /* JobInfoViewModel.swift */; };
 		72ECFFF0298BC9060045ADBB /* JSONManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72ECFFEF298BC9060045ADBB /* JSONManager.swift */; };
-		A319B12729C5B5D500E5B1B2 /* CharacterInfo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A319B12329C5B5D500E5B1B2 /* CharacterInfo+CoreDataClass.swift */; };
-		A319B12829C5B5D500E5B1B2 /* CharacterInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A319B12429C5B5D500E5B1B2 /* CharacterInfo+CoreDataProperties.swift */; };
-		A319B12929C5B5D500E5B1B2 /* BossInfo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A319B12529C5B5D500E5B1B2 /* BossInfo+CoreDataClass.swift */; };
-		A319B12A29C5B5D500E5B1B2 /* BossInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A319B12629C5B5D500E5B1B2 /* BossInfo+CoreDataProperties.swift */; };
+		A319B12D29CAF1C600E5B1B2 /* WeelyBossAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A319B12C29CAF1C600E5B1B2 /* WeelyBossAddViewController.swift */; };
+		A319B13229CB12E700E5B1B2 /* CharacterInfo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A319B12E29CB12E700E5B1B2 /* CharacterInfo+CoreDataClass.swift */; };
+		A319B13329CB12E700E5B1B2 /* CharacterInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A319B12F29CB12E700E5B1B2 /* CharacterInfo+CoreDataProperties.swift */; };
+		A319B13429CB12E700E5B1B2 /* BossInfo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A319B13029CB12E700E5B1B2 /* BossInfo+CoreDataClass.swift */; };
+		A319B13529CB12E700E5B1B2 /* BossInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A319B13129CB12E700E5B1B2 /* BossInfo+CoreDataProperties.swift */; };
+		A319B13729CC1DEB00E5B1B2 /* WeeklyBossAddViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A319B13629CC1DEB00E5B1B2 /* WeeklyBossAddViewCell.swift */; };
 		A3278BAE2988E4330004C278 /* JobDetailCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3278BAD2988E4330004C278 /* JobDetailCollectionViewController.swift */; };
 		A3278BB229890A0A0004C278 /* SkillListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3278BB129890A0A0004C278 /* SkillListViewCell.swift */; };
 		A3278BB5298A31CD0004C278 /* MockSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3278BB4298A31CD0004C278 /* MockSection.swift */; };
@@ -93,10 +95,12 @@
 		72E728F729939D0E00427640 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		72ECFFEC298BC2100045ADBB /* JobInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobInfoViewModel.swift; sourceTree = "<group>"; };
 		72ECFFEF298BC9060045ADBB /* JSONManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONManager.swift; sourceTree = "<group>"; };
-		A319B12329C5B5D500E5B1B2 /* CharacterInfo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CharacterInfo+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A319B12429C5B5D500E5B1B2 /* CharacterInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CharacterInfo+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		A319B12529C5B5D500E5B1B2 /* BossInfo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BossInfo+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A319B12629C5B5D500E5B1B2 /* BossInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BossInfo+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A319B12C29CAF1C600E5B1B2 /* WeelyBossAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeelyBossAddViewController.swift; sourceTree = "<group>"; };
+		A319B12E29CB12E700E5B1B2 /* CharacterInfo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CharacterInfo+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A319B12F29CB12E700E5B1B2 /* CharacterInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CharacterInfo+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A319B13029CB12E700E5B1B2 /* BossInfo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BossInfo+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A319B13129CB12E700E5B1B2 /* BossInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BossInfo+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A319B13629CC1DEB00E5B1B2 /* WeeklyBossAddViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyBossAddViewCell.swift; sourceTree = "<group>"; };
 		A3278BAD2988E4330004C278 /* JobDetailCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailCollectionViewController.swift; sourceTree = "<group>"; };
 		A3278BB129890A0A0004C278 /* SkillListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillListViewCell.swift; sourceTree = "<group>"; };
 		A3278BB4298A31CD0004C278 /* MockSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MockSection.swift; path = MapleStoryGuide/Source/Model/MockSection.swift; sourceTree = SOURCE_ROOT; };
@@ -130,10 +134,10 @@
 		45ACA2592988D75C00BD9935 = {
 			isa = PBXGroup;
 			children = (
-				A319B12329C5B5D500E5B1B2 /* CharacterInfo+CoreDataClass.swift */,
-				A319B12429C5B5D500E5B1B2 /* CharacterInfo+CoreDataProperties.swift */,
-				A319B12529C5B5D500E5B1B2 /* BossInfo+CoreDataClass.swift */,
-				A319B12629C5B5D500E5B1B2 /* BossInfo+CoreDataProperties.swift */,
+				A319B12E29CB12E700E5B1B2 /* CharacterInfo+CoreDataClass.swift */,
+				A319B12F29CB12E700E5B1B2 /* CharacterInfo+CoreDataProperties.swift */,
+				A319B13029CB12E700E5B1B2 /* BossInfo+CoreDataClass.swift */,
+				A319B13129CB12E700E5B1B2 /* BossInfo+CoreDataProperties.swift */,
 				45ACA2642988D75C00BD9935 /* MapleStoryGuide */,
 				45ACA2632988D75C00BD9935 /* Products */,
 				45ACA2BA2995D5D700BD9935 /* Recovered References */,
@@ -188,6 +192,7 @@
 				A3900BC629C099B900B7C409 /* CoreDataManager.swift */,
 				A3900B9029BC51D600B7C409 /* WeeklyBossCalculator */,
 				A3900BD829C2F7DF00B7C409 /* WeeklyBossList */,
+				A319B12B29CAF1A600E5B1B2 /* WeeklyBossAdd */,
 				A3278BDE298B92EE0004C278 /* SkillDetail */,
 				A3278BAC2988E4190004C278 /* JobDetail */,
 				45ACA2B329923F1C00BD9935 /* BasicViewController */,
@@ -309,6 +314,15 @@
 			path = JSON;
 			sourceTree = "<group>";
 		};
+		A319B12B29CAF1A600E5B1B2 /* WeeklyBossAdd */ = {
+			isa = PBXGroup;
+			children = (
+				A319B12C29CAF1C600E5B1B2 /* WeelyBossAddViewController.swift */,
+				A37030DB29D1599500F3ADA4 /* Cells */,
+			);
+			path = WeeklyBossAdd;
+			sourceTree = "<group>";
+		};
 		A3278BAC2988E4190004C278 /* JobDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -355,6 +369,14 @@
 				72AD922929A1C0BA00047D35 /* JobGroupDTO.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		A37030DB29D1599500F3ADA4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A319B13629CC1DEB00E5B1B2 /* WeeklyBossAddViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		A3900B9029BC51D600B7C409 /* WeeklyBossCalculator */ = {
@@ -472,11 +494,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A319B12D29CAF1C600E5B1B2 /* WeelyBossAddViewController.swift in Sources */,
 				A3278BAE2988E4330004C278 /* JobDetailCollectionViewController.swift in Sources */,
 				45ACA2662988D75C00BD9935 /* AppDelegate.swift in Sources */,
+				A319B13729CC1DEB00E5B1B2 /* WeeklyBossAddViewCell.swift in Sources */,
 				A3278BB5298A31CD0004C278 /* MockSection.swift in Sources */,
 				A3278BE2298BE1A80004C278 /* ReinforceSkillDetailViewCell.swift in Sources */,
 				A3278BB229890A0A0004C278 /* SkillListViewCell.swift in Sources */,
+				A319B13229CB12E700E5B1B2 /* CharacterInfo+CoreDataClass.swift in Sources */,
 				A3278BE0298B93060004C278 /* SkillDetailTableViewController.swift in Sources */,
 				45ACA2682988D75C00BD9935 /* SceneDelegate.swift in Sources */,
 				A3278BDD298B5B430004C278 /* TitleHeaderView.swift in Sources */,
@@ -492,27 +517,26 @@
 				A3900BDD29C2F82300B7C409 /* WeeklyBossListViewCell.swift in Sources */,
 				72CDF3A6298A53BE00918C1A /* APIRequest.swift in Sources */,
 				A3900BDB29C2F7FA00B7C409 /* WeeklyBossListViewController.swift in Sources */,
-				A319B12929C5B5D500E5B1B2 /* BossInfo+CoreDataClass.swift in Sources */,
 				72ECFFED298BC2100045ADBB /* JobInfoViewModel.swift in Sources */,
 				45ACA2B229921D3700BD9935 /* SideMenuDelegate.swift in Sources */,
 				45ACA2BE2995D62E00BD9935 /* JobInfo.swift in Sources */,
 				45ACA2A82991AEE200BD9935 /* ContainerViewComposer.swift in Sources */,
 				45ACA2BD2995D62E00BD9935 /* JobInfoDTO.swift in Sources */,
-				A319B12A29C5B5D500E5B1B2 /* BossInfo+CoreDataProperties.swift in Sources */,
+				A319B13329CB12E700E5B1B2 /* CharacterInfo+CoreDataProperties.swift in Sources */,
 				45ACA299298F2C6D00BD9935 /* JobListViewController.swift in Sources */,
 				45ACA294298C866F00BD9935 /* MainCollectionViewCell.swift in Sources */,
+				A319B13529CB12E700E5B1B2 /* BossInfo+CoreDataProperties.swift in Sources */,
 				45ACA290298B003A00BD9935 /* SideMenuCell.swift in Sources */,
 				45ACA2AA2991FFE700BD9935 /* ViewControllerPresentation.swift in Sources */,
 				45ACA2B029921ABD00BD9935 /* SideMenuItem.swift in Sources */,
 				45ACA2AC2992002000BD9935 /* ContentViewController.swift in Sources */,
-				A319B12729C5B5D500E5B1B2 /* CharacterInfo+CoreDataClass.swift in Sources */,
 				A3282F8429A4A29100FA5BE1 /* SkillDetailViewCell.swift in Sources */,
 				45ACA2AE2992187C00BD9935 /* ContainerViewController.swift in Sources */,
-				A319B12829C5B5D500E5B1B2 /* CharacterInfo+CoreDataProperties.swift in Sources */,
 				45ACA2A229900D7000BD9935 /* JobListCollectionViewCell.swift in Sources */,
 				45ACA2662988D75C00BD9935 /* AppDelegate.swift in Sources */,
 				45ACA28E298A2A2A00BD9935 /* SideMenuViewController.swift in Sources */,
 				A3900BC529C0905E00B7C409 /* Model.xcdatamodeld in Sources */,
+				A319B13429CB12E700E5B1B2 /* BossInfo+CoreDataClass.swift in Sources */,
 				A3900BC129C0495D00B7C409 /* CharacterViewCell.swift in Sources */,
 				45ACA2682988D75C00BD9935 /* SceneDelegate.swift in Sources */,
 				45ACA2A0298F2D0900BD9935 /* EquipmentCalcViewController.swift in Sources */,
