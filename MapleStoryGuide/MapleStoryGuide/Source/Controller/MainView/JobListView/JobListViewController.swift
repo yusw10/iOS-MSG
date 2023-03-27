@@ -15,7 +15,6 @@ final class JobListViewController: ContentViewController {
     private let repository = AssetJobInfoRepository()
     private var viewModel: JobInfoViewModel! = nil
     private var prefetchTask: Task<Void, Never>?
-    private var imageLoadTask: Task<Void, Never>?
     private var jobList = [JobGroup]()
     private var selectedSection = 0
     private var selectedRow = 0
