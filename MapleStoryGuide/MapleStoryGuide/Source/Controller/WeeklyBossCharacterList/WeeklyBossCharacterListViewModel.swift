@@ -16,7 +16,7 @@ struct MyCharacter: Hashable {
 }
 
 struct MyWeeklyBoss: Hashable {
-    let checkClear: Bool
+    var checkClear: Bool
     let crystalStonePrice: String
     let difficulty: String
     let name: String
@@ -36,13 +36,17 @@ final class WeeklyBossCharacterListViewModel {
     }
     
     func createCharacter(name: String, world: String) {
-        coreDataManager.createCharacter(
-            name: name,
-            world: world
+        characterInfo.value.append(
+            MyCharacter(
+                name: name,
+                totalRevenue: "",
+                uuid: UUID().uuidString,
+                world: world,
+                bossInformations: []
+            )
         )
-        fetchCharacterInfo()
     }
-    
+ 
     func deleteCharacter(index: Int) {
         characterInfo.value.remove(at: index)
     }
@@ -55,8 +59,6 @@ final class WeeklyBossCharacterListViewModel {
     
     func selectCharacter(index: Int) {
         selectedCharacter.value = characterInfo.value[index]
-        
-        print(selectedCharacter.value)
     }
     
 }

@@ -15,7 +15,9 @@ final class WeeklyBossAddViewController: UIViewController {
         case main
     }
     
-    var characterInfo: CharacterInfo?
+    weak var delegate: WeelyBossAddViewDelegate?
+    
+    var characterInfo: MyCharacter?
 
     private var bossDifficultyList = [ModeLevel]()
     private var bossPriceList = [RewardPrice]()
@@ -51,12 +53,12 @@ final class WeeklyBossAddViewController: UIViewController {
         cell.clipsToBounds = true
         cell.layer.cornerRadius = 10
         
-        cell.configureImage(from: self.viewModel.bossList.value[indexPath.row].imageURL)
+        cell.configureImage(from: object.imageURL)
       
         return cell
     }
     
-    init(characterInfo: CharacterInfo) {
+    init(characterInfo: MyCharacter) {
         super.init(nibName: nil, bundle: nil)
 
         self.characterInfo = characterInfo
@@ -221,13 +223,16 @@ extension WeeklyBossAddViewController: UICollectionViewDelegate {
                 
                 self.present(alert, animated: true, completion: nil)
             } else {
-                self.viewModel.createBoss(
-                    name: self.viewModel.bossList.value[indexPath.row].name,
-                    thumnailImageURL: self.viewModel.bossList.value[indexPath.row].imageURL,
-                    difficulty: self.choiceBossDifficulty,
-                    member: alert.textFields?[0].text ?? "",
-                    price: self.choiceBossPrice,
-                    character: self.characterInfo ?? CharacterInfo()
+                self.delegate?.weelyBossAdd(
+                    from:
+                        MyWeeklyBoss(
+                            checkClear: false,
+                            crystalStonePrice: self.choiceBossPrice,
+                            difficulty: self.choiceBossDifficulty,
+                            name: self.viewModel.bossList.value[indexPath.row].name,
+                            thumnailImageURL: self.viewModel.bossList.value[indexPath.row].imageURL,
+                            member: alert.textFields?[0].text ?? ""
+                        )
                 )
                 let alert = UIAlertController(
                     title: "\(self.viewModel.bossList.value[indexPath.row].name) 보스 정보가 저장되었습니다.",

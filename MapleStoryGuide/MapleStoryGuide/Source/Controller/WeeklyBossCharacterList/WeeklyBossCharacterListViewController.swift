@@ -55,18 +55,15 @@ final class WeeklyBossCharacterListViewController: ContentViewController {
         
         var bossClearCount = 0
         
-//        self.viewModel.fetchBossList(
-//            character: self.viewModel.characterInfo.value[indexPath.row]
-//        ).forEach({ element in
-//            if element.checkClear {
-//                bossClearCount += 1
-//            }
-//        })
-        
+        object.bossInformations.forEach { boss in
+            if boss.checkClear {
+                bossClearCount += 1
+            }
+        }
         cell.configure(
-            name: self.viewModel.characterInfo.value[indexPath.row].name,
-            world: self.viewModel.characterInfo.value[indexPath.row].world,
-            totalCount: ("\(bossClearCount) / \(self.viewModel.characterInfo.value[indexPath.row].bossInformations.count)")
+            name: object.name,
+            world: object.world,
+            totalCount: ("\(bossClearCount) / \(object.bossInformations.count)")
         )
         return cell
     }
@@ -78,21 +75,16 @@ final class WeeklyBossCharacterListViewController: ContentViewController {
         setupLayout()
         setupButton()
         setupPickerView()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         
         viewModel.characterInfo.subscribe(on: self) { [weak self] charterInfo in
             self?.applySnapShot(from: charterInfo)
         }
         viewModel.fetchCharacterInfo()
-        collectionView.reloadData()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        
+
         viewModel.characterInfo.unsunscribe(observer: self)
     }
     

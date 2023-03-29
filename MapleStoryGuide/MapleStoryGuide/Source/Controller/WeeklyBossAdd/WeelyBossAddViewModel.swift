@@ -43,18 +43,16 @@ class CommonWeeklyBossInfoUseCase {
 }
 
 final class WeelyBossAddViewModel {
-    
-    private let coreDataManager = CoreDatamanager.shared
-    
-    private let useCase: CommonWeeklyBossInfoUseCase
 
     var bossList: Observable<[WeeklyBossInfo]> = Observable([])
+    var characterInfo: MyCharacter?
     
-    var characterInfo: CharacterInfo?
-    
+    private let coreDataManager = CoreDatamanager.shared
+    private let useCase: CommonWeeklyBossInfoUseCase
+
     private init(
         useCase: CommonWeeklyBossInfoUseCase,
-        characterInfo: CharacterInfo
+        characterInfo: MyCharacter
     ) {
         self.useCase = useCase
         self.characterInfo = characterInfo
@@ -62,7 +60,7 @@ final class WeelyBossAddViewModel {
     
     convenience init(
         repository: WeeklyBossInfoRepository,
-        characterInfo: CharacterInfo
+        characterInfo: MyCharacter
     ) {
         let useCase = CommonWeeklyBossInfoUseCase(repository: repository)
         self.init(useCase: useCase, characterInfo: characterInfo)
@@ -77,20 +75,6 @@ final class WeelyBossAddViewModel {
         } catch {
             // 에러 처리
         }
-    }
-    
-    func createBoss(name: String, thumnailImageURL: String, difficulty: String, member: String, price: String, character: CharacterInfo) {
-        
-        let resultPrice = ((Int(price) ?? 0) / (Int(member) ?? 0)).description
-        
-        CoreDatamanager.shared.createBoss(
-            name: name,
-            thumnailImageURL: thumnailImageURL,
-            difficulty: difficulty,
-            member: member,
-            price: resultPrice,
-            character: character
-        )
     }
     
 }
