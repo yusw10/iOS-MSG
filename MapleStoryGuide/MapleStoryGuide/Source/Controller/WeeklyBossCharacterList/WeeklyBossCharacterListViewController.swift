@@ -46,7 +46,7 @@ final class WeeklyBossCharacterListViewController: ContentViewController {
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    private lazy var diffableDataSource: UICollectionViewDiffableDataSource<Section, CharacterInfo> = .init(collectionView: self.collectionView) { (collectionView, indexPath, object) -> UICollectionViewListCell? in
+    private lazy var diffableDataSource: UICollectionViewDiffableDataSource<Section, MyCharacter> = .init(collectionView: self.collectionView) { (collectionView, indexPath, object) -> UICollectionViewListCell? in
         
         let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: WeeklyBossCharacterListCell.id,
@@ -55,18 +55,18 @@ final class WeeklyBossCharacterListViewController: ContentViewController {
         
         var bossClearCount = 0
         
-        self.viewModel.fetchBossList(
-            character: self.viewModel.characterInfo.value[indexPath.row]
-        ).forEach({ element in
-            if element.checkClear {
-                bossClearCount += 1
-            }
-        })
+//        self.viewModel.fetchBossList(
+//            character: self.viewModel.characterInfo.value[indexPath.row]
+//        ).forEach({ element in
+//            if element.checkClear {
+//                bossClearCount += 1
+//            }
+//        })
         
         cell.configure(
-            name: self.viewModel.characterInfo.value[indexPath.row].name ?? "",
-            world: self.viewModel.characterInfo.value[indexPath.row].world ?? "",
-            totalCount: ("\(bossClearCount) / \(self.viewModel.characterInfo.value[indexPath.row].bossInformations?.count ?? 0)")
+            name: self.viewModel.characterInfo.value[indexPath.row].name,
+            world: self.viewModel.characterInfo.value[indexPath.row].world,
+            totalCount: ("\(bossClearCount) / \(self.viewModel.characterInfo.value[indexPath.row].bossInformations.count)")
         )
         return cell
     }
@@ -160,7 +160,7 @@ private extension WeeklyBossCharacterListViewController {
     
     func setupSwipeActions(for indexPath: IndexPath?) -> UISwipeActionsConfiguration? {
         guard let indexPath = indexPath,
-              let id = diffableDataSource.itemIdentifier(for: indexPath) else {
+              let _ = diffableDataSource.itemIdentifier(for: indexPath) else {
             return nil
         }
         let deleteActionTitle = NSLocalizedString("Delete", comment: "Delete action title")
@@ -168,14 +168,14 @@ private extension WeeklyBossCharacterListViewController {
             style: .destructive,
             title: deleteActionTitle
         ) { [weak self] _, _, completion in
-            self?.viewModel.deleteCharacter(id: id)
+            self?.viewModel.deleteCharacter(index: indexPath.row)
         }
         
         return UISwipeActionsConfiguration(actions: [deleteAction])
     }
     
-    func applySnapShot(from data: [CharacterInfo]) {
-        var snapshot = NSDiffableDataSourceSnapshot<Section, CharacterInfo>()
+    func applySnapShot(from data: [MyCharacter]) {
+        var snapshot = NSDiffableDataSourceSnapshot<Section, MyCharacter>()
         snapshot.appendSections([.main])
         snapshot.appendItems(data)
         
@@ -240,7 +240,8 @@ extension WeeklyBossCharacterListViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let weeklyBossListViewController = WeeklyBossCalculatorViewController(
-            characterInfo: viewModel.characterInfo.value[indexPath.row]
+            viewModel: viewModel,
+            selectedIndex: indexPath.row
         )
         
         navigationController?.pushViewController(weeklyBossListViewController, animated: true)

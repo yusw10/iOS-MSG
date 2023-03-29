@@ -34,12 +34,31 @@ class CoreDatamanager {
         }
     }
     
-    func readCharter() -> [CharacterInfo] {
+    func readCharter() -> [MyCharacter] {
         let readRequest: NSFetchRequest<CharacterInfo> = CharacterInfo.fetchRequest()
                 
         do {
             let dataToPerson = try context.fetch(readRequest)
-            return dataToPerson
+            
+            
+            return dataToPerson.compactMap { charterInfo in
+                MyCharacter.init(
+                    name: charterInfo.name ?? "",
+                    totalRevenue: charterInfo.totalRevenue ?? "",
+                    uuid: charterInfo.uuid ?? "",
+                    world: charterInfo.world ?? "",
+                    bossInformations: readBossList(characterInfo: charterInfo).map({ bossInfomation in
+                        MyWeeklyBoss(
+                            checkClear: bossInfomation.checkClear,
+                            crystalStonePrice: bossInfomation.crystalStonePrice ?? "",
+                            difficulty: bossInfomation.difficulty ?? "",
+                            name: bossInfomation.name ?? "",
+                            thumnailImageURL: bossInfomation.thumnailImageURL ?? "",
+                            member: bossInfomation.member ?? ""
+                        )
+                    })
+                )
+            }
         } catch {
             fatalError(error.localizedDescription)
         }

@@ -15,9 +15,9 @@ final class WeeklyBossCalculatorViewController: UIViewController {
         case main
     }
     
-    private var viewModel: WeeklyBossCalculatorViewModel! = nil
-    private var characterInfo: CharacterInfo?
-    
+    private var viewModel: WeeklyBossCharacterListViewModel
+    private var selectedIndex: Int
+
     private lazy var collectionView = UICollectionView(
         frame: .zero,
         collectionViewLayout: self.setupCollectionViewLayout()
@@ -38,7 +38,7 @@ final class WeeklyBossCalculatorViewController: UIViewController {
         $0.backgroundColor = .white
     }
     
-    private lazy var diffableDataSource: UICollectionViewDiffableDataSource<Section, BossInformation> = .init(collectionView: self.collectionView) { (collectionView, indexPath, object) -> UICollectionViewListCell? in
+    private lazy var diffableDataSource: UICollectionViewDiffableDataSource<Section, MyWeeklyBoss> = .init(collectionView: self.collectionView) { (collectionView, indexPath, object) -> UICollectionViewListCell? in
         
         let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: WeeklyBossCalculatorViewCell.id,
@@ -54,34 +54,38 @@ final class WeeklyBossCalculatorViewController: UIViewController {
             for: UIControl.Event.valueChanged
         )
         cell.clearCheckSwitch.tag = indexPath.row
-
-        if (self.characterInfo?.world?.contains("리부트") ?? true) {
-            cell.configure(
-                bossName: self.viewModel.bossInformation.value[indexPath.row].name ?? "",
-                bossDifficulty: self.viewModel.bossInformation.value[indexPath.row].difficulty ?? "",
-                bossMember: self.viewModel.bossInformation.value[indexPath.row].member ?? "",
-                thumnailImageURL: self.viewModel.bossInformation.value[indexPath.row].thumnailImageURL ?? "",
-                bossCrystalStone: self.viewModel.bossInformation.value[indexPath.row].crystalStonePrice?.rebootPrice ?? "",
-                bossClear: self.viewModel.bossInformation.value[indexPath.row].checkClear
-            )
-        } else {
-            cell.configure(
-                bossName: self.viewModel.bossInformation.value[indexPath.row].name ?? "",
-                bossDifficulty: self.viewModel.bossInformation.value[indexPath.row].difficulty ?? "",
-                bossMember: self.viewModel.bossInformation.value[indexPath.row].member ?? "",
-                thumnailImageURL: self.viewModel.bossInformation.value[indexPath.row].thumnailImageURL ?? "",
-                bossCrystalStone: self.viewModel.bossInformation.value[indexPath.row].crystalStonePrice ?? "",
-                bossClear: self.viewModel.bossInformation.value[indexPath.row].checkClear
-            )
-        }
+//
+//        if (self.viewModel.selectedCharacter.value?.world.contains("리부트") ?? true) {
+//            cell.configure(
+//                bossName: self.viewModel.selectedCharacter.value[indexPath.row].name ?? "",
+//                bossDifficulty: self.viewModel.bossInformation.value[indexPath.row].difficulty ?? "",
+//                bossMember: self.viewModel.bossInformation.value[indexPath.row].member ?? "",
+//                thumnailImageURL: self.viewModel.bossInformation.value[indexPath.row].thumnailImageURL ?? "",
+//                bossCrystalStone: self.viewModel.bossInformation.value[indexPath.row].crystalStonePrice?.rebootPrice ?? "",
+//                bossClear: self.viewModel.bossInformation.value[indexPath.row].checkClear
+//            )
+//        } else {
+           
+//        }
+        cell.configure(
+            bossName: object.name,
+            bossDifficulty: object.difficulty,
+            bossMember: object.member,
+            thumnailImageURL: object.thumnailImageURL,
+            bossCrystalStone: object.crystalStonePrice,
+            bossClear: object.checkClear
+        )
         return cell
     }
     
-    init(characterInfo: CharacterInfo) {
+    init(
+        viewModel: WeeklyBossCharacterListViewModel,
+        selectedIndex: Int
+    ) {
+        self.viewModel = viewModel
+        self.selectedIndex = selectedIndex
+        
         super.init(nibName: nil, bundle: nil)
-
-        self.characterInfo = characterInfo
-        viewModel = WeeklyBossCalculatorViewModel(characterInfo: characterInfo)
     }
     
     required init?(coder: NSCoder) {
@@ -94,23 +98,18 @@ final class WeeklyBossCalculatorViewController: UIViewController {
         setupView()
         setupLayout()
         setupNavigation()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         
-        viewModel.bossInformation.subscribe(on: self) { [weak self] bossInformation in
-            self?.applySnapShot(from: bossInformation)
+        viewModel.selectedCharacter.subscribe(on: self) { [weak self] information in
+            self?.applySnapShot(from: information!)
+            self?.applyCrystalStonePrice()
         }
-        viewModel.fetchBossInformation()
-        
-        applyCrystalStonePrice()
+        viewModel.selectCharacter(index: selectedIndex)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
-        viewModel.bossInformation.unsunscribe(observer: self)
+        viewModel.selectedCharacter.unsunscribe(observer: self)
     }
 
 }
@@ -118,7 +117,7 @@ final class WeeklyBossCalculatorViewController: UIViewController {
 private extension WeeklyBossCalculatorViewController {
     
     func setupNavigation() {
-        navigationItem.title = characterInfo?.name
+        navigationItem.title = viewModel.selectedCharacter.value?.name
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             title: "보스 추가",
             style: .plain,
@@ -171,15 +170,15 @@ private extension WeeklyBossCalculatorViewController {
             style: .destructive,
             title: deleteActionTitle
         ) { [weak self] _, _, completion in
-            self?.viewModel.deleteBossInformation(id: id)
+            // self?.viewModel.deleteBossInformation(id: id)
         }
         return UISwipeActionsConfiguration(actions: [deleteAction])
     }
     
-    func applySnapShot(from data: [BossInformation]) {
-        var snapshot = NSDiffableDataSourceSnapshot<Section, BossInformation>()
+    func applySnapShot(from data: MyCharacter) {
+        var snapshot = NSDiffableDataSourceSnapshot<Section, MyWeeklyBoss>()
         snapshot.appendSections([.main])
-        snapshot.appendItems(data)
+        snapshot.appendItems(data.bossInformations)
         
         diffableDataSource.apply(snapshot, animatingDifferences: true)
     }
@@ -187,16 +186,16 @@ private extension WeeklyBossCalculatorViewController {
     func applyCrystalStonePrice() {
         var crystalStonePrice = 0
         
-        viewModel.bossInformation.value.forEach({ element in
-            if element.checkClear {
-                crystalStonePrice += Int(element.crystalStonePrice ?? "0") ?? 0
-            }
-        })
-        if characterInfo!.world!.contains("리부트") {
-            totalPriceLabel.text = crystalStonePrice.description.rebootPrice.insertComma
-        } else {
-            totalPriceLabel.text = crystalStonePrice.description.insertComma
-        }
+//        viewModel.bossInformation.value.forEach({ element in
+//            if element.checkClear {
+//                crystalStonePrice += Int(element.crystalStonePrice ?? "0") ?? 0
+//            }
+//        })
+//        if characterInfo!.world!.contains("리부트") {
+//            totalPriceLabel.text = crystalStonePrice.description.rebootPrice.insertComma
+//        } else {
+//            totalPriceLabel.text = crystalStonePrice.description.insertComma
+//        }
     }
     
 }
@@ -204,26 +203,26 @@ private extension WeeklyBossCalculatorViewController {
 @objc private extension WeeklyBossCalculatorViewController {
     
     func onClickSwitch(sender: UISwitch) {
-        if sender.isOn {
-            viewModel.updateBossClear(
-                bossInformation: viewModel.bossInformation.value[sender.tag],
-                clear: true
-            )
-        } else {
-            viewModel.updateBossClear(
-                bossInformation: viewModel.bossInformation.value[sender.tag],
-                clear: false
-            )
-        }
-        applyCrystalStonePrice()
+//        if sender.isOn {
+//            viewModel.updateBossClear(
+//                bossInformation: viewModel.bossInformation.value[sender.tag],
+//                clear: true
+//            )
+//        } else {
+//            viewModel.updateBossClear(
+//                bossInformation: viewModel.bossInformation.value[sender.tag],
+//                clear: false
+//            )
+//        }
+//        applyCrystalStonePrice()
     }
     
     func didTapAddBossButton() {
-        let weeklyBossAddViewController = WeeklyBossAddViewController(
-            characterInfo: self.characterInfo ?? CharacterInfo()
-        )
-        
-        navigationController?.pushViewController(weeklyBossAddViewController, animated: true)
+//        let weeklyBossAddViewController = WeeklyBossAddViewController(
+//            characterInfo: self.characterInfo ?? CharacterInfo()
+//        )
+//
+//        navigationController?.pushViewController(weeklyBossAddViewController, animated: true)
     }
     
 }

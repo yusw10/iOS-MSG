@@ -58,7 +58,6 @@
 		A3278BE2298BE1A80004C278 /* ReinforceSkillDetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3278BE1298BE1A80004C278 /* ReinforceSkillDetailViewCell.swift */; };
 		A3282F8429A4A29100FA5BE1 /* SkillDetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3282F8329A4A29100FA5BE1 /* SkillDetailViewCell.swift */; };
 		A37030E529D1839800F3ADA4 /* WeeklyBossCharacterListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37030E429D1839800F3ADA4 /* WeeklyBossCharacterListViewModel.swift */; };
-		A37030E729D1BF6900F3ADA4 /* WeeklyBossCalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37030E629D1BF6900F3ADA4 /* WeeklyBossCalculatorViewModel.swift */; };
 		A37030E929D2BCF900F3ADA4 /* WeelyBossAddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37030E829D2BCF900F3ADA4 /* WeelyBossAddViewModel.swift */; };
 		A37030EE29D2E0A400F3ADA4 /* CharacterInfo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37030EA29D2E0A400F3ADA4 /* CharacterInfo+CoreDataClass.swift */; };
 		A37030EF29D2E0A400F3ADA4 /* CharacterInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37030EB29D2E0A400F3ADA4 /* CharacterInfo+CoreDataProperties.swift */; };
@@ -125,7 +124,6 @@
 		A3278BE1298BE1A80004C278 /* ReinforceSkillDetailViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReinforceSkillDetailViewCell.swift; sourceTree = "<group>"; };
 		A3282F8329A4A29100FA5BE1 /* SkillDetailViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillDetailViewCell.swift; sourceTree = "<group>"; };
 		A37030E429D1839800F3ADA4 /* WeeklyBossCharacterListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyBossCharacterListViewModel.swift; sourceTree = "<group>"; };
-		A37030E629D1BF6900F3ADA4 /* WeeklyBossCalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyBossCalculatorViewModel.swift; sourceTree = "<group>"; };
 		A37030E829D2BCF900F3ADA4 /* WeelyBossAddViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeelyBossAddViewModel.swift; sourceTree = "<group>"; };
 		A37030EA29D2E0A400F3ADA4 /* CharacterInfo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CharacterInfo+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A37030EB29D2E0A400F3ADA4 /* CharacterInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CharacterInfo+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -457,7 +455,6 @@
 			isa = PBXGroup;
 			children = (
 				A3900BDA29C2F7FA00B7C409 /* WeeklyBossCalculatorViewController.swift */,
-				A37030E629D1BF6900F3ADA4 /* WeeklyBossCalculatorViewModel.swift */,
 				A3900BD929C2F7F200B7C409 /* Cells */,
 			);
 			path = WeeklyBossCalculator;
@@ -613,7 +610,6 @@
 				45ACA299298F2C6D00BD9935 /* JobListViewController.swift in Sources */,
 				45ACA294298C866F00BD9935 /* MainCollectionViewCell.swift in Sources */,
 				45ACA290298B003A00BD9935 /* SideMenuCell.swift in Sources */,
-				A37030E729D1BF6900F3ADA4 /* WeeklyBossCalculatorViewModel.swift in Sources */,
 				72B2BCEE29CD7E600022B95B /* ItemDetailViewController.swift in Sources */,
 				45ACA2AA2991FFE700BD9935 /* ViewControllerPresentation.swift in Sources */,
 				45ACA2B029921ABD00BD9935 /* SideMenuItem.swift in Sources */,
