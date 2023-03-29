@@ -2,7 +2,7 @@
 //  BossInformation+CoreDataProperties.swift
 //  MapleStoryGuide
 //
-//  Created by brad on 2023/03/27.
+//  Created by brad on 2023/03/28.
 //
 //
 
@@ -21,6 +21,7 @@ extension BossInformation {
     @NSManaged public var difficulty: String?
     @NSManaged public var name: String?
     @NSManaged public var thumnailImageURL: String?
+    @NSManaged public var member: String?
     @NSManaged public var charcterInfo: CharacterInfo?
 
 }

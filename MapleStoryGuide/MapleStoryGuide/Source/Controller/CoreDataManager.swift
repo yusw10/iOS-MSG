@@ -71,11 +71,12 @@ class CoreDatamanager {
         }
     }
     
-    func createBoss(name: String, thumnailImageURL: String, difficulty: String, price: String, character: CharacterInfo) {
+    func createBoss(name: String, thumnailImageURL: String, difficulty: String, member: String, price: String, character: CharacterInfo) {
         let bossInfo = BossInformation(context: context)
         bossInfo.name = name
         bossInfo.thumnailImageURL = thumnailImageURL
         bossInfo.difficulty = difficulty
+        bossInfo.member = member
         bossInfo.crystalStonePrice = price
         bossInfo.checkClear = false
         

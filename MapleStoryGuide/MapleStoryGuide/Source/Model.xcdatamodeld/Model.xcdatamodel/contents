@@ -4,6 +4,7 @@
         <attribute name="checkClear" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="crystalStonePrice" optional="YES" attributeType="String"/>
         <attribute name="difficulty" optional="YES" attributeType="String"/>
+        <attribute name="member" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="thumnailImageURL" optional="YES" attributeType="String"/>
         <relationship name="charcterInfo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CharacterInfo" inverseName="bossInformations" inverseEntity="CharacterInfo"/>
