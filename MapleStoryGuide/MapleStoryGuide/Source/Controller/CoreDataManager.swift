@@ -34,12 +34,12 @@ class CoreDatamanager {
         }
     }
     
+    // 캐릭터 정보 가져옴
     func readCharter() -> [MyCharacter] {
         let readRequest: NSFetchRequest<CharacterInfo> = CharacterInfo.fetchRequest()
                 
         do {
             let dataToPerson = try context.fetch(readRequest)
-            
             
             return dataToPerson.compactMap { charterInfo in
                 MyCharacter.init(
@@ -64,6 +64,7 @@ class CoreDatamanager {
         }
     }
     
+    // 보스 정보 가져옴
     func readBossList(characterInfo: CharacterInfo) -> [BossInformation] {
         let readRequest: NSFetchRequest<BossInformation> = BossInformation.fetchRequest()
          readRequest.predicate = NSPredicate(format: "charcterInfo = %@", characterInfo)
@@ -75,6 +76,7 @@ class CoreDatamanager {
         }
     }
     
+    // 캐릭터 생성
     func createCharacter(name: String, world: String) {
         let character = CharacterInfo(context: context)
         
@@ -90,6 +92,7 @@ class CoreDatamanager {
         }
     }
     
+    // 보스 생성
     func createBoss(name: String, thumnailImageURL: String, difficulty: String, member: String, price: String, character: CharacterInfo) {
         let bossInfo = BossInformation(context: context)
         bossInfo.name = name
@@ -108,16 +111,19 @@ class CoreDatamanager {
         }
     }
     
+    // 보스 클리어 업데이트 기능 -> 불필요할수도?
     func updateBossClear(_ contact: BossInformation, clear: Bool) {
         contact.checkClear = clear
         saveContext()
     }
     
+    // 캐릭터 삭제 기능 -> 불필요할수도?
     func deleteCharacter(_ character: CharacterInfo) {
         context.delete(character)
         saveContext()
     }
     
+    // 보스 삭제 기능 -> 불필요할수도?
     func deleteBoss(_ boss: BossInformation) {
         context.delete(boss)
         saveContext()
