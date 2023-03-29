@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Then
 
-class BossImageCell: UICollectionViewCell {
+class BossImageCell: UICollectionViewListCell {
     static let id = "BossImageCell"
     private var task: Task<Void, Never>?
     
