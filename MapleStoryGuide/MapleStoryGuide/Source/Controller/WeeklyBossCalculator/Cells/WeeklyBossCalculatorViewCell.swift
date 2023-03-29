@@ -63,7 +63,7 @@ final class WeeklyBossCalculatorViewCell: UICollectionViewListCell {
     }
     
     func configure(bossName: String, bossDifficulty: String, bossMember: String, thumnailImageURL: String, bossCrystalStone: String, bossClear: Bool) {
-        self.bossName.text = "\(bossName) (\(bossDifficulty). \(bossMember)인)"
+        self.bossName.text = "\(bossName) (\(bossDifficulty), \(bossMember)인)"
         self.bossCrystalStone.text = bossCrystalStone.insertComma
         self.clearCheckSwitch.isOn = bossClear
         
