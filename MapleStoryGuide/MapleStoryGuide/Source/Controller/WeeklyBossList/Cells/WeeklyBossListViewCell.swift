@@ -20,11 +20,6 @@ final class WeeklyBossListViewCell: UICollectionViewListCell {
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    private lazy var subHorizontalStackView = UIStackView().then {
-        $0.axis = .horizontal
-        $0.translatesAutoresizingMaskIntoConstraints = false
-    }
-    
     private lazy var thumbnailImageView = UIImageView().then {
         $0.contentMode = .scaleAspectFill
         $0.layer.cornerRadius = 15
@@ -33,16 +28,6 @@ final class WeeklyBossListViewCell: UICollectionViewListCell {
     }
     
     private lazy var bossName = UILabel().then {
-        $0.font = .preferredFont(
-            forTextStyle: .title3,
-            compatibleWith: UITraitCollection(legibilityWeight: .bold)
-        )
-        $0.numberOfLines = 0
-        $0.translatesAutoresizingMaskIntoConstraints = false
-    }
-    
-    private lazy var bossDifficulty = UILabel().then {
-        $0.textAlignment = .left
         $0.font = .preferredFont(
             forTextStyle: .title3,
             compatibleWith: UITraitCollection(legibilityWeight: .bold)
@@ -77,10 +62,8 @@ final class WeeklyBossListViewCell: UICollectionViewListCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(bossName: String, bossDifficulty: String, thumnailImageURL: String, bossCrystalStone: String, bossClear: Bool) {
-        self.bossName.text = "\(bossName) (\(bossDifficulty). 2인)"
-        self.bossDifficulty.text = nil
-        self.bossDifficulty.isHidden = true
+    func configure(bossName: String, bossDifficulty: String, bossMember: String, thumnailImageURL: String, bossCrystalStone: String, bossClear: Bool) {
+        self.bossName.text = "\(bossName) (\(bossDifficulty). \(bossMember)인)"
         self.bossCrystalStone.text = bossCrystalStone.insertComma
         self.clearCheckSwitch.isOn = bossClear
         
@@ -116,24 +99,21 @@ private extension WeeklyBossListViewCell {
             horizontalStackView.addArrangedSubview(view)
         }
         
-        [bossName, bossDifficulty].forEach { view in
-            subHorizontalStackView.addArrangedSubview(view)
-        }
-        
-        [subHorizontalStackView, bossCrystalStone].forEach { view in
+        [bossName, bossCrystalStone].forEach { view in
             verticalStackView.addArrangedSubview(view)
         }
     }
     
     func setupLayout() {
-        self.contentView.layer.cornerRadius = 15
-        self.contentView.layer.masksToBounds = true
-        
         horizontalStackView.snp.makeConstraints { make in
-            make.top.leading.trailing.bottom.equalTo(self.contentView).inset(10)
+            make.top.equalTo(self.contentView.snp.top)
+            make.trailing.equalTo(self.contentView.snp.trailing).offset(-10)
         }
         
         thumbnailImageView.snp.makeConstraints { make in
+            make.top.bottom.equalTo(self.contentView).inset(10).priority(750)
+            make.leading.equalTo(self.contentView.snp.leading).offset(10)
+
             make.width.equalTo(self.contentView.snp.width).multipliedBy(0.25)
             make.height.equalTo(self.contentView.snp.width).multipliedBy(0.2)
         }
