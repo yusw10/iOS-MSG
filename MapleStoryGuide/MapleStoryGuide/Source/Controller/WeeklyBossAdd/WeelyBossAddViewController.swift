@@ -9,40 +9,24 @@ import UIKit
 import SnapKit
 import Then
 
-struct BossList: Hashable {
-    let name: String
-    let thumnailImageURL: String
-    let difficulty: [String]
-    let price: [String]
-}
-
 final class WeeklyBossAddViewController: UIViewController {
-    
-    var characterInfo: CharacterInfo?
-
-    private let bossList = [
-        BossList(name: "스우",
-                 thumnailImageURL: "https://raw.githubusercontent.com/yusw10/iOS-MSG-Data/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3_jpg/%E1%84%89%E1%85%B3%E1%84%8B%E1%85%AE-min.jpg", difficulty: ["이지", "노말", "하드"],
-                 price: ["10000", "20000", "30000"]),
-        BossList(
-            name: "데미안",
-            thumnailImageURL: "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3_jpg/%E1%84%83%E1%85%A6%E1%84%86%E1%85%B5%E1%84%8B%E1%85%A1%E1%86%AB-min.jpg?raw=true", difficulty: ["이지", "노말"],
-            price: ["10000", "20000", "30000"]
-        ),
-        BossList(name: "루시드",
-                 thumnailImageURL: "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3_jpg/%E1%84%85%E1%85%AE%E1%84%89%E1%85%B5%E1%84%83%E1%85%B3-min.jpg?raw=true", difficulty: ["이지", "노말", "하드"],
-                 price: ["10000", "20000", "30000"]),
-        BossList(name: "윌",
-                 thumnailImageURL: "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3_jpg/%E1%84%8B%E1%85%B1%E1%86%AF-min.jpg?raw=true", difficulty: ["이지", "노말", "하드"],
-                 price: ["10000", "20000", "30000"])
-    ]
     
     enum Section {
         case main
     }
     
+    var characterInfo: CharacterInfo?
+
+    private var bossDifficultyList = [ModeLevel]()
+    private var bossPriceList = [RewardPrice]()
+    private var choiceBossDifficulty = ""
+    private var choiceBossPrice = ""
+    
+    private let repository = LocalWeeklyBossInfoRepository()
+    private var viewModel: WeelyBossAddViewModel! = nil
+    
     private let worldPickerView = UIPickerView(
-        frame: CGRect(x: 5, y: 50, width: 260, height: 160)
+        frame: CGRect(x: 5, y: 20, width: 260, height: 160)
     )
     
     private lazy var collectionView = UICollectionView(
@@ -50,28 +34,24 @@ final class WeeklyBossAddViewController: UIViewController {
         collectionViewLayout: self.setupCollectionViewLayout()
     ).then {
         $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.delegate = self
         $0.backgroundColor = .secondarySystemBackground
         $0.register(
-            WeeklyBossAddViewCell.self,
-            forCellWithReuseIdentifier: WeeklyBossAddViewCell.id
+            BossImageCell.self,
+            forCellWithReuseIdentifier: BossImageCell.id
         )
     }
     
-    private lazy var diffableDataSource: UICollectionViewDiffableDataSource<Section, BossList> = .init(collectionView: self.collectionView) { (collectionView, indexPath, object) -> UICollectionViewListCell? in
+    private lazy var diffableDataSource: UICollectionViewDiffableDataSource<Section, WeeklyBossInfo> = .init(collectionView: self.collectionView) { (collectionView, indexPath, object) -> UICollectionViewListCell? in
         let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: WeeklyBossAddViewCell.id,
+            withReuseIdentifier: BossImageCell.id,
             for: indexPath
-        ) as! WeeklyBossAddViewCell
+        ) as! BossImageCell
         
         cell.clipsToBounds = true
-        cell.layer.cornerRadius = 15
+        cell.layer.cornerRadius = 10
         
-        cell.viewController = self
-
-        cell.configure(
-            bossList: self.bossList[indexPath.row],
-            characterInfo: self.characterInfo ?? CharacterInfo()
-        )
+        cell.configureImage(from: self.viewModel.bossList.value[indexPath.row].imageURL)
       
         return cell
     }
@@ -80,6 +60,10 @@ final class WeeklyBossAddViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
 
         self.characterInfo = characterInfo
+        viewModel = WeelyBossAddViewModel(
+            repository: self.repository,
+            characterInfo: characterInfo
+        )
     }
     
     required init?(coder: NSCoder) {
@@ -91,12 +75,24 @@ final class WeeklyBossAddViewController: UIViewController {
         
         setupView()
         setupLayout()
+        
+        Task {
+            await viewModel.trigger(query: .weeklyBossInfo)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        applySnapShot()
+        viewModel.bossList.subscribe(on: self) { bossList in
+            self.applySnapShot(data: bossList)
+        }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        viewModel.bossList.unsunscribe(observer: self)
     }
     
 }
@@ -142,12 +138,140 @@ private extension WeeklyBossAddViewController {
         return layout
     }
     
-    func applySnapShot() {
-        var snapshot = NSDiffableDataSourceSnapshot<Section, BossList>()
+    func setupPickerView() {
+        worldPickerView.delegate = self
+        worldPickerView.dataSource = self
+        worldPickerView.selectRow(
+            0,
+            inComponent: 0,
+            animated: true
+        )
+    }
+    
+    func applySnapShot(data: [WeeklyBossInfo]) {
+        var snapshot = NSDiffableDataSourceSnapshot<Section, WeeklyBossInfo>()
         snapshot.appendSections([.main])
-        snapshot.appendItems(bossList)
+        snapshot.appendItems(data)
         
         diffableDataSource.apply(snapshot, animatingDifferences: true)
+    }
+    
+}
+
+extension WeeklyBossAddViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return bossDifficultyList.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return bossDifficultyList[row].mode
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        choiceBossDifficulty = bossDifficultyList[row].mode
+        choiceBossPrice = bossPriceList[row].price.description
+    }
+    
+}
+
+extension WeeklyBossAddViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        bossDifficultyList = viewModel.bossList.value[indexPath.row].level
+        bossPriceList = viewModel.bossList.value[indexPath.row].rewardPrice
+        choiceBossDifficulty = bossDifficultyList[0].mode
+        choiceBossPrice = bossPriceList[0].price.description
+        
+        setupPickerView()
+
+        let bossMemberList = ["1", "2", "3", "4", "5", "6"]
+        let alert = UIAlertController(
+            title: "난이도를 선택해 주세요.",
+            message: "\n\n\n\n\n\n",
+            preferredStyle: .alert
+        )
+        alert.view.addSubview(worldPickerView)
+        
+        alert.addTextField { textField in
+            textField.placeholder = "파티원 수를 입력해주세요.(1인 ~ 6인)"
+        }
+        
+        let ok = UIAlertAction(
+            title: "OK",
+            style: .default
+        ) { (ok) in
+            if !bossMemberList.contains(alert.textFields?[0].text ?? "") {
+                let alert = UIAlertController(
+                    title: "파티원 수는 필수 입력 입니다.",
+                    message: "1 부터 6 까지의 숫자만 입력해주세요.",
+                    preferredStyle: .alert
+                )
+                let ok = UIAlertAction(
+                    title: "ok",
+                    style: .cancel
+                ) { (cancel) in
+                    
+                }
+                alert.addAction(ok)
+                
+                self.present(alert, animated: true, completion: nil)
+            } else {
+                self.viewModel.createBoss(
+                    name: self.viewModel.bossList.value[indexPath.row].name,
+                    thumnailImageURL: self.viewModel.bossList.value[indexPath.row].imageURL,
+                    difficulty: self.choiceBossDifficulty,
+                    member: alert.textFields?[0].text ?? "",
+                    price: self.choiceBossPrice,
+                    character: self.characterInfo ?? CharacterInfo()
+                )
+                let alert = UIAlertController(
+                    title: "\(self.viewModel.bossList.value[indexPath.row].name) 보스 정보가 저장되었습니다.",
+                    message: "",
+                    preferredStyle: .alert
+                )
+                let ok = UIAlertAction(
+                    title: "ok",
+                    style: .cancel
+                ) { (cancel) in
+                    
+                }
+                alert.addAction(ok)
+                
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
+        let cancel = UIAlertAction(
+            title: "cancel",
+            style: .cancel
+        ) { (cancel) in
+            
+        }
+        alert.addAction(ok)
+        alert.addAction(cancel)
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+}
+
+extension String {
+    
+    var insertComma: String {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+
+        return numberFormatter.string(for: Double(self)) ?? self
+    }
+        
+    var rebootPrice: String {
+        let price = (Int(self) ?? 0) * 5
+        
+        return price.description
     }
     
 }
