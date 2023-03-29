@@ -15,8 +15,8 @@ final class WeeklyBossCalculatorViewController: ContentViewController {
         case main
     }
 
-    private var characterInfo = [CharacterInfo]()
-    
+    private let viewModel = WeeklyBossCalculatorViewModel()
+        
     private let worldList = [
         "스카니아", "베라", "루나", "제니스", "크로아", "유니온", "엘리시움", "이노시스", "레드", "오로라", "아케인", "노바", "리부트", "리부트2"
     ]
@@ -27,9 +27,17 @@ final class WeeklyBossCalculatorViewController: ContentViewController {
         frame: CGRect(x: 5, y: 50, width: 260, height: 160)
     )
     
-    private var collectionView = UICollectionView(
-        frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()
-    )
+    private lazy var collectionView = UICollectionView(
+        frame: .zero,
+        collectionViewLayout: self.setupCollectionViewLayout()
+    ).then {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.delegate = self
+        $0.register(
+            CharacterViewCell.self,
+            forCellWithReuseIdentifier: CharacterViewCell.id
+        )
+    }
     
     private lazy var characterAddButton = UIButton().then {
         $0.layer.cornerRadius = 30
@@ -46,16 +54,19 @@ final class WeeklyBossCalculatorViewController: ContentViewController {
         ) as! CharacterViewCell
         
         var bossClearCount = 0
-        CoreDatamanager.shared.readBossList(characterInfo: self.characterInfo[indexPath.row]).forEach({ element in
+        
+        self.viewModel.fetchBossList(
+            character: self.viewModel.characterInfo.value[indexPath.row]
+        ).forEach({ element in
             if element.checkClear {
                 bossClearCount += 1
             }
         })
         
         cell.configure(
-            name: self.characterInfo[indexPath.row].name ?? "",
-            world: self.characterInfo[indexPath.row].world ?? "",
-            totalCount: ("\(bossClearCount) / \(self.characterInfo[indexPath.row].bossInformations?.count ?? 0)")
+            name: self.viewModel.characterInfo.value[indexPath.row].name ?? "",
+            world: self.viewModel.characterInfo.value[indexPath.row].world ?? "",
+            totalCount: ("\(bossClearCount) / \(self.viewModel.characterInfo.value[indexPath.row].bossInformations?.count ?? 0)")
         )
         return cell
     }
@@ -63,7 +74,6 @@ final class WeeklyBossCalculatorViewController: ContentViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupCollectionView()
         setupView()
         setupLayout()
         setupButton()
@@ -71,38 +81,24 @@ final class WeeklyBossCalculatorViewController: ContentViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        applySnapShot()
+        super.viewWillAppear(animated)
+        
+        viewModel.characterInfo.subscribe(on: self) { [weak self] charterInfo in
+            self?.applySnapShot(from: charterInfo)
+        }
+        viewModel.fetchCharacterInfo()
+        collectionView.reloadData()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        viewModel.characterInfo.unsunscribe(observer: self)
     }
     
 }
 
 private extension WeeklyBossCalculatorViewController {
-    
-    func setupCollectionView() {
-        collectionView = UICollectionView(
-            frame: view.bounds,
-            collectionViewLayout: UICollectionViewFlowLayout()
-        )
-        
-        var layoutConfig = UICollectionLayoutListConfiguration(
-            appearance: .plain
-        )
-        layoutConfig.trailingSwipeActionsConfigurationProvider = setupSwipeActions
-        
-        
-        let listLayout = UICollectionViewCompositionalLayout.list(
-            using: layoutConfig
-        )
-        
-        collectionView.collectionViewLayout = listLayout
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.delegate = self
-        
-        collectionView.register(
-            CharacterViewCell.self,
-            forCellWithReuseIdentifier: CharacterViewCell.id
-        )
-    }
     
     func setupView() {
         [collectionView, characterAddButton].forEach { view in
@@ -122,13 +118,31 @@ private extension WeeklyBossCalculatorViewController {
         }
     }
     
+    func setupCollectionViewLayout() -> UICollectionViewLayout {
+        var layoutConfig = UICollectionLayoutListConfiguration(
+            appearance: .plain
+        )
+        layoutConfig.trailingSwipeActionsConfigurationProvider = setupSwipeActions
+        
+        let listLayout = UICollectionViewCompositionalLayout.list(
+            using: layoutConfig
+        )
+        
+        return listLayout
+    }
+    
     func setupButton() {
-        let imageConfig = UIImage.SymbolConfiguration(pointSize: 30, weight: .light)
-        let image = UIImage(systemName: "plus", withConfiguration: imageConfig)
+        let imageConfig = UIImage.SymbolConfiguration(
+            pointSize: 30,
+            weight: .light
+        )
+        let image = UIImage(
+            systemName: "plus",
+            withConfiguration: imageConfig
+        )
         
         characterAddButton.tintColor = .white
         characterAddButton.setImage(image, for: .normal)
-        
         characterAddButton.addTarget(self, action: #selector(TappedAddButton), for: .touchUpInside)
     }
     
@@ -154,20 +168,18 @@ private extension WeeklyBossCalculatorViewController {
             style: .destructive,
             title: deleteActionTitle
         ) { [weak self] _, _, completion in
-            CoreDatamanager.shared.deleteCharacter(id)
-            self?.applySnapShot()
+            self?.viewModel.deleteCharacter(id: id)
         }
+        
         return UISwipeActionsConfiguration(actions: [deleteAction])
     }
     
-    func applySnapShot() {
-        characterInfo = CoreDatamanager.shared.readCharter()
-        
+    func applySnapShot(from data: [CharacterInfo]) {
         var snapshot = NSDiffableDataSourceSnapshot<Section, CharacterInfo>()
         snapshot.appendSections([.main])
-        snapshot.appendItems(characterInfo)
+        snapshot.appendItems(data)
         
-        diffableDataSource.apply(snapshot, animatingDifferences: false)
+        diffableDataSource.apply(snapshot, animatingDifferences: true)
     }
     
 }
@@ -206,11 +218,10 @@ private extension WeeklyBossCalculatorViewController {
                 
                 self?.present(alert, animated: true, completion: nil)
             } else {
-                CoreDatamanager.shared.createCharacter(
-                                    name: alert.textFields?[0].text ?? "",
-                                    world: self?.selectWorld ?? ""
-                                )
-                self?.applySnapShot()
+                self?.viewModel.createCharacter(
+                    name: alert.textFields?[0].text ?? "",
+                    world: self?.selectWorld ?? ""
+                )
             }
         }
         let cancel = UIAlertAction(
@@ -229,7 +240,7 @@ extension WeeklyBossCalculatorViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let weeklyBossListViewController = WeeklyBossListViewController(
-            characterInfo: characterInfo[indexPath.row]
+            characterInfo: viewModel.characterInfo.value[indexPath.row]
         )
         
         navigationController?.pushViewController(weeklyBossListViewController, animated: true)
