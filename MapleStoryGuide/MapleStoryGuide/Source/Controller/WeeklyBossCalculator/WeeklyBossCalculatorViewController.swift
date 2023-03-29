@@ -1,120 +1,149 @@
 //
-//  WeeklyBossCalculatorViewController.swift
+//  WeeklyBossListViewController.swift
 //  MapleStoryGuide
 //
-//  Created by brad on 2023/03/14.
+//  Created by brad on 2023/03/16.
 //
 
 import UIKit
 import SnapKit
 import Then
 
-final class WeeklyBossCalculatorViewController: ContentViewController {
+final class WeeklyBossCalculatorViewController: UIViewController {
     
     enum Section: CaseIterable {
         case main
     }
-
-    private let viewModel = WeeklyBossCalculatorViewModel()
-        
-    private let worldList = [
-        "스카니아", "베라", "루나", "제니스", "크로아", "유니온", "엘리시움", "이노시스", "레드", "오로라", "아케인", "노바", "리부트", "리부트2"
-    ]
     
-    private var selectWorld = ""
-
-    private let worldPickerView = UIPickerView(
-        frame: CGRect(x: 5, y: 50, width: 260, height: 160)
-    )
+    private var viewModel: WeeklyBossCalculatorViewModel! = nil
+    private var characterInfo: CharacterInfo?
     
     private lazy var collectionView = UICollectionView(
         frame: .zero,
         collectionViewLayout: self.setupCollectionViewLayout()
     ).then {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.delegate = self
         $0.register(
-            CharacterViewCell.self,
-            forCellWithReuseIdentifier: CharacterViewCell.id
+            WeeklyBossCalculatorViewCell.self,
+            forCellWithReuseIdentifier: WeeklyBossCalculatorViewCell.id
         )
     }
-    
-    private lazy var characterAddButton = UIButton().then {
-        $0.layer.cornerRadius = 30
-        $0.clipsToBounds = true
-        $0.backgroundColor = .systemBrown
-        $0.translatesAutoresizingMaskIntoConstraints = false
+
+    private lazy var totalPriceLabel = UILabel().then {
+        $0.font = .preferredFont(
+            forTextStyle: .title2,
+            compatibleWith: UITraitCollection(legibilityWeight: .bold)
+        )
+        $0.textAlignment = .center
+        $0.backgroundColor = .white
     }
     
-    private lazy var diffableDataSource: UICollectionViewDiffableDataSource<Section, CharacterInfo> = .init(collectionView: self.collectionView) { (collectionView, indexPath, object) -> UICollectionViewListCell? in
+    private lazy var diffableDataSource: UICollectionViewDiffableDataSource<Section, BossInformation> = .init(collectionView: self.collectionView) { (collectionView, indexPath, object) -> UICollectionViewListCell? in
         
         let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: CharacterViewCell.id,
+            withReuseIdentifier: WeeklyBossCalculatorViewCell.id,
             for: indexPath
-        ) as! CharacterViewCell
+        ) as! WeeklyBossCalculatorViewCell
         
-        var bossClearCount = 0
+        cell.clipsToBounds = true
+        cell.layer.cornerRadius = 15
         
-        self.viewModel.fetchBossList(
-            character: self.viewModel.characterInfo.value[indexPath.row]
-        ).forEach({ element in
-            if element.checkClear {
-                bossClearCount += 1
-            }
-        })
-        
-        cell.configure(
-            name: self.viewModel.characterInfo.value[indexPath.row].name ?? "",
-            world: self.viewModel.characterInfo.value[indexPath.row].world ?? "",
-            totalCount: ("\(bossClearCount) / \(self.viewModel.characterInfo.value[indexPath.row].bossInformations?.count ?? 0)")
+        cell.clearCheckSwitch.addTarget(
+            self,
+            action: #selector(self.onClickSwitch(sender:)),
+            for: UIControl.Event.valueChanged
         )
+        cell.clearCheckSwitch.tag = indexPath.row
+
+        if (self.characterInfo?.world?.contains("리부트") ?? true) {
+            cell.configure(
+                bossName: self.viewModel.bossInformation.value[indexPath.row].name ?? "",
+                bossDifficulty: self.viewModel.bossInformation.value[indexPath.row].difficulty ?? "",
+                bossMember: self.viewModel.bossInformation.value[indexPath.row].member ?? "",
+                thumnailImageURL: self.viewModel.bossInformation.value[indexPath.row].thumnailImageURL ?? "",
+                bossCrystalStone: self.viewModel.bossInformation.value[indexPath.row].crystalStonePrice?.rebootPrice ?? "",
+                bossClear: self.viewModel.bossInformation.value[indexPath.row].checkClear
+            )
+        } else {
+            cell.configure(
+                bossName: self.viewModel.bossInformation.value[indexPath.row].name ?? "",
+                bossDifficulty: self.viewModel.bossInformation.value[indexPath.row].difficulty ?? "",
+                bossMember: self.viewModel.bossInformation.value[indexPath.row].member ?? "",
+                thumnailImageURL: self.viewModel.bossInformation.value[indexPath.row].thumnailImageURL ?? "",
+                bossCrystalStone: self.viewModel.bossInformation.value[indexPath.row].crystalStonePrice ?? "",
+                bossClear: self.viewModel.bossInformation.value[indexPath.row].checkClear
+            )
+        }
         return cell
+    }
+    
+    init(characterInfo: CharacterInfo) {
+        super.init(nibName: nil, bundle: nil)
+
+        self.characterInfo = characterInfo
+        viewModel = WeeklyBossCalculatorViewModel(characterInfo: characterInfo)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         setupView()
         setupLayout()
-        setupButton()
-        setupPickerView()
+        setupNavigation()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        viewModel.characterInfo.subscribe(on: self) { [weak self] charterInfo in
-            self?.applySnapShot(from: charterInfo)
+        viewModel.bossInformation.subscribe(on: self) { [weak self] bossInformation in
+            self?.applySnapShot(from: bossInformation)
         }
-        viewModel.fetchCharacterInfo()
-        collectionView.reloadData()
+        viewModel.fetchBossInformation()
+        
+        applyCrystalStonePrice()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
-        viewModel.characterInfo.unsunscribe(observer: self)
+        viewModel.bossInformation.unsunscribe(observer: self)
     }
-    
+
 }
 
 private extension WeeklyBossCalculatorViewController {
     
+    func setupNavigation() {
+        navigationItem.title = characterInfo?.name
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            title: "보스 추가",
+            style: .plain,
+            target: self,
+            action: #selector(didTapAddBossButton)
+        )
+    }
+    
     func setupView() {
-        [collectionView, characterAddButton].forEach { view in
+        [collectionView, totalPriceLabel].forEach { view in
             self.view.addSubview(view)
         }
     }
     
     func setupLayout() {
         collectionView.snp.makeConstraints { make in
-            make.top.leading.trailing.bottom.equalTo(self.view)
+            make.top.leading.trailing.equalTo(self.view)
+            make.bottom.equalTo(totalPriceLabel.snp.top)
         }
         
-        characterAddButton.snp.makeConstraints { make in
-            make.trailing.bottom.equalTo(self.view).inset(20)
+        totalPriceLabel.snp.makeConstraints { make in
+            make.top.equalTo(collectionView.snp.bottom)
+            make.leading.trailing.bottom.equalTo(self.view)
             
-            make.width.height.equalTo(self.view.snp.width).multipliedBy(0.15)
+            make.height.equalTo(self.view.snp.width).multipliedBy(0.2)
         }
     }
     
@@ -131,32 +160,6 @@ private extension WeeklyBossCalculatorViewController {
         return listLayout
     }
     
-    func setupButton() {
-        let imageConfig = UIImage.SymbolConfiguration(
-            pointSize: 30,
-            weight: .light
-        )
-        let image = UIImage(
-            systemName: "plus",
-            withConfiguration: imageConfig
-        )
-        
-        characterAddButton.tintColor = .white
-        characterAddButton.setImage(image, for: .normal)
-        characterAddButton.addTarget(self, action: #selector(TappedAddButton), for: .touchUpInside)
-    }
-    
-    func setupPickerView() {
-        selectWorld = worldList[worldList.count/2]
-        
-        worldPickerView.delegate = self
-        worldPickerView.dataSource = self
-        worldPickerView.selectRow(
-            worldList.count/2,
-            inComponent: 0,
-            animated: true
-        )
-    }
     
     func setupSwipeActions(for indexPath: IndexPath?) -> UISwipeActionsConfiguration? {
         guard let indexPath = indexPath,
@@ -168,101 +171,59 @@ private extension WeeklyBossCalculatorViewController {
             style: .destructive,
             title: deleteActionTitle
         ) { [weak self] _, _, completion in
-            self?.viewModel.deleteCharacter(id: id)
+            self?.viewModel.deleteBossInformation(id: id)
         }
-        
         return UISwipeActionsConfiguration(actions: [deleteAction])
     }
     
-    func applySnapShot(from data: [CharacterInfo]) {
-        var snapshot = NSDiffableDataSourceSnapshot<Section, CharacterInfo>()
+    func applySnapShot(from data: [BossInformation]) {
+        var snapshot = NSDiffableDataSourceSnapshot<Section, BossInformation>()
         snapshot.appendSections([.main])
         snapshot.appendItems(data)
         
         diffableDataSource.apply(snapshot, animatingDifferences: true)
     }
     
+    func applyCrystalStonePrice() {
+        var crystalStonePrice = 0
+        
+        viewModel.bossInformation.value.forEach({ element in
+            if element.checkClear {
+                crystalStonePrice += Int(element.crystalStonePrice ?? "0") ?? 0
+            }
+        })
+        if characterInfo!.world!.contains("리부트") {
+            totalPriceLabel.text = crystalStonePrice.description.rebootPrice.insertComma
+        } else {
+            totalPriceLabel.text = crystalStonePrice.description.insertComma
+        }
+    }
+    
 }
 
 @objc private extension WeeklyBossCalculatorViewController {
     
-    func TappedAddButton() {
-        let alert = UIAlertController(
-            title: "캐릭터 등록",
-            message: "\n\n\n\n\n\n\n\n\n",
-            preferredStyle: .alert
-        )
-        alert.view.addSubview(worldPickerView)
-
-        alert.addTextField { textField in
-            textField.placeholder = "닉네임"
+    func onClickSwitch(sender: UISwitch) {
+        if sender.isOn {
+            viewModel.updateBossClear(
+                bossInformation: viewModel.bossInformation.value[sender.tag],
+                clear: true
+            )
+        } else {
+            viewModel.updateBossClear(
+                bossInformation: viewModel.bossInformation.value[sender.tag],
+                clear: false
+            )
         }
-        
-        let ok = UIAlertAction(
-            title: "OK",
-            style: .default
-        ) { [weak self] ok in
-            if alert.textFields?[0].text == "" {
-                let alert = UIAlertController(
-                    title: "캐릭터 닉네임은 필수 입력 입니다.",
-                    message: "최소 한글자 이상 입력해주세요.",
-                    preferredStyle: .alert
-                )
-                let ok = UIAlertAction(
-                    title: "ok",
-                    style: .cancel
-                ) { (cancel) in
-                    
-                }
-                alert.addAction(ok)
-                
-                self?.present(alert, animated: true, completion: nil)
-            } else {
-                self?.viewModel.createCharacter(
-                    name: alert.textFields?[0].text ?? "",
-                    world: self?.selectWorld ?? ""
-                )
-            }
-        }
-        let cancel = UIAlertAction(
-            title: "cancel",
-            style: .cancel
-        ) 
-        alert.addAction(ok)
-        alert.addAction(cancel)
-        
-        self.present(alert, animated: true, completion: nil)
+        applyCrystalStonePrice()
     }
     
-}
-
-extension WeeklyBossCalculatorViewController: UICollectionViewDelegate {
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let weeklyBossListViewController = WeeklyBossListViewController(
-            characterInfo: viewModel.characterInfo.value[indexPath.row]
+    func didTapAddBossButton() {
+        let weeklyBossAddViewController = WeeklyBossAddViewController(
+            characterInfo: self.characterInfo ?? CharacterInfo()
         )
         
-        navigationController?.pushViewController(weeklyBossListViewController, animated: true)
-    }
-    
-}
-
-extension WeeklyBossCalculatorViewController: UIPickerViewDelegate, UIPickerViewDataSource {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return worldList.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return worldList[row]
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectWorld = worldList[row]
+        navigationController?.pushViewController(weeklyBossAddViewController, animated: true)
     }
     
 }

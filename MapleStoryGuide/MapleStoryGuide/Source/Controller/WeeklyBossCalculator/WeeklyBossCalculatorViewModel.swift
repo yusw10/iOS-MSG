@@ -1,5 +1,5 @@
 //
-//  WeeklyBossCalculatorViewModel.swift
+//  WeeklyBossListViewModel.swift
 //  MapleStoryGuide
 //
 //  Created by brad on 2023/03/27.
@@ -10,30 +10,31 @@ import CoreData
 final class WeeklyBossCalculatorViewModel {
     
     private let coreDataManager = CoreDatamanager.shared
-
-    var characterInfo: Observable<[CharacterInfo]> = Observable([])
-        
-    func fetchCharacterInfo() {
-        characterInfo.value = coreDataManager.readCharter()
+    
+    var bossInformation: Observable<[BossInformation]> = Observable([])
+    var characterInfo: CharacterInfo?
+    
+    init(characterInfo: CharacterInfo) {
+        self.characterInfo =  characterInfo
     }
     
-    func createCharacter(name: String, world: String) {
-        coreDataManager.createCharacter(
-            name: name,
-            world: world
+    func fetchBossInformation() {
+        bossInformation.value = coreDataManager.readBossList(
+            characterInfo: characterInfo ?? CharacterInfo()
         )
-        fetchCharacterInfo()
     }
     
-    func deleteCharacter(id: CharacterInfo) {
-        coreDataManager.deleteCharacter(id)
-        fetchCharacterInfo()
+    func updateBossClear(bossInformation: BossInformation, clear: Bool) {
+        coreDataManager.updateBossClear(
+            bossInformation,
+            clear: clear
+        )
+        fetchBossInformation()
     }
     
-    func fetchBossList(character: CharacterInfo) -> [BossInformation] {
-        let bossInformation = coreDataManager.readBossList(characterInfo: character)
-        
-        return bossInformation
+    func deleteBossInformation(id: BossInformation) {
+        CoreDatamanager.shared.deleteBoss(id)
+        fetchBossInformation()
     }
     
 }

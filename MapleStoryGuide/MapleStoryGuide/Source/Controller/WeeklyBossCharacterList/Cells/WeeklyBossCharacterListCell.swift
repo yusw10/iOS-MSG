@@ -9,9 +9,9 @@ import UIKit
 import SnapKit
 import Then
 
-final class CharacterViewCell: UICollectionViewListCell {
+final class WeeklyBossCharacterListCell: UICollectionViewListCell {
     
-    static let id = "CharacterViewCell"
+    static let id = "WeeklyBossCharacterListCell"
     
     private lazy var horizontalStackView = UIStackView().then {
         $0.alignment = .center
@@ -54,7 +54,7 @@ final class CharacterViewCell: UICollectionViewListCell {
     
 }
 
-private extension CharacterViewCell {
+private extension WeeklyBossCharacterListCell {
     
     func setupView() {
         self.contentView.addSubview(horizontalStackView)

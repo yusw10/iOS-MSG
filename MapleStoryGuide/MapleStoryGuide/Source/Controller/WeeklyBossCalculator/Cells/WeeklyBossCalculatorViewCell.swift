@@ -9,9 +9,9 @@ import UIKit
 import SnapKit
 import Then
 
-final class WeeklyBossListViewCell: UICollectionViewListCell {
+final class WeeklyBossCalculatorViewCell: UICollectionViewListCell {
     
-    static let id = "WeeklyBossListViewCell"
+    static let id = "WeeklyBossCalculatorViewCell"
     
     private lazy var horizontalStackView = UIStackView().then {
         $0.alignment = .center
@@ -89,7 +89,7 @@ final class WeeklyBossListViewCell: UICollectionViewListCell {
     
 }
 
-private extension WeeklyBossListViewCell {
+private extension WeeklyBossCalculatorViewCell {
     
     func setupView() {
         self.contentView.backgroundColor = .white
