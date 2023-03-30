@@ -44,35 +44,23 @@ final class WeeklyBossCalculatorViewController: UIViewController, WeelyBossAddVi
         $0.backgroundColor = .white
     }
     
-    private lazy var diffableDataSource: UICollectionViewDiffableDataSource<Section, MyWeeklyBoss> = .init(collectionView: self.collectionView) { (collectionView, indexPath, object) -> UICollectionViewListCell? in
+    private lazy var diffableDataSource: UICollectionViewDiffableDataSource<Section, MyWeeklyBoss> = .init(collectionView: self.collectionView) { [self] (collectionView, indexPath, object) -> UICollectionViewListCell? in
         
         let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: WeeklyBossCalculatorViewCell.id,
             for: indexPath
         ) as! WeeklyBossCalculatorViewCell
         
-        cell.clipsToBounds = true
-        cell.layer.cornerRadius = 15
-        
-        cell.clearCheckSwitch.addTarget(
+        cell.configureCell(name: object.name, imageURL: object.thumnailImageURL)
+        cell.checkButton.setCheckState(state: object.checkClear)
+        cell.checkButton.addTarget(
             self,
-            action: #selector(self.onClickSwitch(sender:)),
-            for: UIControl.Event.valueChanged
+            action: #selector(self.didTapCheckButton(sender:)),
+            for: .touchUpInside
         )
-        cell.clearCheckSwitch.tag = indexPath.row
+        // TODO: 서버가 리부트인지 확인하는 로직 추가
+        cell.configurePriceCell(price: object.crystalStonePrice)
 
-        var price = object.crystalStonePrice
-        if (self.viewModel.selectedCharacter.value?.world.contains("리부트") ?? true) {
-            price = object.crystalStonePrice.rebootPrice
-        }
-        cell.configure(
-            bossName: object.name,
-            bossDifficulty: object.difficulty,
-            bossMember: object.member,
-            thumnailImageURL: object.thumnailImageURL,
-            bossCrystalStone: price,
-            bossClear: object.checkClear
-        )
         return cell
     }
     
@@ -123,7 +111,6 @@ final class WeeklyBossCalculatorViewController: UIViewController, WeelyBossAddVi
         viewModel.characterInfo.value[selectedIndex].bossInformations.append(data)
         viewModel.selectedCharacter.value?.bossInformations.append(data)
     }
-
 }
 
 private extension WeeklyBossCalculatorViewController {
@@ -159,16 +146,17 @@ private extension WeeklyBossCalculatorViewController {
     }
     
     func setupCollectionViewLayout() -> UICollectionViewLayout {
-        var layoutConfig = UICollectionLayoutListConfiguration(
-            appearance: .plain
-        )
-        layoutConfig.trailingSwipeActionsConfigurationProvider = setupSwipeActions
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
-        let listLayout = UICollectionViewCompositionalLayout.list(
-            using: layoutConfig
-        )
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.15))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         
-        return listLayout
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10)
+        let layout = UICollectionViewCompositionalLayout(section: section)
+        
+        return layout
     }
     
     func setupSwipeActions(for indexPath: IndexPath?) -> UISwipeActionsConfiguration? {
@@ -213,17 +201,6 @@ private extension WeeklyBossCalculatorViewController {
 }
 
 @objc private extension WeeklyBossCalculatorViewController {
-    
-    func onClickSwitch(sender: UISwitch) {
-        if sender.isOn {
-            viewModel.characterInfo.value[selectedIndex].bossInformations[sender.tag].checkClear = true
-            viewModel.selectedCharacter.value?.bossInformations[sender.tag].checkClear = true
-        } else {
-            viewModel.characterInfo.value[selectedIndex].bossInformations[sender.tag].checkClear = false
-            viewModel.selectedCharacter.value?.bossInformations[sender.tag].checkClear = false
-        }
-    }
-    
     func didTapAddBossButton() {
         let weeklyBossAddViewController = WeeklyBossAddViewController(
             characterInfo: viewModel.selectedCharacter.value!
@@ -233,4 +210,11 @@ private extension WeeklyBossCalculatorViewController {
         navigationController?.pushViewController(weeklyBossAddViewController, animated: true)
     }
     
+    func didTapCheckButton(sender: CheckBox) {
+        if sender.getCheckState() {
+            sender.setCheckState(state: false)
+        } else {
+            sender.setCheckState(state: true)
+        }
+    }
 }

@@ -27,6 +27,8 @@ final class WeeklyBossCharacterListViewController: ContentViewController {
         frame: CGRect(x: 5, y: 50, width: 260, height: 160)
     )
     
+    private let kindView = KindHeaderView()
+    
     private lazy var collectionView = UICollectionView(
         frame: .zero,
         collectionViewLayout: self.setupCollectionViewLayout()
@@ -71,6 +73,7 @@ final class WeeklyBossCharacterListViewController: ContentViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = .white
         setupView()
         setupLayout()
         setupButton()
@@ -82,6 +85,7 @@ final class WeeklyBossCharacterListViewController: ContentViewController {
         viewModel.fetchCharacterInfo()
     }
     
+    // TODO: willAppear 할 때 applySnapshot, disappear할 때 deleteSnapshot
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
 
@@ -93,14 +97,20 @@ final class WeeklyBossCharacterListViewController: ContentViewController {
 private extension WeeklyBossCharacterListViewController {
     
     func setupView() {
-        [collectionView, characterAddButton].forEach { view in
+        [kindView, collectionView, characterAddButton].forEach { view in
             self.view.addSubview(view)
         }
     }
     
     func setupLayout() {
+        kindView.snp.makeConstraints { make in
+            make.top.leading.trailing.equalTo(self.view.safeAreaLayoutGuide)
+            make.height.equalTo(self.view.snp.height).multipliedBy(0.05)
+        }
+        
         collectionView.snp.makeConstraints { make in
-            make.top.leading.trailing.bottom.equalTo(self.view)
+            make.top.equalTo(self.kindView.snp.bottom)
+            make.leading.trailing.bottom.equalTo(self.view.safeAreaLayoutGuide)
         }
         
         characterAddButton.snp.makeConstraints { make in
@@ -256,6 +266,73 @@ extension WeeklyBossCharacterListViewController: UIPickerViewDelegate, UIPickerV
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectWorld = worldList[row]
+    }
+    
+}
+
+final class KindHeaderView: UIView {
+    
+    static let id = "WeeklyBossCharacterListCell"
+    
+    private lazy var horizontalStackView = UIStackView().then {
+        $0.distribution = .fillEqually
+        $0.axis = .horizontal
+        $0.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    private lazy var worldLabel = UILabel().then {
+        $0.numberOfLines = 1
+        $0.font = UIFont.boldSystemFont(ofSize: 19)
+        $0.text = "월드"
+        $0.textAlignment = .center
+        $0.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    private lazy var nameLabel = UILabel().then {
+        $0.numberOfLines = 1
+        $0.font = UIFont.boldSystemFont(ofSize: 19)
+        $0.text = "캐릭터"
+        $0.textAlignment = .center
+        $0.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    private lazy var totalPriceLabel = UILabel().then {
+        $0.numberOfLines = 1
+        $0.font = UIFont.boldSystemFont(ofSize: 19) // Font Size 조정이 필요하다.
+        $0.text = "클리어"
+        $0.textAlignment = .center
+        $0.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        self.backgroundColor = .white
+        self.translatesAutoresizingMaskIntoConstraints = false
+        setupView()
+        setupLayout()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+private extension KindHeaderView {
+    
+    func setupView() {
+        self.addSubview(horizontalStackView)
+        
+        [worldLabel, nameLabel, totalPriceLabel].forEach { view in
+            horizontalStackView.addArrangedSubview(view)
+        }
+    }
+    
+    func setupLayout() {
+        horizontalStackView.snp.makeConstraints { make in
+            make.top.bottom.equalTo(self).inset(10)
+            make.width.equalTo(self)
+        }
     }
     
 }
