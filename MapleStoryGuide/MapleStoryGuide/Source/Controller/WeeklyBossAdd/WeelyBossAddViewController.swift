@@ -114,29 +114,22 @@ private extension WeeklyBossAddViewController {
     }
     
     func setupCollectionViewLayout() -> UICollectionViewCompositionalLayout {
-        let item = NSCollectionLayoutItem(
-            layoutSize: .init(
-                widthDimension: .fractionalWidth(1/2),
-                heightDimension: .fractionalHeight(1))
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(0.5),
+            heightDimension: .fractionalHeight(1.0)
         )
-        item.contentInsets.top = 16
-        item.contentInsets.trailing = 16
-
-        let group = NSCollectionLayoutGroup.horizontal(
-            layoutSize: .init(
-                widthDimension: .fractionalWidth(1),
-                heightDimension: .fractionalWidth(1/2)
-            ),
-            subitems: [item]
-        )
-        let section = NSCollectionLayoutSection(
-            group: group
-        )
-        section.contentInsets.leading = 16
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 10, bottom: 5, trailing: 10)
         
-        let layout = UICollectionViewCompositionalLayout(
-            section: section
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .fractionalHeight(0.25)
         )
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        
+        let section = NSCollectionLayoutSection(group: group)
+        let layout = UICollectionViewCompositionalLayout(section: section)
+        
         return layout
     }
     
