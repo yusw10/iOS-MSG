@@ -17,11 +17,8 @@ struct MyCharacter: Hashable {
 
 struct MyWeeklyBoss: Hashable {
     var checkClear: Bool
-    let crystalStonePrice: String
-    let difficulty: String
     let name: String
     let thumnailImageURL: String
-    let member: String
 }
 
 final class WeeklyBossCharacterListViewModel {

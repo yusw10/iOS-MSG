@@ -35,6 +35,7 @@ class CoreDatamanager {
     }
     
     // 캐릭터 정보 가져옴
+    // MARK: CoreData 수정
     func readCharter() -> [MyCharacter] {
         let readRequest: NSFetchRequest<CharacterInfo> = CharacterInfo.fetchRequest()
                 
@@ -97,9 +98,6 @@ class CoreDatamanager {
         let bossInfo = BossInformation(context: context)
         bossInfo.name = name
         bossInfo.thumnailImageURL = thumnailImageURL
-        bossInfo.difficulty = difficulty
-        bossInfo.member = member
-        bossInfo.crystalStonePrice = price
         bossInfo.checkClear = false
         
         character.addToBossInformations(bossInfo)

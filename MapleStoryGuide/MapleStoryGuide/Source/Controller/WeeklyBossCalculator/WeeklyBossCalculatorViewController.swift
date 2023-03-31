@@ -9,13 +9,12 @@ import UIKit
 import SnapKit
 import Then
 
-protocol WeelyBossAddViewDelegate: AnyObject {
-    
-    func weelyBossAdd(from data: MyWeeklyBoss)
-    
-}
+// TODO: TextField에 PickerView 연결 테스트 ( 내가 클릭한 TextView의 Cell에 담긴 정보에 접근이 가능해야 한다. )
+// TODO: 결정석 Label 쪽에 Title 추가 및 NumberFormatter 적용
+// TODO: CoreData쪽 연결
+// TODO: ViewWillAppear 및 ViewWillDisappear 쪽에 snapshot 코드 수정하기
 
-final class WeeklyBossCalculatorViewController: UIViewController, WeelyBossAddViewDelegate {
+final class WeeklyBossCalculatorViewController: UIViewController {
  
     enum Section: CaseIterable {
         case main
@@ -33,6 +32,7 @@ final class WeeklyBossCalculatorViewController: UIViewController, WeelyBossAddVi
             WeeklyBossCalculatorViewCell.self,
             forCellWithReuseIdentifier: WeeklyBossCalculatorViewCell.id
         )
+        $0.delegate = self
     }
 
     private lazy var totalPriceLabel = UILabel().then {
@@ -106,15 +106,9 @@ final class WeeklyBossCalculatorViewController: UIViewController, WeelyBossAddVi
         snapShot.deleteAllItems()
         self.diffableDataSource.apply(snapShot)
     }
-    
-    func weelyBossAdd(from data: MyWeeklyBoss) {
-        viewModel.characterInfo.value[selectedIndex].bossInformations.append(data)
-        viewModel.selectedCharacter.value?.bossInformations.append(data)
-    }
 }
 
 private extension WeeklyBossCalculatorViewController {
-    
     func setupNavigation() {
         navigationItem.title = viewModel.selectedCharacter.value?.name
         navigationItem.rightBarButtonItem = UIBarButtonItem(
@@ -149,7 +143,7 @@ private extension WeeklyBossCalculatorViewController {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.15))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.19))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         
         let section = NSCollectionLayoutSection(group: group)
@@ -200,6 +194,19 @@ private extension WeeklyBossCalculatorViewController {
     
 }
 
+extension WeeklyBossCalculatorViewController: WeelyBossAddViewDelegate {
+    func weelyBossAdd(from data: MyWeeklyBoss) {
+        viewModel.characterInfo.value[selectedIndex].bossInformations.append(data)
+        viewModel.selectedCharacter.value?.bossInformations.append(data)
+    }
+}
+
+extension WeeklyBossCalculatorViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
+        return false
+    }
+}
+
 @objc private extension WeeklyBossCalculatorViewController {
     func didTapAddBossButton() {
         let weeklyBossAddViewController = WeeklyBossAddViewController(
@@ -218,3 +225,8 @@ private extension WeeklyBossCalculatorViewController {
         }
     }
 }
+
+// Edit 버튼을 추가함으로 써 명확하게 해당 버튼을 누르면 수정 가능하도록 변경 (만약 기존에 선택된 정보가 있다면 체크 표시)
+// UIFontPickerViewController를 보면 modal 방식으로 사용할 Font를 설정가능하도록 구성되어있다.
+// 우리도 Modal 방식으로 해당 기능을 구현하자.
+// Cell 사이즈 수정 체크박스가 너무 작은 느낌?

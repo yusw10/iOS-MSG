@@ -21,6 +21,8 @@ final class WeeklyBossCalculatorViewCell: UICollectionViewListCell {
 
     private let totalHorizontalStackView = UIStackView().then { stackView in
         stackView.distribution = .fillProportionally
+        stackView.alignment = .center
+        stackView.spacing = 3
         stackView.axis = .horizontal
         stackView.translatesAutoresizingMaskIntoConstraints = false
     }
@@ -38,14 +40,8 @@ final class WeeklyBossCalculatorViewCell: UICollectionViewListCell {
         label.translatesAutoresizingMaskIntoConstraints = false
     }
 
-    private let userInputHorizontalStackView = UIStackView().then { stackView in
-        stackView.distribution = .fillEqually
-        stackView.axis = .horizontal
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-    }
-
     private let modeInputHorizontalStackView = UIStackView().then { stackView in
-        stackView.distribution = .equalSpacing
+        stackView.distribution = .fillProportionally
         stackView.axis = .horizontal
         stackView.translatesAutoresizingMaskIntoConstraints = false
     }
@@ -53,16 +49,22 @@ final class WeeklyBossCalculatorViewCell: UICollectionViewListCell {
     private let modeTitleLabel = UILabel().then { label in
         label.textAlignment = .left
         label.text = "난이도:"
+        label.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         label.translatesAutoresizingMaskIntoConstraints = false
     }
 
-    let modeTextLabel = UILabel().then { label in
-        label.textAlignment = .left
-        label.translatesAutoresizingMaskIntoConstraints = false
+    let modeTextField = UITextField().then { textField in
+        textField.textAlignment = .left
+        textField.borderStyle = .roundedRect
+        textField.attributedPlaceholder = NSAttributedString(
+            string: "난이도를 선택하세요.",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14, weight: .regular)])
+        textField.setContentHuggingPriority(.defaultLow, for: .horizontal)
+        textField.translatesAutoresizingMaskIntoConstraints = false
     }
 
     private let partyInputHorizontalStackView = UIStackView().then { stackView in
-        stackView.distribution = .equalSpacing
+        stackView.distribution = .fillProportionally
         stackView.axis = .horizontal
         stackView.translatesAutoresizingMaskIntoConstraints = false
     }
@@ -70,12 +72,18 @@ final class WeeklyBossCalculatorViewCell: UICollectionViewListCell {
     private let partyCountTitleLabel = UILabel().then { label in
         label.textAlignment = .left
         label.text = "파티원 수:"
+        label.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         label.translatesAutoresizingMaskIntoConstraints = false
     }
 
-    let partyCountTextLabel = UILabel().then { label in
-        label.textAlignment = .left
-        label.translatesAutoresizingMaskIntoConstraints = false
+    let partyCountTextField = UITextField().then { textField in
+        textField.textAlignment = .left
+        textField.borderStyle = .roundedRect
+        textField.attributedPlaceholder = NSAttributedString(
+            string: "파티원 수를 선택하세요.",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14, weight: .regular)])
+        textField.setContentHuggingPriority(.defaultLow, for: .horizontal)
+        textField.translatesAutoresizingMaskIntoConstraints = false
     }
 
     private let rewardPriceLabel = UILabel().then { label in
@@ -92,7 +100,6 @@ final class WeeklyBossCalculatorViewCell: UICollectionViewListCell {
         super.init(frame: frame)
         
         self.contentView.layer.addBorder([.bottom], color: .systemGray4, width: 1.5)
-        self.checkButton.setImage(UIImage(named: "rectangle"), for: .normal)
         addSubView()
         setLayout()
     }
@@ -103,16 +110,14 @@ final class WeeklyBossCalculatorViewCell: UICollectionViewListCell {
 
     private func addSubView() {
         self.modeInputHorizontalStackView.addArrangedSubview(modeTitleLabel)
-        self.modeInputHorizontalStackView.addArrangedSubview(modeTextLabel)
+        self.modeInputHorizontalStackView.addArrangedSubview(modeTextField)
 
         self.partyInputHorizontalStackView.addArrangedSubview(partyCountTitleLabel)
-        self.partyInputHorizontalStackView.addArrangedSubview(partyCountTextLabel)
-
-        self.userInputHorizontalStackView.addArrangedSubview(modeInputHorizontalStackView)
-        self.userInputHorizontalStackView.addArrangedSubview(partyInputHorizontalStackView)
+        self.partyInputHorizontalStackView.addArrangedSubview(partyCountTextField)
 
         self.infoVerticalStackView.addArrangedSubview(nameLabel)
-        self.infoVerticalStackView.addArrangedSubview(userInputHorizontalStackView)
+        self.infoVerticalStackView.addArrangedSubview(modeInputHorizontalStackView)
+        self.infoVerticalStackView.addArrangedSubview(partyInputHorizontalStackView)
         self.infoVerticalStackView.addArrangedSubview(rewardPriceLabel)
 
         self.totalHorizontalStackView.addArrangedSubview(infoVerticalStackView)
@@ -124,20 +129,20 @@ final class WeeklyBossCalculatorViewCell: UICollectionViewListCell {
 
     private func setLayout() {
         self.bossImageView.snp.makeConstraints { make in
-            make.leading.equalTo(self.contentView)
+            make.leading.equalTo(self.contentView).offset(5)
             make.centerY.equalTo(self.contentView)
-            make.width.equalTo(self.contentView.snp.width).multipliedBy(0.2)
+            make.width.equalTo(self.contentView.snp.width).multipliedBy(0.23)
             make.height.equalTo(self.bossImageView.snp.width).multipliedBy(1.1)
         }
 
         self.totalHorizontalStackView.snp.makeConstraints { make in
             make.leading.equalTo(self.bossImageView.snp.trailing).offset(10)
-            make.trailing.equalTo(self.contentView)
-            make.centerY.equalTo(self.contentView)
+            make.trailing.equalTo(self.contentView).inset(5)
+            make.top.bottom.equalTo(self.contentView).inset(20)
         }
 
         self.checkButton.snp.makeConstraints { make in
-            make.centerY.equalTo(self.totalHorizontalStackView)
+            make.top.bottom.equalTo(self.contentView).inset(60)
         }
     }
 
@@ -158,8 +163,8 @@ final class WeeklyBossCalculatorViewCell: UICollectionViewListCell {
 }
 
 class CheckBox: UIButton {
-    private let uncheckedImage = UIImage(systemName: "rectangle")
-    private let checkedImage = UIImage(systemName: "checkmark.rectangle")
+    private let uncheckedImage = UIImage(systemName: "square")
+    private let checkedImage = UIImage(systemName: "checkmark.square")
     
     private var isChecked: Bool = false {
         didSet {

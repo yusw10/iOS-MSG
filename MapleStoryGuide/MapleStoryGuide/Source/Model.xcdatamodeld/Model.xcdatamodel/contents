@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21513" systemVersion="22A400" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21512" systemVersion="22A400" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="BossInformation" representedClassName="BossInformation" syncable="YES">
         <attribute name="checkClear" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="crystalStonePrice" optional="YES" attributeType="String"/>
-        <attribute name="difficulty" optional="YES" attributeType="String"/>
-        <attribute name="member" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="thumnailImageURL" optional="YES" attributeType="String"/>
         <relationship name="charcterInfo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CharacterInfo" inverseName="bossInformations" inverseEntity="CharacterInfo"/>

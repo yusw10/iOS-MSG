@@ -273,3 +273,7 @@ extension String {
     }
     
 }
+
+protocol WeelyBossAddViewDelegate: AnyObject {
+    func weelyBossAdd(from data: MyWeeklyBoss)
+}
