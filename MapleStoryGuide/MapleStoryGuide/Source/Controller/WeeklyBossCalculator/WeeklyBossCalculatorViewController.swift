@@ -32,15 +32,6 @@ final class WeeklyBossCalculatorViewController: UIViewController {
         tableView.rowHeight = 70
         tableView.translatesAutoresizingMaskIntoConstraints = false
     }
-
-    private lazy var totalPriceLabel = UILabel().then {
-        $0.font = .preferredFont(
-            forTextStyle: .title2,
-            compatibleWith: UITraitCollection(legibilityWeight: .bold)
-        )
-        $0.textAlignment = .center
-        $0.backgroundColor = .white
-    }
     
     private lazy var diffableDataSource: UITableViewDiffableDataSource<Section, MyWeeklyBoss> = .init(tableView: self.tableView) { [self] (tableView, indexPath, object) -> UITableViewCell? in
         
@@ -121,7 +112,7 @@ private extension WeeklyBossCalculatorViewController {
         snapshot.appendSections([.main])
         snapshot.appendItems(data.bossInformations)
         
-        diffableDataSource.apply(snapshot, animatingDifferences: true)
+        diffableDataSource.apply(snapshot, animatingDifferences: false)
     }
     
 }

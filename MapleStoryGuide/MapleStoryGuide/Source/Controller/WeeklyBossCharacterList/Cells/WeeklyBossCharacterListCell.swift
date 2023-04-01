@@ -20,18 +20,21 @@ final class WeeklyBossCharacterListCell: UICollectionViewListCell {
     }
 
     private lazy var nameLabel = UILabel().then {
+        $0.font = .MapleLightFont()
         $0.numberOfLines = 1
         $0.textAlignment = .center
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
     private lazy var worldLabel = UILabel().then {
+        $0.font = .MapleLightFont()
         $0.numberOfLines = 1
         $0.textAlignment = .center
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
     private lazy var totalPriceLabel = UILabel().then {
+        $0.font = .MapleLightFont()
         $0.numberOfLines = 1
         $0.textAlignment = .center
         $0.translatesAutoresizingMaskIntoConstraints = false

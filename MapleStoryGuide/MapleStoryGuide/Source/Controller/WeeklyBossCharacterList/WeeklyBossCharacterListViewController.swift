@@ -282,7 +282,7 @@ final class KindHeaderView: UIView {
     
     private lazy var worldLabel = UILabel().then {
         $0.numberOfLines = 1
-        $0.font = UIFont.boldSystemFont(ofSize: 19)
+        $0.font = .MapleTitleFont()
         $0.text = "월드"
         $0.textAlignment = .center
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -290,7 +290,7 @@ final class KindHeaderView: UIView {
     
     private lazy var nameLabel = UILabel().then {
         $0.numberOfLines = 1
-        $0.font = UIFont.boldSystemFont(ofSize: 19)
+        $0.font = .MapleTitleFont()
         $0.text = "캐릭터"
         $0.textAlignment = .center
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -298,7 +298,7 @@ final class KindHeaderView: UIView {
     
     private lazy var totalPriceLabel = UILabel().then {
         $0.numberOfLines = 1
-        $0.font = UIFont.boldSystemFont(ofSize: 19) // Font Size 조정이 필요하다.
+        $0.font = .MapleTitleFont()
         $0.text = "클리어"
         $0.textAlignment = .center
         $0.translatesAutoresizingMaskIntoConstraints = false

@@ -27,14 +27,14 @@ final class SkillDetailViewCell: UITableViewCell {
     
     private lazy var titleLabel = UILabel().then {
         $0.setContentHuggingPriority(.defaultHigh, for: .vertical)
-        $0.font = .preferredFont(forTextStyle: .title3, compatibleWith: UITraitCollection(legibilityWeight: .bold))
+        $0.font = .MapleTitleFont()
         $0.numberOfLines = 0
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
     private lazy var descriptionLabel = UILabel().then {
         $0.sizeToFit()
-        $0.font = .preferredFont(forTextStyle: .footnote)
+        $0.font = .MapleLightFont()
         $0.numberOfLines = 0
         $0.translatesAutoresizingMaskIntoConstraints = false
     }

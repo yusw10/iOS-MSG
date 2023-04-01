@@ -9,6 +9,26 @@ import UIKit
 import SnapKit
 import Then
 
+extension UIFont {
+    
+    enum MapleFont: String {
+        case Bold, Light
+    }
+    
+    static func MapleHeaderFont(size: CGFloat = 25, font: MapleFont = .Bold) -> UIFont {
+        return UIFont(name: "Maplestory OTF \(font)", size: size)!
+    }
+    
+    static func MapleTitleFont(size: CGFloat = 20, font: MapleFont = .Bold) -> UIFont {
+        return UIFont(name: "Maplestory OTF \(font)", size: size)!
+    }
+    
+    static func MapleLightFont(size: CGFloat = 15, font: MapleFont = .Light) -> UIFont {
+        return UIFont(name: "Maplestory OTF \(font)", size: size)!
+    }
+    
+}
+
 final class TitleHeaderView: UICollectionReusableView {
     
     // MARK: - Properties
@@ -21,7 +41,7 @@ final class TitleHeaderView: UICollectionReusableView {
     }
     
     private let titleLabel = UILabel().then {
-        $0.font = UIFont.boldSystemFont(ofSize: 20)
+        $0.font = .MapleHeaderFont()
         $0.textAlignment = .left
         $0.numberOfLines = 1
         $0.setContentHuggingPriority(.defaultLow, for: .horizontal)

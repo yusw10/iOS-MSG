@@ -73,7 +73,8 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
             let jobListViewController = JobListViewController()
             containerViewController?.pushViewController(jobListViewController)
         case .additionalOption:
-            print("push additionalOptionViewController")
+            let bossListViewController = BossListViewController()
+            containerViewController?.pushViewController(bossListViewController)
         case .bossInfo:
             let weeklyBossCalculatorViewController = WeeklyBossCharacterListViewController()
             containerViewController?.pushViewController(weeklyBossCalculatorViewController)

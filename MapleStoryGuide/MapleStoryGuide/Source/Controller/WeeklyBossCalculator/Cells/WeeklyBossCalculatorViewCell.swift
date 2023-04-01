@@ -28,6 +28,7 @@ final class WeeklyBossCalculatorViewCell: UITableViewCell {
     }
     
     private let nameLabel = UILabel().then { label in
+        label.font = .MapleTitleFont()
         label.textAlignment = .left
         label.setContentHuggingPriority(.defaultLow, for: .horizontal)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -42,6 +43,7 @@ final class WeeklyBossCalculatorViewCell: UITableViewCell {
     
     private let checkLabel = UILabel().then { label in
         label.text = "클리어"
+        label.font = .MapleTitleFont()
         label.setContentHuggingPriority(.defaultLow, for: .horizontal)
         label.translatesAutoresizingMaskIntoConstraints = false
     }

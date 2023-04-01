@@ -129,10 +129,7 @@ class ItemDescriptionCell: UITableViewCell {
     
     private let titlelabel = UILabel().then { label in // label font 사이즈 설정
         label.textAlignment = .left
-        label.font = UIFont.preferredFont(
-            forTextStyle: .body,
-            compatibleWith: UITraitCollection(legibilityWeight: .bold)
-        )
+        label.font = .MapleTitleFont()
         label.setContentHuggingPriority(.defaultLow, for: .vertical)
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -140,7 +137,7 @@ class ItemDescriptionCell: UITableViewCell {
     
     private let descriptionLabel = UILabel().then { label in
         label.textAlignment = .left
-        label.font = UIFont.preferredFont(forTextStyle: .footnote)
+        label.font = .MapleLightFont()
         label.setContentHuggingPriority(.defaultHigh, for: .vertical)
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false

@@ -22,7 +22,7 @@ class LevelAndForceCell: UICollectionViewCell {
     
     private let modeLabel = UILabel().then { label in
         label.textAlignment = .center
-        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.font = .MapleLightFont()
         label.layer.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.8).cgColor
         label.textColor = .white
         label.setContentHuggingPriority(.defaultHigh, for: .vertical)
@@ -31,7 +31,7 @@ class LevelAndForceCell: UICollectionViewCell {
     
     private let infoLabel = UILabel().then { label in
         label.textAlignment = .center
-        label.font = UIFont.preferredFont(forTextStyle: .body)
+        label.font = .MapleLightFont()
         label.setContentHuggingPriority(.defaultLow, for: .vertical)
         label.translatesAutoresizingMaskIntoConstraints = false
     }
@@ -79,7 +79,7 @@ class DescriptionCell: UICollectionViewCell {
     
     private let descriptionLabel = UILabel().then { label in
         label.textAlignment = .center
-        label.font = UIFont.preferredFont(forTextStyle: .body)
+        label.font = .MapleLightFont()
         label.translatesAutoresizingMaskIntoConstraints = false
     }
     
@@ -122,14 +122,14 @@ class RewardPriceCell: UICollectionViewCell {
     
     private let modeLabel = UILabel().then { label in
         label.textAlignment = .left
-        label.font = UIFont.preferredFont(forTextStyle: .title3)
+        label.font = .MapleLightFont()
         label.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         label.translatesAutoresizingMaskIntoConstraints = false
     }
     
     private let priceLabel = UILabel().then { label in
         label.textAlignment = .left
-        label.font = UIFont.preferredFont(forTextStyle: .body)
+        label.font = .MapleLightFont()
         label.setContentHuggingPriority(.defaultLow, for: .horizontal)
         label.translatesAutoresizingMaskIntoConstraints = false
     }
@@ -184,7 +184,7 @@ class RewardItemCell: UICollectionViewCell {
     private let nameLabel = UILabel().then { label in
         label.textAlignment = .left
         label.numberOfLines = 2
-        label.font = UIFont.preferredFont(forTextStyle: .body)
+        label.font = .MapleLightFont()
         label.translatesAutoresizingMaskIntoConstraints = false
     }
     
