@@ -153,6 +153,7 @@ extension WeeklyBossCalculatorViewController: UITableViewDelegate {
         // MARK: Modal 방식으로 변경 (연락처 앱을 확인해보면 뭔가를 추가하는 방식은 대부분 모달 방식으로 동작)
         let weeklyBossAddViewController = WeeklyBossAddViewController()
         weeklyBossAddViewController.delegate = self
+        weeklyBossAddViewController.myWeeklyBoss = viewModel.selectedCharacter.value?.bossInformations ?? []
         
         present(weeklyBossAddViewController, animated: true)
     }

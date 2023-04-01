@@ -16,9 +16,11 @@ final class WeeklyBossAddViewController: UIViewController {
     }
     
     weak var delegate: WeelyBossAddViewDelegate?
-    
+    var myWeeklyBoss: [MyWeeklyBoss]?
+
     private let repository = LocalWeeklyBossInfoRepository()
     private var viewModel: WeeklyBossAddViewModel! = nil
+    private var filterWeeklyBossInfo = [WeeklyBossInfo]()
     
     private let okButton = UIButton().then { button in
         button.setTitle("확인", for: .normal)
@@ -65,6 +67,14 @@ final class WeeklyBossAddViewController: UIViewController {
         setupView()
         setupLayout()
         
+        myWeeklyBoss?.forEach({ boss in
+            filterWeeklyBossInfo.append(
+                WeeklyBossInfo(
+                    name: boss.name,
+                    imageURL: boss.thumnailImageURL
+                )
+            )
+        })
         Task {
             await viewModel.trigger(query: .weeklyBossInfo)
         }
@@ -138,12 +148,39 @@ private extension WeeklyBossAddViewController {
 extension WeeklyBossAddViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let data = self.viewModel.bossList.value[indexPath.row]
-        self.delegate?.weelyBossAdd(from: data)
-        
-        let alertController = UIAlertController(title: "성공", message: "보스를 추가했습니다.", preferredStyle: .alert)
+       
+        let bossAppendAlertController = UIAlertController(
+            title: "성공",
+            message: "보스를 추가했습니다.",
+            preferredStyle: .alert
+        )
+        let bossCheckAlertController = UIAlertController(
+            title: "실패",
+            message: "이미 보스를 추가했습니다.",
+            preferredStyle: .alert
+        )
         let okAction = UIAlertAction(title: "확인", style: .default)
-        alertController.addAction(okAction)
-        present(alertController, animated: true)
+        
+        bossAppendAlertController.addAction(okAction)
+        bossCheckAlertController.addAction(okAction)
+
+        if filterWeeklyBossInfo.isEmpty {
+            if filterWeeklyBossInfo.contains(data) {
+                present(bossCheckAlertController, animated: true)
+            } else {
+                filterWeeklyBossInfo.append(data)
+                self.delegate?.weelyBossAdd(from: data)
+                present(bossAppendAlertController, animated: true)
+            }
+        } else {
+            if filterWeeklyBossInfo.contains(where: { $0.name.hasPrefix(data.name)}) {
+                present(bossCheckAlertController, animated: true)
+            } else {
+                filterWeeklyBossInfo.append(data)
+                self.delegate?.weelyBossAdd(from: data)
+                present(bossAppendAlertController, animated: true)
+            }
+        }
     }
     
 }
