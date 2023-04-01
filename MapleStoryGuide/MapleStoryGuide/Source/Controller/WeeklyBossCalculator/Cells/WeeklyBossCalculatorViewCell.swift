@@ -9,7 +9,9 @@ import UIKit
 import SnapKit
 import Then
 
-final class WeeklyBossCalculatorViewCell: UICollectionViewCell {
+// TODO: 디자인 살짝 수정
+
+final class WeeklyBossCalculatorViewCell: UITableViewCell {
     static let id = "WeeklyBossCalculatorViewCell"
     
     private let bossImageView = UIImageView().then { imageView in
@@ -31,15 +33,27 @@ final class WeeklyBossCalculatorViewCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
     }
     
+    private let checkHorizontalStackView = UIStackView().then { stackView in
+        stackView.axis = .horizontal
+        stackView.distribution = .fillProportionally
+        stackView.spacing = 10
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    private let checkLabel = UILabel().then { label in
+        label.text = "클리어"
+        label.setContentHuggingPriority(.defaultLow, for: .horizontal)
+        label.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
     let checkButton = CheckBox().then { button in
         button.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         button.translatesAutoresizingMaskIntoConstraints = false
     }
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        self.contentView.layer.addBorder([.bottom], color: .systemGray4, width: 1.5)
         addSubView()
         setLayout()
     }
@@ -49,8 +63,11 @@ final class WeeklyBossCalculatorViewCell: UICollectionViewCell {
     }
 
     private func addSubView() {
+        self.checkHorizontalStackView.addArrangedSubview(checkLabel)
+        self.checkHorizontalStackView.addArrangedSubview(checkButton)
+        
         self.totalHorizontalStackView.addArrangedSubview(nameLabel)
-        self.totalHorizontalStackView.addArrangedSubview(checkButton)
+        self.totalHorizontalStackView.addArrangedSubview(checkHorizontalStackView)
         
         self.contentView.addSubview(bossImageView)
         self.contentView.addSubview(totalHorizontalStackView)
@@ -58,15 +75,15 @@ final class WeeklyBossCalculatorViewCell: UICollectionViewCell {
 
     private func setLayout() {
         self.bossImageView.snp.makeConstraints { make in
-            make.leading.equalTo(self.contentView).offset(5)
+            make.leading.equalTo(self.contentView).offset(10)
             make.centerY.equalTo(self.contentView)
-            make.height.equalTo(self.contentView).multipliedBy(0.9)
+            make.height.equalTo(self.contentView).multipliedBy(0.8)
             make.width.equalTo(self.bossImageView.snp.height)
         }
 
         self.totalHorizontalStackView.snp.makeConstraints { make in
             make.leading.equalTo(self.bossImageView.snp.trailing).offset(10)
-            make.trailing.equalTo(self.contentView).inset(10)
+            make.trailing.equalTo(self.contentView).inset(15)
             make.centerY.equalTo(self.contentView)
         }
     }

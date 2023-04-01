@@ -9,8 +9,8 @@ import UIKit
 import SnapKit
 import Then
 
-// TODO: ViewWillAppear 및 ViewWillDisappear 쪽에 snapshot 코드 수정하기 (TableView로 수정 하고 싶다.)
 // TODO: CoreData쪽 연결
+// TODO: 코드 일관성
 
 final class WeeklyBossCalculatorViewController: UIViewController {
  
@@ -21,16 +21,16 @@ final class WeeklyBossCalculatorViewController: UIViewController {
     private var viewModel: WeeklyBossCharacterListViewModel
     private var selectedIndex: Int
 
-    private lazy var collectionView = UICollectionView(
+    private let tableView = UITableView(
         frame: .zero,
-        collectionViewLayout: self.setupCollectionViewLayout()
-    ).then {
-        $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.register(
+        style: .plain
+    ).then { tableView in
+        tableView.register(
             WeeklyBossCalculatorViewCell.self,
-            forCellWithReuseIdentifier: WeeklyBossCalculatorViewCell.id
+            forCellReuseIdentifier: WeeklyBossCalculatorViewCell.id
         )
-        $0.delegate = self
+        tableView.rowHeight = 70
+        tableView.translatesAutoresizingMaskIntoConstraints = false
     }
 
     private lazy var totalPriceLabel = UILabel().then {
@@ -42,10 +42,10 @@ final class WeeklyBossCalculatorViewController: UIViewController {
         $0.backgroundColor = .white
     }
     
-    private lazy var diffableDataSource: UICollectionViewDiffableDataSource<Section, MyWeeklyBoss> = .init(collectionView: self.collectionView) { [self] (collectionView, indexPath, object) -> UICollectionViewCell? in
+    private lazy var diffableDataSource: UITableViewDiffableDataSource<Section, MyWeeklyBoss> = .init(tableView: self.tableView) { [self] (tableView, indexPath, object) -> UITableViewCell? in
         
-        let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: WeeklyBossCalculatorViewCell.id,
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: WeeklyBossCalculatorViewCell.id,
             for: indexPath
         ) as! WeeklyBossCalculatorViewCell
         
@@ -77,6 +77,7 @@ final class WeeklyBossCalculatorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.delegate = self
         setupView()
         setupLayout()
         
@@ -109,27 +110,13 @@ private extension WeeklyBossCalculatorViewController {
     }
     
     func setupView() {
-        self.view.addSubview(collectionView)
+        self.view.addSubview(tableView)
     }
     
     func setupLayout() {
-        collectionView.snp.makeConstraints { make in
+        tableView.snp.makeConstraints { make in
             make.top.leading.trailing.bottom.equalTo(self.view)
         }
-    }
-    
-    func setupCollectionViewLayout() -> UICollectionViewLayout {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.08))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
-        
-        let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10)
-        let layout = UICollectionViewCompositionalLayout(section: section)
-        
-        return layout
     }
     
     func applySnapShot(from data: MyCharacter) {
@@ -155,9 +142,20 @@ extension WeeklyBossCalculatorViewController: WeelyBossAddViewDelegate {
     }
 }
 
-extension WeeklyBossCalculatorViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
+extension WeeklyBossCalculatorViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
         return false
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let contextualAction = UIContextualAction(style: .normal, title: "delete") { (action, view, handler) in
+            self.viewModel.selectedCharacter.value?.bossInformations.remove(at: indexPath.row)
+        }
+        contextualAction.backgroundColor = .systemRed
+        
+        return UISwipeActionsConfiguration(
+            actions: [contextualAction]
+        )
     }
 }
 
