@@ -47,6 +47,7 @@ final class WeeklyBossCalculatorViewController: UIViewController {
             action: #selector(self.didTapCheckButton(sender:)),
             for: .touchUpInside
         )
+        cell.checkButton.tag = indexPath.row
 
         return cell
     }
@@ -159,8 +160,12 @@ extension WeeklyBossCalculatorViewController: UITableViewDelegate {
     func didTapCheckButton(sender: CheckBox) {
         if sender.getCheckState() {
             sender.setCheckState(state: false)
+            viewModel.characterInfo.value[selectedIndex].bossInformations[sender.tag].checkClear = false
+            viewModel.selectedCharacter.value?.bossInformations[sender.tag].checkClear = false
         } else {
             sender.setCheckState(state: true)
+            viewModel.characterInfo.value[selectedIndex].bossInformations[sender.tag].checkClear = true
+            viewModel.selectedCharacter.value?.bossInformations[sender.tag].checkClear = true
         }
     }
 }

@@ -82,7 +82,10 @@ final class WeeklyBossCharacterListViewController: ContentViewController {
         viewModel.characterInfo.subscribe(on: self) { [weak self] charterInfo in
             self?.applySnapShot(from: charterInfo)
         }
-        viewModel.fetchCharacterInfo()
+        
+        viewModel.selectedCharacter.subscribe(on: self) { [weak self] charterInfo in
+            self?.applySnapShot(from: [charterInfo!])
+        }
     }
     
     // TODO: willAppear 할 때 applySnapshot, disappear할 때 deleteSnapshot
