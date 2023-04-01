@@ -91,9 +91,6 @@ final class WeeklyBossCalculatorViewController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
 
-        var snapShot = diffableDataSource.snapshot()
-        snapShot.deleteAllItems()
-        self.diffableDataSource.apply(snapShot)
         self.viewModel.selectedCharacter.unsunscribe(observer: self)
     }
 }
