@@ -2,465 +2,89 @@
     {
         "name" : "자쿰",
         "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3_jpg/%E1%84%8C%E1%85%A1%E1%84%8F%E1%85%AE%E1%86%B7-min.jpg?raw=true",
-        "mode_level" : [
-            {
-                "mode" : "카오스",
-                "level" : 180
-            }
-        ],
-        "reward_price" : [
-            {
-                "mode" : "카오스",
-                "price" : 9741285
-            }
-        ]
     },
     {
         "name" : "매그너스",
         "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3_jpg/%E1%84%86%E1%85%A2%E1%84%80%E1%85%B3%E1%84%82%E1%85%A5%E1%84%89%E1%85%B3-min.jpg?raw=true",
-        "mode_level" : [
-            {
-                "mode" : "하드",
-                "level" : 190
-            }
-        ],
-        "reward_price" : [
-            {
-                "mode" : "하드",
-                "price" : 11579023
-            }
-        ]
     },
     {
         "name" : "힐라",
         "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3_jpg/%E1%84%92%E1%85%B5%E1%86%AF%E1%84%85%E1%85%A1-min.jpg?raw=true",
-        "mode_level" : [
-            {
-                "mode" : "하드",
-                "level" : 190
-            }
-        ],
-        "reward_price" : [
-            {
-                "mode" : "하드",
-                "price" : 6936489
-            }
-        ]
     },
     {
         "name" : "파풀라투스",
         "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3_jpg/%E1%84%91%E1%85%A1%E1%84%91%E1%85%AE%E1%86%AF-min.jpg?raw=true",
-        "mode_level" : [
-            {
-                "mode" : "카오스",
-                "level" : 190
-            }
-        ],
-        "reward_price" : [
-            {
-                "mode" : "카오스",
-                "price" : 26725937
-            }
-        ]
     },
     {
         "name" : "피에르",
         "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3_jpg/%E1%84%91%E1%85%B5%E1%84%8B%E1%85%A6%E1%84%85%E1%85%B3-min.jpg?raw=true",
-        "mode_level" : [
-            {
-                "mode" : "카오스",
-                "level" : 190
-            }
-        ],
-        "reward_price" : [
-            {
-                "mode" : "카오스",
-                "price" : 9838932
-            }
-        ]
     },
     {
         "name" : "반반",
         "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3_jpg/%E1%84%87%E1%85%A1%E1%86%AB%E1%84%87%E1%85%A1%E1%86%AB-min.jpg?raw=true",
-        "mode_level" : [
-            {
-                "mode" : "카오스",
-                "level" : 190
-            }
-        ],
-        "reward_price" : [
-            {
-                "mode" : "카오스",
-                "price" : 9818154
-            }
-        ]
     },
     {
         "name" : "블러디 퀸",
         "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3_jpg/%E1%84%87%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A5%E1%84%83%E1%85%B5%E1%84%8F%E1%85%B1%E1%86%AB-min.jpg?raw=true",
-        "mode_level" : [
-            {
-                "mode" : "카오스",
-                "level" : 190
-            }
-        ],
-        "reward_price" : [
-            {
-                "mode" : "카오스",
-                "price" : 9806780
-            }
-        ]
     },
     {
         "name" : "벨룸",
         "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3_jpg/%E1%84%87%E1%85%A6%E1%86%AF%E1%84%85%E1%85%AE%E1%86%B7-min.jpg?raw=true",
-        "mode_level" : [
-            {
-                "mode" : "카오스",
-                "level" : 190
-            }
-        ],
-        "reward_price" : [
-            {
-                "mode" : "카오스",
-                "price" : 12590202
-            }
-        ]
     },
     {
         "name" : "핑크빈",
         "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3_jpg/%E1%84%91%E1%85%B5%E1%86%BC%E1%84%8F%E1%85%B3%E1%84%87%E1%85%B5%E1%86%AB-min.jpg?raw=true",
-        "mode_level" : [
-            {
-                "mode" : "카오스",
-                "level" : 190
-            }
-        ],
-        "reward_price" : [
-            {
-                "mode" : "노멀",
-                "price" : 7923110
-            }
-        ]
     },
     {
         "name" : "시그너스",
         "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3_jpg/%E1%84%89%E1%85%B5%E1%84%80%E1%85%B3%E1%84%82%E1%85%A5%E1%84%89%E1%85%B3-min.jpg?raw=true",
-        "mode_level" : [
-            {
-                "mode" : "이지",
-                "level" : 140
-            },
-            {
-                "mode" : "노멀",
-                "level" : 190
-            }
-        ],
-        "reward_price" : [
-            {
-                "mode" : "이지",
-                "price" : 5496394
-            },
-            {
-                "mode" : "노멀",
-                "price" : 9039130
-            }
-        ]
     },
     {
         "name" : "스우",
         "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3_jpg/%E1%84%89%E1%85%B3%E1%84%8B%E1%85%AE-min.jpg?raw=true",
-        "mode_level" : [
-            {
-                "mode" : "노멀",
-                "level" : 210
-            },
-            {
-                "mode" : "하드",
-                "level" : 210
-            }
-        ],
-        "reward_price" : [
-            {
-                "mode" : "노멀",
-                "price" : 33942566
-            },
-            {
-                "mode" : "하드",
-                "price" : 118294192
-            }
-        ]
     },
     {
         "name" : "데미안",
         "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3_jpg/%E1%84%83%E1%85%A6%E1%84%86%E1%85%B5%E1%84%8B%E1%85%A1%E1%86%AB-min.jpg?raw=true",
-        "mode_level" : [
-            {
-                "mode" : "노멀",
-                "level" : 210
-            },
-            {
-                "mode" : "하드",
-                "level" : 210
-            }
-        ],
-        "reward_price" : [
-            {
-                "mode" : "노멀",
-                "price" : 35517853
-            },
-            {
-                "mode" : "하드",
-                "price" : 112480613
-            }
-        ]
     },
     {
         "name" : "가디언 엔젤 슬라임",
         "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3_jpg/%E1%84%80%E1%85%A1%E1%84%8B%E1%85%A6%E1%86%AB%E1%84%89%E1%85%B3%E1%86%AF-min.jpg?raw=true",
-        "mode_level" : [
-            {
-                "mode" : "노멀",
-                "level" : 220
-            },
-            {
-                "mode" : "카오스",
-                "level" : 250
-            }
-        ],
-        "reward_price" : [
-            {
-                "mode" : "노멀",
-                "price" : 46935874
-            },
-            {
-                "mode" : "카오스",
-                "price" : 155492141
-            }
-        ]
     },
     {
         "name" : "루시드",
         "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3_jpg/%E1%84%85%E1%85%AE%E1%84%89%E1%85%B5%E1%84%83%E1%85%B3-min.jpg?raw=true",
-        "mode_level" : [
-            {
-                "mode" : "이지",
-                "level" : 230
-            },
-            {
-                "mode" : "노멀",
-                "level" : 230
-            },
-            {
-                "mode" : "하드",
-                "level" : 230
-            }
-        ],
-        "reward_price" : [
-            {
-                "mode" : "이지",
-                "price" : 48058319
-            },
-            {
-                "mode" : "노멀",
-                "price" : 57505626
-            },
-            {
-                "mode" : "하드",
-                "price" : 131095655
-            }
-        ]
     },
     {
         "name" : "윌",
         "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3_jpg/%E1%84%8B%E1%85%B1%E1%86%AF-min.jpg?raw=true",
-        "mode_level" : [
-            {
-                "mode" : "이지",
-                "level" : 235
-            },
-            {
-                "mode" : "노멀",
-                "level" : 250
-            },
-            {
-                "mode" : "하드",
-                "level" : 250
-            }
-        ],
-        "reward_price" : [
-            {
-                "mode" : "이지",
-                "price" : 52139127
-            },
-            {
-                "mode" : "노멀",
-                "price" : 66311463
-            },
-            {
-                "mode" : "하드",
-                "price" : 145038483
-            }
-        ]
     },
     {
         "name" : "더스크",
         "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3_jpg/%E1%84%83%E1%85%A5%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3-min.jpg?raw=true",
-        "mode_level" : [
-            {
-                "mode" : "노멀",
-                "level" : 255
-            },
-            {
-                "mode" : "카오스",
-                "level" : 255
-            }
-        ],
-        "reward_price" : [
-            {
-                "mode" : "노멀",
-                "price" : 71054562
-            },
-            {
-                "mode" : "카오스",
-                "price" : 160173752
-            }
-        ]
     },
     {
         "name" : "진 힐라",
         "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3_jpg/%E1%84%8C%E1%85%B5%E1%86%AB%20%E1%84%92%E1%85%B5%E1%86%AF%E1%84%85%E1%85%A1-min.jpg?raw=true",
-        "mode_level" : [
-            {
-                "mode" : "노멀",
-                "level" : 250
-            },
-            {
-                "mode" : "하드",
-                "level" : 250
-            }
-        ],
-        "reward_price" : [
-            {
-                "mode" : "노멀",
-                "price" : 148112376
-            },
-            {
-                "mode" : "카오스",
-                "price" : 190159452
-            }
-        ]
     },
     {
         "name" : "듄켈",
         "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3_jpg/%E1%84%83%E1%85%B2%E1%86%AB%E1%84%8F%E1%85%A6%E1%86%AF-min.jpg?raw=true",
-        "mode_level" : [
-            {
-                "mode" : "노멀",
-                "level" : 265
-            },
-            {
-                "mode" : "하드",
-                "level" : 265
-            }
-        ],
-        "reward_price" : [
-            {
-                "mode" : "노멀",
-                "price" : 76601412
-            },
-            {
-                "mode" : "하드",
-                "price" : 168609280
-            }
-        ]
     },
     {
         "name" : "검은 마법사",
         "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3_jpg/%E1%84%80%E1%85%A5%E1%86%B7%E1%84%86%E1%85%A1-min.jpg?raw=true",
-        "mode_level" : [
-            {
-                "mode" : "하드",
-                "level" : 265
-            },
-            {
-                "mode" : "익스트림",
-                "level" : 275
-            }
-        ],
-        "reward_price" : [
-            {
-                "mode" : "노멀",
-                "price" : 1418809857
-            },
-            {
-                "mode" : "하드",
-                "price" : 5675239428
-            }
-        ]
     },
     {
         "name" : "세렌",
         "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3_jpg/%E1%84%89%E1%85%A6%E1%84%85%E1%85%A6%E1%86%AB-min.jpg?raw=true",
-        "mode_level" : [
-            {
-                "mode" : "노멀",
-                "level" : 275
-            },
-            {
-                "mode" : "하드",
-                "level" : 275
-            },
-            {
-                "mode" : "익스트림",
-                "level" : 275
-            }
-        ],
-        "reward_price" : [
-            {
-                "mode" : "노멀",
-                "price" : 196904752
-            },
-            {
-                "mode" : "하드",
-                "price" : 267825621
-            },
-            {
-                "mode" : "익스트림",
-                "price" : 1071302484
-            }
-        ]
     },
     {
         "name" : "칼로스",
         "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3_jpg/%E1%84%8F%E1%85%A1%E1%86%AF%E1%84%85%E1%85%A9%E1%84%89%E1%85%B3-min.jpg?raw=true",
-        "mode_level" : [
-            {
-                "mode" : "카오스",
-                "level" : 275
-            }
-        ],
-        "reward_price" : [
-            {
-                "mode" : "카오스",
-                "price" : 300000000
-            }
-        ]
     },
     {
         "name" : "카링",
         "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3_jpg/%E1%84%8F%E1%85%A1%E1%84%85%E1%85%B5%E1%86%BC-min.jpg?raw=true",
-        "mode_level" : [
-            {
-                "mode" : "노멀",
-                "level" : 285
-            }
-        ],
-        "reward_price" : [
-            {
-                "mode" : "카오스",
-                "price" : 350000000
-            }
-        ]
     }
 ]

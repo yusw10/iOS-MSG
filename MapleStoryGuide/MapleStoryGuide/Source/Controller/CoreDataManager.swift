@@ -51,11 +51,8 @@ class CoreDatamanager {
                     bossInformations: readBossList(characterInfo: charterInfo).map({ bossInfomation in
                         MyWeeklyBoss(
                             checkClear: bossInfomation.checkClear,
-                            crystalStonePrice: bossInfomation.crystalStonePrice ?? "",
-                            difficulty: bossInfomation.difficulty ?? "",
                             name: bossInfomation.name ?? "",
-                            thumnailImageURL: bossInfomation.thumnailImageURL ?? "",
-                            member: bossInfomation.member ?? ""
+                            thumnailImageURL: bossInfomation.thumnailImageURL ?? ""
                         )
                     })
                 )

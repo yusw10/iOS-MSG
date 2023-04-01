@@ -42,28 +42,23 @@ class CommonWeeklyBossInfoUseCase {
     }
 }
 
-final class WeelyBossAddViewModel {
-
+final class WeeklyBossAddViewModel {
     var bossList: Observable<[WeeklyBossInfo]> = Observable([])
-    var characterInfo: MyCharacter?
     
     private let coreDataManager = CoreDatamanager.shared
     private let useCase: CommonWeeklyBossInfoUseCase
 
     private init(
-        useCase: CommonWeeklyBossInfoUseCase,
-        characterInfo: MyCharacter
+        useCase: CommonWeeklyBossInfoUseCase
     ) {
         self.useCase = useCase
-        self.characterInfo = characterInfo
     }
     
     convenience init(
-        repository: WeeklyBossInfoRepository,
-        characterInfo: MyCharacter
+        repository: WeeklyBossInfoRepository
     ) {
         let useCase = CommonWeeklyBossInfoUseCase(repository: repository)
-        self.init(useCase: useCase, characterInfo: characterInfo)
+        self.init(useCase: useCase)
     }
     
     @MainActor

@@ -50,7 +50,7 @@
 		72E728F829939D0E00427640 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E728F729939D0E00427640 /* Observable.swift */; };
 		72ECFFED298BC2100045ADBB /* JobInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72ECFFEC298BC2100045ADBB /* JobInfoViewModel.swift */; };
 		72ECFFF0298BC9060045ADBB /* JSONManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72ECFFEF298BC9060045ADBB /* JSONManager.swift */; };
-		A319B12D29CAF1C600E5B1B2 /* WeelyBossAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A319B12C29CAF1C600E5B1B2 /* WeelyBossAddViewController.swift */; };
+		A319B12D29CAF1C600E5B1B2 /* WeeklyBossAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A319B12C29CAF1C600E5B1B2 /* WeeklyBossAddViewController.swift */; };
 		A3278BAE2988E4330004C278 /* JobDetailCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3278BAD2988E4330004C278 /* JobDetailCollectionViewController.swift */; };
 		A3278BB229890A0A0004C278 /* SkillListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3278BB129890A0A0004C278 /* SkillListViewCell.swift */; };
 		A3278BB5298A31CD0004C278 /* MockSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3278BB4298A31CD0004C278 /* MockSection.swift */; };
@@ -60,7 +60,7 @@
 		A3278BE2298BE1A80004C278 /* ReinforceSkillDetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3278BE1298BE1A80004C278 /* ReinforceSkillDetailViewCell.swift */; };
 		A3282F8429A4A29100FA5BE1 /* SkillDetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3282F8329A4A29100FA5BE1 /* SkillDetailViewCell.swift */; };
 		A37030E529D1839800F3ADA4 /* WeeklyBossCharacterListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37030E429D1839800F3ADA4 /* WeeklyBossCharacterListViewModel.swift */; };
-		A37030E929D2BCF900F3ADA4 /* WeelyBossAddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37030E829D2BCF900F3ADA4 /* WeelyBossAddViewModel.swift */; };
+		A37030E929D2BCF900F3ADA4 /* WeeklyBossAddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37030E829D2BCF900F3ADA4 /* WeeklyBossAddViewModel.swift */; };
 		A37030EE29D2E0A400F3ADA4 /* CharacterInfo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37030EA29D2E0A400F3ADA4 /* CharacterInfo+CoreDataClass.swift */; };
 		A37030EF29D2E0A400F3ADA4 /* CharacterInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37030EB29D2E0A400F3ADA4 /* CharacterInfo+CoreDataProperties.swift */; };
 		A37030F329D31A8E00F3ADA4 /* weeklyBossInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = A37030F229D31A8E00F3ADA4 /* weeklyBossInfo.json */; };
@@ -116,7 +116,7 @@
 		72E728F729939D0E00427640 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		72ECFFEC298BC2100045ADBB /* JobInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobInfoViewModel.swift; sourceTree = "<group>"; };
 		72ECFFEF298BC9060045ADBB /* JSONManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONManager.swift; sourceTree = "<group>"; };
-		A319B12C29CAF1C600E5B1B2 /* WeelyBossAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeelyBossAddViewController.swift; sourceTree = "<group>"; };
+		A319B12C29CAF1C600E5B1B2 /* WeeklyBossAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyBossAddViewController.swift; sourceTree = "<group>"; };
 		A3278BAD2988E4330004C278 /* JobDetailCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailCollectionViewController.swift; sourceTree = "<group>"; };
 		A3278BB129890A0A0004C278 /* SkillListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillListViewCell.swift; sourceTree = "<group>"; };
 		A3278BB4298A31CD0004C278 /* MockSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MockSection.swift; path = MapleStoryGuide/Source/Model/JobInfo/MockSection.swift; sourceTree = SOURCE_ROOT; };
@@ -126,7 +126,7 @@
 		A3278BE1298BE1A80004C278 /* ReinforceSkillDetailViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReinforceSkillDetailViewCell.swift; sourceTree = "<group>"; };
 		A3282F8329A4A29100FA5BE1 /* SkillDetailViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillDetailViewCell.swift; sourceTree = "<group>"; };
 		A37030E429D1839800F3ADA4 /* WeeklyBossCharacterListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyBossCharacterListViewModel.swift; sourceTree = "<group>"; };
-		A37030E829D2BCF900F3ADA4 /* WeelyBossAddViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeelyBossAddViewModel.swift; sourceTree = "<group>"; };
+		A37030E829D2BCF900F3ADA4 /* WeeklyBossAddViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyBossAddViewModel.swift; sourceTree = "<group>"; };
 		A37030EA29D2E0A400F3ADA4 /* CharacterInfo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CharacterInfo+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A37030EB29D2E0A400F3ADA4 /* CharacterInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CharacterInfo+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A37030F229D31A8E00F3ADA4 /* weeklyBossInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = weeklyBossInfo.json; sourceTree = "<group>"; };
@@ -390,8 +390,8 @@
 		A319B12B29CAF1A600E5B1B2 /* WeeklyBossAdd */ = {
 			isa = PBXGroup;
 			children = (
-				A319B12C29CAF1C600E5B1B2 /* WeelyBossAddViewController.swift */,
-				A37030E829D2BCF900F3ADA4 /* WeelyBossAddViewModel.swift */,
+				A319B12C29CAF1C600E5B1B2 /* WeeklyBossAddViewController.swift */,
+				A37030E829D2BCF900F3ADA4 /* WeeklyBossAddViewModel.swift */,
 			);
 			path = WeeklyBossAdd;
 			sourceTree = "<group>";
@@ -569,7 +569,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A319B12D29CAF1C600E5B1B2 /* WeelyBossAddViewController.swift in Sources */,
+				A319B12D29CAF1C600E5B1B2 /* WeeklyBossAddViewController.swift in Sources */,
 				A3278BAE2988E4330004C278 /* JobDetailCollectionViewController.swift in Sources */,
 				45ACA2662988D75C00BD9935 /* AppDelegate.swift in Sources */,
 				72ABFD7C29C2E50E003A207F /* BossDetailViewController.swift in Sources */,
@@ -601,7 +601,7 @@
 				72ECFFED298BC2100045ADBB /* JobInfoViewModel.swift in Sources */,
 				45ACA2B229921D3700BD9935 /* SideMenuDelegate.swift in Sources */,
 				A37030EF29D2E0A400F3ADA4 /* CharacterInfo+CoreDataProperties.swift in Sources */,
-				A37030E929D2BCF900F3ADA4 /* WeelyBossAddViewModel.swift in Sources */,
+				A37030E929D2BCF900F3ADA4 /* WeeklyBossAddViewModel.swift in Sources */,
 				7229CE2829D6C5E700347D30 /* BossInformation+CoreDataProperties.swift in Sources */,
 				45ACA2BE2995D62E00BD9935 /* JobInfo.swift in Sources */,
 				A37030EE29D2E0A400F3ADA4 /* CharacterInfo+CoreDataClass.swift in Sources */,
