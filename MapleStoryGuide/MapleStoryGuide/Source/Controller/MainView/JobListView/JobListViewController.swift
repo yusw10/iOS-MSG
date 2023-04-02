@@ -49,7 +49,7 @@ final class JobListViewController: ContentViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         if self.isMovingFromParent {
-            viewModel.jobListInfo.unsunscribe(observer: self)
+            viewModel.jobListInfo.unsubscribe(observer: self)
             prefetchTask?.cancel()
         }
     }

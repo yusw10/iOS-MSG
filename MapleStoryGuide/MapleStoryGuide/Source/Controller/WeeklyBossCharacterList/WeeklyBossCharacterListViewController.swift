@@ -83,17 +83,15 @@ final class WeeklyBossCharacterListViewController: ContentViewController {
             self?.applySnapShot(from: charterInfo)
         }
         
-        viewModel.selectedCharacter.subscribe(on: self) { [weak self] charterInfo in
-            self?.applySnapShot(from: [charterInfo!])
-        }
+        viewModel.fetchCharacterInfo()
     }
     
-    // TODO: willAppear 할 때 applySnapshot, disappear할 때 deleteSnapshot
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-
-        viewModel.characterInfo.unsunscribe(observer: self)
-    }
+    // MARK: ViewDidDisAppear 하게 되면 데이터가 업데이트 하는 시점이 화면에서 다시 subscribe 하는 시점보다 빨라 바로 View에 반영되지 않는다.
+//    override func viewDidDisappear(_ animated: Bool) {
+//        super.viewDidDisappear(animated)
+//
+//        viewModel.characterInfo.unsubscribe(observer: self)
+//    }
     
 }
 
@@ -242,7 +240,6 @@ private extension WeeklyBossCharacterListViewController {
 }
 
 extension WeeklyBossCharacterListViewController: UICollectionViewDelegate {
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let weeklyBossListViewController = WeeklyBossCalculatorViewController(
             viewModel: viewModel,
@@ -251,7 +248,6 @@ extension WeeklyBossCharacterListViewController: UICollectionViewDelegate {
         
         navigationController?.pushViewController(weeklyBossListViewController, animated: true)
     }
-    
 }
 
 extension WeeklyBossCharacterListViewController: UIPickerViewDelegate, UIPickerViewDataSource {

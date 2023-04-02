@@ -53,7 +53,7 @@ class BossListViewController: ContentViewController, UICollectionViewDelegate {
     
     override func viewWillDisappear(_ animated: Bool) {
         if self.isMovingFromParent {
-            viewModel.bossListInfo.unsunscribe(observer: self)
+            viewModel.bossListInfo.unsubscribe(observer: self)
         }
     }
     

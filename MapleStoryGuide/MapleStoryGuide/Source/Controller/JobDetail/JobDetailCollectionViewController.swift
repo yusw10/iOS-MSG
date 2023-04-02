@@ -98,7 +98,7 @@ final class JobDetailCollectionViewController: ContentCollectionViewController {
             var snapshot = self.diffableDataSource.snapshot()
             snapshot.deleteAllItems()
             diffableDataSource.apply(snapshot, animatingDifferences: false)
-            viewModel.jobInfo.unsunscribe(observer: self)
+            viewModel.jobInfo.unsubscribe(observer: self)
         }
     }
     

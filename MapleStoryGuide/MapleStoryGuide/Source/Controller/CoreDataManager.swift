@@ -34,8 +34,6 @@ class CoreDatamanager {
         }
     }
     
-    // 캐릭터 정보 가져옴
-    // MARK: CoreData 수정
     func readCharter() -> [MyCharacter] {
         let readRequest: NSFetchRequest<CharacterInfo> = CharacterInfo.fetchRequest()
                 
@@ -62,8 +60,7 @@ class CoreDatamanager {
         }
     }
     
-    // 보스 정보 가져옴
-    func readBossList(characterInfo: CharacterInfo) -> [BossInformation] {
+    private func readBossList(characterInfo: CharacterInfo) -> [BossInformation] {
         let readRequest: NSFetchRequest<BossInformation> = BossInformation.fetchRequest()
          readRequest.predicate = NSPredicate(format: "charcterInfo = %@", characterInfo)
         do {
@@ -74,53 +71,79 @@ class CoreDatamanager {
         }
     }
     
-    // 캐릭터 생성
-    func createCharacter(name: String, world: String) {
+    func createCharacter(from model: MyCharacter) {
         let character = CharacterInfo(context: context)
         
-        character.uuid = UUID().uuidString
-        character.name = name
-        character.world = world
-        character.totalRevenue = "0"
+        character.uuid = model.uuid
+        character.name = model.name
+        character.world = model.world
+        character.totalRevenue = model.totalRevenue
         
-        do {
-            try context.save()
-        } catch {
-            print(error.localizedDescription)
-        }
+        saveContext()
     }
     
-    // 보스 생성
-    func createBoss(name: String, thumnailImageURL: String, difficulty: String, member: String, price: String, character: CharacterInfo) {
+    func createBoss(from model: MyWeeklyBoss, _ id: String) {
         let bossInfo = BossInformation(context: context)
-        bossInfo.name = name
-        bossInfo.thumnailImageURL = thumnailImageURL
-        bossInfo.checkClear = false
+        bossInfo.name = model.name
+        bossInfo.thumnailImageURL = model.thumnailImageURL
+        bossInfo.checkClear = model.checkClear
         
-        character.addToBossInformations(bossInfo)
+        let request: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "CharacterInfo")
+        request.predicate = NSPredicate(format: "uuid = %@", id as CVarArg)
         
         do {
-            try context.save()
+            let data = try context.fetch(request)
+            guard let charaterInfo = data[0] as? CharacterInfo else { return }
+            charaterInfo.addToBossInformations(bossInfo)
         } catch {
-            print(error.localizedDescription)
+            // 에러 처리
         }
-    }
-    
-    // 보스 클리어 업데이트 기능 -> 불필요할수도?
-    func updateBossClear(_ contact: BossInformation, clear: Bool) {
-        contact.checkClear = clear
+        
         saveContext()
     }
     
-    // 캐릭터 삭제 기능 -> 불필요할수도?
-    func deleteCharacter(_ character: CharacterInfo) {
-        context.delete(character)
+    func updateBossClear(uuid: String, index: Int, _ isClear: Bool) {
+        let request: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "CharacterInfo")
+        request.predicate = NSPredicate(format: "uuid = %@", uuid as CVarArg)
+        
+        do {
+            let data = try context.fetch(request)
+            guard let characterInfo = data[0] as? CharacterInfo else { return }
+            let bossList = self.readBossList(characterInfo: characterInfo)
+            bossList[index].checkClear = isClear
+        } catch {
+            // 에러 처리
+        }
         saveContext()
     }
     
-    // 보스 삭제 기능 -> 불필요할수도?
-    func deleteBoss(_ boss: BossInformation) {
-        context.delete(boss)
+    func deleteCharacter(_ id: String) {
+        let request: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "CharacterInfo")
+        request.predicate = NSPredicate(format: "uuid = %@", id as CVarArg)
+        
+        do {
+            let data = try context.fetch(request)
+            guard let charaterInfo = data[0] as? NSManagedObject else { return }
+            context.delete(charaterInfo)
+        } catch {
+            // 에러 처리
+        }
+        
+        saveContext()
+    }
+    
+    func deleteBoss(from name: String) {
+        let request: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "BossInformation")
+        request.predicate = NSPredicate(format: "name = %@", name as CVarArg)
+        
+        do {
+            let data = try context.fetch(request)
+            guard let bossInfo = data[0] as? NSManagedObject else { return }
+            context.delete(bossInfo)
+        } catch {
+            // 에러 처리
+        }
+        
         saveContext()
     }
     

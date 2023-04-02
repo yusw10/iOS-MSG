@@ -91,7 +91,7 @@ final class WeeklyBossAddViewController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
-        viewModel.bossList.unsunscribe(observer: self)
+        viewModel.bossList.unsubscribe(observer: self)
     }
     
 }
@@ -149,36 +149,33 @@ extension WeeklyBossAddViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let data = self.viewModel.bossList.value[indexPath.row]
        
-        let bossAppendAlertController = UIAlertController(
+        let sucessAlertController = UIAlertController(
             title: "성공",
             message: "보스를 추가했습니다.",
             preferredStyle: .alert
         )
-        let bossCheckAlertController = UIAlertController(
+        let failureAlertController = UIAlertController(
             title: "실패",
             message: "이미 보스를 추가했습니다.",
             preferredStyle: .alert
         )
         let okAction = UIAlertAction(title: "확인", style: .default)
         
-        bossAppendAlertController.addAction(okAction)
-        bossCheckAlertController.addAction(okAction)
-
+        sucessAlertController.addAction(okAction)
+        failureAlertController.addAction(okAction)
+        
+        // MARK: 로직 변경이 필요해 보임
         if filterWeeklyBossInfo.isEmpty {
-            if filterWeeklyBossInfo.contains(data) {
-                present(bossCheckAlertController, animated: true)
-            } else {
-                filterWeeklyBossInfo.append(data)
-                self.delegate?.weelyBossAdd(from: data)
-                present(bossAppendAlertController, animated: true)
-            }
+            filterWeeklyBossInfo.append(data)
+            self.delegate?.weelyBossAdd(from: data)
+            present(sucessAlertController, animated: true)
         } else {
             if filterWeeklyBossInfo.contains(where: { $0.name.hasPrefix(data.name)}) {
-                present(bossCheckAlertController, animated: true)
+                present(failureAlertController, animated: true)
             } else {
                 filterWeeklyBossInfo.append(data)
                 self.delegate?.weelyBossAdd(from: data)
-                present(bossAppendAlertController, animated: true)
+                present(sucessAlertController, animated: true)
             }
         }
     }

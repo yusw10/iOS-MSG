@@ -28,7 +28,7 @@ class Observable<T> {
         observers.append(Observer(observer: observer, listener: closure))
     }
     
-    func unsunscribe(observer: AnyObject) {
+    func unsubscribe(observer: AnyObject) {
         observers = observers.filter { $0.observer !== observer }
     }
     

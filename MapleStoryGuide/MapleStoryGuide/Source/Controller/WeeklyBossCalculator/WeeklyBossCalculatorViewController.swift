@@ -83,7 +83,7 @@ final class WeeklyBossCalculatorViewController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
 
-        self.viewModel.selectedCharacter.unsunscribe(observer: self)
+        self.viewModel.selectedCharacter.unsubscribe(observer: self)
     }
 }
 
@@ -120,14 +120,7 @@ private extension WeeklyBossCalculatorViewController {
 
 extension WeeklyBossCalculatorViewController: WeelyBossAddViewDelegate {
     func weelyBossAdd(from data: WeeklyBossInfo) {
-        let data = MyWeeklyBoss(
-            checkClear: false,
-            name: data.name,
-            thumnailImageURL: data.imageURL
-        )
-        
-        viewModel.characterInfo.value[selectedIndex].bossInformations.append(data)
-        viewModel.selectedCharacter.value?.bossInformations.append(data)
+        self.viewModel.createBoss(from: data, selectedIndex)
     }
 }
 
@@ -137,8 +130,9 @@ extension WeeklyBossCalculatorViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let contextualAction = UIContextualAction(style: .normal, title: "delete") { (action, view, handler) in
-            self.viewModel.selectedCharacter.value?.bossInformations.remove(at: indexPath.row)
+        let contextualAction = UIContextualAction(style: .normal, title: "delete") { [weak self] (action, view, handler) in
+            guard let self = self else { return }
+            self.viewModel.deleteBoss(index: indexPath.row, self.selectedIndex)
         }
         contextualAction.backgroundColor = .systemRed
         
@@ -161,12 +155,18 @@ extension WeeklyBossCalculatorViewController: UITableViewDelegate {
     func didTapCheckButton(sender: CheckBox) {
         if sender.getCheckState() {
             sender.setCheckState(state: false)
-            viewModel.characterInfo.value[selectedIndex].bossInformations[sender.tag].checkClear = false
-            viewModel.selectedCharacter.value?.bossInformations[sender.tag].checkClear = false
+            self.viewModel.updateBossClear(
+                isClear: false,
+                bossIndex: sender.tag,
+                characterIndex: selectedIndex
+            )
         } else {
             sender.setCheckState(state: true)
-            viewModel.characterInfo.value[selectedIndex].bossInformations[sender.tag].checkClear = true
-            viewModel.selectedCharacter.value?.bossInformations[sender.tag].checkClear = true
+            self.viewModel.updateBossClear(
+                isClear: true,
+                bossIndex: sender.tag,
+                characterIndex: selectedIndex
+            )
         }
     }
 }

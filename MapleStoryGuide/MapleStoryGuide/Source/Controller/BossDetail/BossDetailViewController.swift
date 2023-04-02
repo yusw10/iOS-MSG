@@ -93,7 +93,7 @@ class BossDetailViewController: ContentViewController {
             var snapshot = self.diffableDataSource.snapshot()
             snapshot.deleteAllItems()
             diffableDataSource.apply(snapshot, animatingDifferences: false)
-            viewModel.bossInfo.unsunscribe(observer: self)
+            viewModel.bossInfo.unsubscribe(observer: self)
         }
     }
     
