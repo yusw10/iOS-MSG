@@ -29,8 +29,8 @@ final class MainViewController: ContentViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setupMainCollectionView()
+        addUserNotification()
     }
     
     //MARK: - ViewController Setup Method
@@ -44,6 +44,22 @@ final class MainViewController: ContentViewController {
         mainCollectionView.snp.makeConstraints { make in
             make.top.leading.trailing.bottom.equalToSuperview()
         }
+    }
+    
+    private func addUserNotification() {
+        let content = UNMutableNotificationContent()
+        content.title = "주간 보스 알림"
+        content.body = "주간 보스 초기화 하루 전날입니다."
+        
+        var dateComponents = DateComponents()
+        dateComponents.weekday = 3
+        dateComponents.hour = 11
+        dateComponents.minute = 06
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+        let request = UNNotificationRequest(identifier: "bossAlert", content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request)
     }
 }
 

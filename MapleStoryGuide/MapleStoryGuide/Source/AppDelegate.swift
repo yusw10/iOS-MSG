@@ -18,6 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             diskCapacity: 200 * 1024 * 1024,
             diskPath: nil
         )
+        requestUserNotification()
+        
+        UNUserNotificationCenter.current().delegate = self
         
         return true
     }
@@ -41,3 +44,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse) async {
+        guard let rootViewController = (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.window?.rootViewController as? ContainerViewController else { return }
+        
+        if response.notification.request.identifier == "bossAlert" {
+            let weeklyBossCharacterListViewController = WeeklyBossCharacterListViewController()
+            rootViewController.pushViewController(weeklyBossCharacterListViewController)
+        }
+    }
+    
+    private func requestUserNotification() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert]) { didAllow, error in
+            if didAllow {
+                return
+            }
+        }
+    }
+}
