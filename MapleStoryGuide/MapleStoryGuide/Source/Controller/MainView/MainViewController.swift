@@ -93,7 +93,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
             containerViewController?.pushViewController(bossListViewController)
         case .bossInfo:
             let weeklyBossCalculatorViewController = WeeklyBossCharacterListViewController()
-            containerViewController?.pushViewController(weeklyBossCalculatorViewController)
+            containerViewController?.pushListViewController(weeklyBossCalculatorViewController)
         }
     }
     

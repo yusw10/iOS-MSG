@@ -71,6 +71,12 @@ final class ContainerViewController: UIViewController {
         navigator.pushViewController(viewController, animated: true)
     }
     
+    func pushListViewController(_ viewController: ContentMyCharacterListViewController) {
+        viewController.containerViewController = self
+        viewController.delegate = self
+        navigator.pushViewController(viewController, animated: true)
+    }
+    
 }
 
 extension ContainerViewController: SideMenuDelegate {

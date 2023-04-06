@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Then
 
-final class WeeklyBossCharacterListViewController: ContentViewController {
+final class WeeklyBossCharacterListViewController: ContentMyCharacterListViewController {
     
     enum Section: CaseIterable {
         case main
@@ -78,6 +78,7 @@ final class WeeklyBossCharacterListViewController: ContentViewController {
         setupLayout()
         setupButton()
         setupPickerView()
+        configureMenu()
         
         viewModel.characterInfo.subscribe(on: self) { [weak self] charterInfo in
             self?.applySnapShot(from: charterInfo)
@@ -185,6 +186,28 @@ private extension WeeklyBossCharacterListViewController {
         diffableDataSource.apply(snapshot, animatingDifferences: true)
     }
     
+    private func configureMenu() {
+        self.resetButtonItem.menu =  UIMenu(title: "",
+                                            image: nil,
+                                            identifier: nil,
+                                            options: .displayInline,
+                                            children: self.configureMenuAction()
+        )
+    }
+    
+    private func configureMenuAction() -> [UIAction] {
+        let weeklyResetAction = UIAction(title: "주간 보스 초기화") { action in
+            self.viewModel.resetWeeklyBossData()
+        }
+        
+        let monthlyResetAction = UIAction(title: "월간 보스 초기화") { action in
+            self.viewModel.resetMonthlyBossData()
+        }
+        
+        let cancelAction = UIAction(title: "취소", attributes: .destructive) { _ in }
+        
+        return [weeklyResetAction, monthlyResetAction, cancelAction]
+    }
 }
 
 @objc private extension WeeklyBossCharacterListViewController {

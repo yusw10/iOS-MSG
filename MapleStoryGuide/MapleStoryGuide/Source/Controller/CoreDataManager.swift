@@ -132,14 +132,23 @@ class CoreDatamanager {
         saveContext()
     }
     
-    func deleteBoss(from name: String) {
-        let request: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "BossInformation")
-        request.predicate = NSPredicate(format: "name = %@", name as CVarArg)
+    func deleteBoss(uuid: String, name: String) { // 이부분 수정 필요 특정 보스가 지워지지 않는다.
+        let request: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "CharacterInfo")
+        request.predicate = NSPredicate(format: "uuid = %@", uuid as CVarArg)
         
         do {
             let data = try context.fetch(request)
-            guard let bossInfo = data[0] as? NSManagedObject else { return }
-            context.delete(bossInfo)
+            guard let characterInfo = data[0] as? CharacterInfo else { return }
+            guard let bossList = characterInfo.bossInformations else { return }
+            
+            for boss in bossList {
+                guard let bossInfo = boss as? BossInformation else { return }
+                
+                if bossInfo.name == name {
+                    characterInfo.removeFromBossInformations(bossInfo)
+                    break
+                }
+            }
         } catch {
             // 에러 처리
         }
@@ -147,4 +156,49 @@ class CoreDatamanager {
         saveContext()
     }
     
+    func resetWeeklyBossCoreData() {
+        let characterRequest: NSFetchRequest<CharacterInfo> = CharacterInfo.fetchRequest()
+        
+        do {
+            let characterList = try context.fetch(characterRequest)
+            characterList.forEach { characterInfo in
+                let bossList = readBossList(characterInfo: characterInfo)
+                
+                for boss in bossList {
+                    if boss.name == "검은 마법사" {
+                        continue
+                    } else {
+                        boss.checkClear = false
+                    }
+                }
+            }
+        } catch {
+            
+        }
+        
+        saveContext()
+    }
+    
+    func resetMonthlyBossCoreData() {
+        let characterRequest: NSFetchRequest<CharacterInfo> = CharacterInfo.fetchRequest()
+        
+        do {
+            let characterList = try context.fetch(characterRequest)
+            characterList.forEach { characterInfo in
+                let bossList = readBossList(characterInfo: characterInfo)
+                
+                for boss in bossList {
+                    if boss.name == "검은 마법사" {
+                        boss.checkClear = false
+                    } else {
+                        continue
+                    }
+                }
+            }
+        } catch {
+            
+        }
+        
+        saveContext()
+    }
 }

@@ -82,3 +82,27 @@ class ContentTableViewController: UITableViewController, ContentViewControllerSe
         delegate?.menuButtonTapped()
     }
 }
+
+class ContentMyCharacterListViewController: UIViewController, ContentViewControllerSetup {
+    weak var delegate: SideMenuDelegate?
+    weak var containerViewController: ContainerViewController?
+    var barButtonImage: UIImage? = UIImage(systemName: "line.horizontal.3")
+    var resetImage: UIImage? = UIImage(systemName: "arrow.counterclockwise.circle")
+    
+    private lazy var barButtonItem = UIBarButtonItem(image: barButtonImage, style: .plain, target: self, action: #selector(menuTapped))
+    lazy var resetButtonItem = UIBarButtonItem(image: resetImage, style: .plain, target: self, action: nil)
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configureView()
+    }
+    
+    func configureView() {
+        barButtonItem.tintColor = .black
+        navigationItem.setRightBarButtonItems([barButtonItem, resetButtonItem], animated: false)
+    }
+    
+    @objc private func menuTapped() {
+        delegate?.menuButtonTapped()
+    }
+}

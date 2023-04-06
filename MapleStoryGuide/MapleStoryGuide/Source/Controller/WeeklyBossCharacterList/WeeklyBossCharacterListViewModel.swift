@@ -68,7 +68,10 @@ final class WeeklyBossCharacterListViewModel {
             return
         }
         
-        coreDataManager.deleteBoss(from: bossName)
+        coreDataManager.deleteBoss(
+            uuid: characterInfo.value[characterIndex].uuid,
+            name: bossName
+        )
         characterInfo.value[characterIndex].bossInformations.remove(at: index)
         selectedCharacter.value?.bossInformations.remove(at: index)
     }
@@ -80,6 +83,48 @@ final class WeeklyBossCharacterListViewModel {
             uuid: characterInfo.value[characterIndex].uuid,
             index: bossIndex,
             isClear
+        )
+    }
+    
+    func resetWeeklyBossData() {
+        for (characterIndex, character) in characterInfo.value.enumerated() {
+            for (bossIndex, boss) in character.bossInformations.enumerated() {
+                if boss.name == "검은 마법사" {
+                    continue
+                } else {
+                    self.resetbossList(
+                        characterIndex: characterIndex,
+                        bossIndex: bossIndex
+                    )
+                }
+            }
+        }
+        
+        CoreDatamanager.shared.resetWeeklyBossCoreData()
+    }
+    
+    func resetMonthlyBossData() {
+        for (characterIndex, character) in characterInfo.value.enumerated() {
+            for (bossIndex, boss) in character.bossInformations.enumerated() {
+                if boss.name == "검은 마법사" {
+                    self.resetbossList(
+                        characterIndex: characterIndex,
+                        bossIndex: bossIndex
+                    )
+                    break
+                }
+            }
+        }
+        
+        CoreDatamanager.shared.resetMonthlyBossCoreData()
+    }
+    
+    func resetbossList(characterIndex: Int, bossIndex: Int) {
+        characterInfo.value[characterIndex].bossInformations[bossIndex].checkClear = false
+        coreDataManager.updateBossClear(
+            uuid: characterInfo.value[characterIndex].uuid,
+            index: bossIndex,
+            false
         )
     }
     

@@ -50,7 +50,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         
         if response.notification.request.identifier == "bossAlert" {
             let weeklyBossCharacterListViewController = WeeklyBossCharacterListViewController()
-            rootViewController.pushViewController(weeklyBossCharacterListViewController)
+            rootViewController.pushListViewController(weeklyBossCharacterListViewController)
         }
     }
     
