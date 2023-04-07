@@ -4,8 +4,8 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Maplestory OTF Light.otf</string>
-		<string>Maplestory OTF Bold.otf</string>
+		<string>MaplestoryOTFLight.otf</string>
+		<string>MaplestoryOTFBold.otf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

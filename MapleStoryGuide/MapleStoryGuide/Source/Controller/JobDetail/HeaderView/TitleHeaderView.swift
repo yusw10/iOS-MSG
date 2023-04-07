@@ -12,19 +12,20 @@ import Then
 extension UIFont {
     
     enum MapleFont: String {
-        case Bold, Light
+        case bold = "Bold"
+        case light = "Light"
     }
     
-    static func MapleHeaderFont(size: CGFloat = 25, font: MapleFont = .Bold) -> UIFont {
-        return UIFont(name: "Maplestory OTF \(font)", size: size)!
+    static func MapleHeaderFont(size: CGFloat = 25, font: MapleFont = .bold) -> UIFont {
+        return UIFont(name: "Maplestory OTF \(font.rawValue)", size: size)!
     }
     
-    static func MapleTitleFont(size: CGFloat = 20, font: MapleFont = .Bold) -> UIFont {
-        return UIFont(name: "Maplestory OTF \(font)", size: size)!
+    static func MapleTitleFont(size: CGFloat = 20, font: MapleFont = .bold) -> UIFont {
+        return UIFont(name: "Maplestory OTF \(font.rawValue)", size: size)!
     }
     
-    static func MapleLightFont(size: CGFloat = 15, font: MapleFont = .Light) -> UIFont {
-        return UIFont(name: "Maplestory OTF \(font)", size: size)!
+    static func MapleLightFont(size: CGFloat = 15, font: MapleFont = .light) -> UIFont {
+        return UIFont(name: "Maplestory OTF \(font.rawValue)", size: size)!
     }
     
 }

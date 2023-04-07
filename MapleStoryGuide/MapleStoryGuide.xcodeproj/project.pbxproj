@@ -65,8 +65,8 @@
 		A37030EF29D2E0A400F3ADA4 /* CharacterInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37030EB29D2E0A400F3ADA4 /* CharacterInfo+CoreDataProperties.swift */; };
 		A37030F329D31A8E00F3ADA4 /* weeklyBossInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = A37030F229D31A8E00F3ADA4 /* weeklyBossInfo.json */; };
 		A37030F629D3C7DF00F3ADA4 /* WeeklyBossInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37030F529D3C7DF00F3ADA4 /* WeeklyBossInfo.swift */; };
-		A37030FD29D7EB7100F3ADA4 /* Maplestory OTF Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A37030FC29D7EB7100F3ADA4 /* Maplestory OTF Bold.otf */; };
-		A37030FF29D7ED2600F3ADA4 /* Maplestory OTF Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = A37030FE29D7ED2600F3ADA4 /* Maplestory OTF Light.otf */; };
+		A37030FD29D7EB7100F3ADA4 /* MaplestoryOTFBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A37030FC29D7EB7100F3ADA4 /* MaplestoryOTFBold.otf */; };
+		A37030FF29D7ED2600F3ADA4 /* MaplestoryOTFLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = A37030FE29D7ED2600F3ADA4 /* MaplestoryOTFLight.otf */; };
 		A3900BBE29C0489C00B7C409 /* WeeklyBossCharacterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3900BBD29C0489C00B7C409 /* WeeklyBossCharacterListViewController.swift */; };
 		A3900BC129C0495D00B7C409 /* WeeklyBossCharacterListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3900BC029C0495D00B7C409 /* WeeklyBossCharacterListCell.swift */; };
 		A3900BC529C0905E00B7C409 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A3900BC329C0905E00B7C409 /* Model.xcdatamodeld */; };
@@ -133,8 +133,8 @@
 		A37030EB29D2E0A400F3ADA4 /* CharacterInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CharacterInfo+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A37030F229D31A8E00F3ADA4 /* weeklyBossInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = weeklyBossInfo.json; sourceTree = "<group>"; };
 		A37030F529D3C7DF00F3ADA4 /* WeeklyBossInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyBossInfo.swift; sourceTree = "<group>"; };
-		A37030FC29D7EB7100F3ADA4 /* Maplestory OTF Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Maplestory OTF Bold.otf"; sourceTree = "<group>"; };
-		A37030FE29D7ED2600F3ADA4 /* Maplestory OTF Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Maplestory OTF Light.otf"; sourceTree = "<group>"; };
+		A37030FC29D7EB7100F3ADA4 /* MaplestoryOTFBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaplestoryOTFBold.otf; sourceTree = "<group>"; };
+		A37030FE29D7ED2600F3ADA4 /* MaplestoryOTFLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaplestoryOTFLight.otf; sourceTree = "<group>"; };
 		A3900BBD29C0489C00B7C409 /* WeeklyBossCharacterListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyBossCharacterListViewController.swift; sourceTree = "<group>"; };
 		A3900BC029C0495D00B7C409 /* WeeklyBossCharacterListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyBossCharacterListCell.swift; sourceTree = "<group>"; };
 		A3900BC429C0905E00B7C409 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -468,8 +468,8 @@
 		A37030FB29D7EB2200F3ADA4 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				A37030FC29D7EB7100F3ADA4 /* Maplestory OTF Bold.otf */,
-				A37030FE29D7ED2600F3ADA4 /* Maplestory OTF Light.otf */,
+				A37030FC29D7EB7100F3ADA4 /* MaplestoryOTFBold.otf */,
+				A37030FE29D7ED2600F3ADA4 /* MaplestoryOTFLight.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -568,11 +568,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A37030FD29D7EB7100F3ADA4 /* Maplestory OTF Bold.otf in Resources */,
+				A37030FD29D7EB7100F3ADA4 /* MaplestoryOTFBold.otf in Resources */,
 				A37030F329D31A8E00F3ADA4 /* weeklyBossInfo.json in Resources */,
 				72CB8BDA29BF047700A34A36 /* bossInfo.json in Resources */,
 				45ACA2722988D76000BD9935 /* LaunchScreen.storyboard in Resources */,
-				A37030FF29D7ED2600F3ADA4 /* Maplestory OTF Light.otf in Resources */,
+				A37030FF29D7ED2600F3ADA4 /* MaplestoryOTFLight.otf in Resources */,
 				725400FD29AC6F96005A7420 /* newJobs_jpg.json in Resources */,
 				45ACA26F2988D76000BD9935 /* Assets.xcassets in Resources */,
 			);

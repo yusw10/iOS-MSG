@@ -12,6 +12,7 @@ enum MainViewBannerList: String, CaseIterable {
     case jobList = "jobList"
     case additionalOption = "additionalOption"
     case bossInfo = "bossInfo"
+    case itemInfo = "itemInfo"
 }
 
 final class MainViewController: ContentViewController {
@@ -94,6 +95,8 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         case .bossInfo:
             let weeklyBossCalculatorViewController = WeeklyBossCharacterListViewController()
             containerViewController?.pushListViewController(weeklyBossCalculatorViewController)
+        case .itemInfo:
+            print("itemInfoView")
         }
     }
     
