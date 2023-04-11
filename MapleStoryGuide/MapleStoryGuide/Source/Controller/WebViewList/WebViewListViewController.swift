@@ -103,9 +103,9 @@ final class WebViewListViewController: ContentViewController {
     }
     
     func setupNavitaionBar() {
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.MapleLightFont()]
         navigationItem.title = "유용한 사이트 모음"
     }
+    
 }
 
 extension WebViewListViewController: UICollectionViewDelegate {

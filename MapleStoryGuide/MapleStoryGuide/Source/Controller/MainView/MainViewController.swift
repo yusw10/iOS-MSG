@@ -33,6 +33,7 @@ final class MainViewController: ContentViewController {
         super.viewDidLoad()
         setupMainCollectionView()
         addUserNotification()
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.MapleLightFont()]
     }
     
     //MARK: - ViewController Setup Method
