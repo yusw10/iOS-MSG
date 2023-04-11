@@ -67,6 +67,9 @@
 		A37030F629D3C7DF00F3ADA4 /* WeeklyBossInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37030F529D3C7DF00F3ADA4 /* WeeklyBossInfo.swift */; };
 		A37030FD29D7EB7100F3ADA4 /* MaplestoryOTFBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A37030FC29D7EB7100F3ADA4 /* MaplestoryOTFBold.otf */; };
 		A37030FF29D7ED2600F3ADA4 /* MaplestoryOTFLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = A37030FE29D7ED2600F3ADA4 /* MaplestoryOTFLight.otf */; };
+		A38A78B329E3ED4D00213CC7 /* WebViewListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38A78B229E3ED4D00213CC7 /* WebViewListViewController.swift */; };
+		A38A78B629E54C1600213CC7 /* WebViewListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38A78B529E54C1600213CC7 /* WebViewListCell.swift */; };
+		A38A78B829E54CB200213CC7 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38A78B729E54CB200213CC7 /* WebViewController.swift */; };
 		A3900BBE29C0489C00B7C409 /* WeeklyBossCharacterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3900BBD29C0489C00B7C409 /* WeeklyBossCharacterListViewController.swift */; };
 		A3900BC129C0495D00B7C409 /* WeeklyBossCharacterListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3900BC029C0495D00B7C409 /* WeeklyBossCharacterListCell.swift */; };
 		A3900BC529C0905E00B7C409 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A3900BC329C0905E00B7C409 /* Model.xcdatamodeld */; };
@@ -135,6 +138,9 @@
 		A37030F529D3C7DF00F3ADA4 /* WeeklyBossInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyBossInfo.swift; sourceTree = "<group>"; };
 		A37030FC29D7EB7100F3ADA4 /* MaplestoryOTFBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaplestoryOTFBold.otf; sourceTree = "<group>"; };
 		A37030FE29D7ED2600F3ADA4 /* MaplestoryOTFLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaplestoryOTFLight.otf; sourceTree = "<group>"; };
+		A38A78B229E3ED4D00213CC7 /* WebViewListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewListViewController.swift; sourceTree = "<group>"; };
+		A38A78B529E54C1600213CC7 /* WebViewListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewListCell.swift; sourceTree = "<group>"; };
+		A38A78B729E54CB200213CC7 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		A3900BBD29C0489C00B7C409 /* WeeklyBossCharacterListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyBossCharacterListViewController.swift; sourceTree = "<group>"; };
 		A3900BC029C0495D00B7C409 /* WeeklyBossCharacterListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyBossCharacterListCell.swift; sourceTree = "<group>"; };
 		A3900BC429C0905E00B7C409 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -218,6 +224,7 @@
 		45ACA2852988D97B00BD9935 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A38A78B429E54BFA00213CC7 /* WebViewList */,
 				A3900BC629C099B900B7C409 /* CoreDataManager.swift */,
 				A3900B9029BC51D600B7C409 /* WeeklyBossCharacterList */,
 				A37030F729D3D10B00F3ADA4 /* WeeklyBossCalculator */,
@@ -474,6 +481,16 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		A38A78B429E54BFA00213CC7 /* WebViewList */ = {
+			isa = PBXGroup;
+			children = (
+				A38A78B229E3ED4D00213CC7 /* WebViewListViewController.swift */,
+				A38A78B529E54C1600213CC7 /* WebViewListCell.swift */,
+				A38A78B729E54CB200213CC7 /* WebViewController.swift */,
+			);
+			path = WebViewList;
+			sourceTree = "<group>";
+		};
 		A3900B9029BC51D600B7C409 /* WeeklyBossCharacterList */ = {
 			isa = PBXGroup;
 			children = (
@@ -602,6 +619,7 @@
 				72CDF3A8298A53E100918C1A /* Components.swift in Sources */,
 				72CDF3AA298A576B00918C1A /* URLSessionManager.swift in Sources */,
 				A3900BC729C099B900B7C409 /* CoreDataManager.swift in Sources */,
+				A38A78B829E54CB200213CC7 /* WebViewController.swift in Sources */,
 				7229CE2729D6C5E700347D30 /* BossInformation+CoreDataClass.swift in Sources */,
 				72ECFFF0298BC9060045ADBB /* JSONManager.swift in Sources */,
 				72CB8BD829BF000D00A34A36 /* BossInfo.swift in Sources */,
@@ -627,6 +645,7 @@
 				45ACA294298C866F00BD9935 /* MainCollectionViewCell.swift in Sources */,
 				45ACA290298B003A00BD9935 /* SideMenuCell.swift in Sources */,
 				72B2BCEE29CD7E600022B95B /* ItemDetailViewController.swift in Sources */,
+				A38A78B329E3ED4D00213CC7 /* WebViewListViewController.swift in Sources */,
 				45ACA2AA2991FFE700BD9935 /* ViewControllerPresentation.swift in Sources */,
 				45ACA2B029921ABD00BD9935 /* SideMenuItem.swift in Sources */,
 				45ACA2AC2992002000BD9935 /* ContentViewController.swift in Sources */,
@@ -641,6 +660,7 @@
 				45ACA2A0298F2D0900BD9935 /* EquipmentCalcViewController.swift in Sources */,
 				A37030E529D1839800F3ADA4 /* WeeklyBossCharacterListViewModel.swift in Sources */,
 				45ACA2A5299016D100BD9935 /* JobListHeaderView.swift in Sources */,
+				A38A78B629E54C1600213CC7 /* WebViewListCell.swift in Sources */,
 				45ACA29E298F2CE800BD9935 /* ItemCombinationViewController.swift in Sources */,
 				72AD922A29A1C0BA00047D35 /* JobGroupDTO.swift in Sources */,
 			);
