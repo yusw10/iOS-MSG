@@ -28,6 +28,10 @@ extension UIFont {
         return UIFont(name: "Maplestory OTF \(font.rawValue)", size: size)!
     }
     
+    static func MapleLightDesciptionFont(size: CGFloat = 10, font: MapleFont = .light) -> UIFont {
+        return UIFont(name: "Maplestory OTF \(font.rawValue)", size: size)!
+    }
+    
 }
 
 final class TitleHeaderView: UICollectionReusableView {
