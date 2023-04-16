@@ -9,33 +9,34 @@ import UIKit
 
 final class EquipmentCalcView: UIScrollView {
     
+    //MARK: - Properties
+    
+    weak var viewModel: EuipmentCalcViewModel?
+    
     //MARK: - UI Properties
     
-    private let contentView = UIView(frame: .zero).then { UIView in
-        
-    }
-    
-    private let itemSlotView = ItemSlotView(frame: .zero).then { ItemSlotView in
+    let itemSlotView = ItemSlotView(frame: .zero).then { ItemSlotView in
         ItemSlotView.backgroundColor = .green
         ItemSlotView.layer.cornerRadius = 10
     }
     
-    private let itemSetTagView = ItemSetTagView(frame: .zero).then { ItemSetTagView in
+    let itemSetTagView = ItemSetTagView(frame: .zero).then { ItemSetTagView in
         ItemSetTagView.layoutIfNeeded()
     }
     
-    private let setOptionListView = SetOptionListView(frame: .zero).then { SetOptionListView in
-        
+    let setOptionListView = SetOptionListView(frame: .zero).then { SetOptionListView in
+        SetOptionListView.backgroundColor = .brown
     }
     
     //MARK: - UIView Initailizer
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .white
+        backgroundColor = .systemBackground
         showsVerticalScrollIndicator = false
         addUIProperties()
         setupLayouts()
+        
     }
     
     required init?(coder: NSCoder) {
@@ -45,36 +46,31 @@ final class EquipmentCalcView: UIScrollView {
     //MARK: - View Setup Method
     
     private func addUIProperties() {
-        addSubview(contentView)
-        contentView.addSubview(itemSlotView)
-        contentView.addSubview(itemSetTagView)
-        contentView.addSubview(setOptionListView)
+        addSubview(itemSlotView)
+        addSubview(itemSetTagView)
+        addSubview(setOptionListView)
     }
     
     private func setupLayouts() {
-        contentView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-            make.width.equalTo(self.snp.width)
-        }
         
         itemSlotView.snp.makeConstraints { make in
-            make.top.equalTo(contentView.snp.top)
-            make.leading.equalTo(contentView.snp.leading).offset(20)
-            make.trailing.equalTo(contentView.snp.trailing).offset(-20)
+            make.top.equalToSuperview()
+            make.width.equalToSuperview().multipliedBy(0.9)
+            make.centerX.equalToSuperview()
+            make.height.equalTo(itemSlotView.snp.width)
         }
         
         itemSetTagView.snp.makeConstraints { make in
             make.top.equalTo(itemSlotView.snp.bottom)
-            make.leading.equalTo(contentView.snp.leading)
-            make.trailing.equalTo(contentView.snp.trailing)
+            make.width.equalToSuperview()
             make.height.equalTo(50)
         }
         
         setOptionListView.snp.makeConstraints { make in
             make.top.equalTo(itemSetTagView.snp.bottom)
-            make.leading.equalTo(contentView.snp.leading)
-            make.trailing.equalTo(contentView.snp.trailing)
-            make.bottom.equalTo(contentView.snp.bottom)
+            make.width.equalToSuperview().multipliedBy(0.9)
+            make.centerX.equalToSuperview()
+            make.bottom.equalToSuperview()
         }
     }
 }

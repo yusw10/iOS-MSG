@@ -1,825 +1,794 @@
 [
     {
         "set" : "arcane",
-        "option" : [
+        "options" : [
             {
                 "set_count" : "2",
-                "option_name" : "공격력 / 마력",
-                "option_amount" : "30"
-            },{
-                "set_count" : "2",
-                "option_name" : "보스 몬스터 공격 시 데미지",
-                "option_amount" : "10%"
+                "option" : [
+                    {
+                        "option_name" : "공격력 / 마력",
+                        "option_amount" : 30
+                    },{
+                        "option_name" : "보스 몬스터 공격 시 데미지",
+                        "option_amount" : 10
+                    }
+                ]
             },
-            
             {
                 "set_count" : "3",
-                "option_name" : "공격력 / 마력",
-                "option_amount" : "60"
-            },{
-                "set_count" : "3",
-                "option_name" : "보스 몬스터 공격시 데미지",
-                "option_amount" : "10%"
-            },{
-                "set_count" : "3",
-                "option_name" : "몬스터 방어율 무시",
-                "option_amount" : "10%"
-            },{
-                "set_count" : "3",
-                "option_name" : "방어력",
-                "option_amount" : "400"
-            },
+                "option" : [
+                    {
+                        "option_name" : "공격력 / 마력",
+                        "option_amount" : 60
+                    },{
+                        "option_name" : "보스 몬스터 공격시 데미지",
+                        "option_amount" : 10
+                    },{
+                        "option_name" : "몬스터 방어율 무시",
+                        "option_amount" : 10
+                    },{
+                        "option_name" : "방어력",
+                        "option_amount" : 400
+                    }
+                ]
+            }
+            ,
             
             {
                 "set_count" : "4",
-                "option_name" : "공격력 / 마력",
-                "option_amount" : "95"
-            },{
-                "set_count" : "4",
-                "option_name" : "보스 몬스터 공격시 데미지",
-                "option_amount" : "20%"
-            },{
-                "set_count" : "4",
-                "option_name" : "올스탯",
-                "option_amount" : "50"
-            },{
-                "set_count" : "4",
-                "option_name" : "몬스터 방어율 무시",
-                "option_amount" : "10%"
-            },{
-                "set_count" : "4",
-                "option_name" : "방어력",
-                "option_amount" : "400"
-            },
+                "option" : [
+                    {
+                        "option_name" : "공격력 / 마력",
+                        "option_amount" : 95
+                    },{
+                        "option_name" : "보스 몬스터 공격시 데미지",
+                        "option_amount" : 20
+                    },{
+                        "option_name" : "올스탯",
+                        "option_amount" : 50
+                    },{
+                        "option_name" : "몬스터 방어율 무시",
+                        "option_amount" : 10
+                    },{
+                        "option_name" : "방어력",
+                        "option_amount" : 400
+                    }
+                ]
+                
+            }
+            ,
             
             {
                 "set_count" : "5",
-                "option_name" : "공격력 / 마력",
-                "option_amount" : "135"
-            },{
-                "set_count" : "5",
-                "option_name" : "보스 몬스터 공격시 데미지",
-                "option_amount" : "30%"
-            },{
-                "set_count" : "5",
-                "option_name" : "올스탯",
-                "option_amount" : "50"
-            },{
-                "set_count" : "5",
-                "option_name" : "최대HP",
-                "option_amount" : "2000"
-            },{
-                "set_count" : "5",
-                "option_name" : "최대MP",
-                "option_amount" : "2000"
-            },{
-                "set_count" : "5",
-                "option_name" : "몬스터 방어율 무시",
-                "option_amount" : "10%"
-            },{
-                "set_count" : "5",
-                "option_name" : "방어력",
-                "option_amount" : "400"
+                "option" : [
+                    {
+                        "option_name" : "공격력 / 마력",
+                        "option_amount" : 135
+                    },{
+                        "option_name" : "보스 몬스터 공격시 데미지",
+                        "option_amount" : 30
+                    },{
+                        "option_name" : "올스탯",
+                        "option_amount" : 50
+                    },{
+                        "option_name" : "최대HP",
+                        "option_amount" : 2000
+                    },{
+                        "option_name" : "최대MP",
+                        "option_amount" : 2000
+                    },{
+                        "option_name" : "몬스터 방어율 무시",
+                        "option_amount" : 10
+                    },{
+                        "option_name" : "방어력",
+                        "option_amount" : 400
+                    }
+                ]
             },
             
             {
                 "set_count" : "6",
-                "option_name" : "공격력 / 마력",
-                "option_amount" : "165"
-            },{
-                "set_count" : "6",
-                "option_name" : "보스 몬스터 공격시 데미지",
-                "option_amount" : "30%"
-            },{
-                "set_count" : "6",
-                "option_name" : "올스탯",
-                "option_amount" : "50"
-            },{
-                "set_count" : "6",
-                "option_name" : "최대HP",
-                "option_amount" : "2000"
-            },{
-                "set_count" : "6",
-                "option_name" : "최대MP",
-                "option_amount" : "2000"
-            },{
-                "set_count" : "6",
-                "option_name" : "최대HP%",
-                "option_amount" : "30%"
-            },{
-                "set_count" : "6",
-                "option_name" : "최대MP%",
-                "option_amount" : "30%"
-            },{
-                "set_count" : "6",
-                "option_name" : "몬스터 방어율 무시",
-                "option_amount" : "10%"
-            },{
-                "set_count" : "6",
-                "option_name" : "방어력",
-                "option_amount" : "400"
+                "option" : [
+                    {
+                        "option_name" : "공격력 / 마력",
+                        "option_amount" : 165
+                    },{
+                        "option_name" : "보스 몬스터 공격시 데미지",
+                        "option_amount" : 30
+                    },{
+                        "option_name" : "올스탯",
+                        "option_amount" : 50
+                    },{
+                        "option_name" : "최대HP",
+                        "option_amount" : 2000
+                    },{
+                        "option_name" : "최대MP",
+                        "option_amount" : 2000
+                    },{
+                        "option_name" : "최대HP%",
+                        "option_amount" : 30
+                    },{
+                        "option_name" : "최대MP%",
+                        "option_amount" : 30
+                    },{
+                        "option_name" : "몬스터 방어율 무시",
+                        "option_amount" : 10
+                    },{
+                        "option_name" : "방어력",
+                        "option_amount" : 400
+                    }
+                ]
             },
             
             {
                 "set_count" : "7",
-                "option_name" : "공격력 / 마력",
-                "option_amount" : "195"
-            },{
-                "set_count" : "7",
-                "option_name" : "보스 몬스터 공격시 데미지",
-                "option_amount" : "30%"
-            },{
-                "set_count" : "7",
-                "option_name" : "올스탯",
-                "option_amount" : "50"
-            },{
-                "set_count" : "7",
-                "option_name" : "최대HP",
-                "option_amount" : "2000"
-            },{
-                "set_count" : "7",
-                "option_name" : "최대MP",
-                "option_amount" : "2000"
-            },{
-                "set_count" : "7",
-                "option_name" : "최대HP%",
-                "option_amount" : "30%"
-            },{
-                "set_count" : "7",
-                "option_name" : "최대MP%",
-                "option_amount" : "30%"
-            },{
-                "set_count" : "7",
-                "option_name" : "몬스터 방어율 무시",
-                "option_amount" : "20%"
-            },{
-                "set_count" : "7",
-                "option_name" : "방어력",
-                "option_amount" : "400"
+                "option" : [
+                    {
+                        "option_name" : "공격력 / 마력",
+                        "option_amount" : 195
+                    },{
+                        "option_name" : "보스 몬스터 공격시 데미지",
+                        "option_amount" : 30
+                    },{
+                        "option_name" : "올스탯",
+                        "option_amount" : 50
+                    },{
+                        "option_name" : "최대HP",
+                        "option_amount" : 2000
+                    },{
+                        "option_name" : "최대MP",
+                        "option_amount" : 2000
+                    },{
+                        "option_name" : "최대HP%",
+                        "option_amount" : 30
+                    },{
+                        "option_name" : "최대MP%",
+                        "option_amount" : 30
+                    },{
+                        "option_name" : "몬스터 방어율 무시",
+                        "option_amount" : 20
+                    },{
+                        "option_name" : "방어력",
+                        "option_amount" : 400
+                    }
+                ]
             }
         ]
     },
     {
         "set" : "absolabs",
-        "option" : [
+        "options" : [
             {
                 "set_count" : "2",
-                "option_name" : "공격력 / 마력",
-                "option_amount" : "20"
-            },{
-                "set_count" : "2",
-                "option_name" : "보스 몬스터 공격 시 데미지",
-                "option_amount" : "10%"
-            },{
-                "set_count" : "2",
-                "option_name" : "최대 HP",
-                "option_amount" : "1500"
-            },{
-                "set_count" : "2",
-                "option_name" : "최대 MP",
-                "option_amount" : "1500"
-            },
+                "option" : [
+                    {
+                        "option_name" : "공격력 / 마력",
+                        "option_amount" : 20
+                    },{
+                        "option_name" : "보스 몬스터 공격 시 데미지",
+                        "option_amount" : 10
+                    },{
+                        "option_name" : "최대 HP",
+                        "option_amount" : 1500
+                    },{
+                        "option_name" : "최대 MP",
+                        "option_amount" : 1500
+                    }
+                ]
+            }
+            ,
             
             {
                 "set_count" : "3",
-                "option_name" : "공격력 / 마력",
-                "option_amount" : "40"
-            },{
-                "set_count" : "3",
-                "option_name" : "보스 몬스터 공격 시 데미지",
-                "option_amount" : "20%"
-            },{
-                "set_count" : "3",
-                "option_name" : "올스탯",
-                "option_amount" : "30"
-            },{
-                "set_count" : "3",
-                "option_name" : "최대 HP",
-                "option_amount" : "1500"
-            },{
-                "set_count" : "3",
-                "option_name" : "최대 MP",
-                "option_amount" : "1500"
+                "option" : [
+                    {
+                        "option_name" : "공격력 / 마력",
+                        "option_amount" : 40
+                    },{
+                        "option_name" : "보스 몬스터 공격 시 데미지",
+                        "option_amount" : 20
+                    },{
+                        "option_name" : "올스탯",
+                        "option_amount" : 30
+                    },{
+                        "option_name" : "최대 HP",
+                        "option_amount" : 1500
+                    },{
+                        "option_name" : "최대 MP",
+                        "option_amount" : 1500
+                    }
+                ]
             },
             
             {
                 "set_count" : "4",
-                "option_name" : "공격력 / 마력",
-                "option_amount" : "65"
-            },{
-                "set_count" : "4",
-                "option_name" : "보스 몬스터 공격 시 데미지",
-                "option_amount" : "20%"
-            },{
-                "set_count" : "4",
-                "option_name" : "올스탯",
-                "option_amount" : "30"
-            },{
-                "set_count" : "4",
-                "option_name" : "최대 HP",
-                "option_amount" : "1500"
-            },{
-                "set_count" : "4",
-                "option_name" : "최대 MP",
-                "option_amount" : "1500"
-            },{
-                "set_count" : "4",
-                "option_name" : "몬스터 방어율 무시",
-                "option_amount" : "10%"
-            },{
-                "set_count" : "4",
-                "option_name" : "방어력",
-                "option_amount" : "200"
+                "option" : [
+                    {
+                        "option_name" : "공격력 / 마력",
+                        "option_amount" : 65
+                    },{
+                        "option_name" : "보스 몬스터 공격 시 데미지",
+                        "option_amount" : 20
+                    },{
+                        "option_name" : "올스탯",
+                        "option_amount" : 30
+                    },{
+                        "option_name" : "최대 HP",
+                        "option_amount" : 1500
+                    },{
+                        "option_name" : "최대 MP",
+                        "option_amount" : 1500
+                    },{
+                        "option_name" : "몬스터 방어율 무시",
+                        "option_amount" : 10
+                    },{
+                        "option_name" : "방어력",
+                        "option_amount" : 200
+                    }
+                ]
             },
             
             {
                 "set_count" : "5",
-                "option_name" : "공격력 / 마력",
-                "option_amount" : "95"
-            },{
-                "set_count" : "5",
-                "option_name" : "보스 몬스터 공격 시 데미지",
-                "option_amount" : "30%"
-            },{
-                "set_count" : "5",
-                "option_name" : "올스탯",
-                "option_amount" : "30"
-            },{
-                "set_count" : "5",
-                "option_name" : "최대 HP",
-                "option_amount" : "1500"
-            },{
-                "set_count" : "5",
-                "option_name" : "최대 MP",
-                "option_amount" : "1500"
-            },{
-                "set_count" : "5",
-                "option_name" : "몬스터 방어율 무시",
-                "option_amount" : "10%"
-            },{
-                "set_count" : "5",
-                "option_name" : "방어력",
-                "option_amount" : "200"
+                "option" : [
+                    {
+                        "option_name" : "공격력 / 마력",
+                        "option_amount" : 95
+                    },{
+                        "option_name" : "보스 몬스터 공격 시 데미지",
+                        "option_amount" : 30
+                    },{
+                        "option_name" : "올스탯",
+                        "option_amount" : 30
+                    },{
+                        "option_name" : "최대 HP",
+                        "option_amount" : 1500
+                    },{
+                        "option_name" : "최대 MP",
+                        "option_amount" : 1500
+                    },{
+                        "option_name" : "몬스터 방어율 무시",
+                        "option_amount" : 10
+                    },{
+                        "option_name" : "방어력",
+                        "option_amount" : 200
+                    }
+                ]
             },
             
             {
                 "set_count" : "6",
-                "option_name" : "공격력 / 마력",
-                "option_amount" : "115"
-            },{
-                "set_count" : "6",
-                "option_name" : "보스 몬스터 공격 시 데미지",
-                "option_amount" : "30%"
-            },{
-                "set_count" : "6",
-                "option_name" : "올스탯",
-                "option_amount" : "30"
-            },{
-                "set_count" : "6",
-                "option_name" : "최대 HP",
-                "option_amount" : "1500"
-            },{
-                "set_count" : "6",
-                "option_name" : "최대 MP",
-                "option_amount" : "1500"
-            },{
-                "set_count" : "6",
-                "option_name" : "최대 HP%",
-                "option_amount" : "20%"
-            },{
-                "set_count" : "6",
-                "option_name" : "최대 MP%",
-                "option_amount" : "20%"
-            },{
-                "set_count" : "6",
-                "option_name" : "몬스터 방어율 무시",
-                "option_amount" : "10%"
-            },{
-                "set_count" : "6",
-                "option_name" : "방어력",
-                "option_amount" : "200"
+                "option" : [
+                    {
+                        "option_name" : "공격력 / 마력",
+                        "option_amount" : 115
+                    },{
+                        "option_name" : "보스 몬스터 공격 시 데미지",
+                        "option_amount" : 30
+                    },{
+                        "option_name" : "올스탯",
+                        "option_amount" : 30
+                    },{
+                        "option_name" : "최대 HP",
+                        "option_amount" : 1500
+                    },{
+                        "option_name" : "최대 MP",
+                        "option_amount" : 1500
+                    },{
+                        "option_name" : "최대 HP%",
+                        "option_amount" : 20
+                    },{
+                        "option_name" : "최대 MP%",
+                        "option_amount" : 20
+                    },{
+                        "option_name" : "몬스터 방어율 무시",
+                        "option_amount" : 10
+                    },{
+                        "option_name" : "방어력",
+                        "option_amount" : 200
+                    }
+                ]
             },
             
             {
                 "set_count" : "7",
-                "option_name" : "공격력 / 마력",
-                "option_amount" : "135"
-            },{
-                "set_count" : "7",
-                "option_name" : "보스 몬스터 공격 시 데미지",
-                "option_amount" : "30%"
-            },{
-                "set_count" : "7",
-                "option_name" : "올스탯",
-                "option_amount" : "30"
-            },{
-                "set_count" : "7",
-                "option_name" : "최대 HP",
-                "option_amount" : "1500"
-            },{
-                "set_count" : "7",
-                "option_name" : "최대 MP",
-                "option_amount" : "1500"
-            },{
-                "set_count" : "7",
-                "option_name" : "최대 HP%",
-                "option_amount" : "20%"
-            },{
-                "set_count" : "7",
-                "option_name" : "최대 MP%",
-                "option_amount" : "20%"
-            },{
-                "set_count" : "7",
-                "option_name" : "몬스터 방어율 무시",
-                "option_amount" : "20%"
-            },{
-                "set_count" : "7",
-                "option_name" : "방어력",
-                "option_amount" : "200"
+                "option" : [
+                    {
+                        "option_name" : "공격력 / 마력",
+                        "option_amount" : 135
+                    },{
+                        "option_name" : "보스 몬스터 공격 시 데미지",
+                        "option_amount" : 30
+                    },{
+                        "option_name" : "올스탯",
+                        "option_amount" : 30
+                    },{
+                        "option_name" : "최대 HP",
+                        "option_amount" : 1500
+                    },{
+                        "option_name" : "최대 MP",
+                        "option_amount" : 1500
+                    },{
+                        "option_name" : "최대 HP%",
+                        "option_amount" : 20
+                    },{
+                        "option_name" : "최대 MP%",
+                        "option_amount" : 20
+                    },{
+                        "option_name" : "몬스터 방어율 무시",
+                        "option_amount" : 20
+                    },{
+                        "option_name" : "방어력",
+                        "option_amount" : 20
+                    }
+                ]
             }
         ]
     },
     {
         "set" : "choasRutabyss",
-        "option" : [
+        "options" : [
             {
                 "set_count" : "2",
-                "option_name" : "주스탯 및 부스탯",
-                "option_amount" : "20"
-            },{
-                "set_count" : "2",
-                "option_name" : "최대 HP",
-                "option_amount" : "1000"
-            },{
-                "set_count" : "2",
-                "option_name" : "최대 MP",
-                "option_amount" : "1000"
+                "option" : [
+                    {
+                        "option_name" : "주스탯 및 부스탯",
+                        "option_amount" : 20
+                    },{
+                        "option_name" : "최대 HP",
+                        "option_amount" : 1000
+                    },{
+                        "option_name" : "최대 MP",
+                        "option_amount" : 100
+                    }
+                ]
             },
             
             {
                 "set_count" : "3",
-                "option_name" : "공격력 / 마력",
-                "option_amount" : "50"
-            },{
-                "set_count" : "3",
-                "option_name" : "주스탯 및 부스탯",
-                "option_amount" : "20"
-            },{
-                "set_count" : "3",
-                "option_name" : "올스탯%",
-                "option_amount" : "10%"
-            },{
-                "set_count" : "3",
-                "option_name" : "최대 HP",
-                "option_amount" : "1000"
-            },{
-                "set_count" : "3",
-                "option_name" : "최대 MP",
-                "option_amount" : "1000"
+                "option" : [
+                    {
+                        "option_name" : "공격력 / 마력",
+                        "option_amount" : 50
+                    },{
+                        "option_name" : "주스탯 및 부스탯",
+                        "option_amount" : 20
+                    },{
+                        "option_name" : "올스탯%",
+                        "option_amount" : 10
+                    },{
+                        "option_name" : "최대 HP",
+                        "option_amount" : 1000
+                    },{
+                        "option_name" : "최대 MP",
+                        "option_amount" : 1000
+                    }
+                ]
             },
             
             {
                 "set_count" : "4",
-                "option_name" : "공격력 / 마력",
-                "option_amount" : "50"
-            },{
-                "set_count" : "4",
-                "option_name" : "보스 몬스터 공격시 데미지",
-                "option_amount" : "30%"
-            },{
-                "set_count" : "4",
-                "option_name" : "주스탯 및 부스탯",
-                "option_amount" : "20"
-            },{
-                "set_count" : "4",
-                "option_name" : "올스탯%",
-                "option_amount" : "10%"
-            },{
-                "set_count" : "4",
-                "option_name" : "최대 HP",
-                "option_amount" : "1000"
-            },{
-                "set_count" : "4",
-                "option_name" : "최대 MP",
-                "option_amount" : "1000"
+                "option" : [
+                    {
+                        "option_name" : "공격력 / 마력",
+                        "option_amount" : 50
+                    },{
+                        "option_name" : "보스 몬스터 공격시 데미지",
+                        "option_amount" : 30
+                    },{
+                        "option_name" : "주스탯 및 부스탯",
+                        "option_amount" : 20
+                    },{
+                        "option_name" : "올스탯%",
+                        "option_amount" : 10
+                    },{
+                        "option_name" : "최대 HP",
+                        "option_amount" : 1000
+                    },{
+                        "option_name" : "최대 MP",
+                        "option_amount" : 1000
+                    }
+                ]
             }
+            
         ]
     },
     {
         "set" : "basicBossAccessory",
-        "option" : [
+        "options" : [
             {
                 "set_count" : "3",
-                "option_name" : "공격력 / 마력",
-                "option_amount" : "5"
-            },{
-                "set_count" : "3",
-                "option_name" : "올스탯",
-                "option_amount" : "10"
-            },{
-                "set_count" : "3",
-                "option_name" : "최대 HP%",
-                "option_amount" : "5%"
-            },{
-                "set_count" : "3",
-                "option_name" : "최대 MP%",
-                "option_amount" : "5%"
+                "option" : [
+                    {
+                        "option_name" : "공격력 / 마력",
+                        "option_amount" : 5
+                    },{
+                        "option_name" : "올스탯",
+                        "option_amount" : 10
+                    },{
+                        "option_name" : "최대 HP%",
+                        "option_amount" : 5
+                    },{
+                        "option_name" : "최대 MP%",
+                        "option_amount" : 5
+                    }
+                ]
             },
             
             {
                 "set_count" : "5",
-                "option_name" : "공격력 / 마력",
-                "option_amount" : "10"
-            },{
-                "set_count" : "5",
-                "option_name" : "올스탯",
-                "option_amount" : "20"
-            },{
-                "set_count" : "5",
-                "option_name" : "최대 HP%",
-                "option_amount" : "10%"
-            },{
-                "set_count" : "5",
-                "option_name" : "최대 MP%",
-                "option_amount" : "10%"
+                "option" : [
+                    {
+                        "option_name" : "공격력 / 마력",
+                        "option_amount" : 10
+                    },{
+                        "option_name" : "올스탯",
+                        "option_amount" : 20
+                    },{
+                        "option_name" : "최대 HP%",
+                        "option_amount" : 10
+                    },{
+                        "option_name" : "최대 MP%",
+                        "option_amount" : 10
+                    }
+                ]
             },
             
             {
                 "set_count" : "7",
-                "option_name" : "공격력 / 마력",
-                "option_amount" : "20"
-            },{
-                "set_count" : "7",
-                "option_name" : "올스탯",
-                "option_amount" : "30"
-            },{
-                "set_count" : "7",
-                "option_name" : "최대 HP%",
-                "option_amount" : "10%"
-            },{
-                "set_count" : "7",
-                "option_name" : "최대 MP%",
-                "option_amount" : "10%"
-            },{
-                "set_count" : "7",
-                "option_name" : "몬스터 방어율 무시",
-                "option_amount" : "10%"
-            },{
-                "set_count" : "7",
-                "option_name" : "방어력",
-                "option_amount" : "80"
+                "option" : [
+                    {
+                        "option_name" : "공격력 / 마력",
+                        "option_amount" : 20
+                    },{
+                        "option_name" : "올스탯",
+                        "option_amount" : 30
+                    },{
+                        "option_name" : "최대 HP%",
+                        "option_amount" : 10
+                    },{
+                        "option_name" : "최대 MP%",
+                        "option_amount" : 10
+                    },{
+                        "option_name" : "몬스터 방어율 무시",
+                        "option_amount" : 10
+                    },{
+                        "option_name" : "방어력",
+                        "option_amount" : 80
+                    }
+                ]
             },
             
             {
                 "set_count" : "9",
-                "option_name" : "공격력 / 마력",
-                "option_amount" : "30"
-            },{
-                "set_count" : "9",
-                "option_name" : "보스 몬스터 공격시 데미지",
-                "option_amount" : "10%"
-            },{
-                "set_count" : "9",
-                "option_name" : "올스탯",
-                "option_amount" : "45"
-            },{
-                "set_count" : "9",
-                "option_name" : "최대 HP%",
-                "option_amount" : "10%"
-            },{
-                "set_count" : "9",
-                "option_name" : "최대 MP%",
-                "option_amount" : "10%"
-            },{
-                "set_count" : "9",
-                "option_name" : "몬스터 방어율 무시",
-                "option_amount" : "10%"
-            },{
-                "set_count" : "9",
-                "option_name" : "방어력",
-                "option_amount" : "180"
+                "option" : [
+                    {
+                        "option_name" : "공격력 / 마력",
+                        "option_amount" : 30
+                    },{
+                        "option_name" : "보스 몬스터 공격시 데미지",
+                        "option_amount" : 10
+                    },{
+                        "option_name" : "올스탯",
+                        "option_amount" : 45
+                    },{
+                        "option_name" : "최대 HP%",
+                        "option_amount" : 10
+                    },{
+                        "option_name" : "최대 MP%",
+                        "option_amount" : 10
+                    },{
+                        "option_name" : "몬스터 방어율 무시",
+                        "option_amount" : 10
+                    },{
+                        "option_name" : "방어력",
+                        "option_amount" : 180
+                    }
+                ]
             }
         ]
     },
     {
         "set" : "dawnBossAccessory",
-        "option" : [
+        "options" : [
             {
                 "set_count" : "2",
-                "option_name" : "공격력 / 마력",
-                "option_amount" : "10"
-            },{
-                "set_count" : "2",
-                "option_name" : "보스 몬스터 공격시 데미지",
-                "option_amount" : "10%"
-            },{
-                "set_count" : "2",
-                "option_name" : "올스탯",
-                "option_amount" : "10"
-            },{
-                "set_count" : "2",
-                "option_name" : "최대 HP",
-                "option_amount" : "250"
+                "option" : [
+                    {
+                        "option_name" : "공격력 / 마력",
+                        "option_amount" : 10
+                    },{
+                        "option_name" : "보스 몬스터 공격시 데미지",
+                        "option_amount" : 10
+                    },{
+                        "option_name" : "올스탯",
+                        "option_amount" : 10
+                    },{
+                        "option_name" : "최대 HP",
+                        "option_amount" : 250
+                    }
+                ]
             },
             
             {
                 "set_count" : "3",
-                "option_name" : "공격력 / 마력",
-                "option_amount" : "20"
-            },{
-                "set_count" : "3",
-                "option_name" : "보스 몬스터 공격시 데미지",
-                "option_amount" : "10%"
-            },{
-                "set_count" : "3",
-                "option_name" : "올스탯",
-                "option_amount" : "20"
-            },{
-                "set_count" : "3",
-                "option_name" : "최대 HP",
-                "option_amount" : "500"
+                "option" : [
+                    {
+                        "option_name" : "공격력 / 마력",
+                        "option_amount" : 20
+                    },{
+                        "option_name" : "보스 몬스터 공격시 데미지",
+                        "option_amount" : 10
+                    },{
+                        "option_name" : "올스탯",
+                        "option_amount" : 20
+                    },{
+                        "option_name" : "최대 HP",
+                        "option_amount" : 500
+                    }
+                ]
             },
             
             {
                 "set_count" : "4",
-                "option_name" : "공격력 / 마력",
-                "option_amount" : "30"
-            },{
-                "set_count" : "4",
-                "option_name" : "보스 몬스터 공격시 데미지",
-                "option_amount" : "10%"
-            },{
-                "set_count" : "4",
-                "option_name" : "올스탯",
-                "option_amount" : "30"
-            },{
-                "set_count" : "4",
-                "option_name" : "최대 HP",
-                "option_amount" : "750"
-            },{
-                "set_count" : "4",
-                "option_name" : "몬스터 방어율 무시",
-                "option_amount" : "10%"
-            },{
-                "set_count" : "4",
-                "option_name" : "방어력",
-                "option_amount" : "100"
+                "option" : [
+                    {
+                        "option_name" : "공격력 / 마력",
+                        "option_amount" : 30
+                    },{
+                        "option_name" : "보스 몬스터 공격시 데미지",
+                        "option_amount" : 10
+                    },{
+                        "option_name" : "올스탯",
+                        "option_amount" : 30
+                    },{
+                        "option_name" : "최대 HP",
+                        "option_amount" : 750
+                    },{
+                        "option_name" : "몬스터 방어율 무시",
+                        "option_amount" : 10
+                    },{
+                        "option_name" : "방어력",
+                        "option_amount" : 100
+                    }
+                ]
             }
         ]
     },
     {
         "set" : "blackBossAccessory",
-        "option" : [
+        "options" : [
             {
                 "set_count" : "2",
-                "option_name" : "공격력 / 마력",
-                "option_amount" : "10"
-            },{
-                "set_count" : "2",
-                "option_name" : "보스 몬스터 공격시 데미지",
-                "option_amount" : "10%"
-            },{
-                "set_count" : "2",
-                "option_name" : "올스탯",
-                "option_amount" : "10"
-            },{
-                "set_count" : "2",
-                "option_name" : "최대 HP",
-                "option_amount" : "250"
+                "option" : [
+                    {
+                        "option_name" : "공격력 / 마력",
+                        "option_amount" : 10
+                    },{
+                        "option_name" : "보스 몬스터 공격시 데미지",
+                        "option_amount" : 10
+                    },{
+                        "option_name" : "올스탯",
+                        "option_amount" : 10
+                    },{
+                        "option_name" : "최대 HP",
+                        "option_amount" : 250
+                    }
+                ]
             },
             
             {
                 "set_count" : "3",
-                "option_name" : "공격력 / 마력",
-                "option_amount" : "20"
-            },{
-                "set_count" : "3",
-                "option_name" : "보스 몬스터 공격시 데미지",
-                "option_amount" : "10%"
-            },{
-                "set_count" : "3",
-                "option_name" : "올스탯",
-                "option_amount" : "20"
-            },{
-                "set_count" : "3",
-                "option_name" : "최대 HP",
-                "option_amount" : "500"
-            },{
-                "set_count" : "3",
-                "option_name" : "최대 HP%",
-                "option_amount" : "10%"
-            },{
-                "set_count" : "3",
-                "option_name" : "몬스터 방어율 무시",
-                "option_amount" : "10%"
-            },{
-                "set_count" : "3",
-                "option_name" : "방어력",
-                "option_amount" : "250"
+                "option" : [
+                    {
+                        "option_name" : "공격력 / 마력",
+                        "option_amount" : 20
+                    },{
+                        "option_name" : "보스 몬스터 공격시 데미지",
+                        "option_amount" : 10
+                    },{
+                        "option_name" : "올스탯",
+                        "option_amount" : 20
+                    },{
+                        "option_name" : "최대 HP",
+                        "option_amount" : 500
+                    },{
+                        "option_name" : "최대 HP%",
+                        "option_amount" : 10
+                    },{
+                        "option_name" : "몬스터 방어율 무시",
+                        "option_amount" : 10
+                    },{
+                        "option_name" : "방어력",
+                        "option_amount" : 250
+                    }
+                ]
             },
             
             {
                 "set_count" : "4",
-                "option_name" : "공격력 / 마력",
-                "option_amount" : "35"
-            },{
-                "set_count" : "4",
-                "option_name" : "보스 몬스터 공격시 데미지",
-                "option_amount" : "10%"
-            },{
-                "set_count" : "4",
-                "option_name" : "올스탯",
-                "option_amount" : "35"
-            },{
-                "set_count" : "4",
-                "option_name" : "최대 HP",
-                "option_amount" : "875"
-            },{
-                "set_count" : "4",
-                "option_name" : "최대 HP%",
-                "option_amount" : "10%"
-            },{
-                "set_count" : "4",
-                "option_name" : "몬스터 방어율 무시",
-                "option_amount" : "10%"
-            },{
-                "set_count" : "4",
-                "option_name" : "방어력",
-                "option_amount" : "250"
-            },{
-                "set_count" : "4",
-                "option_name" : "크리티컬 데미지",
-                "option_amount" : "5%"
+                "option" : [
+                    {
+                        "option_name" : "공격력 / 마력",
+                        "option_amount" : 35
+                    },{
+                        "option_name" : "보스 몬스터 공격시 데미지",
+                        "option_amount" : 10
+                    },{
+                        "option_name" : "올스탯",
+                        "option_amount" : 35
+                    },{
+                        "option_name" : "최대 HP",
+                        "option_amount" : 875
+                    },{
+                        "option_name" : "최대 HP%",
+                        "option_amount" : 10
+                    },{
+                        "option_name" : "몬스터 방어율 무시",
+                        "option_amount" : 10
+                    },{
+                        "option_name" : "방어력",
+                        "option_amount" : 250
+                    },{
+                        "option_name" : "크리티컬 데미지",
+                        "option_amount" : 5
+                    }
+                ]
             },
             
             {
                 "set_count" : "5",
-                "option_name" : "공격력 / 마력",
-                "option_amount" : "50"
-            },{
-                "set_count" : "5",
-                "option_name" : "보스 몬스터 공격시 데미지",
-                "option_amount" : "20%"
-            },{
-                "set_count" : "5",
-                "option_name" : "올스탯",
-                "option_amount" : "50"
-            },{
-                "set_count" : "5",
-                "option_name" : "최대 HP",
-                "option_amount" : "1250"
-            },{
-                "set_count" : "5",
-                "option_name" : "최대 HP%",
-                "option_amount" : "10%"
-            },{
-                "set_count" : "5",
-                "option_name" : "몬스터 방어율 무시",
-                "option_amount" : "10%"
-            },{
-                "set_count" : "5",
-                "option_name" : "방어력",
-                "option_amount" : "250"
-            },{
-                "set_count" : "5",
-                "option_name" : "크리티컬 데미지",
-                "option_amount" : "5%"
+                "option" : [
+                    {
+                        "option_name" : "공격력 / 마력",
+                        "option_amount" : 50
+                    },{
+                        "option_name" : "보스 몬스터 공격시 데미지",
+                        "option_amount" : 20
+                    },{
+                        "option_name" : "올스탯",
+                        "option_amount" : 50
+                    },{
+                        "option_name" : "최대 HP",
+                        "option_amount" : 1250
+                    },{
+                        "option_name" : "최대 HP%",
+                        "option_amount" : 10
+                    },{
+                        "option_name" : "몬스터 방어율 무시",
+                        "option_amount" : 10
+                    },{
+                        "option_name" : "방어력",
+                        "option_amount" : 250
+                    },{
+                        "option_name" : "크리티컬 데미지",
+                        "option_amount" : 5
+                    }
+                ]
             },
             
             {
                 "set_count" : "6",
-                "option_name" : "공격력 / 마력",
-                "option_amount" : "65"
-            },{
-                "set_count" : "6",
-                "option_name" : "보스 몬스터 공격시 데미지",
-                "option_amount" : "20%"
-            },{
-                "set_count" : "6",
-                "option_name" : "올스탯",
-                "option_amount" : "65"
-            },{
-                "set_count" : "6",
-                "option_name" : "최대 HP",
-                "option_amount" : "1625"
-            },{
-                "set_count" : "6",
-                "option_name" : "최대 HP%",
-                "option_amount" : "20%"
-            },{
-                "set_count" : "6",
-                "option_name" : "몬스터 방어율 무시",
-                "option_amount" : "20%"
-            },{
-                "set_count" : "6",
-                "option_name" : "방어력",
-                "option_amount" : "250"
-            },{
-                "set_count" : "6",
-                "option_name" : "크리티컬 데미지",
-                "option_amount" : "5%"
+                "option" : [
+                    {
+                        "option_name" : "공격력 / 마력",
+                        "option_amount" : 65
+                    },{
+                        "option_name" : "보스 몬스터 공격시 데미지",
+                        "option_amount" : 20
+                    },{
+                        "option_name" : "올스탯",
+                        "option_amount" : 65
+                    },{
+                        "option_name" : "최대 HP",
+                        "option_amount" : 1625
+                    },{
+                        "option_name" : "최대 HP%",
+                        "option_amount" : 20
+                    },{
+                        "option_name" : "몬스터 방어율 무시",
+                        "option_amount" : 20
+                    },{
+                        "option_name" : "방어력",
+                        "option_amount" : 250
+                    },{
+                        "option_name" : "크리티컬 데미지",
+                        "option_amount" : 5
+                    }
+                ]
             },
             
             {
                 "set_count" : "7",
-                "option_name" : "공격력 / 마력",
-                "option_amount" : "80"
-            },{
-                "set_count" : "7",
-                "option_name" : "보스 몬스터 공격시 데미지",
-                "option_amount" : "20%"
-            },{
-                "set_count" : "7",
-                "option_name" : "올스탯",
-                "option_amount" : "80"
-            },{
-                "set_count" : "7",
-                "option_name" : "최대 HP",
-                "option_amount" : "2000"
-            },{
-                "set_count" : "7",
-                "option_name" : "최대 HP%",
-                "option_amount" : "20%"
-            },{
-                "set_count" : "7",
-                "option_name" : "몬스터 방어율 무시",
-                "option_amount" : "20%"
-            },{
-                "set_count" : "7",
-                "option_name" : "방어력",
-                "option_amount" : "250"
-            },{
-                "set_count" : "7",
-                "option_name" : "크리티컬 데미지",
-                "option_amount" : "10%"
+                "option" : [
+                    {
+                        "option_name" : "공격력 / 마력",
+                        "option_amount" : 80
+                    },{
+                        "option_name" : "보스 몬스터 공격시 데미지",
+                        "option_amount" : 20
+                    },{
+                        "option_name" : "올스탯",
+                        "option_amount" : 80
+                    },{
+                        "option_name" : "최대 HP",
+                        "option_amount" : 2000
+                    },{
+                        "option_name" : "최대 HP%",
+                        "option_amount" : 20
+                    },{
+                        "option_name" : "몬스터 방어율 무시",
+                        "option_amount" : 20
+                    },{
+                        "option_name" : "방어력",
+                        "option_amount" : 250
+                    },{
+                        "option_name" : "크리티컬 데미지",
+                        "option_amount" : 10
+                    }
+                ]
             },
             
             {
                 "set_count" : "8",
-                "option_name" : "공격력 / 마력",
-                "option_amount" : "95"
-            },{
-                "set_count" : "8",
-                "option_name" : "보스 몬스터 공격시 데미지",
-                "option_amount" : "30%"
-            },{
-                "set_count" : "8",
-                "option_name" : "올스탯",
-                "option_amount" : "95"
-            },{
-                "set_count" : "8",
-                "option_name" : "최대 HP",
-                "option_amount" : "2375"
-            },{
-                "set_count" : "8",
-                "option_name" : "최대 HP%",
-                "option_amount" : "20%"
-            },{
-                "set_count" : "8",
-                "option_name" : "몬스터 방어율 무시",
-                "option_amount" : "20%"
-            },{
-                "set_count" : "8",
-                "option_name" : "방어력",
-                "option_amount" : "250"
-            },{
-                "set_count" : "8",
-                "option_name" : "크리티컬 데미지",
-                "option_amount" : "10%"
+                "option" : [
+                    {
+                        "option_name" : "공격력 / 마력",
+                        "option_amount" : 95
+                    },{
+                        "option_name" : "보스 몬스터 공격시 데미지",
+                        "option_amount" : 30
+                    },{
+                        "option_name" : "올스탯",
+                        "option_amount" : 95
+                    },{
+                        "option_name" : "최대 HP",
+                        "option_amount" : 2375
+                    },{
+                        "option_name" : "최대 HP%",
+                        "option_amount" : 20
+                    },{
+                        "option_name" : "몬스터 방어율 무시",
+                        "option_amount" : 20
+                    },{
+                        "option_name" : "방어력",
+                        "option_amount" : 250
+                    },{
+                        "option_name" : "크리티컬 데미지",
+                        "option_amount" : 10
+                    }
+                ]
             },
             
             {
                 "set_count" : "9",
-                "option_name" : "공격력 / 마력",
-                "option_amount" : "110"
-            },{
-                "set_count" : "9",
-                "option_name" : "보스 몬스터 공격시 데미지",
-                "option_amount" : "30%"
-            },{
-                "set_count" : "9",
-                "option_name" : "올스탯",
-                "option_amount" : "110"
-            },{
-                "set_count" : "9",
-                "option_name" : "최대 HP",
-                "option_amount" : "2750"
-            },{
-                "set_count" : "9",
-                "option_name" : "최대 HP%",
-                "option_amount" : "20%"
-            },{
-                "set_count" : "9",
-                "option_name" : "몬스터 방어율 무시",
-                "option_amount" : "20%"
-            },{
-                "set_count" : "9",
-                "option_name" : "방어력",
-                "option_amount" : "250"
-            },{
-                "set_count" : "9",
-                "option_name" : "크리티컬 데미지",
-                "option_amount" : "15%"
+                "option" : [
+                    {
+                        "option_name" : "공격력 / 마력",
+                        "option_amount" : 110
+                    },{
+                        "option_name" : "보스 몬스터 공격시 데미지",
+                        "option_amount" : 30
+                    },{
+                        "option_name" : "올스탯",
+                        "option_amount" : 110
+                    },{
+                        "option_name" : "최대 HP",
+                        "option_amount" : 2750
+                    },{
+                        "option_name" : "최대 HP%",
+                        "option_amount" : 20
+                    },{
+                        "option_name" : "몬스터 방어율 무시",
+                        "option_amount" : 20
+                    },{
+                        "option_name" : "방어력",
+                        "option_amount" : 250
+                    },{
+                        "option_name" : "크리티컬 데미지",
+                        "option_amount" : 15
+                    }
+                ]
             }
         ]
     }

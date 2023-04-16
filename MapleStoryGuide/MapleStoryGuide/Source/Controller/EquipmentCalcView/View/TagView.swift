@@ -8,7 +8,7 @@
 import UIKit
 
 final class TagView: UIView {
-    
+
     private let label = UILabel().then { UILabel in
         
     }

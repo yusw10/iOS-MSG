@@ -11,7 +11,7 @@ import Foundation
 
 struct EquipmentSetOptionDTO: Codable {
     let equipmentSetOptionSet: String
-    let options: [OptionDTO]
+    let options: [SetOptionDTO]
 
     enum CodingKeys: String, CodingKey {
         case equipmentSetOptionSet = "set"
@@ -21,21 +21,36 @@ struct EquipmentSetOptionDTO: Codable {
     func toDomain() -> EquipmentSetOption {
         return EquipmentSetOption(
             equipmentSetOptionSet: self.equipmentSetOptionSet,
-            options: self.options.map({ optionDTO in
-                return Option(
-                    setCount: optionDTO.setCount,
-                    optionName: optionDTO.optionName,
-                    optionAmount: optionDTO.optionAmount
-                )
+            options: self.options.map({ SetOptionDTO in
+                return SetOptionDTO.toDomain()
+            })
+        )
+    }
+}
+
+struct SetOptionDTO: Codable {
+    let setCount: String
+    let option: [OptionDTO]
+
+    enum CodingKeys: String, CodingKey {
+        case setCount = "set_count"
+        case option
+    }
+    
+    func toDomain() -> SetOption {
+        return SetOption(
+            setCount: self.setCount,
+            option: self.option.map({ OptionDTO in
+                return Option(optionName: OptionDTO.optionName, optionAmount: OptionDTO.optionAmount)
             }))
     }
 }
 
 struct OptionDTO: Codable {
-    let setCount, optionName, optionAmount: String
+    let optionName: String
+    let optionAmount: Int
 
     enum CodingKeys: String, CodingKey {
-        case setCount = "set_count"
         case optionName = "option_name"
         case optionAmount = "option_amount"
     }
@@ -45,21 +60,19 @@ struct OptionDTO: Codable {
 
 struct EquipmentSetOption {
     let equipmentSetOptionSet: String
-    let options: [Option]
-    
-    func generateOptionList(at: Int) -> [Option] {
-        var optionList: [Option] = []
-        options.forEach { option in
-            if option.setCount == "\(at)" {
-                optionList.append(option)
-            }
-        }
-        return optionList
-    }
+    let options: [SetOption]
+}
+
+struct SetOption {
+    let setCount: String
+    let option: [Option]
 }
 
 struct Option {
-    let setCount: String
     let optionName: String
-    let optionAmount: String
+    let optionAmount: Int
+    
+    func toString() -> String {
+        return "\(optionName) : \(optionName.contains("%") ? "\(optionAmount)%" : "\(optionAmount)")"
+    }
 }

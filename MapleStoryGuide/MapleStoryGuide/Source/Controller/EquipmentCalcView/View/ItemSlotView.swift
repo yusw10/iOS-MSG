@@ -7,13 +7,21 @@
 
 import UIKit
 
+protocol SelectedPartDelegate: AnyObject {
+    func selectPart(at: EquipmentPart)
+}
+
 final class ItemSlotView: UIView {
+    
+    weak var viewModel: EuipmentCalcViewModel?
+    
+    weak var delegate: SelectedPartDelegate?
     
     //MARK: - UIView Properties
     
-    private var itemSlots: [UIStackView] = []
+    var itemSlots: [UIStackView] = []
     
-    private var mainStackView = UIStackView(frame: .zero).then { UIStackView in
+    var mainStackView = UIStackView(frame: .zero).then { UIStackView in
         UIStackView.spacing = 15
         UIStackView.alignment = .center
         UIStackView.distribution = .fillEqually
@@ -87,6 +95,8 @@ final class ItemSlotView: UIView {
         if (sender.state == .ended) {
             print("터치 이벤트")
             print(sender.part)
+            
+            delegate?.selectPart(at: sender.part)
         }
     }
 }
@@ -96,12 +106,3 @@ final class ItemSlotView: UIView {
 final class ItemSlotTapGesture: UITapGestureRecognizer {
     var part: EquipmentPart = .empty
 }
-
-let SlotPartsData: [[EquipmentPart]] = [
-    [.ring, .empty, .head, .empty, .emblem],
-    [.ring, .necklace, .eyeMask, .empty, .title],
-    [.ring, .necklace, .faceMask, .earring, .badge],
-    [.ring, .weapon, .top, .shoulder, .subWeapon],
-    [.pocket, .belt, .pants, .glove, .cloak],
-    [.empty, .empty, .shoes, .android, .heart]
-]
