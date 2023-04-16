@@ -10,6 +10,8 @@ enum Query {
     case imageQuery(query: String)
     case fileName
     case newJson
+    case equipmentPart
+    case equipmentSet
     
     var value: String {
         switch self {
@@ -21,6 +23,10 @@ enum Query {
             return "jobs_Asset"
         case .newJson:
             return "newJobs_jpg"
+        case .equipmentPart:
+            return "equipment_part"
+        case .equipmentSet:
+            return "equipment_set"
         }
     }
 }

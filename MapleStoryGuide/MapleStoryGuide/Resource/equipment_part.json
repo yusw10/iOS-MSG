@@ -1,0 +1,74 @@
+[
+    {
+    "equipment_part": "head",
+    "part_list" : [
+        {
+            "name" : "아케인셰이드",
+            "set" : "arcane",
+            "imageURL" : "https://drive.google.com/file/d/1V43YTjIjAe2bpzGKeCQhshUpguhSohlJ/view?usp=sharing"
+        },{
+            "name" : "앱솔랩스",
+            "set" : "absolabs",
+            "imageURL" : "https://drive.google.com/file/d/1mVwW7b85CRGQBsb3vr3_gRdBqh7PoKl6/view?usp=sharing"
+        },{
+            "name" : "카오스 루타비스",
+            "set" : "chaosRutabyss",
+            "imageURL" : "https://drive.google.com/file/d/1WDnnUXjzzsYRa7ZjK_GO1ubqLM_ipHOc/view?usp=sharing"
+        }
+    ]
+},{
+    "equipment_part": "ring",
+    "part_list" : [
+        {
+            "name" : "거대한 공포",
+            "set" : "blackBossAccessory",
+            "imageURL" : ""
+        },{
+            "name" : "가디언 엔젤링",
+            "set" : "basicBossAccessory",
+            "imageURL" : ""
+        },{
+            "name" : "가디언 엔젤링",
+            "set" : "dawnBossAccessory",
+            "imageURL" : ""
+        },{
+            "name" : "실버 블라썸 링",
+            "set" : "basicBossAccessory",
+            "imageURL" : ""
+        },{
+            "name" : "고귀한 이피아의 반지",
+            "set" : "basicBossAccessory",
+            "imageURL" : ""
+        }
+    ]
+},{
+    "equipment_part": "necklace",
+    "part_list" : [
+        {
+            "name" : "혼테일의 목걸이",
+            "set" : "basicBossAccessory",
+            "imageURL" : ""
+        },{
+            "name" : "카오스 혼테일의 목걸이",
+            "set" : "basicBossAccessory",
+            "imageURL" : ""
+        },{
+            "name" : "매커네이터 펜던트",
+            "set" : "basicBossAccessory",
+            "imageURL" : ""
+        },{
+            "name" : "도미네이터 펜던트",
+            "set" : "basicBossAccessory",
+            "imageURL" : ""
+        },{
+            "name" : "데이브레이크 펜던트",
+            "set" : "dawnBossAccessory",
+            "imageURL" : ""
+        },{
+            "name" : "고통의 근원",
+            "set" : "blackBossAccessory",
+            "imageURL" : ""
+        }
+    ]
+}
+]
