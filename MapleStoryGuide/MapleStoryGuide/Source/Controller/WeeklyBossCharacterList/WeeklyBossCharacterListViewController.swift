@@ -87,13 +87,7 @@ final class WeeklyBossCharacterListViewController: ContentMyCharacterListViewCon
         viewModel.fetchCharacterInfo()
     }
     
-    // MARK: ViewDidDisAppear 하게 되면 데이터가 업데이트 하는 시점이 화면에서 다시 subscribe 하는 시점보다 빨라 바로 View에 반영되지 않는다.
-//    override func viewDidDisappear(_ animated: Bool) {
-//        super.viewDidDisappear(animated)
-//
-//        viewModel.characterInfo.unsubscribe(observer: self)
-//    }
-    
+
 }
 
 private extension WeeklyBossCharacterListViewController {
@@ -270,6 +264,7 @@ extension WeeklyBossCharacterListViewController: UICollectionViewDelegate {
         )
         
         navigationController?.pushViewController(weeklyBossListViewController, animated: true)
+        self.collectionView.deselectItem(at: indexPath, animated: true)
     }
 }
 
