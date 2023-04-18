@@ -59,9 +59,12 @@ final class SkillListViewCell: UICollectionViewListCell {
     
     func configure(title: String, imageURL: String) {
         titleLabel.text = title
-       
+        
+        guard let url = URL(string: imageURL) else { return }
+        let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad)
+        
         task = Task {
-            await self.imageView.fetchImage(imageURL)
+            await self.imageView.fetchImage(request)
         }
     }
     

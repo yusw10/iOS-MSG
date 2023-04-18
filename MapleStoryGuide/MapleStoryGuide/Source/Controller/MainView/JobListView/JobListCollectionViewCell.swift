@@ -63,33 +63,17 @@ final class JobListCollectionViewCell: UICollectionViewCell {
         let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad)
 
         task = Task {
-            await jobImage.fetchJobImage(request)
+            await jobImage.fetchImage(request)
         }
     }
 }
 
 // TODO: Task cancel 적용 시키기
 extension UIImageView {
-    func fetchImage(_ url: String) async {
-        guard let newURL = URL(string: url) else {
-            return
-        }
-        
-        do {
-            let (data, _) = try await URLSession(configuration: .default).data(from: newURL)
-            guard let thumbnail = UIImage(data: data)?.downSampling(for: self.frame.size) else {
-                return
-            }
-            self.image = thumbnail
-        } catch {
-            // 에러 처리
-        }
-    }
-    
     // MARK: 교착 상태 발생
     // 중간에 있는 await이 있는 지점에서 해당 쓰레드에 대한 제어권을 시스템에 넘기기 때문에 해당 쓰레드에서 다른 작업을 수행할 수 있다.
     // 함수를 Task에서 실행시키는 동안 쓰레드 내부에서 다른 context도 동시에 실행 -> 현재 쓰레드 충돌의 원인?
-    func fetchJobImage(_ urlRequest: URLRequest) async {
+    func fetchImage(_ urlRequest: URLRequest) async {
         if let response = URLCache.shared.cachedResponse(for: urlRequest) {
             self.image = UIImage(data: response.data)?.downSampling(for: self.frame.size)
             return

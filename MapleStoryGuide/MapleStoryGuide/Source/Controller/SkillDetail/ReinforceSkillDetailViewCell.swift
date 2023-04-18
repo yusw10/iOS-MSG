@@ -64,12 +64,16 @@ final class ReinforceSkillDetailViewCell: UITableViewCell {
     // MARK: - Methods
     
     func configure(imageURL: String, title: String, description20: String, description40: String) {
-        Task {
-            await self.skillImageView.fetchImage(imageURL)
-        }
         titleLabel.text = title
         description20Label.text = "20레벨: \(description20)"
         description40Label.text = "40레벨: \(description40)"
+        
+        guard let url = URL(string: imageURL) else { return }
+        let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad)
+        
+        Task {
+            await self.skillImageView.fetchImage(request)
+        }
     }
     
 }

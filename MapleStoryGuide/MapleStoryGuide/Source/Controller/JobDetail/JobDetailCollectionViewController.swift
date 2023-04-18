@@ -91,8 +91,8 @@ final class JobDetailCollectionViewController: ContentCollectionViewController {
         jobDelegate?.selectJobDetail()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
         
         if self.isMovingFromParent {
             var snapshot = self.diffableDataSource.snapshot()
@@ -101,7 +101,6 @@ final class JobDetailCollectionViewController: ContentCollectionViewController {
             viewModel.jobInfo.unsubscribe(observer: self)
         }
     }
-    
 }
 
 // MARK: - Private Methods

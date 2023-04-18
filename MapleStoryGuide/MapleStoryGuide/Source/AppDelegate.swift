@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         URLCache.shared = URLCache(
-            memoryCapacity: 40 * 1024 * 1024,
+            memoryCapacity: 0,
             diskCapacity: 200 * 1024 * 1024,
             diskPath: nil
         )

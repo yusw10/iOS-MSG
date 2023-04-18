@@ -50,7 +50,7 @@ class BossImageCell: UICollectionViewListCell {
         let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad)
 
         task = Task {
-            await imageView.fetchJobImage(request)
+            await imageView.fetchImage(request)
         }
     }
 }

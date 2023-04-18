@@ -46,7 +46,7 @@ final class JobImageViewCell: UICollectionViewListCell {
         let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad)
         
         Task {
-            await self.imageView.fetchJobImage(request)
+            await self.imageView.fetchImage(request)
         }
     }
     

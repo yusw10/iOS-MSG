@@ -57,9 +57,9 @@ final class MainViewController: ContentViewController {
         content.body = "주간 보스 초기화 하루 전날입니다."
         
         var dateComponents = DateComponents()
-        dateComponents.weekday = 3
-        dateComponents.hour = 11
-        dateComponents.minute = 06
+        dateComponents.weekday = 4 // 매주 수요일
+        dateComponents.hour = 12 // 12시
+        dateComponents.minute = 30 // 30분
         
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
         let request = UNNotificationRequest(identifier: "bossAlert", content: content, trigger: trigger)

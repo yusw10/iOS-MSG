@@ -57,8 +57,12 @@ final class SkillDetailViewCell: UITableViewCell {
     func configure(imageURL: String, title: String, description: String) {
         titleLabel.text = title
         descriptionLabel.text = description
+        
+        guard let url = URL(string: imageURL) else { return }
+        let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad)
+        
         Task {
-            await self.skillImageView.fetchImage(imageURL)
+            await self.skillImageView.fetchImage(request)
         }
     }
     

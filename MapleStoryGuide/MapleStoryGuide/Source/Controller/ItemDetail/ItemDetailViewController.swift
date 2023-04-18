@@ -51,8 +51,8 @@ class ItemDetailViewController: ContentViewController, UITableViewDelegate {
         itemDetailView.tableView.delegate = self
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
         
         if self.isMovingFromParent {
             var snapshot = self.diffableDataSource.snapshot()
@@ -169,7 +169,7 @@ class ItemDescriptionCell: UITableViewCell {
         self.descriptionLabel.text = item.description
         
         Task {
-            await self.itemImageView.fetchJobImage(request)
+            await self.itemImageView.fetchImage(request)
         }
     }
     

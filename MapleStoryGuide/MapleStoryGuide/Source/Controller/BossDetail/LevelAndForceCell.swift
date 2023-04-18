@@ -220,10 +220,13 @@ class RewardItemCell: UICollectionViewCell {
     }
     
     func configureCell(imageURL: String, name: String) {
-        Task {
-            await self.imageView.fetchImage(imageURL)
-        }
         self.nameLabel.text = name
+        guard let url = URL(string: imageURL) else { return }
+        let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad)
+        
+        Task {
+            await self.imageView.fetchImage(request)
+        }
     }
     
 }
@@ -280,7 +283,7 @@ class MainBossImageCell: UICollectionViewCell {
         let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad)
         
         task = Task {
-            await self.imageView.fetchJobImage(request)
+            await self.imageView.fetchImage(request)
         }
     }
 }
