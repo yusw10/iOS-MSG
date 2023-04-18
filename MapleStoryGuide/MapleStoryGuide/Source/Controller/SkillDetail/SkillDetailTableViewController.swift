@@ -60,7 +60,8 @@ final class SkillDetailTableViewController: ContentTableViewController {
     
     // MARK: - Methods
     
-    func configure(data: [AnyHashable]) {
+    func configure(data: [AnyHashable], title: String) {
+        navigationItem.title = title
         var snapshot = self.diffableDataSource.snapshot()
         
         snapshot.appendSections([.reinforceSkillCore])

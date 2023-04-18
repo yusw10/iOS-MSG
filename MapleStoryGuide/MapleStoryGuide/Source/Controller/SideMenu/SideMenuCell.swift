@@ -12,25 +12,15 @@ import SnapKit
 final class SideMenuTableViewCell: UITableViewCell {
     
     //MARK: - TableViewCell Properties
-    private let sideMenuButtonShadowView = UIView().then {
-        $0.layer.cornerRadius = 10
-        $0.backgroundColor = .systemBackground
-        $0.layer.borderWidth = 2
-        $0.layer.borderColor = UIColor.systemGray.cgColor
-    }
-    
     private let sideMenuButton = UIButton().then {
+        $0.backgroundColor = .secondarySystemBackground
+        $0.layer.cornerRadius = 10
         $0.isUserInteractionEnabled = false
-        
-        var configuration = UIButton.Configuration.plain()
-        configuration.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
-        $0.configuration = configuration
-        
-        //UIEdgeInsets(top: 10, left: 10, bottom: -10, right: -10)
         $0.contentHorizontalAlignment = .leading
-        $0.setTitleColor(.black, for: .normal)
         $0.translatesAutoresizingMaskIntoConstraints = false
-        
+        $0.tintColor = .black
+        $0.setTitleColor(.black, for: .normal)
+        $0.titleLabel?.font = .MapleLightFont()
     }
     
     //MARK: - TableViewCell Initialize
@@ -47,17 +37,12 @@ final class SideMenuTableViewCell: UITableViewCell {
     //MARK: - TableViewCell Setup Method
     
     private func setupDefault() {
-        contentView.addSubview(sideMenuButtonShadowView)
-        
-        sideMenuButtonShadowView.addSubview(sideMenuButton)
-        
-        sideMenuButtonShadowView.snp.makeConstraints { make in
-            make.top.leading.equalToSuperview().offset(10)
-            make.trailing.bottom.equalToSuperview().offset(-10)
-        }
-        
+        contentView.addSubview(sideMenuButton)
+
         sideMenuButton.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.top.leading.bottom.trailing.equalTo(self.contentView).inset(10)
+
+            make.height.equalTo(self.contentView.snp.width).multipliedBy(0.2).priority(750)
         }
     }
     

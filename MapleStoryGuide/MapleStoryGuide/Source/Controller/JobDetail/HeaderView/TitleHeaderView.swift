@@ -16,7 +16,7 @@ extension UIFont {
         case light = "Light"
     }
     
-    static func MapleHeaderFont(size: CGFloat = 25, font: MapleFont = .bold) -> UIFont {
+    static func MapleHeaderFont(size: CGFloat = 23, font: MapleFont = .bold) -> UIFont {
         return UIFont(name: "Maplestory OTF \(font.rawValue)", size: size)!
     }
     
@@ -54,6 +54,7 @@ final class TitleHeaderView: UICollectionReusableView {
     }
     
     let screenTransitionButton = UIButton().then {
+        $0.titleLabel?.font = .MapleLightFont()
         $0.setTitle("상세보기", for: .normal)
         $0.setTitleColor(.systemBlue, for: .normal)
         $0.setContentHuggingPriority(.defaultHigh, for: .horizontal)

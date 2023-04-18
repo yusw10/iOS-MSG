@@ -202,19 +202,19 @@ extension JobDetailCollectionViewController {
     
     @objc private func linkSkillSectionTapAction() {
         let skillDetailTableViewController = SkillDetailTableViewController()
-        skillDetailTableViewController.configure(data: linkSkillData)
+        skillDetailTableViewController.configure(data: linkSkillData, title: "링크 스킬")
         containerViewController?.pushTableViewController(skillDetailTableViewController)
     }
     
     @objc private func skillCoreSectionTapAction() {
         let skillDetailTableViewController = SkillDetailTableViewController()
-        skillDetailTableViewController.configure(data: skillCoreData)
+        skillDetailTableViewController.configure(data: skillCoreData, title: "5차 스킬 코어")
         containerViewController?.pushTableViewController(skillDetailTableViewController)
     }
     
     @objc private func reinforceSkillCoreSectionTapAction() {
         let skillDetailTableViewController = SkillDetailTableViewController()
-        skillDetailTableViewController.configure(data: reinforceSkillCoreData)
+        skillDetailTableViewController.configure(data: reinforceSkillCoreData, title: "추천 직업 스킬 코어 강화")
         containerViewController?.pushTableViewController(skillDetailTableViewController)
     }
     
