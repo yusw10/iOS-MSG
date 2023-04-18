@@ -17,7 +17,32 @@ enum ViewControllerType {
     case tableViewController
 }
 
-class ContentViewController: UIViewController, ContentViewControllerSetup, Contentable {
+class ContentViewController: UIViewController, ContentViewControllerSetup, Contentable, ContainerViewControllerDelegate {
+    weak var delegate: SideMenuDelegate?
+    weak var containerViewController: ContainerViewController?
+    var barButtonImage: UIImage? = UIImage(systemName: "line.horizontal.3")
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configureView()
+    }
+    
+    func configureView() {
+        let barButtonItem = UIBarButtonItem(image: barButtonImage, style: .plain, target: self, action: #selector(menuTapped))
+        barButtonItem.tintColor = .black
+        navigationItem.setRightBarButton(barButtonItem, animated: false)
+    }
+    
+    @objc private func menuTapped() {
+        delegate?.menuButtonTapped()
+    }
+    
+    func setOpacity(_ float: Float) {
+        self.view.layer.opacity = float
+    }
+}
+
+class ContentCollectionViewController: UICollectionViewController, ContentViewControllerSetup, ContainerViewControllerDelegate {
     
     weak var delegate: SideMenuDelegate?
     weak var containerViewController: ContainerViewController?
@@ -37,9 +62,13 @@ class ContentViewController: UIViewController, ContentViewControllerSetup, Conte
     @objc private func menuTapped() {
         delegate?.menuButtonTapped()
     }
+    
+    func setOpacity(_ float: Float) {
+        self.view.layer.opacity = float
+    }
 }
 
-class ContentCollectionViewController: UICollectionViewController, ContentViewControllerSetup {
+class ContentTableViewController: UITableViewController, ContentViewControllerSetup, ContainerViewControllerDelegate {
     
     weak var delegate: SideMenuDelegate?
     weak var containerViewController: ContainerViewController?
@@ -59,31 +88,13 @@ class ContentCollectionViewController: UICollectionViewController, ContentViewCo
     @objc private func menuTapped() {
         delegate?.menuButtonTapped()
     }
-}
-
-class ContentTableViewController: UITableViewController, ContentViewControllerSetup {
     
-    weak var delegate: SideMenuDelegate?
-    weak var containerViewController: ContainerViewController?
-    var barButtonImage: UIImage? = UIImage(systemName: "line.horizontal.3")
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        configureView()
-    }
-    
-    func configureView() {
-        let barButtonItem = UIBarButtonItem(image: barButtonImage, style: .plain, target: self, action: #selector(menuTapped))
-        barButtonItem.tintColor = .black
-        navigationItem.setRightBarButton(barButtonItem, animated: false)
-    }
-    
-    @objc private func menuTapped() {
-        delegate?.menuButtonTapped()
+    func setOpacity(_ float: Float) {
+        self.view.layer.opacity = float
     }
 }
 
-class ContentMyCharacterListViewController: UIViewController, ContentViewControllerSetup, Contentable {
+class ContentMyCharacterListViewController: UIViewController, ContentViewControllerSetup, Contentable, ContainerViewControllerDelegate {
     weak var delegate: SideMenuDelegate?
     weak var containerViewController: ContainerViewController?
     var barButtonImage: UIImage? = UIImage(systemName: "line.horizontal.3")
@@ -105,5 +116,9 @@ class ContentMyCharacterListViewController: UIViewController, ContentViewControl
     
     @objc private func menuTapped() {
         delegate?.menuButtonTapped()
+    }
+    
+    func setOpacity(_ float: Float) {
+        self.view.layer.opacity = float
     }
 }

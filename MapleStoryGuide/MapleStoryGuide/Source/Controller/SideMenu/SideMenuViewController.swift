@@ -22,6 +22,11 @@ final class SideMenuViewController: UIViewController {
     //MARK: - ViewController Properties
     
     private var sideMenuItems: [SideMenuItem] = []
+    private var isPresent: Bool = false {
+        didSet {
+            delegate?.configureOpacity(state: isPresent)
+        }
+    }
     weak var delegate: SideMenuDelegate?
     
     private let sideMenuMainTitle = UILabel().then {
@@ -43,7 +48,12 @@ final class SideMenuViewController: UIViewController {
         view.backgroundColor = .systemBackground
         setupMainTitle()
         setupTableView()
-        print("side menu load")
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        self.setState(false)
     }
     
     //MARK: - ViewController Initializer
@@ -75,6 +85,10 @@ final class SideMenuViewController: UIViewController {
         menuTableView.dataSource = self
         menuTableView.delegate = self
         menuTableView.register(SideMenuTableViewCell.self, forCellReuseIdentifier: "menuCell")
+    }
+    
+    func setState(_ state: Bool) {
+        self.isPresent = state
     }
     
     func hide() {

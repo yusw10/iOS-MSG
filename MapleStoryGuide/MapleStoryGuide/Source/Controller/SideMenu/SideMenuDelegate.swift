@@ -8,4 +8,5 @@
 protocol SideMenuDelegate: AnyObject {
     func menuButtonTapped()
     func itemSelected(item: ContentViewControllerPresentation)
+    func configureOpacity(state: Bool)
 }
