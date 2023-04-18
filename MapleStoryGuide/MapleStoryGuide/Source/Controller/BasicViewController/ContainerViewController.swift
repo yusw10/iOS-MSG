@@ -13,10 +13,15 @@ final class ContainerViewController: UIViewController {
     private var sideMenuViewController: SideMenuViewController!
     
     private var navigator: UINavigationController!
-    private var rootViewController: ContentViewController! {
+    private var rootViewController: Contentable! {
         didSet {
-            rootViewController.delegate = self
-            navigator.setViewControllers([rootViewController], animated: false)
+            if let contenViewController = rootViewController as? ContentViewController {
+                contenViewController.delegate = self
+                navigator.setViewControllers([contenViewController], animated: false)
+            } else if let contentMyCharacterListViewController = rootViewController as? ContentMyCharacterListViewController {
+                contentMyCharacterListViewController.delegate = self
+                navigator.setViewControllers([contentMyCharacterListViewController], animated: false)
+            }
         }
     }
     
@@ -39,12 +44,22 @@ final class ContainerViewController: UIViewController {
     
     private func configureDelegates() {
         sideMenuViewController.delegate = self
-        rootViewController.delegate = self
+        if let contentViewController = rootViewController as? ContentViewController {
+            contentViewController.delegate = self
+        } else if let contentMyCharacterListViewController = rootViewController as? ContentMyCharacterListViewController {
+            contentMyCharacterListViewController.delegate = self
+        }
     }
     
-    func updateRootViewController(_ viewController: ContentViewController) {
-        viewController.containerViewController = self
-        rootViewController = viewController
+    func updateRootViewController(_ viewController: Contentable) {
+        if let contentViewController = viewController as? ContentViewController {
+            contentViewController.containerViewController = self
+            rootViewController = contentViewController
+        } else if let contentMyCharacterListViewController = viewController as? ContentMyCharacterListViewController {
+            contentMyCharacterListViewController.containerViewController = self
+            rootViewController = contentMyCharacterListViewController
+        }
+       
     }
     
     private func addChildViewControllers() {
@@ -90,7 +105,11 @@ extension ContainerViewController: SideMenuDelegate {
     func itemSelected(item: ContentViewControllerPresentation) {
         switch item {
         case let .embed(viewController):
-            updateRootViewController(viewController)
+            if let contentViewController = viewController as? ContentViewController {
+                updateRootViewController(contentViewController)
+            } else if let contentMyCharacterListViewController = viewController as? ContentMyCharacterListViewController {
+                updateRootViewController(contentMyCharacterListViewController)
+            }
             sideMenuViewController.hide()
         case let .push(viewController):
             sideMenuViewController.hide()

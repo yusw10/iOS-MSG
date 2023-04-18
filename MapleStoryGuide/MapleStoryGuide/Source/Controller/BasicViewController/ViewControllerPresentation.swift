@@ -8,7 +8,7 @@
 import UIKit
 
 enum ContentViewControllerPresentation {
-    case embed(ContentViewController)
+    case embed(Contentable)
     case push(UIViewController)
     case modal(UIViewController)
 }

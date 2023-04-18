@@ -17,7 +17,7 @@ enum ViewControllerType {
     case tableViewController
 }
 
-class ContentViewController: UIViewController, ContentViewControllerSetup {
+class ContentViewController: UIViewController, ContentViewControllerSetup, Contentable {
     
     weak var delegate: SideMenuDelegate?
     weak var containerViewController: ContainerViewController?
@@ -83,7 +83,7 @@ class ContentTableViewController: UITableViewController, ContentViewControllerSe
     }
 }
 
-class ContentMyCharacterListViewController: UIViewController, ContentViewControllerSetup {
+class ContentMyCharacterListViewController: UIViewController, ContentViewControllerSetup, Contentable {
     weak var delegate: SideMenuDelegate?
     weak var containerViewController: ContainerViewController?
     var barButtonImage: UIImage? = UIImage(systemName: "line.horizontal.3")
@@ -99,6 +99,7 @@ class ContentMyCharacterListViewController: UIViewController, ContentViewControl
     
     func configureView() {
         barButtonItem.tintColor = .black
+        
         navigationItem.setRightBarButtonItems([barButtonItem, resetButtonItem], animated: false)
     }
     

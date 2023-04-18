@@ -10,9 +10,11 @@ import Then
 import SideMenu
 
 enum SideMenuList: String, CaseIterable {
-    case mapleDictionary = "mapleDictionary"
-    case equipmentCalc = "equipmentCalc"
-    case itemCombination = "itemCombination"
+    case mainMenu = "mainMenu"
+    case jobInfo = "jobInfo"
+    case bossInfo = "bossInfo"
+    case weeklyBossList = "weeklyBossList"
+    case itemInfo = "itemInfo"
 }
 
 final class SideMenuViewController: UIViewController {
@@ -23,11 +25,11 @@ final class SideMenuViewController: UIViewController {
     weak var delegate: SideMenuDelegate?
     
     private let sideMenuMainTitle = UILabel().then {
-        $0.font = .preferredFont(forTextStyle: .title2)
+        $0.font = .MapleTitleFont()
         $0.textAlignment = .center
         $0.numberOfLines = 0
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.text = "Maple Story Guide"
+        $0.text = "MapleStory Guide"
     }
     
     private let menuTableView = UITableView().then {
