@@ -10,8 +10,6 @@ import SideMenu
 
 final class ContainerViewController: UIViewController {
     
-    weak var delegate: ContainerViewControllerDelegate?
-    
     private var sideMenuViewController: SideMenuViewController!
     
     private var navigator: UINavigationController!
@@ -56,11 +54,9 @@ final class ContainerViewController: UIViewController {
     func updateRootViewController(_ viewController: Contentable) {
         if let contentViewController = viewController as? ContentViewController {
             contentViewController.containerViewController = self
-            self.delegate = contentViewController
             rootViewController = contentViewController
         } else if let contentMyCharacterListViewController = viewController as? ContentMyCharacterListViewController {
             contentMyCharacterListViewController.containerViewController = self
-            self.delegate = contentMyCharacterListViewController
             rootViewController = contentMyCharacterListViewController
         }
        
@@ -75,28 +71,24 @@ final class ContainerViewController: UIViewController {
     func pushViewController(_ viewController: ContentViewController) {
         viewController.containerViewController = self
         viewController.delegate = self
-        self.delegate = viewController
         navigator.pushViewController(viewController, animated: true)
     }
     
     func pushCollectionViewController(_ viewController: ContentCollectionViewController) {
         viewController.containerViewController = self
         viewController.delegate = self
-        self.delegate = viewController
         navigator.pushViewController(viewController, animated: true)
     }
     
     func pushTableViewController(_ viewController: ContentTableViewController) {
         viewController.containerViewController = self
         viewController.delegate = self
-        self.delegate = viewController
         navigator.pushViewController(viewController, animated: true)
     }
     
     func pushListViewController(_ viewController: ContentMyCharacterListViewController) {
         viewController.containerViewController = self
         viewController.delegate = self
-        self.delegate = viewController
         navigator.pushViewController(viewController, animated: true)
     }
     
@@ -105,9 +97,9 @@ final class ContainerViewController: UIViewController {
 extension ContainerViewController: SideMenuDelegate {
     func configureOpacity(state: Bool) {
         if state {
-            delegate?.setOpacity(0.6)
+            self.navigator.topViewController!.view.layer.opacity = 0.6
         } else {
-            delegate?.setOpacity(1.0)
+            self.navigator.topViewController!.view.layer.opacity = 1.0
         }
     }
     
@@ -135,8 +127,4 @@ extension ContainerViewController: SideMenuDelegate {
             navigator.present(viewController, animated: true, completion: nil)
         }
     }
-}
-
-protocol ContainerViewControllerDelegate: AnyObject {
-    func setOpacity(_ float: Float)
 }
