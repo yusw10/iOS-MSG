@@ -34,6 +34,8 @@ final class MainViewController: ContentViewController {
         setupMainCollectionView()
         addUserNotification()
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.MapleLightFont()]
+        // navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.title = "MapleStory Guide"
     }
     
     //MARK: - ViewController Setup Method

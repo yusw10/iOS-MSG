@@ -29,6 +29,7 @@ final class SkillListViewCell: UICollectionViewListCell {
     }
     
     private let titleLabel = UILabel().then {
+        $0.font = .MapleLightFont()
         $0.numberOfLines = 1
         $0.translatesAutoresizingMaskIntoConstraints = false
     }

@@ -24,7 +24,7 @@ extension UIFont {
         return UIFont(name: "Maplestory OTF \(font.rawValue)", size: size)!
     }
     
-    static func MapleLightFont(size: CGFloat = 15, font: MapleFont = .light) -> UIFont {
+    static func MapleLightFont(size: CGFloat = 16, font: MapleFont = .light) -> UIFont {
         return UIFont(name: "Maplestory OTF \(font.rawValue)", size: size)!
     }
     
@@ -45,7 +45,7 @@ final class TitleHeaderView: UICollectionReusableView {
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    private let titleLabel = UILabel().then {
+    let titleLabel = UILabel().then {
         $0.font = .MapleHeaderFont()
         $0.textAlignment = .left
         $0.numberOfLines = 1

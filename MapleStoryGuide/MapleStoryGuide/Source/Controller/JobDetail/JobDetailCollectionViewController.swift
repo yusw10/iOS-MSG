@@ -165,7 +165,8 @@ extension JobDetailCollectionViewController {
             
             if section == .jobImage {
                 header.screenTransitionButton.isHidden = true
-                
+                header.titleLabel.isHidden = true
+
             } else if section == .unionEffect {
                 header.configure(titleText: "유니온 효과")
                 header.screenTransitionButton.isHidden = true
