@@ -33,7 +33,7 @@ final class SetOptionListView: UIView {
             generateOptionLabel(optionList: optionList)
         })
         
-        viewModel?.currentlyApplidOptions.value = [EquipmentSetOption(equipmentSetOptionSet: "아케인셰이드", options: [SetOption(setCount: "2", option: [Option(optionName: "보스공격력", optionAmount: 20)])])]
+//        viewModel?.currentlyApplidOptions.value = [EquipmentSetOption(equipmentSetOptionSet: "아케인셰이드", options: [SetOption(setCount: "2", option: [Option(optionName: "보스공격력", optionAmount: 20)])])]
     }
     
     required init?(coder: NSCoder) {

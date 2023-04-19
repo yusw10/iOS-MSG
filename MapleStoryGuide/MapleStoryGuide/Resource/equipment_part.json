@@ -17,7 +17,7 @@
             }
         ]
     },{
-        "equipment_part": "ring",
+        "equipment_part": "ring1",
         "part_list" : [
             {
                 "name" : "거대한 공포",
@@ -42,7 +42,82 @@
             }
         ]
     },{
-        "equipment_part": "necklace",
+        "equipment_part": "ring2",
+        "part_list" : [
+            {
+                "name" : "거대한 공포",
+                "set" : "blackBossAccessory",
+                "imageURL" : "https://drive.google.com/file/d/1wsizgijJ5UaYZLGRu1ja6XKupPtKqYoD/view?usp=sharing"
+            },{
+                "name" : "가디언 엔젤링",
+                "set" : "basicBossAccessory",
+                "imageURL" : "https://drive.google.com/file/d/1sNdo5q1yItrRerMojwIVRk-xvXZsFG8g/view?usp=sharing"
+            },{
+                "name" : "여명의 가디언 엔젤링",
+                "set" : "dawnBossAccessory",
+                "imageURL" : "https://drive.google.com/file/d/1wrxEysQcO8_36v0Hn22rnb8__pHC684Z/view?usp=sharing"
+            },{
+                "name" : "실버 블라썸 링",
+                "set" : "basicBossAccessory",
+                "imageURL" : "https://drive.google.com/file/d/1gRHaIaWFnwa-ylHmnZ-_kc60Qib7bgeg/view?usp=sharing"
+            },{
+                "name" : "고귀한 이피아의 반지",
+                "set" : "basicBossAccessory",
+                "imageURL" : "https://drive.google.com/file/d/1ADOKt7lOQVcCeEsUSkVWwBGb9q9sGcIS/view?usp=sharing"
+            }
+        ]
+    },{
+        "equipment_part": "ring3",
+        "part_list" : [
+            {
+                "name" : "거대한 공포",
+                "set" : "blackBossAccessory",
+                "imageURL" : "https://drive.google.com/file/d/1wsizgijJ5UaYZLGRu1ja6XKupPtKqYoD/view?usp=sharing"
+            },{
+                "name" : "가디언 엔젤링",
+                "set" : "basicBossAccessory",
+                "imageURL" : "https://drive.google.com/file/d/1sNdo5q1yItrRerMojwIVRk-xvXZsFG8g/view?usp=sharing"
+            },{
+                "name" : "여명의 가디언 엔젤링",
+                "set" : "dawnBossAccessory",
+                "imageURL" : "https://drive.google.com/file/d/1wrxEysQcO8_36v0Hn22rnb8__pHC684Z/view?usp=sharing"
+            },{
+                "name" : "실버 블라썸 링",
+                "set" : "basicBossAccessory",
+                "imageURL" : "https://drive.google.com/file/d/1gRHaIaWFnwa-ylHmnZ-_kc60Qib7bgeg/view?usp=sharing"
+            },{
+                "name" : "고귀한 이피아의 반지",
+                "set" : "basicBossAccessory",
+                "imageURL" : "https://drive.google.com/file/d/1ADOKt7lOQVcCeEsUSkVWwBGb9q9sGcIS/view?usp=sharing"
+            }
+        ]
+    },{
+        "equipment_part": "ring4",
+        "part_list" : [
+            {
+                "name" : "거대한 공포",
+                "set" : "blackBossAccessory",
+                "imageURL" : "https://drive.google.com/file/d/1wsizgijJ5UaYZLGRu1ja6XKupPtKqYoD/view?usp=sharing"
+            },{
+                "name" : "가디언 엔젤링",
+                "set" : "basicBossAccessory",
+                "imageURL" : "https://drive.google.com/file/d/1sNdo5q1yItrRerMojwIVRk-xvXZsFG8g/view?usp=sharing"
+            },{
+                "name" : "여명의 가디언 엔젤링",
+                "set" : "dawnBossAccessory",
+                "imageURL" : "https://drive.google.com/file/d/1wrxEysQcO8_36v0Hn22rnb8__pHC684Z/view?usp=sharing"
+            },{
+                "name" : "실버 블라썸 링",
+                "set" : "basicBossAccessory",
+                "imageURL" : "https://drive.google.com/file/d/1gRHaIaWFnwa-ylHmnZ-_kc60Qib7bgeg/view?usp=sharing"
+            },{
+                "name" : "고귀한 이피아의 반지",
+                "set" : "basicBossAccessory",
+                "imageURL" : "https://drive.google.com/file/d/1ADOKt7lOQVcCeEsUSkVWwBGb9q9sGcIS/view?usp=sharing"
+            }
+        ]
+    },{
+        "equipment_part": "necklace2",
         "part_list" : [
             {
                 "name" : "혼테일의 목걸이",
@@ -224,15 +299,4 @@
     }
 ]
 
-
-/*
- let SlotPartsData: [[EquipmentPart]] = [
-     [., ., ., ., .emblem],
-     [., ., ., ., .title],
-     [., ., ., ., .badge],
-     [., ., ., .shoulder, .subWeapon],
-     [.pocket, .belt, ., ., .],
-     [., ., ., .android, .heart]
- ]
- */
 

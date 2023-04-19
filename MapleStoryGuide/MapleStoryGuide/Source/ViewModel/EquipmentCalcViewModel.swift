@@ -66,8 +66,10 @@ class EuipmentCalcViewModel {
     private let useCase: CommonEuipmentCalcUseCase
     let partList: Observable<[EquipmentPartList]> = Observable([]) // 전체 파츠별 장비 목록
     let setOptionList: Observable<[EquipmentSetOption]> = Observable([]) // 전체 세트별 옵션 리스트
-    let equipedPartInfo: Observable<[EquipmentPart]> = Observable([]) // 현재 장착중인 파츠 리스트
-    let currentlyApplidOptions: Observable<[EquipmentSetOption]> = Observable([])// 현재 적용중인 옵션 리스트
+    
+    let currentlyEquipedPartInfo: Observable<[EquipmentPart: Part]> = Observable([:]) // 현재 장착중인 파츠 리스트
+    let currentlyApplidOptions: Observable<[EquipmentSet: Int]> = Observable([:])// 현재 적용중인 옵션 리스트
+    
     let selectedPart: Observable<EquipmentPartList?> = Observable(nil) // 선택한 파츠 - 각 부위별 장비 목록 보여주고 파츠 및 세트 추가해야함
     
     private init(
@@ -113,8 +115,8 @@ extension EuipmentCalcViewModel {
         return currentPartList
     }
     
-    func addEquipedPart(at part: Part) {
-        
+    func addEquipedPart(at selectedPart: EquipmentPart, to selectedEquipment: Part) {
+        self.currentlyEquipedPartInfo.value[selectedPart] = selectedEquipment
     }
     
     // 옵션 관련(Set) method
@@ -127,24 +129,13 @@ extension EuipmentCalcViewModel {
         }
     }
     
-    func fetchEquipmentSetOption() -> [EquipmentSetOption] {
+    func fetchEquipmentSetOption() -> [EquipmentSet: Int] {
         return self.currentlyApplidOptions.value
     }
     
     func generateSetOpion() -> [String: Int] {
         var optionTotal: [String: Int] = [:]
-        currentlyApplidOptions.value.forEach { EquipmentSetOption in
-            EquipmentSetOption.options.forEach { SetOption in
-                SetOption.option.forEach { Option in
-                    if optionTotal[Option.optionName] != nil {
-                        optionTotal[Option.optionName] = Option.optionAmount
-                    } else {
-                        let amount = optionTotal[Option.optionName]
-                        optionTotal[Option.optionName] = (amount ?? 0) + Option.optionAmount
-                    }
-                }
-            }
-        }
+        
         
         return optionTotal
     }

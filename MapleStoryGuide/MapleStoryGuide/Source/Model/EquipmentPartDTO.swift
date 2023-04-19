@@ -44,7 +44,7 @@ struct PartDTO: Codable {
 
 //MARK: - Model
 
-struct EquipmentPartList {
+struct EquipmentPartList { // 부위별 파츠 목록
     let equipmentPart: EquipmentPart
     let partList: [Part]
 
@@ -54,14 +54,14 @@ struct EquipmentPartList {
     }
 }
 
-struct Part {
+struct Part { // 장비
     let name: String
-    let partListSet: EquipmentPart
+    let partListSet: EquipmentSet
     let imageURL: String
     
     init(name: String, partListSet: String, imageURL: String) {
         self.name = name
-        self.partListSet = toPart(input: partListSet)
+        self.partListSet = partListSet.toSet()
         self.imageURL = imageURL
     }
 }
@@ -75,57 +75,4 @@ extension EquipmentPartListDTO {
              imageURL: "https://drive.google.com/file/d/1V43YTjIjAe2bpzGKeCQhshUpguhSohlJ/view?usp=sharing"
         )
     ])
-}
-
-func toPart(input: String) -> EquipmentPart {
-    switch input {
-    case "weapon":
-        return .weapon
-    case "subWeapon":
-        return .subWeapon
-    case "head":
-        return .head
-    case "top":
-        return .top
-    case "suit":
-        return .suit
-    case "pants":
-        return .pants
-    case "shoulder":
-        return .shoulder
-    case "shoes":
-        return .shoes
-    case "cloak":
-        return .cloak
-    case "emblem":
-        return .emblem
-    case "title": // 칭호
-        return .title
-    case "badge":
-        return .badge
-    case "glove":
-        return .glove
-    case "eyeMask":
-        return .eyeMask
-    case "faceMask":
-        return .faceMask
-    case "earring":
-        return .earring
-    case "necklace":
-        return .necklace
-    case "ring":
-        return .ring
-    case "pocket":
-        return .pocket
-    case "heart":
-        return .heart
-    case "belt":
-        return .belt
-    case "android":
-        return .android
-    case "empty":
-        return .empty
-    default :
-        return .empty
-    }
 }

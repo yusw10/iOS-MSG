@@ -19,7 +19,7 @@ final class ItemSlotView: UIView {
     
     //MARK: - UIView Properties
     
-    var itemSlots: [UIStackView] = []
+    var itemSlots: [PartImageView] = []
     
     var mainStackView = UIStackView(frame: .zero).then { UIStackView in
         UIStackView.spacing = 15
@@ -67,27 +67,28 @@ final class ItemSlotView: UIView {
             }
             
             for column in 0..<5 {
-                let imageView = UIImageView(frame: .zero).then { UIImageView in
-                    UIImageView.translatesAutoresizingMaskIntoConstraints = false
-                    let image = UIImage(named: "testEqupmentImage")
-                    //UIImageView.contentMode = .scaleAspectFill
-                    UIImageView.image = image
-                    UIImageView.isUserInteractionEnabled = true
+                let part = SlotPartsData[row][column]
+                let imageView = PartImageView(frame: .zero, part: part).then { PartImageView in
+                    PartImageView.translatesAutoresizingMaskIntoConstraints = false
+                    let image = UIImage(systemName: "plus")
+                    PartImageView.contentMode = .scaleAspectFill
+                    PartImageView.image = image
+                    PartImageView.isUserInteractionEnabled = true
                     let slotGesture = ItemSlotTapGesture(target: self, action: #selector(self.itemSlotTapped(_:)))
-                    let part = SlotPartsData[row][column]
+                    
                     if part != .empty {
                         slotGesture.part = part
                     } else {
-                        UIImageView.alpha = 0
+                        PartImageView.alpha = 0
                     }
-                    UIImageView.addGestureRecognizer(slotGesture)
+                    PartImageView.addGestureRecognizer(slotGesture)
                     
                 }
                 
                 stackView.addArrangedSubview(imageView)
+                itemSlots.append(imageView)
             }
             mainStackView.addArrangedSubview(stackView)
-            itemSlots.append(stackView)
         }
     }
     
@@ -105,4 +106,17 @@ final class ItemSlotView: UIView {
 
 final class ItemSlotTapGesture: UITapGestureRecognizer {
     var part: EquipmentPart = .empty
+}
+
+final class PartImageView: UIImageView {
+    var part: EquipmentPart
+    
+    init(frame: CGRect, part: EquipmentPart) {
+        self.part = part
+        super.init(frame: frame)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }

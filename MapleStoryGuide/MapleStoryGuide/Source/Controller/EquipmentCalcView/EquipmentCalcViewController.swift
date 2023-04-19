@@ -15,8 +15,8 @@ final class EquipmentCalcViewController: ContentViewController {
     private let repository = AssetEuipmentCalcRepository()
     private var viewModel: EuipmentCalcViewModel! = nil
     
-    private var currentEquipedPart = [[Part]]()
-    private var currentlyApplidOptions = [EquipmentSetOption]()
+    private var currentEquipedPart = [[EquipmentPart: Part]]()
+    private var currentlyApplidOptions = [EquipmentSet: Int]()
     
     //MARK: - ViewController UI
     
@@ -39,13 +39,31 @@ final class EquipmentCalcViewController: ContentViewController {
         equipmentCalcView.itemSlotView.viewModel = viewModel
         equipmentCalcView.viewModel = viewModel
         
+        viewModel.currentlyEquipedPartInfo.subscribe(on: self) { equipedPartInfo in
+            // 장착 장비 변경
+            equipedPartInfo.forEach { (key: EquipmentPart, value: Part) in
+                print(self.equipmentCalcView.itemSlotView.itemSlots.count)
+                self.equipmentCalcView.itemSlotView.itemSlots.forEach { PartImageView in
+                    print("ㅡㅡㅡ")
+                    if key == PartImageView.part {
+                        Task {
+                            PartImageView.image = nil
+                            await PartImageView.fetchImage(value.imageURL)
+                            print("test")
+                        }
+                    }
+                }
+            }
+            // 변경에 따른 옵션의 변동
+            
+        }
+        
         viewModel.currentlyApplidOptions.subscribe(on: self) { [weak self] _ in
             guard let self = self else { return }
             self.currentlyApplidOptions = self.viewModel.currentlyApplidOptions.value
         }
         
         Task {
-            
             await viewModel.triggerSet(query:.equipmentSet)
             await viewModel.triggerPart(query: .equipmentPart)
         }
@@ -75,6 +93,10 @@ final class EquipmentCalcViewController: ContentViewController {
             make.top.leading.trailing.bottom.equalToSuperview()
         }
     }
+    
+    func selectPartToEquiped(at selectedPart: EquipmentPart, to selectedEquipment: Part) {
+        viewModel.addEquipedPart(at: selectedPart, to: selectedEquipment)
+    }
 }
 
 
@@ -85,7 +107,8 @@ extension EquipmentCalcViewController: SelectedPartDelegate {
         let alert = UIAlertController(title: "", message: "부위를 선택해주세요.", preferredStyle: .alert)
         parts.forEach { Part in
             let action = UIAlertAction(title: "\(Part.name)", style: .default) { _ in
-                print("현재 \(Part.name)")
+                print("\(Part.name) 선택 !")
+                self.selectPartToEquiped(at: at, to: Part)
             }
             alert.addAction(action)
         }

@@ -22,8 +22,12 @@ enum EquipmentPart: String, Codable {
     case eyeMask
     case faceMask
     case earring
-    case necklace
-    case ring
+    case necklace1
+    case necklace2
+    case ring1
+    case ring2
+    case ring3
+    case ring4
     case pocket
     case heart
     case belt
@@ -38,6 +42,7 @@ enum EquipmentSet: Codable {
     case basicBossAccessory
     case dawnBossAccessory
     case blackBossAccessory
+    case defaultCase
 }
 
 enum SetOptions: Codable, CaseIterable {
@@ -79,10 +84,92 @@ enum SetOptions: Codable, CaseIterable {
 }
 
 let SlotPartsData: [[EquipmentPart]] = [
-    [.ring, .empty, .head, .empty, .emblem],
-    [.ring, .necklace, .eyeMask, .empty, .title],
-    [.ring, .necklace, .faceMask, .earring, .badge],
-    [.ring, .weapon, .top, .shoulder, .subWeapon],
+    [.ring1, .empty, .head, .empty, .emblem],
+    [.ring2, .necklace1, .eyeMask, .empty, .title],
+    [.ring3, .necklace2, .faceMask, .earring, .badge],
+    [.ring4, .weapon, .top, .shoulder, .subWeapon],
     [.pocket, .belt, .pants, .glove, .cloak],
     [.empty, .empty, .shoes, .android, .heart]
 ]
+
+extension String {
+    func toPart() -> EquipmentPart {
+        switch self {
+        case "weapon":
+            return .weapon
+        case "subWeapon":
+            return .subWeapon
+        case "head":
+            return .head
+        case "top":
+            return .top
+        case "suit":
+            return .suit
+        case "pants":
+            return .pants
+        case "shoulder":
+            return .shoulder
+        case "shoes":
+            return .shoes
+        case "cloak":
+            return .cloak
+        case "emblem":
+            return .emblem
+        case "title": // 칭호
+            return .title
+        case "badge":
+            return .badge
+        case "glove":
+            return .glove
+        case "eyeMask":
+            return .eyeMask
+        case "faceMask":
+            return .faceMask
+        case "earring":
+            return .earring
+        case "necklace1":
+            return .necklace1
+        case "necklace2":
+            return .necklace2
+        case "ring1":
+            return .ring1
+        case "ring2":
+            return .ring2
+        case "ring3":
+            return .ring3
+        case "ring4":
+            return .ring4
+        case "pocket":
+            return .pocket
+        case "heart":
+            return .heart
+        case "belt":
+            return .belt
+        case "android":
+            return .android
+        case "empty":
+            return .empty
+        default :
+            return .empty
+        }
+    }
+    
+    func toSet() -> EquipmentSet {
+        switch self {
+        case "arcane":
+            return .arcane
+        case "absolabs":
+            return .absolabs
+        case "chaosRutabyss":
+            return .chaosRutabyss
+        case "basicBossAccessory":
+            return .basicBossAccessory
+        case "dawnBossAccessory":
+            return .dawnBossAccessory
+        case "blackBossAccessory":
+            return .blackBossAccessory
+        default:
+            return .defaultCase
+        }
+    }
+}
