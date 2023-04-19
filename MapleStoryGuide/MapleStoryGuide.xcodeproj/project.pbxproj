@@ -42,6 +42,7 @@
 		45ACA2BD2995D62E00BD9935 /* JobInfoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ACA2BB2995D62E00BD9935 /* JobInfoDTO.swift */; };
 		45ACA2BE2995D62E00BD9935 /* JobInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ACA2BC2995D62E00BD9935 /* JobInfo.swift */; };
 		45ACA2C02995D70F00BD9935 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ACA2BF2995D70F00BD9935 /* MainViewController.swift */; };
+		45CB848129EEEC2D006BB5F1 /* equipment_part.json in Resources */ = {isa = PBXBuildFile; fileRef = 45770B0229D86EC4002A3BF3 /* equipment_part.json */; };
 		725400FD29AC6F96005A7420 /* newJobs_jpg.json in Resources */ = {isa = PBXBuildFile; fileRef = 725400FC29AC6F96005A7420 /* newJobs_jpg.json */; };
 		72AD922A29A1C0BA00047D35 /* JobGroupDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AD922929A1C0BA00047D35 /* JobGroupDTO.swift */; };
 		72CDF3A4298A4C4300918C1A /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CDF3A3298A4C4300918C1A /* EndPoint.swift */; };
@@ -438,6 +439,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45CB848129EEEC2D006BB5F1 /* equipment_part.json in Resources */,
 				45ACA2722988D76000BD9935 /* LaunchScreen.storyboard in Resources */,
 				45770B0529D87097002A3BF3 /* equipment_set.json in Resources */,
 				725400FD29AC6F96005A7420 /* newJobs_jpg.json in Resources */,

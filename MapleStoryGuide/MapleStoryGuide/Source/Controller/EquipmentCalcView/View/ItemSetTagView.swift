@@ -9,6 +9,8 @@ import UIKit
 
 final class ItemSetTagView: UIScrollView {
     
+    weak var viewModel: EuipmentCalcViewModel?
+    
     private var tagStackView = UIStackView().then { UIStackView in
         UIStackView.distribution = .equalSpacing
         UIStackView.alignment = .leading
