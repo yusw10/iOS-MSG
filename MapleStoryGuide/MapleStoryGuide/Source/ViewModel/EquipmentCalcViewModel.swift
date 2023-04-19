@@ -69,8 +69,9 @@ class EuipmentCalcViewModel {
     
     let currentlyEquipedPartInfo: Observable<[EquipmentPart: Part]> = Observable([:]) // 현재 장착중인 파츠 리스트
     let currentlyApplidOptions: Observable<[EquipmentSet: Int]> = Observable([:])// 현재 적용중인 옵션 리스트
+    let sumOfApplidOptions: Observable<[String: Int]> = Observable([:])
     
-    let selectedPart: Observable<EquipmentPartList?> = Observable(nil) // 선택한 파츠 - 각 부위별 장비 목록 보여주고 파츠 및 세트 추가해야함
+//    let selectedPart: Observable<EquipmentPartList?> = Observable(nil) // 선택한 파츠 - 각 부위별 장비 목록 보여주고 파츠 및 세트 추가해야함
     
     private init(
         useCase: CommonEuipmentCalcUseCase
@@ -133,12 +134,27 @@ extension EuipmentCalcViewModel {
         return self.currentlyApplidOptions.value
     }
     
-    func generateSetOpion() -> [String: Int] {
-        var optionTotal: [String: Int] = [:]
-        
-        
-        return optionTotal
+    func updateCurrentlyAppliedSetOption() {
+        let values = self.currentlyEquipedPartInfo.value.values
+        print("??? \(values)")
+        values.forEach { Part in
+            if currentlyApplidOptions.value.keys.contains(Part.partListSet),
+            let partListCount = currentlyApplidOptions.value[Part.partListSet] {
+                currentlyApplidOptions.value[Part.partListSet] = partListCount + 1
+            } else {
+                currentlyApplidOptions.value[Part.partListSet] = 1
+            }
+        }
     }
+    
+//    func generateSetOpion() -> [String: Int] {
+//        currentlyApplidOptions.value.forEach { (key: EquipmentSet, value: Int) in
+//            setOptionList.value.
+//        }
+//
+//
+//        return optionTotal
+//    }
     
 }
 /*

@@ -74,6 +74,7 @@ final class ItemSlotView: UIView {
                     PartImageView.contentMode = .scaleAspectFill
                     PartImageView.image = image
                     PartImageView.isUserInteractionEnabled = true
+                    
                     let slotGesture = ItemSlotTapGesture(target: self, action: #selector(self.itemSlotTapped(_:)))
                     
                     if part != .empty {
@@ -82,7 +83,6 @@ final class ItemSlotView: UIView {
                         PartImageView.alpha = 0
                     }
                     PartImageView.addGestureRecognizer(slotGesture)
-                    
                 }
                 
                 stackView.addArrangedSubview(imageView)

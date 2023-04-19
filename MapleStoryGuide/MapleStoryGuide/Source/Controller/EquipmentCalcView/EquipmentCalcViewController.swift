@@ -39,12 +39,12 @@ final class EquipmentCalcViewController: ContentViewController {
         equipmentCalcView.itemSlotView.viewModel = viewModel
         equipmentCalcView.viewModel = viewModel
         
-        viewModel.currentlyEquipedPartInfo.subscribe(on: self) { equipedPartInfo in
+        viewModel.currentlyEquipedPartInfo.subscribe(on: self) { [weak self] equipedPartInfo in
+            guard let self = self else { return }
             // 장착 장비 변경
             equipedPartInfo.forEach { (key: EquipmentPart, value: Part) in
                 print(self.equipmentCalcView.itemSlotView.itemSlots.count)
                 self.equipmentCalcView.itemSlotView.itemSlots.forEach { PartImageView in
-                    print("ㅡㅡㅡ")
                     if key == PartImageView.part {
                         Task {
                             PartImageView.image = nil
@@ -53,34 +53,27 @@ final class EquipmentCalcViewController: ContentViewController {
                         }
                     }
                 }
+                self.viewModel.updateCurrentlyAppliedSetOption()
+                
             }
             // 변경에 따른 옵션의 변동
-            
         }
-        
-        viewModel.currentlyApplidOptions.subscribe(on: self) { [weak self] _ in
-            guard let self = self else { return }
-            self.currentlyApplidOptions = self.viewModel.currentlyApplidOptions.value
-        }
+        viewModel.currentlyApplidOptions.subscribe(on: self, { currentlyAppliedOptionList in
+            print("*****")
+            print(currentlyAppliedOptionList)
+            self.equipmentCalcView.itemSetTagView.resetTagView()
+            currentlyAppliedOptionList.forEach { (key: EquipmentSet, value: Int) in
+                Task {
+                    
+                    self.equipmentCalcView.itemSetTagView.createTagView(at: key, count: value)
+                }
+            }
+        })
         
         Task {
             await viewModel.triggerSet(query:.equipmentSet)
             await viewModel.triggerPart(query: .equipmentPart)
         }
-        /*
-         viewModel = JobInfoViewModel(repository: repository)
-         viewModel.jobListInfo.subscribe(on: self) { [self] _ in
-             self.jobList = viewModel.fetchJobGroup()
-             
-             DispatchQueue.main.async {
-                 self.jobListCollectionView.reloadData()
-             }
-         }
-         
-         Task {
-             await viewModel.trigger(query: .newJson)
-         }
-         */
     }
     
     //MARK: - ViewController Setup Method

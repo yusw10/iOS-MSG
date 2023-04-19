@@ -11,7 +11,7 @@ final class ItemSetTagView: UIScrollView {
     
     weak var viewModel: EuipmentCalcViewModel?
     
-    private var tagStackView = UIStackView().then { UIStackView in
+    var tagStackView = UIStackView().then { UIStackView in
         UIStackView.distribution = .equalSpacing
         UIStackView.alignment = .leading
         UIStackView.axis = .horizontal
@@ -23,9 +23,6 @@ final class ItemSetTagView: UIScrollView {
         super.init(frame: .zero)
         backgroundColor = .systemGray4
         setupLayouts()
-        
-        createTagView(at: EquipmentSet.absolabs, count: 3)
-        createTagView(at: EquipmentSet.basicBossAccessory, count: 9)
     }
     
     required init?(coder: NSCoder) {
@@ -42,7 +39,13 @@ final class ItemSetTagView: UIScrollView {
         }
     }
     
-    private func createTagView(at part: EquipmentSet, count: Int) {
+    func resetTagView() {
+        self.tagStackView.arrangedSubviews.forEach { UIView in
+            UIView.removeFromSuperview()
+        }
+    }
+    
+    func createTagView(at part: EquipmentSet, count: Int) {
         let tagView = TagView(frame: .zero)
         let title = "\(part) \(count)개"
         tagView.setupTitle(title)
