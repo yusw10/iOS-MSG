@@ -20,9 +20,14 @@ final class JobListViewController: ContentViewController {
     private var selectedRow = 0
     
     private lazy var jobListCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
+//        let layout = UICollectionViewFlowLayout()
+//        layout.scrollDirection = .vertical
+//        layout.minimumLineSpacing = 10
+//        layout.minimumInteritemSpacing = 10
+//        $0.collectionViewLayout = layout
+        
         $0.backgroundColor = .secondarySystemBackground
         $0.register(JobListHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "JobListHeaderViewReuse")
-        
         $0.register(JobListCollectionViewCell.self, forCellWithReuseIdentifier: "JobListCollectionViewCell")
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
@@ -122,7 +127,8 @@ extension JobListViewController: UICollectionViewDelegate, UICollectionViewDataS
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width - 80 , height: 150)
+//        return CGSize(width: (view.frame.width - 30) / 2, height: 195 / 2)
+        return CGSize(width: view.frame.width - 40, height: 180)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
@@ -160,6 +166,10 @@ extension JobListViewController: UICollectionViewDelegate, UICollectionViewDataS
         return CGFloat(20)
     }
     
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+//        return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+//    }
+//    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         var index = indexPath.item
         

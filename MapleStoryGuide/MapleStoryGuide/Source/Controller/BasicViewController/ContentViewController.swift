@@ -112,6 +112,7 @@ class ContentMyCharacterListViewController: UIViewController, ContentViewControl
         barButtonItem.tintColor = .black
         
         navigationItem.setRightBarButtonItems([barButtonItem, resetButtonItem], animated: false)
+        self.navigationController?.navigationBar.topItem?.title = "Back"
     }
     
     @objc private func menuTapped() {
