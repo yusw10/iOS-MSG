@@ -74,6 +74,7 @@ final class WeeklyBossCharacterListViewController: ContentMyCharacterListViewCon
         super.viewDidLoad()
         
         self.view.backgroundColor = .white
+        navigationItem.title = "주간 보스 체크 리스트"
         setupView()
         setupLayout()
         setupButton()

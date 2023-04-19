@@ -8,21 +8,26 @@ import UIKit
 import Then
 import SnapKit
 
-enum MainViewBannerList: String, CaseIterable {
-    case jobList = "jobList"
-    case additionalOption = "additionalOption"
-    case bossInfo = "bossInfo"
-    case itemInfo = "itemInfo"
-    case webViewInfo = "webViewInfo"
-}
-
 final class MainViewController: ContentViewController {
     
+    enum MainViewBannerList: String, CaseIterable {
+        case jobList = "jobList"
+        case bossInfo = "bossInfo"
+        case weeklyBossCheckList = "weeklyBossCheckList"
+        case itemInfo = "itemInfo"
+        case webViewInfo = "webViewInfo"
+    }
+    
     //MARK: - ViewController Properies
-        
+    
     private var mainViewBannerList = MainViewBannerList.allCases
     
-    private let mainCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
+    private var diffableDataSource: UICollectionViewDiffableDataSource<MainViewBannerList, AnyHashable>! = nil
+    private lazy var mainCollectionView = UICollectionView(
+        frame: .zero,
+        collectionViewLayout: self.setupCompositionalLayout()
+    ).then {
+        $0.delegate = self
         $0.register(MainCollectionViewCell.self, forCellWithReuseIdentifier: "mainCollectionViewCell")
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
@@ -31,23 +36,68 @@ final class MainViewController: ContentViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupNavigationController()
         setupMainCollectionView()
+        setupDiffableDataSource()
         addUserNotification()
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.MapleLightFont()]
-        navigationItem.title = "MapleStory Guide"
     }
     
     //MARK: - ViewController Setup Method
     
+    private func setupNavigationController() {
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.MapleLightFont()]
+        navigationItem.title = "MapleStory Guide"
+    }
+    
     private func setupMainCollectionView() {
-        mainCollectionView.delegate = self
-        mainCollectionView.dataSource = self
-        
         view.addSubview(mainCollectionView)
         
         mainCollectionView.snp.makeConstraints { make in
             make.top.leading.trailing.bottom.equalToSuperview()
         }
+    }
+    
+    private func setupDiffableDataSource() {
+        diffableDataSource = UICollectionViewDiffableDataSource<MainViewBannerList, AnyHashable>(collectionView: self.mainCollectionView, cellProvider: { (collectionView, indexPath, object) -> UICollectionViewCell in
+            
+            let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: "mainCollectionViewCell",
+                for: indexPath
+            ) as! MainCollectionViewCell
+            cell.setupCellImage(title: self.mainViewBannerList[indexPath.row].rawValue)
+            
+            return cell
+        })
+        var snapshot = self.diffableDataSource.snapshot()
+        snapshot.appendSections([.jobList])
+        snapshot.appendItems(self.mainViewBannerList, toSection: .jobList)
+        
+        diffableDataSource.apply(snapshot)
+    }
+    
+    private func setupCompositionalLayout() -> UICollectionViewCompositionalLayout {
+        let item = NSCollectionLayoutItem(
+            layoutSize: .init(
+                widthDimension: .fractionalWidth(1),
+                heightDimension: .fractionalHeight(1)
+            )
+        )
+        item.contentInsets.leading = 15
+        item.contentInsets.trailing = 15
+        item.contentInsets.bottom = 30
+        
+        let group = NSCollectionLayoutGroup.horizontal(
+            layoutSize: .init(
+                widthDimension: .fractionalWidth(1),
+                heightDimension: .absolute(200)
+            ),
+            subitems: [item]
+        )
+        let section = NSCollectionLayoutSection(group: group)
+        let layout = UICollectionViewCompositionalLayout(section: section)
+        
+        return layout
     }
     
     private func addUserNotification() {
@@ -65,25 +115,12 @@ final class MainViewController: ContentViewController {
         
         UNUserNotificationCenter.current().add(request)
     }
+    
 }
 
-// MARK: - MainCollectionView Delegate, DataSource
-extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        mainViewBannerList.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mainCollectionViewCell", for: indexPath) as? MainCollectionViewCell else {
-            return UICollectionViewCell()
-        }
-        cell.setupCellImage(title: mainViewBannerList[indexPath.row].rawValue)
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width - 80 , height: 150)
-    }
+// MARK: - MainCollectionView Delegate
+
+extension MainViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedBanner = mainViewBannerList[indexPath.row]
@@ -92,10 +129,10 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         case .jobList:
             let jobListViewController = JobListViewController()
             containerViewController?.pushViewController(jobListViewController)
-        case .additionalOption:
+        case .bossInfo:
             let bossListViewController = BossListViewController()
             containerViewController?.pushViewController(bossListViewController)
-        case .bossInfo:
+        case .weeklyBossCheckList:
             let weeklyBossCalculatorViewController = WeeklyBossCharacterListViewController()
             containerViewController?.pushListViewController(weeklyBossCalculatorViewController)
         case .itemInfo:
@@ -109,4 +146,5 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return CGFloat(30)
     }
+    
 }
