@@ -56,6 +56,7 @@ enum SetOptions: Codable, CaseIterable {
     case defenseIgnore //몬스터 방어율 무시
     case defense //방어력
     case criticalHitRate //크리티컬 데미지
+    case defaultCase
     
     func toString() -> String {
         switch self {
@@ -79,6 +80,8 @@ enum SetOptions: Codable, CaseIterable {
             return "방어력"
         case .criticalHitRate:
             return "크리티컬 데미지"
+        case .defaultCase:
+            return ""
         }
     }
 }
@@ -168,6 +171,33 @@ extension String {
             return .dawnBossAccessory
         case "blackBossAccessory":
             return .blackBossAccessory
+        default:
+            return .defaultCase
+        }
+    }
+    
+    func toOptions() -> SetOptions {
+        switch self {
+        case "atkAndMtk": //공격력 및 마력
+            return .atkAndMtk
+        case "bossAtkDamage": //보스 몬스터 공격시 데미지ㅌ
+            return .bossAtkDamage
+        case "allStat": //올스탯
+            return .allStat
+        case "maxHp": //최대 HP
+            return .maxHp
+        case "maxMp": //최대 MP
+            return .maxMp
+        case "maxHpRate": //최대 HP%
+            return .maxHpRate
+        case "maxMpRate": //최대 MP%
+            return .maxMpRate
+        case "defenseIgnore": //몬스터 방어율 무시
+            return .defenseIgnore
+        case "defense": //방어력
+            return .defense
+        case "criticalHitRate": //크리티컬 데미지
+            return .criticalHitRate
         default:
             return .defaultCase
         }

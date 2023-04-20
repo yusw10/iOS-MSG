@@ -53,15 +53,17 @@ final class EquipmentCalcViewController: ContentViewController {
                         }
                     }
                 }
-                self.viewModel.updateCurrentlyAppliedSetOption()
+                
                 
             }
+            self.viewModel.updateCurrentlyAppliedSetOption()
             // 변경에 따른 옵션의 변동
         }
         viewModel.currentlyApplidOptions.subscribe(on: self, { currentlyAppliedOptionList in
             print("*****")
             print(currentlyAppliedOptionList)
             self.equipmentCalcView.itemSetTagView.resetTagView()
+            
             currentlyAppliedOptionList.forEach { (key: EquipmentSet, value: Int) in
                 Task {
                     

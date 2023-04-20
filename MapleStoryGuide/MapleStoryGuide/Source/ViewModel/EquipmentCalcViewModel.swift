@@ -64,12 +64,12 @@ class CommonEuipmentCalcUseCase {
 
 class EuipmentCalcViewModel {
     private let useCase: CommonEuipmentCalcUseCase
-    let partList: Observable<[EquipmentPartList]> = Observable([]) // 전체 파츠별 장비 목록
-    let setOptionList: Observable<[EquipmentSetOption]> = Observable([]) // 전체 세트별 옵션 리스트
+    var partList: [EquipmentPartList] = [] // 전체 파츠별 장비 목록
+    var setOptionList: [EquipmentSetOption] = [] // 전체 세트별 옵션 리스트
     
     let currentlyEquipedPartInfo: Observable<[EquipmentPart: Part]> = Observable([:]) // 현재 장착중인 파츠 리스트
     let currentlyApplidOptions: Observable<[EquipmentSet: Int]> = Observable([:])// 현재 적용중인 옵션 리스트
-    let sumOfApplidOptions: Observable<[String: Int]> = Observable([:])
+    let sumOfApplidOptions: Observable<[SetOptions: Int]> = Observable([:])
     
 //    let selectedPart: Observable<EquipmentPartList?> = Observable(nil) // 선택한 파츠 - 각 부위별 장비 목록 보여주고 파츠 및 세트 추가해야함
     
@@ -94,20 +94,20 @@ extension EuipmentCalcViewModel {
     func triggerPart(query: Query) async {
         do {
             let data = try await self.useCase.excutePart(query: query)
-            self.partList.value = data
+            self.partList = data
         } catch {
             debugPrint("EquipmentViewModel.swift - func triggerPart() error")
         }
     }
     
     func fetchEquipmentPartList() -> [EquipmentPartList] {
-        return self.partList.value
+        return self.partList
     }
     
     func selectPart(at parts: EquipmentPart) -> [Part] {
         var currentPartList: [Part] = []
         
-        for item in self.partList.value {
+        for item in self.partList {
             if item.equipmentPart == parts {
                 currentPartList = item.partList
                 break
@@ -136,13 +136,39 @@ extension EuipmentCalcViewModel {
     
     func updateCurrentlyAppliedSetOption() {
         let values = self.currentlyEquipedPartInfo.value.values
-        print("??? \(values)")
+        var currentOption: [EquipmentSet: Int] = [:]
         values.forEach { Part in
-            if currentlyApplidOptions.value.keys.contains(Part.partListSet),
-            let partListCount = currentlyApplidOptions.value[Part.partListSet] {
-                currentlyApplidOptions.value[Part.partListSet] = partListCount + 1
+            if currentOption.keys.contains(Part.partListSet),
+            let partListCount = currentOption[Part.partListSet] {
+                currentOption[Part.partListSet] = partListCount + 1
             } else {
-                currentlyApplidOptions.value[Part.partListSet] = 1
+                currentOption[Part.partListSet] = 1
+            }
+        }
+        
+        currentlyApplidOptions.value = currentOption
+    }
+    
+    func sumOfApplidOptions() {
+        let values = self.currentlyApplidOptions.value
+        var currentSetOption: [SetOptions: Int] = [:]
+        values.forEach { (key: EquipmentSet, value: Int) in // 현재 적용중인 장비: 몇셋인지 추출 후
+            setOptionList.forEach { EquipmentSetOption in // 옵션 표에서
+                if EquipmentSetOption.equipmentSetOptionSet == key { // 무슨세트인지와
+                    EquipmentSetOption.options.forEach { SetOption in
+                        if SetOption.setCount == "\(value)" { // 몇부위인지를 추출해서
+                            
+                            let optionList = SetOption.option
+                            
+                            optionList.forEach { Option in
+                                if optionAmount = currentSetOption[Option.optionName]
+                            }
+                            
+                            
+                            
+                        }
+                    }
+                }
             }
         }
     }

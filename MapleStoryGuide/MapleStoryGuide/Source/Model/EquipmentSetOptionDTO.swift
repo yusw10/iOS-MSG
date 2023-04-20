@@ -20,7 +20,7 @@ struct EquipmentSetOptionDTO: Codable {
     
     func toDomain() -> EquipmentSetOption {
         return EquipmentSetOption(
-            equipmentSetOptionSet: self.equipmentSetOptionSet,
+            equipmentSetOptionSet: self.equipmentSetOptionSet.toSet(),
             options: self.options.map({ SetOptionDTO in
                 return SetOptionDTO.toDomain()
             })
@@ -59,7 +59,7 @@ struct OptionDTO: Codable {
 //MARK: - Model
 
 struct EquipmentSetOption {
-    let equipmentSetOptionSet: String
+    let equipmentSetOptionSet: EquipmentSet
     let options: [SetOption]
 }
 
