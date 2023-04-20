@@ -18,8 +18,6 @@
 		45ACA290298B003A00BD9935 /* SideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ACA28F298B003A00BD9935 /* SideMenuCell.swift */; };
 		45ACA294298C866F00BD9935 /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ACA293298C866E00BD9935 /* MainCollectionViewCell.swift */; };
 		45ACA299298F2C6D00BD9935 /* JobListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ACA298298F2C6D00BD9935 /* JobListViewController.swift */; };
-		45ACA29E298F2CE800BD9935 /* ItemCombinationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ACA29D298F2CE800BD9935 /* ItemCombinationViewController.swift */; };
-		45ACA2A0298F2D0900BD9935 /* EquipmentCalcViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ACA29F298F2D0900BD9935 /* EquipmentCalcViewController.swift */; };
 		45ACA2A229900D7000BD9935 /* JobListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ACA2A129900D7000BD9935 /* JobListCollectionViewCell.swift */; };
 		45ACA2A5299016D100BD9935 /* JobListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ACA2A4299016D100BD9935 /* JobListHeaderView.swift */; };
 		45ACA2A82991AEE200BD9935 /* ContainerViewComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ACA2A72991AEE200BD9935 /* ContainerViewComposer.swift */; };
@@ -28,8 +26,6 @@
 		45ACA2AE2992187C00BD9935 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ACA2AD2992187C00BD9935 /* ContainerViewController.swift */; };
 		45ACA2B029921ABD00BD9935 /* SideMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ACA2AF29921ABD00BD9935 /* SideMenuItem.swift */; };
 		45ACA2B229921D3700BD9935 /* SideMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ACA2B129921D3700BD9935 /* SideMenuDelegate.swift */; };
-		45ACA2BD2995D62E00BD9935 /* JobInfoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ACA2BB2995D62E00BD9935 /* JobInfoDTO.swift */; };
-		45ACA2BE2995D62E00BD9935 /* JobInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ACA2BC2995D62E00BD9935 /* JobInfo.swift */; };
 		45ACA2C02995D70F00BD9935 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ACA2BF2995D70F00BD9935 /* MainViewController.swift */; };
 		7229CE2729D6C5E700347D30 /* BossInformation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7229CE2529D6C5E700347D30 /* BossInformation+CoreDataClass.swift */; };
 		7229CE2829D6C5E700347D30 /* BossInformation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7229CE2629D6C5E700347D30 /* BossInformation+CoreDataProperties.swift */; };
@@ -43,17 +39,13 @@
 		72B6810A29C4535D00D81470 /* LevelAndForceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B6810929C4535D00D81470 /* LevelAndForceCell.swift */; };
 		72CB8BD829BF000D00A34A36 /* BossInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CB8BD729BF000D00A34A36 /* BossInfo.swift */; };
 		72CB8BDA29BF047700A34A36 /* bossInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 72CB8BD929BF047700A34A36 /* bossInfo.json */; };
-		72CDF3A4298A4C4300918C1A /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CDF3A3298A4C4300918C1A /* EndPoint.swift */; };
-		72CDF3A6298A53BE00918C1A /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CDF3A5298A53BE00918C1A /* APIRequest.swift */; };
 		72CDF3A8298A53E100918C1A /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CDF3A7298A53E100918C1A /* Components.swift */; };
-		72CDF3AA298A576B00918C1A /* URLSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CDF3A9298A576B00918C1A /* URLSessionManager.swift */; };
 		72E728F829939D0E00427640 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E728F729939D0E00427640 /* Observable.swift */; };
 		72ECFFED298BC2100045ADBB /* JobInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72ECFFEC298BC2100045ADBB /* JobInfoViewModel.swift */; };
 		72ECFFF0298BC9060045ADBB /* JSONManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72ECFFEF298BC9060045ADBB /* JSONManager.swift */; };
 		A319B12D29CAF1C600E5B1B2 /* WeeklyBossAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A319B12C29CAF1C600E5B1B2 /* WeeklyBossAddViewController.swift */; };
 		A3278BAE2988E4330004C278 /* JobDetailCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3278BAD2988E4330004C278 /* JobDetailCollectionViewController.swift */; };
 		A3278BB229890A0A0004C278 /* SkillListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3278BB129890A0A0004C278 /* SkillListViewCell.swift */; };
-		A3278BB5298A31CD0004C278 /* MockSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3278BB4298A31CD0004C278 /* MockSection.swift */; };
 		A3278BDB298B59140004C278 /* JobImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3278BDA298B59140004C278 /* JobImageViewCell.swift */; };
 		A3278BDD298B5B430004C278 /* TitleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3278BDC298B5B430004C278 /* TitleHeaderView.swift */; };
 		A3278BE0298B93060004C278 /* SkillDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3278BDF298B93060004C278 /* SkillDetailTableViewController.swift */; };
@@ -76,6 +68,15 @@
 		A3900BC729C099B900B7C409 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3900BC629C099B900B7C409 /* CoreDataManager.swift */; };
 		A3900BDB29C2F7FA00B7C409 /* WeeklyBossCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3900BDA29C2F7FA00B7C409 /* WeeklyBossCalculatorViewController.swift */; };
 		A3900BDD29C2F82300B7C409 /* WeeklyBossCalculatorViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3900BDC29C2F82300B7C409 /* WeeklyBossCalculatorViewCell.swift */; };
+		A3E3794729F100BB00FE688E /* Extension+Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E3794629F100BB00FE688E /* Extension+Font.swift */; };
+		A3E3794929F100F300FE688E /* NumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E3794829F100F300FE688E /* NumberFormatter.swift */; };
+		A3E3794C29F1015400FE688E /* Extension+CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E3794B29F1015400FE688E /* Extension+CALayer.swift */; };
+		A3E3794E29F101B400FE688E /* Extension+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E3794D29F101B400FE688E /* Extension+UIImage.swift */; };
+		A3E3795A29F104A300FE688E /* DescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E3795929F104A300FE688E /* DescriptionCell.swift */; };
+		A3E3795C29F104BD00FE688E /* RewardPriceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E3795B29F104BD00FE688E /* RewardPriceCell.swift */; };
+		A3E3795E29F104D200FE688E /* RewardItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E3795D29F104D200FE688E /* RewardItemCell.swift */; };
+		A3E3796029F104E600FE688E /* MainBossImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E3795F29F104E600FE688E /* MainBossImageCell.swift */; };
+		A3E3796229F1052700FE688E /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E3796129F1052700FE688E /* CheckBox.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,8 +90,6 @@
 		45ACA28F298B003A00BD9935 /* SideMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuCell.swift; sourceTree = "<group>"; };
 		45ACA293298C866E00BD9935 /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
 		45ACA298298F2C6D00BD9935 /* JobListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobListViewController.swift; sourceTree = "<group>"; };
-		45ACA29D298F2CE800BD9935 /* ItemCombinationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCombinationViewController.swift; sourceTree = "<group>"; };
-		45ACA29F298F2D0900BD9935 /* EquipmentCalcViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentCalcViewController.swift; sourceTree = "<group>"; };
 		45ACA2A129900D7000BD9935 /* JobListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobListCollectionViewCell.swift; sourceTree = "<group>"; };
 		45ACA2A4299016D100BD9935 /* JobListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobListHeaderView.swift; sourceTree = "<group>"; };
 		45ACA2A72991AEE200BD9935 /* ContainerViewComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewComposer.swift; sourceTree = "<group>"; };
@@ -99,8 +98,6 @@
 		45ACA2AD2992187C00BD9935 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		45ACA2AF29921ABD00BD9935 /* SideMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuItem.swift; sourceTree = "<group>"; };
 		45ACA2B129921D3700BD9935 /* SideMenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuDelegate.swift; sourceTree = "<group>"; };
-		45ACA2BB2995D62E00BD9935 /* JobInfoDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JobInfoDTO.swift; path = MapleStoryGuide/Source/Model/JobInfo/JobInfoDTO.swift; sourceTree = SOURCE_ROOT; };
-		45ACA2BC2995D62E00BD9935 /* JobInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JobInfo.swift; path = MapleStoryGuide/Source/Model/JobInfo/JobInfo.swift; sourceTree = SOURCE_ROOT; };
 		45ACA2BF2995D70F00BD9935 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		7229CE2529D6C5E700347D30 /* BossInformation+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BossInformation+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7229CE2629D6C5E700347D30 /* BossInformation+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BossInformation+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -114,17 +111,13 @@
 		72B6810929C4535D00D81470 /* LevelAndForceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelAndForceCell.swift; sourceTree = "<group>"; };
 		72CB8BD729BF000D00A34A36 /* BossInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BossInfo.swift; sourceTree = "<group>"; };
 		72CB8BD929BF047700A34A36 /* bossInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bossInfo.json; sourceTree = "<group>"; };
-		72CDF3A3298A4C4300918C1A /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
-		72CDF3A5298A53BE00918C1A /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		72CDF3A7298A53E100918C1A /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
-		72CDF3A9298A576B00918C1A /* URLSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionManager.swift; sourceTree = "<group>"; };
 		72E728F729939D0E00427640 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		72ECFFEC298BC2100045ADBB /* JobInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobInfoViewModel.swift; sourceTree = "<group>"; };
 		72ECFFEF298BC9060045ADBB /* JSONManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONManager.swift; sourceTree = "<group>"; };
 		A319B12C29CAF1C600E5B1B2 /* WeeklyBossAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyBossAddViewController.swift; sourceTree = "<group>"; };
 		A3278BAD2988E4330004C278 /* JobDetailCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailCollectionViewController.swift; sourceTree = "<group>"; };
 		A3278BB129890A0A0004C278 /* SkillListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillListViewCell.swift; sourceTree = "<group>"; };
-		A3278BB4298A31CD0004C278 /* MockSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MockSection.swift; path = MapleStoryGuide/Source/Model/JobInfo/MockSection.swift; sourceTree = SOURCE_ROOT; };
 		A3278BDA298B59140004C278 /* JobImageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobImageViewCell.swift; sourceTree = "<group>"; };
 		A3278BDC298B5B430004C278 /* TitleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleHeaderView.swift; sourceTree = "<group>"; };
 		A3278BDF298B93060004C278 /* SkillDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillDetailTableViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +140,15 @@
 		A3900BC629C099B900B7C409 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		A3900BDA29C2F7FA00B7C409 /* WeeklyBossCalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyBossCalculatorViewController.swift; sourceTree = "<group>"; };
 		A3900BDC29C2F82300B7C409 /* WeeklyBossCalculatorViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyBossCalculatorViewCell.swift; sourceTree = "<group>"; };
+		A3E3794629F100BB00FE688E /* Extension+Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Font.swift"; sourceTree = "<group>"; };
+		A3E3794829F100F300FE688E /* NumberFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatter.swift; sourceTree = "<group>"; };
+		A3E3794B29F1015400FE688E /* Extension+CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+CALayer.swift"; sourceTree = "<group>"; };
+		A3E3794D29F101B400FE688E /* Extension+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIImage.swift"; sourceTree = "<group>"; };
+		A3E3795929F104A300FE688E /* DescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionCell.swift; sourceTree = "<group>"; };
+		A3E3795B29F104BD00FE688E /* RewardPriceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardPriceCell.swift; sourceTree = "<group>"; };
+		A3E3795D29F104D200FE688E /* RewardItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardItemCell.swift; sourceTree = "<group>"; };
+		A3E3795F29F104E600FE688E /* MainBossImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBossImageCell.swift; sourceTree = "<group>"; };
+		A3E3796129F1052700FE688E /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,10 +202,11 @@
 				45ACA2652988D75C00BD9935 /* AppDelegate.swift */,
 				45ACA2672988D75C00BD9935 /* SceneDelegate.swift */,
 				A3900BC329C0905E00B7C409 /* Model.xcdatamodeld */,
-				45ACA2852988D97B00BD9935 /* Controller */,
+				A3E3794529F1006700FE688E /* Extension */,
+				45ACA2862988D99F00BD9935 /* Utility */,
 				A3278C09298FCAED0004C278 /* Model */,
 				45ACA2872988D9A600BD9935 /* ViewModel */,
-				45ACA2862988D99F00BD9935 /* Utility */,
+				45ACA2852988D97B00BD9935 /* Controller */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -211,10 +214,8 @@
 		45ACA2842988D90C00BD9935 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A3E3796729F1061500FE688E /* Json */,
 				A37030FB29D7EB2200F3ADA4 /* Fonts */,
-				725400FC29AC6F96005A7420 /* newJobs_jpg.json */,
-				72CB8BD929BF047700A34A36 /* bossInfo.json */,
-				A37030F229D31A8E00F3ADA4 /* weeklyBossInfo.json */,
 				45ACA26E2988D76000BD9935 /* Assets.xcassets */,
 				45ACA2702988D76000BD9935 /* LaunchScreen.storyboard */,
 			);
@@ -224,21 +225,14 @@
 		45ACA2852988D97B00BD9935 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A3E3796329F1055400FE688E /* CommonView */,
+				A3E3794F29F1024B00FE688E /* WeeklyBossCheckList */,
 				A38A78B429E54BFA00213CC7 /* WebViewList */,
-				A3900BC629C099B900B7C409 /* CoreDataManager.swift */,
-				A3900B9029BC51D600B7C409 /* WeeklyBossCharacterList */,
-				A37030F729D3D10B00F3ADA4 /* WeeklyBossCalculator */,
-				A319B12B29CAF1A600E5B1B2 /* WeeklyBossAdd */,
 				72B0CBD229C15B5C00B7320F /* BossList */,
-				72B7A94B29D1299B005867C3 /* BossDetail */,
-				72B7A94C29D12B3C005867C3 /* ItemDetail */,
-				A3278BDE298B92EE0004C278 /* SkillDetail */,
-				A3278BAC2988E4190004C278 /* JobDetail */,
-				45ACA2B329923F1C00BD9935 /* BasicViewController */,
+				A3E3795029F1028500FE688E /* JobList */,
+				45ACA2B329923F1C00BD9935 /* ContatinerView */,
 				45ACA291298C828700BD9935 /* SideMenu */,
 				45ACA28A298995C300BD9935 /* MainView */,
-				45ACA29C298F2CD400BD9935 /* itemCombinationView */,
-				45ACA29B298F2CC500BD9935 /* EquipmentCalcView */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -246,9 +240,11 @@
 		45ACA2862988D99F00BD9935 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				72CDF3A7298A53E100918C1A /* Components.swift */,
 				72ECFFEE298BC8E70045ADBB /* JSON */,
 				45ACA2A62991AECE00BD9935 /* SideMenuManager */,
-				45ACA2882988D9BB00BD9935 /* Network */,
+				45ACA2882988D9BB00BD9935 /* CoreData */,
+				A3E3794A29F100FF00FE688E /* Formatter */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -256,30 +252,27 @@
 		45ACA2872988D9A600BD9935 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				72ECFFEC298BC2100045ADBB /* JobInfoViewModel.swift */,
-				7246561829C058CC00AA9154 /* BossInfoViewModel.swift */,
 				72E728F729939D0E00427640 /* Observable.swift */,
+				A3E3795429F1037000FE688E /* JobList */,
+				A3E3795529F1037C00FE688E /* BossList */,
+				A3E3795129F1032900FE688E /* WeeklyBossCheckList */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		45ACA2882988D9BB00BD9935 /* Network */ = {
+		45ACA2882988D9BB00BD9935 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				72CDF3A9298A576B00918C1A /* URLSessionManager.swift */,
-				72CDF3A3298A4C4300918C1A /* EndPoint.swift */,
-				72CDF3A5298A53BE00918C1A /* APIRequest.swift */,
-				72CDF3A7298A53E100918C1A /* Components.swift */,
+				A3900BC629C099B900B7C409 /* CoreDataManager.swift */,
 			);
-			path = Network;
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		45ACA28A298995C300BD9935 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
 				45ACA2BF2995D70F00BD9935 /* MainViewController.swift */,
-				45ACA293298C866E00BD9935 /* MainCollectionViewCell.swift */,
-				45ACA295298F213E00BD9935 /* JobListView */,
+				A3E3796629F105DE00FE688E /* Cells */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -288,37 +281,11 @@
 			isa = PBXGroup;
 			children = (
 				45ACA28D298A2A2A00BD9935 /* SideMenuViewController.swift */,
-				45ACA28F298B003A00BD9935 /* SideMenuCell.swift */,
-				45ACA2AF29921ABD00BD9935 /* SideMenuItem.swift */,
 				45ACA2B129921D3700BD9935 /* SideMenuDelegate.swift */,
+				A3E3796429F1058000FE688E /* Cells */,
+				A3E3796529F1059000FE688E /* Compoent */,
 			);
 			path = SideMenu;
-			sourceTree = "<group>";
-		};
-		45ACA295298F213E00BD9935 /* JobListView */ = {
-			isa = PBXGroup;
-			children = (
-				45ACA298298F2C6D00BD9935 /* JobListViewController.swift */,
-				45ACA2A129900D7000BD9935 /* JobListCollectionViewCell.swift */,
-				45ACA2A4299016D100BD9935 /* JobListHeaderView.swift */,
-			);
-			path = JobListView;
-			sourceTree = "<group>";
-		};
-		45ACA29B298F2CC500BD9935 /* EquipmentCalcView */ = {
-			isa = PBXGroup;
-			children = (
-				45ACA29F298F2D0900BD9935 /* EquipmentCalcViewController.swift */,
-			);
-			path = EquipmentCalcView;
-			sourceTree = "<group>";
-		};
-		45ACA29C298F2CD400BD9935 /* itemCombinationView */ = {
-			isa = PBXGroup;
-			children = (
-				45ACA29D298F2CE800BD9935 /* ItemCombinationViewController.swift */,
-			);
-			path = itemCombinationView;
 			sourceTree = "<group>";
 		};
 		45ACA2A62991AECE00BD9935 /* SideMenuManager */ = {
@@ -329,14 +296,14 @@
 			path = SideMenuManager;
 			sourceTree = "<group>";
 		};
-		45ACA2B329923F1C00BD9935 /* BasicViewController */ = {
+		45ACA2B329923F1C00BD9935 /* ContatinerView */ = {
 			isa = PBXGroup;
 			children = (
 				45ACA2AD2992187C00BD9935 /* ContainerViewController.swift */,
 				45ACA2AB2992002000BD9935 /* ContentViewController.swift */,
 				45ACA2A92991FFE700BD9935 /* ViewControllerPresentation.swift */,
 			);
-			path = BasicViewController;
+			path = ContatinerView;
 			sourceTree = "<group>";
 		};
 		45ACA2BA2995D5D700BD9935 /* Recovered References */ = {
@@ -350,34 +317,16 @@
 			isa = PBXGroup;
 			children = (
 				72B0CBD329C15B7400B7320F /* BossListViewController.swift */,
-				7265762329C1AB20008DBA6F /* BossImageCell.swift */,
+				72ABFD7B29C2E50E003A207F /* BossDetailViewController.swift */,
+				72B2BCED29CD7E600022B95B /* ItemDetailViewController.swift */,
+				A3E3795729F1041700FE688E /* Cell */,
 			);
 			path = BossList;
-			sourceTree = "<group>";
-		};
-		72B7A94B29D1299B005867C3 /* BossDetail */ = {
-			isa = PBXGroup;
-			children = (
-				72ABFD7B29C2E50E003A207F /* BossDetailViewController.swift */,
-				72B6810929C4535D00D81470 /* LevelAndForceCell.swift */,
-			);
-			path = BossDetail;
-			sourceTree = "<group>";
-		};
-		72B7A94C29D12B3C005867C3 /* ItemDetail */ = {
-			isa = PBXGroup;
-			children = (
-				72B2BCED29CD7E600022B95B /* ItemDetailViewController.swift */,
-			);
-			path = ItemDetail;
 			sourceTree = "<group>";
 		};
 		72CB8BD529BEFFE600A34A36 /* JobInfo */ = {
 			isa = PBXGroup;
 			children = (
-				45ACA2BC2995D62E00BD9935 /* JobInfo.swift */,
-				45ACA2BB2995D62E00BD9935 /* JobInfoDTO.swift */,
-				A3278BB4298A31CD0004C278 /* MockSection.swift */,
 				72AD922929A1C0BA00047D35 /* JobGroupDTO.swift */,
 			);
 			path = JobInfo;
@@ -399,52 +348,6 @@
 			path = JSON;
 			sourceTree = "<group>";
 		};
-		A319B12B29CAF1A600E5B1B2 /* WeeklyBossAdd */ = {
-			isa = PBXGroup;
-			children = (
-				A319B12C29CAF1C600E5B1B2 /* WeeklyBossAddViewController.swift */,
-				A37030E829D2BCF900F3ADA4 /* WeeklyBossAddViewModel.swift */,
-			);
-			path = WeeklyBossAdd;
-			sourceTree = "<group>";
-		};
-		A3278BAC2988E4190004C278 /* JobDetail */ = {
-			isa = PBXGroup;
-			children = (
-				A3278BAD2988E4330004C278 /* JobDetailCollectionViewController.swift */,
-				A3278C08298F884E0004C278 /* HeaderView */,
-				A3278C07298F883C0004C278 /* Cells */,
-			);
-			path = JobDetail;
-			sourceTree = "<group>";
-		};
-		A3278BDE298B92EE0004C278 /* SkillDetail */ = {
-			isa = PBXGroup;
-			children = (
-				A3278BDF298B93060004C278 /* SkillDetailTableViewController.swift */,
-				A3282F8329A4A29100FA5BE1 /* SkillDetailViewCell.swift */,
-				A3278BE1298BE1A80004C278 /* ReinforceSkillDetailViewCell.swift */,
-			);
-			path = SkillDetail;
-			sourceTree = "<group>";
-		};
-		A3278C07298F883C0004C278 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				A3278BDA298B59140004C278 /* JobImageViewCell.swift */,
-				A3278BB129890A0A0004C278 /* SkillListViewCell.swift */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		A3278C08298F884E0004C278 /* HeaderView */ = {
-			isa = PBXGroup;
-			children = (
-				A3278BDC298B5B430004C278 /* TitleHeaderView.swift */,
-			);
-			path = HeaderView;
-			sourceTree = "<group>";
-		};
 		A3278C09298FCAED0004C278 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -463,15 +366,6 @@
 			path = WeeklyBossInfo;
 			sourceTree = "<group>";
 		};
-		A37030F729D3D10B00F3ADA4 /* WeeklyBossCalculator */ = {
-			isa = PBXGroup;
-			children = (
-				A3900BDA29C2F7FA00B7C409 /* WeeklyBossCalculatorViewController.swift */,
-				A3900BD929C2F7F200B7C409 /* Cells */,
-			);
-			path = WeeklyBossCalculator;
-			sourceTree = "<group>";
-		};
 		A37030FB29D7EB2200F3ADA4 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -485,36 +379,161 @@
 			isa = PBXGroup;
 			children = (
 				A38A78B229E3ED4D00213CC7 /* WebViewListViewController.swift */,
-				A38A78B529E54C1600213CC7 /* WebViewListCell.swift */,
 				A38A78B729E54CB200213CC7 /* WebViewController.swift */,
+				A3E3795629F103F000FE688E /* Cells */,
 			);
 			path = WebViewList;
-			sourceTree = "<group>";
-		};
-		A3900B9029BC51D600B7C409 /* WeeklyBossCharacterList */ = {
-			isa = PBXGroup;
-			children = (
-				A3900BBD29C0489C00B7C409 /* WeeklyBossCharacterListViewController.swift */,
-				A37030E429D1839800F3ADA4 /* WeeklyBossCharacterListViewModel.swift */,
-				A3900BC229C0499800B7C409 /* Cells */,
-			);
-			path = WeeklyBossCharacterList;
 			sourceTree = "<group>";
 		};
 		A3900BC229C0499800B7C409 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				A3900BDC29C2F82300B7C409 /* WeeklyBossCalculatorViewCell.swift */,
 				A3900BC029C0495D00B7C409 /* WeeklyBossCharacterListCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		A3900BD929C2F7F200B7C409 /* Cells */ = {
+		A3E3794529F1006700FE688E /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				A3900BDC29C2F82300B7C409 /* WeeklyBossCalculatorViewCell.swift */,
+				A3E3794629F100BB00FE688E /* Extension+Font.swift */,
+				A3E3794B29F1015400FE688E /* Extension+CALayer.swift */,
+				A3E3794D29F101B400FE688E /* Extension+UIImage.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		A3E3794A29F100FF00FE688E /* Formatter */ = {
+			isa = PBXGroup;
+			children = (
+				A3E3794829F100F300FE688E /* NumberFormatter.swift */,
+			);
+			path = Formatter;
+			sourceTree = "<group>";
+		};
+		A3E3794F29F1024B00FE688E /* WeeklyBossCheckList */ = {
+			isa = PBXGroup;
+			children = (
+				A3900BBD29C0489C00B7C409 /* WeeklyBossCharacterListViewController.swift */,
+				A3900BDA29C2F7FA00B7C409 /* WeeklyBossCalculatorViewController.swift */,
+				A319B12C29CAF1C600E5B1B2 /* WeeklyBossAddViewController.swift */,
+				A3900BC229C0499800B7C409 /* Cells */,
+			);
+			path = WeeklyBossCheckList;
+			sourceTree = "<group>";
+		};
+		A3E3795029F1028500FE688E /* JobList */ = {
+			isa = PBXGroup;
+			children = (
+				45ACA298298F2C6D00BD9935 /* JobListViewController.swift */,
+				A3278BDF298B93060004C278 /* SkillDetailTableViewController.swift */,
+				A3278BAD2988E4330004C278 /* JobDetailCollectionViewController.swift */,
+				A3E3795829F1046E00FE688E /* Cells */,
+			);
+			path = JobList;
+			sourceTree = "<group>";
+		};
+		A3E3795129F1032900FE688E /* WeeklyBossCheckList */ = {
+			isa = PBXGroup;
+			children = (
+				A37030E829D2BCF900F3ADA4 /* WeeklyBossAddViewModel.swift */,
+				A37030E429D1839800F3ADA4 /* WeeklyBossCharacterListViewModel.swift */,
+			);
+			path = WeeklyBossCheckList;
+			sourceTree = "<group>";
+		};
+		A3E3795429F1037000FE688E /* JobList */ = {
+			isa = PBXGroup;
+			children = (
+				72ECFFEC298BC2100045ADBB /* JobInfoViewModel.swift */,
+			);
+			path = JobList;
+			sourceTree = "<group>";
+		};
+		A3E3795529F1037C00FE688E /* BossList */ = {
+			isa = PBXGroup;
+			children = (
+				7246561829C058CC00AA9154 /* BossInfoViewModel.swift */,
+			);
+			path = BossList;
+			sourceTree = "<group>";
+		};
+		A3E3795629F103F000FE688E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A38A78B529E54C1600213CC7 /* WebViewListCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		A3E3795729F1041700FE688E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7265762329C1AB20008DBA6F /* BossImageCell.swift */,
+				72B6810929C4535D00D81470 /* LevelAndForceCell.swift */,
+				A3E3795929F104A300FE688E /* DescriptionCell.swift */,
+				A3E3795B29F104BD00FE688E /* RewardPriceCell.swift */,
+				A3E3795D29F104D200FE688E /* RewardItemCell.swift */,
+				A3E3795F29F104E600FE688E /* MainBossImageCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		A3E3795829F1046E00FE688E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				45ACA2A129900D7000BD9935 /* JobListCollectionViewCell.swift */,
+				A3282F8329A4A29100FA5BE1 /* SkillDetailViewCell.swift */,
+				A3278BE1298BE1A80004C278 /* ReinforceSkillDetailViewCell.swift */,
+				A3278BDA298B59140004C278 /* JobImageViewCell.swift */,
+				A3278BB129890A0A0004C278 /* SkillListViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		A3E3796329F1055400FE688E /* CommonView */ = {
+			isa = PBXGroup;
+			children = (
+				A3E3796129F1052700FE688E /* CheckBox.swift */,
+				A3278BDC298B5B430004C278 /* TitleHeaderView.swift */,
+				45ACA2A4299016D100BD9935 /* JobListHeaderView.swift */,
+			);
+			path = CommonView;
+			sourceTree = "<group>";
+		};
+		A3E3796429F1058000FE688E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				45ACA28F298B003A00BD9935 /* SideMenuCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		A3E3796529F1059000FE688E /* Compoent */ = {
+			isa = PBXGroup;
+			children = (
+				45ACA2AF29921ABD00BD9935 /* SideMenuItem.swift */,
+			);
+			path = Compoent;
+			sourceTree = "<group>";
+		};
+		A3E3796629F105DE00FE688E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				45ACA293298C866E00BD9935 /* MainCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		A3E3796729F1061500FE688E /* Json */ = {
+			isa = PBXGroup;
+			children = (
+				725400FC29AC6F96005A7420 /* newJobs_jpg.json */,
+				72CB8BD929BF047700A34A36 /* bossInfo.json */,
+				A37030F229D31A8E00F3ADA4 /* weeklyBossInfo.json */,
+			);
+			path = Json;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -606,30 +625,32 @@
 				A3278BAE2988E4330004C278 /* JobDetailCollectionViewController.swift in Sources */,
 				45ACA2662988D75C00BD9935 /* AppDelegate.swift in Sources */,
 				72ABFD7C29C2E50E003A207F /* BossDetailViewController.swift in Sources */,
-				A3278BB5298A31CD0004C278 /* MockSection.swift in Sources */,
 				A3278BE2298BE1A80004C278 /* ReinforceSkillDetailViewCell.swift in Sources */,
 				A3278BB229890A0A0004C278 /* SkillListViewCell.swift in Sources */,
 				A3278BE0298B93060004C278 /* SkillDetailTableViewController.swift in Sources */,
 				7246561929C058CC00AA9154 /* BossInfoViewModel.swift in Sources */,
 				45ACA2682988D75C00BD9935 /* SceneDelegate.swift in Sources */,
+				A3E3796029F104E600FE688E /* MainBossImageCell.swift in Sources */,
 				A3278BDD298B5B430004C278 /* TitleHeaderView.swift in Sources */,
 				72B0CBD429C15B7400B7320F /* BossListViewController.swift in Sources */,
 				A3278BDB298B59140004C278 /* JobImageViewCell.swift in Sources */,
 				A3900BBE29C0489C00B7C409 /* WeeklyBossCharacterListViewController.swift in Sources */,
 				72CDF3A8298A53E100918C1A /* Components.swift in Sources */,
-				72CDF3AA298A576B00918C1A /* URLSessionManager.swift in Sources */,
 				A3900BC729C099B900B7C409 /* CoreDataManager.swift in Sources */,
 				A38A78B829E54CB200213CC7 /* WebViewController.swift in Sources */,
+				A3E3794E29F101B400FE688E /* Extension+UIImage.swift in Sources */,
 				7229CE2729D6C5E700347D30 /* BossInformation+CoreDataClass.swift in Sources */,
+				A3E3794729F100BB00FE688E /* Extension+Font.swift in Sources */,
 				72ECFFF0298BC9060045ADBB /* JSONManager.swift in Sources */,
 				72CB8BD829BF000D00A34A36 /* BossInfo.swift in Sources */,
 				7265762429C1AB20008DBA6F /* BossImageCell.swift in Sources */,
 				72B6810A29C4535D00D81470 /* LevelAndForceCell.swift in Sources */,
+				A3E3796229F1052700FE688E /* CheckBox.swift in Sources */,
 				72E728F829939D0E00427640 /* Observable.swift in Sources */,
-				72CDF3A4298A4C4300918C1A /* EndPoint.swift in Sources */,
+				A3E3795C29F104BD00FE688E /* RewardPriceCell.swift in Sources */,
+				A3E3795A29F104A300FE688E /* DescriptionCell.swift in Sources */,
 				45ACA2C02995D70F00BD9935 /* MainViewController.swift in Sources */,
 				A3900BDD29C2F82300B7C409 /* WeeklyBossCalculatorViewCell.swift in Sources */,
-				72CDF3A6298A53BE00918C1A /* APIRequest.swift in Sources */,
 				A37030F629D3C7DF00F3ADA4 /* WeeklyBossInfo.swift in Sources */,
 				A3900BDB29C2F7FA00B7C409 /* WeeklyBossCalculatorViewController.swift in Sources */,
 				72ECFFED298BC2100045ADBB /* JobInfoViewModel.swift in Sources */,
@@ -637,18 +658,19 @@
 				A37030EF29D2E0A400F3ADA4 /* CharacterInfo+CoreDataProperties.swift in Sources */,
 				A37030E929D2BCF900F3ADA4 /* WeeklyBossAddViewModel.swift in Sources */,
 				7229CE2829D6C5E700347D30 /* BossInformation+CoreDataProperties.swift in Sources */,
-				45ACA2BE2995D62E00BD9935 /* JobInfo.swift in Sources */,
+				A3E3794C29F1015400FE688E /* Extension+CALayer.swift in Sources */,
 				A37030EE29D2E0A400F3ADA4 /* CharacterInfo+CoreDataClass.swift in Sources */,
 				45ACA2A82991AEE200BD9935 /* ContainerViewComposer.swift in Sources */,
-				45ACA2BD2995D62E00BD9935 /* JobInfoDTO.swift in Sources */,
 				45ACA299298F2C6D00BD9935 /* JobListViewController.swift in Sources */,
 				45ACA294298C866F00BD9935 /* MainCollectionViewCell.swift in Sources */,
 				45ACA290298B003A00BD9935 /* SideMenuCell.swift in Sources */,
 				72B2BCEE29CD7E600022B95B /* ItemDetailViewController.swift in Sources */,
 				A38A78B329E3ED4D00213CC7 /* WebViewListViewController.swift in Sources */,
+				A3E3794929F100F300FE688E /* NumberFormatter.swift in Sources */,
 				45ACA2AA2991FFE700BD9935 /* ViewControllerPresentation.swift in Sources */,
 				45ACA2B029921ABD00BD9935 /* SideMenuItem.swift in Sources */,
 				45ACA2AC2992002000BD9935 /* ContentViewController.swift in Sources */,
+				A3E3795E29F104D200FE688E /* RewardItemCell.swift in Sources */,
 				A3282F8429A4A29100FA5BE1 /* SkillDetailViewCell.swift in Sources */,
 				45ACA2AE2992187C00BD9935 /* ContainerViewController.swift in Sources */,
 				45ACA2A229900D7000BD9935 /* JobListCollectionViewCell.swift in Sources */,
@@ -657,11 +679,9 @@
 				A3900BC529C0905E00B7C409 /* Model.xcdatamodeld in Sources */,
 				A3900BC129C0495D00B7C409 /* WeeklyBossCharacterListCell.swift in Sources */,
 				45ACA2682988D75C00BD9935 /* SceneDelegate.swift in Sources */,
-				45ACA2A0298F2D0900BD9935 /* EquipmentCalcViewController.swift in Sources */,
 				A37030E529D1839800F3ADA4 /* WeeklyBossCharacterListViewModel.swift in Sources */,
 				45ACA2A5299016D100BD9935 /* JobListHeaderView.swift in Sources */,
 				A38A78B629E54C1600213CC7 /* WebViewListCell.swift in Sources */,
-				45ACA29E298F2CE800BD9935 /* ItemCombinationViewController.swift in Sources */,
 				72AD922A29A1C0BA00047D35 /* JobGroupDTO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
