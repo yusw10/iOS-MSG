@@ -24,14 +24,14 @@ final class SetOptionListView: UIView {
         super.init(frame: .zero)
         backgroundColor = .systemGray5
         setupLayouts()
-        viewModel?.currentlyApplidOptions.subscribe(on: self, { [self] _ in
-            
-            guard let optionList = viewModel?.generateSetOpion() else {
-                return
-            }
-            
-            generateOptionLabel(optionList: optionList)
-        })
+//        viewModel?.currentlyApplidOptions.subscribe(on: self, { [self] _ in
+//            
+//            guard let optionList = viewModel?.generateSetOpion() else {
+//                return
+//            }
+//            
+//            generateOptionLabel(optionList: optionList)
+//        })
         
 //        viewModel?.currentlyApplidOptions.value = [EquipmentSetOption(equipmentSetOptionSet: "아케인셰이드", options: [SetOption(setCount: "2", option: [Option(optionName: "보스공격력", optionAmount: 20)])])]
     }
