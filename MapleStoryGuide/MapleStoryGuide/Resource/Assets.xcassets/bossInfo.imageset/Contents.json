@@ -2,15 +2,17 @@
   "images" : [
     {
       "filename" : "스크린샷 2023-04-06 오후 7.59.50.png",
-      "idiom" : "universal",
+      "idiom" : "iphone",
       "scale" : "1x"
     },
     {
-      "idiom" : "universal",
+      "filename" : "스크린샷 2023-04-06 오후 7.59.50 2.png",
+      "idiom" : "iphone",
       "scale" : "2x"
     },
     {
-      "idiom" : "universal",
+      "filename" : "스크린샷 2023-04-06 오후 7.59.50 3.png",
+      "idiom" : "iphone",
       "scale" : "3x"
     }
   ],

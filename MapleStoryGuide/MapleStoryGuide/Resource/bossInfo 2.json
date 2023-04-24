@@ -1,0 +1,1521 @@
+[
+    {
+        "name" : "자쿰",
+        "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3_jpg/%E1%84%8C%E1%85%A1%E1%84%8F%E1%85%AE%E1%86%B7-min.jpg?raw=true",
+        "mode_level" : [
+            {
+                "mode" : "이지",
+                "level" : 50
+            },
+            {
+                "mode" : "노멀",
+                "level" : 110
+            },
+            {
+                "mode" : "카오스",
+                "level" : 180
+            }
+        ],
+        "reward_price" : [
+            {
+                "mode" : "이지",
+                "price" : 119835
+            },
+            {
+                "mode" : "노멀",
+                "price" : 366997
+            },
+            {
+                "mode" : "카오스",
+                "price" : 9741285
+            }
+        ],
+        "reward_item" : [
+            {
+                "name" : "자쿰의 투구(이지, 노멀)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%8C%E1%85%A1%E1%84%8F%E1%85%AE%E1%86%B7/%E1%84%8C%E1%85%A1%E1%84%8F%E1%85%AE%E1%86%B7%E1%84%8B%E1%85%B4%20%E1%84%90%E1%85%AE%E1%84%80%E1%85%AE.png?raw=true"
+            },
+            {
+                "name" : "자쿰의 나뭇가지(이지, 노멀)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%8C%E1%85%A1%E1%84%8F%E1%85%AE%E1%86%B7/%E1%84%8F%E1%85%A1%E1%84%8B%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8C%E1%85%A1%E1%84%8F%E1%85%AE%E1%86%B7%E1%84%8B%E1%85%B4%20%E1%84%82%E1%85%A1%E1%84%86%E1%85%AE%E1%86%BA%E1%84%80%E1%85%A1%E1%84%8C%E1%85%B5.png?raw=true"
+            },
+            {
+                "name" : "아쿠아틱 레터 눈장식(노멀, 카오스)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%8C%E1%85%A1%E1%84%8F%E1%85%AE%E1%86%B7/%E1%84%8B%E1%85%A1%E1%84%8F%E1%85%AE%E1%84%8B%E1%85%A1%E1%84%90%E1%85%B5%E1%86%A8%20%E1%84%85%E1%85%A6%E1%84%90%E1%85%A5%20%E1%84%82%E1%85%AE%E1%86%AB%E1%84%8C%E1%85%A1%E1%86%BC%E1%84%89%E1%85%B5%E1%86%A8.png?raw=true",
+                "description" : "보스 장신구 세트"
+            },
+            {
+                "name" : "응축된 힘의 결정석(노멀, 카오스)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%8C%E1%85%A1%E1%84%8F%E1%85%AE%E1%86%B7/%E1%84%8B%E1%85%B3%E1%86%BC%E1%84%8E%E1%85%AE%E1%86%A8%E1%84%83%E1%85%AC%E1%86%AB%20%E1%84%92%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%B4%20%E1%84%80%E1%85%A7%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%89%E1%85%A5%E1%86%A8.png?raw=true",
+                "description" : "보스 장신구 세트"
+            },
+            {
+                "name" : "카오스 자쿰의 투구(카오스)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%8C%E1%85%A1%E1%84%8F%E1%85%AE%E1%86%B7/%E1%84%8F%E1%85%A1%E1%84%8B%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8C%E1%85%A1%E1%84%8F%E1%85%AE%E1%86%B7%E1%84%8B%E1%85%B4%20%E1%84%90%E1%85%AE%E1%84%80%E1%85%AE.png?raw=true"
+            },
+            {
+                "name" : "분노한 자쿰의 투구(카오스)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%8C%E1%85%A1%E1%84%8F%E1%85%AE%E1%86%B7/%E1%84%87%E1%85%AE%E1%86%AB%E1%84%82%E1%85%A9%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%8C%E1%85%A1%E1%84%8F%E1%85%AE%E1%86%B7%E1%84%8B%E1%85%B4%20%E1%84%90%E1%85%AE%E1%84%80%E1%85%AE.png?raw=true"
+            },
+            {
+                "name" : "카오스 자쿰의 나뭇가지(카오스)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%8C%E1%85%A1%E1%84%8F%E1%85%AE%E1%86%B7/%E1%84%8F%E1%85%A1%E1%84%8B%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8C%E1%85%A1%E1%84%8F%E1%85%AE%E1%86%B7%E1%84%8B%E1%85%B4%20%E1%84%82%E1%85%A1%E1%84%86%E1%85%AE%E1%86%BA%E1%84%80%E1%85%A1%E1%84%8C%E1%85%B5.png?raw=true"
+            },
+            {
+                "name" : "분노한 자쿰의 망토(카오스)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%8C%E1%85%A1%E1%84%8F%E1%85%AE%E1%86%B7/%E1%84%87%E1%85%AE%E1%86%AB%E1%84%82%E1%85%A9%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%8C%E1%85%A1%E1%84%8F%E1%85%AE%E1%86%B7%E1%84%8B%E1%85%B4%20%E1%84%86%E1%85%A1%E1%86%BC%E1%84%90%E1%85%A9.png?raw=true"
+            },
+            {
+                "name" : "분노한 자쿰의 벨트(카오스)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%8C%E1%85%A1%E1%84%8F%E1%85%AE%E1%86%B7/%E1%84%87%E1%85%AE%E1%86%AB%E1%84%82%E1%85%A9%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%8C%E1%85%A1%E1%84%8F%E1%85%AE%E1%86%B7%E1%84%8B%E1%85%B4%20%E1%84%87%E1%85%A6%E1%86%AF%E1%84%90%E1%85%B3.png?raw=true",
+                "description" : "보스 장신구 세트"
+            }
+        ]
+    },
+    {
+        "name" : "매그너스",
+        "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3_jpg/%E1%84%86%E1%85%A2%E1%84%80%E1%85%B3%E1%84%82%E1%85%A5%E1%84%89%E1%85%B3-min.jpg?raw=true",
+        "mode_level" : [
+            {
+                "mode" : "이지",
+                "level" : 110
+            },
+            {
+                "mode" : "노멀",
+                "level" : 130
+            },
+            {
+                "mode" : "하드",
+                "level" : 190
+            }
+        ],
+        "reward_price" : [
+            {
+                "mode" : "이지",
+                "price" : 432605
+            },
+            {
+                "mode" : "노멀",
+                "price" : 1553066
+            },
+            {
+                "mode" : "하드",
+                "price" : 11579023
+            }
+        ],
+        "reward_item" : [
+            {
+                "name" : "로얄 블랙메탈 숄더(공통)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%86%E1%85%A2%E1%84%80%E1%85%B3%E1%84%82%E1%85%A5%E1%84%89%E1%85%B3/%E1%84%85%E1%85%A9%E1%84%8B%E1%85%A3%E1%86%AF%20%E1%84%87%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A2%E1%86%A8%E1%84%86%E1%85%A6%E1%84%90%E1%85%A1%E1%86%AF%20%E1%84%89%E1%85%AD%E1%86%AF%E1%84%83%E1%85%A5.png?raw=true",
+                "description" : "보스 장신구 세트"
+            },
+            {
+                "name" : "크리스탈 웬투스 뱃지",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%86%E1%85%A2%E1%84%80%E1%85%B3%E1%84%82%E1%85%A5%E1%84%89%E1%85%B3/%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%84%89%E1%85%B3%E1%84%90%E1%85%A1%E1%86%AF%20%E1%84%8B%E1%85%B0%E1%86%AB%E1%84%90%E1%85%AE%E1%84%89%E1%85%B3%20%E1%84%87%E1%85%A2%E1%86%BA%E1%84%8C%E1%85%B5.png?raw=true",
+                "description" : "보스 장신구 세트"
+            },
+            {
+                "name" : "매그너스 코인",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%86%E1%85%A2%E1%84%80%E1%85%B3%E1%84%82%E1%85%A5%E1%84%89%E1%85%B3/%E1%84%86%E1%85%A2%E1%84%80%E1%85%B3%E1%84%82%E1%85%A5%E1%84%89%E1%85%B3%20%E1%84%8F%E1%85%A9%E1%84%8B%E1%85%B5%E1%86%AB.png?raw=true",
+                "description" : "타일런트 장비를 살 수 있는 코인이다."
+            },
+            {
+                "name" : "타일런트 망토",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%86%E1%85%A2%E1%84%80%E1%85%B3%E1%84%82%E1%85%A5%E1%84%89%E1%85%B3/%E1%84%90%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%85%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3%20%E1%84%86%E1%85%A1%E1%86%BC%E1%84%90%E1%85%A9.png?raw=true"
+            },
+            {
+                "name" : "저주받은 카이세리움",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%86%E1%85%A2%E1%84%80%E1%85%B3%E1%84%82%E1%85%A5%E1%84%89%E1%85%B3/%E1%84%8C%E1%85%A5%E1%84%8C%E1%85%AE%E1%84%87%E1%85%A1%E1%86%AE%E1%84%8B%E1%85%B3%E1%86%AB%20%E1%84%8F%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%89%E1%85%A6%E1%84%85%E1%85%B5%E1%84%8B%E1%85%AE%E1%86%B7.png?raw=true",
+                "description" : "암시장의 이데아에게서 전용 퀘스트를 받아 해방된 카이세리움과 교환할 수 있다."
+            }
+        ]
+    },
+    {
+        "name" : "힐라",
+        "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3_jpg/%E1%84%92%E1%85%B5%E1%86%AF%E1%84%85%E1%85%A1-min.jpg?raw=true",
+        "mode_level" : [
+            {
+                "mode" : "노멀",
+                "level" : 110
+            },
+            {
+                "mode" : "하드",
+                "level" : 190
+            }
+        ],
+        "reward_price" : [
+            {
+                "mode" : "노멀",
+                "price" : 479343
+            },
+            {
+                "mode" : "하드",
+                "price" : 6936489
+            }
+        ],
+        "reward_item" : [
+            {
+                "name" : "[펫 상자] 다크 소울",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%92%E1%85%B5%E1%86%AF%E1%84%85%E1%85%A1/%5B%E1%84%91%E1%85%A6%E1%86%BA%20%E1%84%89%E1%85%A1%E1%86%BC%E1%84%8C%E1%85%A1%5D%20%E1%84%83%E1%85%A1%E1%84%8F%E1%85%B3%20%E1%84%89%E1%85%A9%E1%84%8B%E1%85%AE%E1%86%AF.png?raw=true"
+            },
+            {
+                "name" : "영생의 돌",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%92%E1%85%B5%E1%86%AF%E1%84%85%E1%85%A1/%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%89%E1%85%A2%E1%86%BC%E1%84%8B%E1%85%B4%20%E1%84%83%E1%85%A9%E1%86%AF.png?raw=true",
+                "description" : "보스 장신구 세트"
+            },
+            {
+                "name" : "지옥의 불꽃",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%92%E1%85%B5%E1%86%AF%E1%84%85%E1%85%A1/%E1%84%8C%E1%85%B5%E1%84%8B%E1%85%A9%E1%86%A8%E1%84%8B%E1%85%B4%20%E1%84%87%E1%85%AE%E1%86%AF%E1%84%81%E1%85%A9%E1%86%BE.png?raw=true",
+                "description" : "보스 장신구 세트"
+            }
+        ]
+    },
+    {
+        "name" : "카웅",
+        "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3_jpg/%E1%84%8F%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%BC-min.jpg?raw=true",
+        "mode_level" : [
+            {
+                "mode" : "노멀",
+                "level" : 180
+            }
+        ],
+        "reward_price" : [
+            {
+                "mode" : "노멀",
+                "price" : 748970
+            }
+        ],
+        "reward_item" : [
+            {
+                "name" : "카웅 부품",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%8F%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%BC/%E1%84%8F%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%BC%20%E1%84%87%E1%85%AE%E1%84%91%E1%85%AE%E1%86%B7.png?raw=true",
+                "description" : "상점에 판매하면 10만 메소를 얻을 수 있다."
+            }
+        ]
+    },
+    {
+        "name" : "파풀라투스",
+        "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3_jpg/%E1%84%91%E1%85%A1%E1%84%91%E1%85%AE%E1%86%AF-min.jpg?raw=true",
+        "mode_level" : [
+            {
+                "mode" : "이지",
+                "level" : 125
+            },
+            {
+                "mode" : "노멀",
+                "level" : 155
+            },
+            {
+                "mode" : "카오스",
+                "level" : 190
+            }
+        ],
+        "reward_price" : [
+            {
+                "mode" : "이지",
+                "price" : 410135
+            },
+            {
+                "mode" : "노멀",
+                "price" : 1596596
+            },
+            {
+                "mode" : "카오스",
+                "price" : 26725937
+            }
+        ],
+        "reward_item" : [
+            {
+                "name" : "파풀라투스 시계 의자(노멀, 카오스)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%91%E1%85%A1%E1%84%91%E1%85%AE%E1%86%AF%E1%84%85%E1%85%A1%E1%84%90%E1%85%AE%E1%84%89%E1%85%B3/%E1%84%91%E1%85%A1%E1%84%91%E1%85%AE%E1%86%AF%E1%84%85%E1%85%A1%E1%84%90%E1%85%AE%E1%84%89%E1%85%B3%20%E1%84%89%E1%85%B5%E1%84%80%E1%85%A8%20%E1%84%8B%E1%85%B4%E1%84%8C%E1%85%A1.png?raw=true"
+            },
+            {
+                "name" : "파풀라투스 마크(카오스)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%91%E1%85%A1%E1%84%91%E1%85%AE%E1%86%AF%E1%84%85%E1%85%A1%E1%84%90%E1%85%AE%E1%84%89%E1%85%B3/%E1%84%91%E1%85%A1%E1%84%91%E1%85%AE%E1%86%AF%E1%84%85%E1%85%A1%E1%84%90%E1%85%AE%E1%84%89%E1%85%B3%20%E1%84%86%E1%85%A1%E1%84%8F%E1%85%B3.png?raw=true",
+                "description" : "보스 장신구 세트"
+            }
+        ]
+    },
+    {
+        "name" : "피에르",
+        "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3_jpg/%E1%84%91%E1%85%B5%E1%84%8B%E1%85%A6%E1%84%85%E1%85%B3-min.jpg?raw=true",
+        "mode_level" : [
+            {
+                "mode" : "노멀",
+                "level" : 120
+            },
+            {
+                "mode" : "카오스",
+                "level" : 190
+            }
+        ],
+        "reward_price" : [
+            {
+                "mode" : "노멀",
+                "price" : 580003
+            },
+            {
+                "mode" : "카오스",
+                "price" : 9838932
+            }
+        ],
+        "reward_item" : [
+            {
+                "name" : "피에르 모자(노멀)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%91%E1%85%B5%E1%84%8B%E1%85%A6%E1%84%85%E1%85%B3/%E1%84%91%E1%85%B5%E1%84%8B%E1%85%A6%E1%84%85%E1%85%B3%20%E1%84%86%E1%85%A9%E1%84%8C%E1%85%A1.png?raw=true"
+            },
+            {
+                "name" : "즐거운 피에르(노멀, 카오스)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%91%E1%85%B5%E1%84%8B%E1%85%A6%E1%84%85%E1%85%B3/%E1%84%8C%E1%85%B3%E1%86%AF%E1%84%80%E1%85%A5%E1%84%8B%E1%85%AE%E1%86%AB%20%E1%84%91%E1%85%B5%E1%84%8B%E1%85%A6%E1%84%85%E1%85%B3.png?raw=true"
+            },
+            {
+                "name" : "카오스 피에르 모자(카오스)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%91%E1%85%B5%E1%84%8B%E1%85%A6%E1%84%85%E1%85%B3/%E1%84%8F%E1%85%A1%E1%84%8B%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%91%E1%85%B5%E1%84%8B%E1%85%A6%E1%84%85%E1%85%B3%20%E1%84%86%E1%85%A9%E1%84%8C%E1%85%A1.png?raw=true",
+                "description" : "럭키 아이템 : 3개 이상 착용하고 있는 모든 세트 아이템에 포함된다."
+            },
+            {
+                "name" : "조롱의 조각(카오스)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%91%E1%85%B5%E1%84%8B%E1%85%A6%E1%84%85%E1%85%B3/%E1%84%8C%E1%85%A9%E1%84%85%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%B4%20%E1%84%8C%E1%85%A9%E1%84%80%E1%85%A1%E1%86%A8.png?raw=true",
+                "description" : "조각 5개를 모아 루타비스 하의와 교환이 가능하다."
+            }
+        ]
+    },
+    {
+        "name" : "반반",
+        "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3_jpg/%E1%84%87%E1%85%A1%E1%86%AB%E1%84%87%E1%85%A1%E1%86%AB-min.jpg?raw=true",
+        "mode_level" : [
+            {
+                "mode" : "노멀",
+                "level" : 120
+            },
+            {
+                "mode" : "카오스",
+                "level" : 190
+            }
+        ],
+        "reward_price" : [
+            {
+                "mode" : "노멀",
+                "price" : 580003
+            },
+            {
+                "mode" : "카오스",
+                "price" : 9818154
+            }
+        ],
+        "reward_item" : [
+            {
+                "name" : "반반 투구(노멀)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%87%E1%85%A1%E1%86%AB%E1%84%87%E1%85%A1%E1%86%AB/%E1%84%87%E1%85%A1%E1%86%AB%E1%84%87%E1%85%A1%E1%86%AB%20%E1%84%90%E1%85%AE%E1%84%80%E1%85%AE.png?raw=true"
+            },
+            {
+                "name" : "반반과 함께(노멀, 카오스)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%87%E1%85%A1%E1%86%AB%E1%84%87%E1%85%A1%E1%86%AB/%E1%84%87%E1%85%A1%E1%86%AB%E1%84%87%E1%85%A1%E1%86%AB%E1%84%80%E1%85%AA%20%E1%84%92%E1%85%A1%E1%86%B7%E1%84%81%E1%85%A6.png?raw=true"
+            },
+            {
+                "name" : "카오스 반반 투구(카오스)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%87%E1%85%A1%E1%86%AB%E1%84%87%E1%85%A1%E1%86%AB/%E1%84%8F%E1%85%A1%E1%84%8B%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%87%E1%85%A1%E1%86%AB%E1%84%87%E1%85%A1%E1%86%AB%20%E1%84%90%E1%85%AE%E1%84%80%E1%85%AE.png?raw=true",
+                "description" : "럭키 아이템 : 3개 이상 착용하고 있는 모든 세트 아이템에 포함된다."
+            },
+            {
+                "name" : "시간의 조각(카오스)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%87%E1%85%A1%E1%86%AB%E1%84%87%E1%85%A1%E1%86%AB/%E1%84%89%E1%85%B5%E1%84%80%E1%85%A1%E1%86%AB%E1%84%8B%E1%85%B4%20%E1%84%8C%E1%85%A9%E1%84%80%E1%85%A1%E1%86%A8.png?raw=true",
+                "description" : "조각 5개를 모아 루타비스 상의와 교환이 가능하다."
+            }
+        ]
+    },
+    {
+        "name" : "블러디 퀸",
+        "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3_jpg/%E1%84%87%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A5%E1%84%83%E1%85%B5%E1%84%8F%E1%85%B1%E1%86%AB-min.jpg?raw=true",
+        "mode_level" : [
+            {
+                "mode" : "노멀",
+                "level" : 120
+            },
+            {
+                "mode" : "카오스",
+                "level" : 190
+            }
+        ],
+        "reward_price" : [
+            {
+                "mode" : "노멀",
+                "price" : 580003
+            },
+            {
+                "mode" : "카오스",
+                "price" : 9806780
+            }
+        ],
+        "reward_item" : [
+            {
+                "name" : "퀸의 티아라(노멀)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%87%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A5%E1%84%83%E1%85%B5%E1%84%8F%E1%85%B1%E1%86%AB/%E1%84%8F%E1%85%B1%E1%86%AB%E1%84%8B%E1%85%B4%20%E1%84%90%E1%85%B5%E1%84%8B%E1%85%A1%E1%84%85%E1%85%A1.png?raw=true"
+            },
+            {
+                "name" : "무서워요 퀸(노멀, 카오스)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%87%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A5%E1%84%83%E1%85%B5%E1%84%8F%E1%85%B1%E1%86%AB/%E1%84%86%E1%85%AE%E1%84%89%E1%85%A5%E1%84%8B%E1%85%AF%E1%84%8B%E1%85%AD%20%E1%84%8F%E1%85%B1%E1%86%AB.png?raw=true"
+            },
+            {
+                "name" : "카오스 퀸의 티아라(카오스)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%87%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A5%E1%84%83%E1%85%B5%E1%84%8F%E1%85%B1%E1%86%AB/%E1%84%8F%E1%85%A1%E1%84%8B%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8F%E1%85%B1%E1%86%AB%E1%84%8B%E1%85%B4%20%E1%84%90%E1%85%B5%E1%84%8B%E1%85%A1%E1%84%85%E1%85%A1.png?raw=true",
+                "description" : "럭키 아이템 : 3개 이상 착용하고 있는 모든 세트 아이템에 포함된다."
+            },
+            {
+                "name" : "절규의 조각(카오스)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%87%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A5%E1%84%83%E1%85%B5%E1%84%8F%E1%85%B1%E1%86%AB/%E1%84%8C%E1%85%A5%E1%86%AF%E1%84%80%E1%85%B2%E1%84%8B%E1%85%B4%20%E1%84%8C%E1%85%A9%E1%84%80%E1%85%A1%E1%86%A8.png?raw=true",
+                "description" : "조각 5개를 모아 루타비스 모자와 교환이 가능하다."
+            }
+        ]
+    },
+    {
+        "name" : "벨룸",
+        "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3_jpg/%E1%84%87%E1%85%A6%E1%86%AF%E1%84%85%E1%85%AE%E1%86%B7-min.jpg?raw=true",
+        "mode_level" : [
+            {
+                "mode" : "노멀",
+                "level" : 130
+            },
+            {
+                "mode" : "카오스",
+                "level" : 190
+            }
+        ],
+        "reward_price" : [
+            {
+                "mode" : "노멀",
+                "price" : 580003
+            },
+            {
+                "mode" : "카오스",
+                "price" : 12590202
+            }
+        ],
+        "reward_item" : [
+            {
+                "name" : "벨룸의 헬름(노멀)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%87%E1%85%A6%E1%86%AF%E1%84%85%E1%85%AE%E1%86%B7/%E1%84%87%E1%85%A6%E1%86%AF%E1%84%85%E1%85%AE%E1%86%B7%E1%84%8B%E1%85%B4%20%E1%84%92%E1%85%A6%E1%86%AF%E1%84%85%E1%85%B3%E1%86%B7.png?raw=true"
+            },
+            {
+                "name" : "기암괴석 의자(노멀, 카오스)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%87%E1%85%A6%E1%86%AF%E1%84%85%E1%85%AE%E1%86%B7/%E1%84%80%E1%85%B5%E1%84%8B%E1%85%A1%E1%86%B7%E1%84%80%E1%85%AC%E1%84%89%E1%85%A5%E1%86%A8%20%E1%84%8B%E1%85%B4%E1%84%8C%E1%85%A1.png?raw=true"
+            },
+            {
+                "name" : "카오스 벨룸의 헬름(카오스)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%87%E1%85%A6%E1%86%AF%E1%84%85%E1%85%AE%E1%86%B7/%E1%84%8F%E1%85%A1%E1%84%8B%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%87%E1%85%A6%E1%86%AF%E1%84%85%E1%85%AE%E1%86%B7%E1%84%8B%E1%85%B4%20%E1%84%92%E1%85%A6%E1%86%AF%E1%84%85%E1%85%B3%E1%86%B7.png?raw=true",
+                "description" : "럭키 아이템 : 3개 이상 착용하고 있는 모든 세트 아이템에 포함된다."
+            },
+            {
+                "name" : "파멸의 조각(카오스)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%87%E1%85%A6%E1%86%AF%E1%84%85%E1%85%AE%E1%86%B7/%E1%84%91%E1%85%A1%E1%84%86%E1%85%A7%E1%86%AF%E1%84%8B%E1%85%B4%20%E1%84%8C%E1%85%A9%E1%84%80%E1%85%A1%E1%86%A8.png?raw=true",
+                "description" : "조각 15개를 모아 루타비스 무기와 교환이 가능하다."
+            }
+        ]
+    },
+    {
+        "name" : "반 레온",
+        "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3_jpg/%E1%84%87%E1%85%A1%E1%86%AB%20%E1%84%85%E1%85%A6%E1%84%8B%E1%85%A9%E1%86%AB-min.jpg?raw=true",
+        "mode_level" : [
+            {
+                "mode" : "이지",
+                "level" : 120
+            },
+            {
+                "mode" : "노멀",
+                "level" : 129
+            },
+            {
+                "mode" : "카오스",
+                "level" : 150
+            }
+        ],
+        "reward_price" : [
+            {
+                "mode" : "이지",
+                "price" : 633927
+            },
+            {
+                "mode" : "노멀",
+                "price" : 873601
+            },
+            {
+                "mode" : "카오스",
+                "price" : 1467984
+            }
+        ],
+        "reward_item" : [
+            {
+                "name" : "이피아의 반지(하드)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%87%E1%85%A1%E1%86%AB%20%E1%84%85%E1%85%A6%E1%84%8B%E1%85%A9%E1%86%AB/%E1%84%8B%E1%85%B5%E1%84%91%E1%85%B5%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B4%20%E1%84%87%E1%85%A1%E1%86%AB%E1%84%8C%E1%85%B5.png?raw=true",
+                "description" : "장신구 10개를 모아 고귀한 이피아의 반지(보스 장신구 세트)를 만들 수 있다."
+            },
+            {
+                "name" : "이피아의 목걸이(하드)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%87%E1%85%A1%E1%86%AB%20%E1%84%85%E1%85%A6%E1%84%8B%E1%85%A9%E1%86%AB/%E1%84%8B%E1%85%B5%E1%84%91%E1%85%B5%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B4%20%E1%84%86%E1%85%A9%E1%86%A8%E1%84%80%E1%85%A5%E1%86%AF%E1%84%8B%E1%85%B5.png?raw=true",
+                "description" : "장신구 10개를 모아 고귀한 이피아의 반지(보스 장신구 세트)를 만들 수 있다."
+            },
+            {
+                "name" : "이피아의 귀고리(하드)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%87%E1%85%A1%E1%86%AB%20%E1%84%85%E1%85%A6%E1%84%8B%E1%85%A9%E1%86%AB/%E1%84%8B%E1%85%B5%E1%84%91%E1%85%B5%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B4%20%E1%84%80%E1%85%B1%E1%84%80%E1%85%A9%E1%84%85%E1%85%B5.png?raw=true",
+                "description" : "장신구 10개를 모아 고귀한 이피아의 반지(보스 장신구 세트)를 만들 수 있다."
+            }
+        ]
+    },
+    {
+        "name" : "혼테일",
+        "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3_jpg/%E1%84%92%E1%85%A9%E1%86%AB%E1%84%90%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AF-min.jpg?raw=true",
+        "mode_level" : [
+            {
+                "mode" : "이지",
+                "level" : 130
+            },
+            {
+                "mode" : "노멀",
+                "level" : 160
+            },
+            {
+                "mode" : "카오스",
+                "level" : 160
+            }
+        ],
+        "reward_price" : [
+            {
+                "mode" : "이지",
+                "price" : 528474
+            },
+            {
+                "mode" : "노멀",
+                "price" : 606666
+            },
+            {
+                "mode" : "카오스",
+                "price" : 810086
+            }
+        ],
+        "reward_item" : [
+            {
+                "name" : "실버블라썸 링(이지, 노멀, 카오스)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%92%E1%85%A9%E1%86%AB%E1%84%90%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AF/%E1%84%89%E1%85%B5%E1%86%AF%E1%84%87%E1%85%A5%E1%84%87%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A1%E1%84%8A%E1%85%A5%E1%86%B7%20%E1%84%85%E1%85%B5%E1%86%BC.png?raw=true",
+                "description" : "보스 장신구 세트"
+            },
+            {
+                "name" : "데아 시두스 이어링(이지, 노멀, 카오스)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%92%E1%85%A9%E1%86%AB%E1%84%90%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AF/%E1%84%83%E1%85%A6%E1%84%8B%E1%85%A1%20%E1%84%89%E1%85%B5%E1%84%83%E1%85%AE%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A5%E1%84%85%E1%85%B5%E1%86%BC.png?raw=true",
+                "description" : "보스 장신구 세트"
+            },
+            {
+                "name" : "혼테일의 목걸이(노멀)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%92%E1%85%A9%E1%86%AB%E1%84%90%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AF/%E1%84%92%E1%85%A9%E1%86%AB%E1%84%90%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8B%E1%85%B4%20%E1%84%86%E1%85%A9%E1%86%A8%E1%84%80%E1%85%A5%E1%86%AF%E1%84%8B%E1%85%B5.png?raw=true",
+                "description" : "보스 장신구 세트"
+            },
+            {
+                "name" : "카오스 혼테일의 목걸이(카오스)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%92%E1%85%A9%E1%86%AB%E1%84%90%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AF/%E1%84%8F%E1%85%A1%E1%84%8B%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%92%E1%85%A9%E1%86%AB%E1%84%90%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%8B%E1%85%B4%20%E1%84%86%E1%85%A9%E1%86%A8%E1%84%80%E1%85%A5%E1%86%AF%E1%84%8B%E1%85%B5.png?raw=true",
+                "description" : "보스 장신구 세트"
+            }
+        ]
+    },
+    {
+        "name" : "아카이럼",
+        "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3_jpg/%E1%84%8B%E1%85%A1%E1%84%8F%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%85%E1%85%A5%E1%86%B7-min.jpg?raw=true",
+        "mode_level" : [
+            {
+                "mode" : "이지",
+                "level" : 130
+            },
+            {
+                "mode" : "노멀",
+                "level" : 170
+            }
+        ],
+        "reward_price" : [
+            {
+                "mode" : "이지",
+                "price" : 690249
+            },
+            {
+                "mode" : "노멀",
+                "price" : 1510227
+            }
+        ],
+        "reward_item" : [
+            {
+                "name" : "태초의 정수(이지, 노멀)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%8B%E1%85%A1%E1%84%8F%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%85%E1%85%A5%E1%86%B7/%E1%84%90%E1%85%A2%E1%84%8E%E1%85%A9%E1%84%8B%E1%85%B4%20%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%89%E1%85%AE.png?raw=true",
+                "description" : "비싼 장비의 제작 재료로 사용되는 아이템이다.(대표 아이템 : 마이스터 링)"
+            },
+            {
+                "name" : "매커네이터 펜던트(이지, 노멀)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%8B%E1%85%A1%E1%84%8F%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%85%E1%85%A5%E1%86%B7/%E1%84%86%E1%85%A2%E1%84%8F%E1%85%A5%E1%84%82%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5%20%E1%84%91%E1%85%A6%E1%86%AB%E1%84%83%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3.png?raw=true",
+                "description" : "보스 장신구 세트"
+            },
+            {
+                "name" : "비틀린 시간의 파편(노멀)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%8B%E1%85%A1%E1%84%8F%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%85%E1%85%A5%E1%86%B7/%E1%84%87%E1%85%B5%E1%84%90%E1%85%B3%E1%86%AF%E1%84%85%E1%85%B5%E1%86%AB%20%E1%84%89%E1%85%B5%E1%84%80%E1%85%A1%E1%86%AB%E1%84%8B%E1%85%B4%20%E1%84%91%E1%85%A1%E1%84%91%E1%85%A7%E1%86%AB.png?raw=true",
+                "description" : "도미네이터 펜던트를 강화할 때 사용된다. 올스텟 3, 공격력과 마력을 3씩 올려준다. 성공률은 70% 지만 실패 시 파괴된다."
+            },
+            {
+                "name" : "도미네이터 펜턴트(노멀)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%8B%E1%85%A1%E1%84%8F%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%85%E1%85%A5%E1%86%B7/%E1%84%83%E1%85%A9%E1%84%86%E1%85%B5%E1%84%82%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5%20%E1%84%91%E1%85%A6%E1%86%AB%E1%84%83%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3.png?raw=true",
+                "description" : "보스 장신구 세트"
+            }
+        ]
+    },
+    {
+        "name" : "핑크빈",
+        "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3_jpg/%E1%84%91%E1%85%B5%E1%86%BC%E1%84%8F%E1%85%B3%E1%84%87%E1%85%B5%E1%86%AB-min.jpg?raw=true",
+        "mode_level" : [
+            {
+                "mode" : "노멀",
+                "level" : 180
+            },
+            {
+                "mode" : "카오스",
+                "level" : 190
+            }
+        ],
+        "reward_price" : [
+            {
+                "mode" : "이지",
+                "price" : 841544
+            },
+            {
+                "mode" : "노멀",
+                "price" : 7923110
+            }
+        ],
+        "reward_item" : [
+            {
+                "name" : "핑크빛 성배(노멀, 카오스)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%91%E1%85%B5%E1%86%BC%E1%84%8F%E1%85%B3%E1%84%87%E1%85%B5%E1%86%AB/%E1%84%91%E1%85%B5%E1%86%BC%E1%84%8F%E1%85%B3%E1%84%87%E1%85%B5%E1%86%BE%20%E1%84%89%E1%85%A5%E1%86%BC%E1%84%87%E1%85%A2.png?raw=true",
+                "description" : "보스 장신구 세트"
+            },
+            {
+                "name" : "골든 클로버 벨트(노멀, 카오스)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%91%E1%85%B5%E1%86%BC%E1%84%8F%E1%85%B3%E1%84%87%E1%85%B5%E1%86%AB/%E1%84%80%E1%85%A9%E1%86%AF%E1%84%83%E1%85%B3%E1%86%AB%20%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A9%E1%84%87%E1%85%A5%20%E1%84%87%E1%85%A6%E1%86%AF%E1%84%90%E1%85%B3.png?raw=true",
+                "description" : "보스 장신구 세트"
+            },
+            {
+                "name" : "블랙빈 마크(노멀, 카오스)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%91%E1%85%B5%E1%86%BC%E1%84%8F%E1%85%B3%E1%84%87%E1%85%B5%E1%86%AB/%E1%84%87%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A2%E1%86%A8%E1%84%87%E1%85%B5%E1%86%AB%20%E1%84%86%E1%85%A1%E1%84%8F%E1%85%B3.png?raw=true",
+                "description" : "보스 장신구 세트"
+            },
+            {
+                "name" : "카오스 핑크빈 모자(카오스)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%91%E1%85%B5%E1%86%BC%E1%84%8F%E1%85%B3%E1%84%87%E1%85%B5%E1%86%AB/%E1%84%8F%E1%85%A1%E1%84%8B%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%91%E1%85%B5%E1%86%BC%E1%84%8F%E1%85%B3%E1%84%87%E1%85%B5%E1%86%AB%20%E1%84%86%E1%85%A9%E1%84%8C%E1%85%A1.png?raw=true"
+            },
+            {
+                "name" : "카오스 핑크빈 슈트(카오스)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%91%E1%85%B5%E1%86%BC%E1%84%8F%E1%85%B3%E1%84%87%E1%85%B5%E1%86%AB/%E1%84%8F%E1%85%A1%E1%84%8B%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%91%E1%85%B5%E1%86%BC%E1%84%8F%E1%85%B3%E1%84%87%E1%85%B5%E1%86%AB%20%E1%84%89%E1%85%B2%E1%84%90%E1%85%B3.png?raw=true"
+            },
+            {
+                "name" : "블랙빈 모자(카오스)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%91%E1%85%B5%E1%86%BC%E1%84%8F%E1%85%B3%E1%84%87%E1%85%B5%E1%86%AB/%E1%84%87%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A2%E1%86%A8%E1%84%87%E1%85%B5%E1%86%AB%20%E1%84%86%E1%85%A9%E1%84%8C%E1%85%A1.png?raw=true"
+            },
+            {
+                "name" : "블랙빈 슈트(카오스)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%91%E1%85%B5%E1%86%BC%E1%84%8F%E1%85%B3%E1%84%87%E1%85%B5%E1%86%AB/%E1%84%87%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A2%E1%86%A8%E1%84%87%E1%85%B5%E1%86%AB%20%E1%84%89%E1%85%B2%E1%84%90%E1%85%B3.png?raw=true"
+            }
+        ]
+    },
+    {
+        "name" : "시그너스",
+        "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3_jpg/%E1%84%89%E1%85%B5%E1%84%80%E1%85%B3%E1%84%82%E1%85%A5%E1%84%89%E1%85%B3-min.jpg?raw=true",
+        "mode_level" : [
+            {
+                "mode" : "이지",
+                "level" : 140
+            },
+            {
+                "mode" : "노멀",
+                "level" : 190
+            }
+        ],
+        "reward_price" : [
+            {
+                "mode" : "이지",
+                "price" : 5496394
+            },
+            {
+                "mode" : "노멀",
+                "price" : 9039130
+            }
+        ],
+        "reward_item" : [
+            {
+                "name" : "검은 수호의 조각(이지, 노멀)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%89%E1%85%B5%E1%84%80%E1%85%B3%E1%84%82%E1%85%A5%E1%84%89%E1%85%B3/%E1%84%80%E1%85%A5%E1%86%B7%E1%84%8B%E1%85%B3%E1%86%AB%20%E1%84%89%E1%85%AE%E1%84%92%E1%85%A9%E1%84%8B%E1%85%B4%20%E1%84%8C%E1%85%A9%E1%84%80%E1%85%A1%E1%86%A8.png?raw=true",
+                "description" : "조각 5개를 모아 여제 방어구로 교환이 가능하다."
+            },
+            {
+                "name" : "검은 파괴의 조각(이지, 노멀)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%89%E1%85%B5%E1%84%80%E1%85%B3%E1%84%82%E1%85%A5%E1%84%89%E1%85%B3/%E1%84%80%E1%85%A5%E1%86%B7%E1%84%8B%E1%85%B3%E1%86%AB%20%E1%84%91%E1%85%A1%E1%84%80%E1%85%AC%E1%84%8B%E1%85%B4%20%E1%84%8C%E1%85%A9%E1%84%80%E1%85%A1%E1%86%A8.png?raw=true",
+                "description" : "조각 15개를 모아 여제 무기로 교환이 가능하다."
+            },
+            {
+                "name" : "여제 세트 어깨장식(노멀)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%89%E1%85%B5%E1%84%80%E1%85%B3%E1%84%82%E1%85%A5%E1%84%89%E1%85%B3/%E1%84%8B%E1%85%A7%E1%84%8C%E1%85%A6%20%E1%84%89%E1%85%A6%E1%84%90%E1%85%B3%20%E1%84%8B%E1%85%A5%E1%84%81%E1%85%A2%E1%84%8C%E1%85%A1%E1%86%BC%E1%84%89%E1%85%B5%E1%86%A8.png?raw=true"
+            },
+            {
+                "name" : "꿈의 돌(노멀)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%89%E1%85%B5%E1%84%80%E1%85%B3%E1%84%82%E1%85%A5%E1%84%89%E1%85%B3/%E1%84%81%E1%85%AE%E1%86%B7%E1%84%8B%E1%85%B4%20%E1%84%83%E1%85%A9%E1%86%AF.png?raw=true",
+                "description" : "장비의 제작 재료로 사용되는 아이템이다.(대표 아이템 : 마이스터 견장)"
+            },
+            {
+                "name" : "130제 여제 보조무기 레시피(노멀)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%89%E1%85%B5%E1%84%80%E1%85%B3%E1%84%82%E1%85%A5%E1%84%89%E1%85%B3/130%E1%84%8C%E1%85%A6%20%E1%84%8B%E1%85%A7%E1%84%8C%E1%85%A6%20%E1%84%87%E1%85%A9%E1%84%8C%E1%85%A9%E1%84%86%E1%85%AE%E1%84%80%E1%85%B5%20%E1%84%85%E1%85%A6%E1%84%89%E1%85%B5%E1%84%91%E1%85%B5.png?raw=true",
+                "description" : "전사, 마법사, 도적 직업군 방패와 블레이드 레시피이다.(리부트 같은 경우 데이모스 다크니스/데이모스 세이지 실드는 최종 아이템이다.)"
+            }
+        ]
+    },
+    {
+        "name" : "스우",
+        "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3_jpg/%E1%84%89%E1%85%B3%E1%84%8B%E1%85%AE-min.jpg?raw=true",
+        "mode_level" : [
+            {
+                "mode" : "노멀",
+                "level" : 210
+            },
+            {
+                "mode" : "하드",
+                "level" : 210
+            }
+        ],
+        "reward_price" : [
+            {
+                "mode" : "노멀",
+                "price" : 33942566
+            },
+            {
+                "mode" : "하드",
+                "price" : 118294192
+            }
+        ],
+        "reward_item" : [
+            {
+                "name" : "특수형 에너지 코어(S급)(노멀, 하드)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%89%E1%85%B3%E1%84%8B%E1%85%AE/%E1%84%90%E1%85%B3%E1%86%A8%E1%84%89%E1%85%AE%E1%84%92%E1%85%A7%E1%86%BC%20%E1%84%8B%E1%85%A6%E1%84%82%E1%85%A5%E1%84%8C%E1%85%B5%20%E1%84%8F%E1%85%A9%E1%84%8B%E1%85%A5(S%E1%84%80%E1%85%B3%E1%86%B8).png?raw=true",
+                "description" : "S급 코어 1개와 A급 코어 20개를 앱솔랩스 코인 1개로 교환할 수 있다."
+            },
+            {
+                "name" : "강력한 환생의 불꽃(노멀)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A1%E1%86%BC%E1%84%85%E1%85%A7%E1%86%A8%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%92%E1%85%AA%E1%86%AB%E1%84%89%E1%85%A2%E1%86%BC%E1%84%8B%E1%85%B4%20%E1%84%87%E1%85%AE%E1%86%AF%E1%84%81%E1%85%A9%E1%86%BE.png?raw=true"
+            },
+            {
+                "name" : "영원한 환생의 불꽃(하드)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8B%E1%85%AF%E1%86%AB%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%92%E1%85%AA%E1%86%AB%E1%84%89%E1%85%A2%E1%86%BC%E1%84%8B%E1%85%B4%20%E1%84%87%E1%85%AE%E1%86%AF%E1%84%81%E1%85%A9%E1%86%BE.png?raw=true"
+            },
+            {
+                "name" : "검은 환생의 불꽃(하드)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A5%E1%86%B7%E1%84%8B%E1%85%B3%E1%86%AB%20%E1%84%92%E1%85%AA%E1%86%AB%E1%84%89%E1%85%A2%E1%86%BC%E1%84%8B%E1%85%B4%20%E1%84%87%E1%85%AE%E1%86%AF%E1%84%81%E1%85%A9%E1%86%BE.png?raw=true"
+            },
+            {
+                "name" : "놀라운 긍정의 혼돈 주문서 60%(하드)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%82%E1%85%A9%E1%86%AF%E1%84%85%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%AB%20%E1%84%80%E1%85%B3%E1%86%BC%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%8B%E1%85%B4%20%E1%84%92%E1%85%A9%E1%86%AB%E1%84%83%E1%85%A9%E1%86%AB%20%E1%84%8C%E1%85%AE%E1%84%86%E1%85%AE%E1%86%AB%E1%84%89%E1%85%A5%2060_.png?raw=true"
+            },
+            {
+                "name" : "앱솔랩스 방어구 상자(하드)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%8B%E1%85%A2%E1%86%B8%E1%84%89%E1%85%A9%E1%86%AF%E1%84%85%E1%85%A2%E1%86%B8%E1%84%89%E1%85%B3%20%E1%84%87%E1%85%A1%E1%86%BC%E1%84%8B%E1%85%A5%E1%84%80%E1%85%AE%20%E1%84%89%E1%85%A1%E1%86%BC%E1%84%8C%E1%85%A1.png?raw=true"
+            },
+            {
+                "name" : "앱솔랩스 무기 상자(하드)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%8B%E1%85%A2%E1%86%B8%E1%84%89%E1%85%A9%E1%86%AF%E1%84%85%E1%85%A2%E1%86%B8%E1%84%89%E1%85%B3%20%E1%84%86%E1%85%AE%E1%84%80%E1%85%B5%20%E1%84%89%E1%85%A1%E1%86%BC%E1%84%8C%E1%85%A1.png?raw=true"
+            },
+            {
+                "name" : "스우로이드(하드)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%89%E1%85%B3%E1%84%8B%E1%85%AE/%E1%84%89%E1%85%B3%E1%84%8B%E1%85%AE%E1%84%85%E1%85%A9%E1%84%8B%E1%85%B5%E1%84%83%E1%85%B3.png?raw=true"
+            },
+            {
+                "name" : "손상된 블랙 하트(하드)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%89%E1%85%B3%E1%84%8B%E1%85%AE/%E1%84%89%E1%85%A9%E1%86%AB%E1%84%89%E1%85%A1%E1%86%BC%E1%84%83%E1%85%AC%E1%86%AB%20%E1%84%87%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A2%E1%86%A8%20%E1%84%92%E1%85%A1%E1%84%90%E1%85%B3.png?raw=true",
+                "description" : "칠흑의 보스 세트\n헤이븐 기계무덤의 감수성 터지는 네모로이드에게 가져다 주면 블랙 하트 20일을 얻을 수 있다."
+            },
+            {
+                "name" : "루즈 컨트롤 머신 마크(하드)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%89%E1%85%B3%E1%84%8B%E1%85%AE/%E1%84%85%E1%85%AE%E1%84%8C%E1%85%B3%20%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3%E1%84%85%E1%85%A9%E1%86%AF%20%E1%84%86%E1%85%A5%E1%84%89%E1%85%B5%E1%86%AB%20%E1%84%86%E1%85%A1%E1%84%8F%E1%85%B3.png?raw=true",
+                "description" : "칠흑의 보스 세트"
+            }
+        ]
+    },
+    {
+        "name" : "데미안",
+        "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3_jpg/%E1%84%83%E1%85%A6%E1%84%86%E1%85%B5%E1%84%8B%E1%85%A1%E1%86%AB-min.jpg?raw=true",
+        "mode_level" : [
+            {
+                "mode" : "노멀",
+                "level" : 210
+            },
+            {
+                "mode" : "하드",
+                "level" : 210
+            }
+        ],
+        "reward_price" : [
+            {
+                "mode" : "노멀",
+                "price" : 35517853
+            },
+            {
+                "mode" : "하드",
+                "price" : 112480613
+            }
+        ],
+        "reward_item" : [
+            {
+                "name" : "뒤틀린 낙인의 영혼석(S급)(노멀, 하드)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%83%E1%85%A6%E1%84%86%E1%85%B5%E1%84%8B%E1%85%A1%E1%86%AB/%E1%84%83%E1%85%B1%E1%84%90%E1%85%B3%E1%86%AF%E1%84%85%E1%85%B5%E1%86%AB%20%E1%84%82%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%8B%E1%85%B4%20%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%92%E1%85%A9%E1%86%AB%E1%84%89%E1%85%A5%E1%86%A8.png?raw=true",
+                "description" : "뒤틀린 낙인의 영혼석 1개와 희미한 낙인의 영혼석 20개를 스티그마 코인 1개로 교환할 수 있다."
+            },
+            {
+                "name" : "루인 포스실드(노멀, 하드)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%83%E1%85%A6%E1%84%86%E1%85%B5%E1%84%8B%E1%85%A1%E1%86%AB/%E1%84%85%E1%85%AE%E1%84%8B%E1%85%B5%E1%86%AB%20%E1%84%91%E1%85%A9%E1%84%89%E1%85%B3%E1%84%89%E1%85%B5%E1%86%AF%E1%84%83%E1%85%B3.png?raw=true",
+                "description" : "데몬 직업군 전용 보조무기, 최종 데미지 10% 증가와 피격 데미지 25% 증가라는 고유효과가 존재한다."
+            },
+            {
+                "name" : "강력한 환생의 불꽃(노멀)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A1%E1%86%BC%E1%84%85%E1%85%A7%E1%86%A8%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%92%E1%85%AA%E1%86%AB%E1%84%89%E1%85%A2%E1%86%BC%E1%84%8B%E1%85%B4%20%E1%84%87%E1%85%AE%E1%86%AF%E1%84%81%E1%85%A9%E1%86%BE.png?raw=true"
+            },
+            {
+                "name" : "영원한 환생의 불꽃(하드)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8B%E1%85%AF%E1%86%AB%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%92%E1%85%AA%E1%86%AB%E1%84%89%E1%85%A2%E1%86%BC%E1%84%8B%E1%85%B4%20%E1%84%87%E1%85%AE%E1%86%AF%E1%84%81%E1%85%A9%E1%86%BE.png?raw=true"
+            },
+            {
+                "name" : "검은 환생의 불꽃(하드)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A5%E1%86%B7%E1%84%8B%E1%85%B3%E1%86%AB%20%E1%84%92%E1%85%AA%E1%86%AB%E1%84%89%E1%85%A2%E1%86%BC%E1%84%8B%E1%85%B4%20%E1%84%87%E1%85%AE%E1%86%AF%E1%84%81%E1%85%A9%E1%86%BE.png?raw=true"
+            },
+            {
+                "name" : "놀라운 긍정의 혼돈 주문서 60%(하드)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%82%E1%85%A9%E1%86%AF%E1%84%85%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%AB%20%E1%84%80%E1%85%B3%E1%86%BC%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%8B%E1%85%B4%20%E1%84%92%E1%85%A9%E1%86%AB%E1%84%83%E1%85%A9%E1%86%AB%20%E1%84%8C%E1%85%AE%E1%84%86%E1%85%AE%E1%86%AB%E1%84%89%E1%85%A5%2060_.png?raw=true"
+            },
+            {
+                "name" : "앱솔랩스 방어구 상자(하드)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%8B%E1%85%A2%E1%86%B8%E1%84%89%E1%85%A9%E1%86%AF%E1%84%85%E1%85%A2%E1%86%B8%E1%84%89%E1%85%B3%20%E1%84%87%E1%85%A1%E1%86%BC%E1%84%8B%E1%85%A5%E1%84%80%E1%85%AE%20%E1%84%89%E1%85%A1%E1%86%BC%E1%84%8C%E1%85%A1.png?raw=true"
+            },
+            {
+                "name" : "앱솔랩스 무기 상자(하드)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%8B%E1%85%A2%E1%86%B8%E1%84%89%E1%85%A9%E1%86%AF%E1%84%85%E1%85%A2%E1%86%B8%E1%84%89%E1%85%B3%20%E1%84%86%E1%85%AE%E1%84%80%E1%85%B5%20%E1%84%89%E1%85%A1%E1%86%BC%E1%84%8C%E1%85%A1.png?raw=true"
+            },
+            {
+                "name" : "데미안로이드(하드)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%83%E1%85%A6%E1%84%86%E1%85%B5%E1%84%8B%E1%85%A1%E1%86%AB/%E1%84%83%E1%85%A6%E1%84%86%E1%85%B5%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%85%E1%85%A9%E1%84%8B%E1%85%B5%E1%84%83%E1%85%B3.png?raw=true"
+            },
+            {
+                "name" : "마력이 깃든 안대(하드)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%83%E1%85%A6%E1%84%86%E1%85%B5%E1%84%8B%E1%85%A1%E1%86%AB/%E1%84%86%E1%85%A1%E1%84%85%E1%85%A7%E1%86%A8%E1%84%8B%E1%85%B4%20%E1%84%80%E1%85%B5%E1%86%BA%E1%84%83%E1%85%B3%E1%86%AB%20%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%83%E1%85%A2.png?raw=true",
+                "description" : "칠흑의 보스 세트"
+            }
+        ]
+    },
+    {
+        "name" : "가디언 엔젤 슬라임",
+        "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3_jpg/%E1%84%80%E1%85%A1%E1%84%8B%E1%85%A6%E1%86%AB%E1%84%89%E1%85%B3%E1%86%AF-min.jpg?raw=true",
+        "mode_level" : [
+            {
+                "mode" : "노멀",
+                "level" : 220
+            },
+            {
+                "mode" : "카오스",
+                "level" : 250
+            }
+        ],
+        "reward_price" : [
+            {
+                "mode" : "노멀",
+                "price" : 46935874
+            },
+            {
+                "mode" : "카오스",
+                "price" : 155492141
+            }
+        ],
+        "reward_item" : [
+            {
+                "name" : "가디언 엔젤 링(노멀, 카오스)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A1%E1%84%83%E1%85%B5%E1%84%8B%E1%85%A5%E1%86%AB%20%E1%84%8B%E1%85%A6%E1%86%AB%E1%84%8C%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%B7/%E1%84%80%E1%85%A1%E1%84%83%E1%85%B5%E1%84%8B%E1%85%A5%E1%86%AB%20%E1%84%8B%E1%85%A6%E1%86%AB%E1%84%8C%E1%85%A6%E1%86%AF%20%E1%84%85%E1%85%B5%E1%86%BC.png?raw=true",
+                "description" : "보스 장신구 세트/여명의 보스 세트\n기본적으로 보스 장신구 세트이지만, 라무라무 마을의 촌장 슬라임한테서 1천만 메소에 세트 변환 주문서를 구입해 사용하면 세트가 변환된다. 단, 여명의 가디언 엔젤 링으로 변환하면 다시 가디언 엔젤 링으로 되돌릴 수 없다."
+            },
+            {
+                "name" : "강력한 환생의 불꽃(노멀)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A1%E1%86%BC%E1%84%85%E1%85%A7%E1%86%A8%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%92%E1%85%AA%E1%86%AB%E1%84%89%E1%85%A2%E1%86%BC%E1%84%8B%E1%85%B4%20%E1%84%87%E1%85%AE%E1%86%AF%E1%84%81%E1%85%A9%E1%86%BE.png?raw=true"
+            },
+            {
+                "name" : "영원한 환생의 불꽃(노멀, 카오스)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8B%E1%85%AF%E1%86%AB%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%92%E1%85%AA%E1%86%AB%E1%84%89%E1%85%A2%E1%86%BC%E1%84%8B%E1%85%B4%20%E1%84%87%E1%85%AE%E1%86%AF%E1%84%81%E1%85%A9%E1%86%BE.png?raw=true"
+            },
+            {
+                "name" : "검은 환생의 불꽃(카오스)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A5%E1%86%B7%E1%84%8B%E1%85%B3%E1%86%AB%20%E1%84%92%E1%85%AA%E1%86%AB%E1%84%89%E1%85%A2%E1%86%BC%E1%84%8B%E1%85%B4%20%E1%84%87%E1%85%AE%E1%86%AF%E1%84%81%E1%85%A9%E1%86%BE.png?raw=true"
+            },
+            {
+                "name" : "놀라운 긍정의 혼돈 주문서 60%(카오스)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%82%E1%85%A9%E1%86%AF%E1%84%85%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%AB%20%E1%84%80%E1%85%B3%E1%86%BC%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%8B%E1%85%B4%20%E1%84%92%E1%85%A9%E1%86%AB%E1%84%83%E1%85%A9%E1%86%AB%20%E1%84%8C%E1%85%AE%E1%84%86%E1%85%AE%E1%86%AB%E1%84%89%E1%85%A5%2060_.png?raw=true"
+            }
+        ]
+    },
+    {
+        "name" : "루시드",
+        "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3_jpg/%E1%84%85%E1%85%AE%E1%84%89%E1%85%B5%E1%84%83%E1%85%B3-min.jpg?raw=true",
+        "mode_level" : [
+            {
+                "mode" : "이지",
+                "level" : 230
+            },
+            {
+                "mode" : "노멀",
+                "level" : 230
+            },
+            {
+                "mode" : "하드",
+                "level" : 230
+            }
+        ],
+        "force" : {
+            "type" : "아케인 포스",
+            "mode_force" : [
+                {
+                    "mode" : "이지",
+                    "force" : 360
+                },
+                {
+                    "mode" : "노멀",
+                    "force" : 360
+                },
+                {
+                    "mode" : "하드",
+                    "force" : 360
+                }
+            ]
+        },
+        "reward_price" : [
+            {
+                "mode" : "이지",
+                "price" : 48058319
+            },
+            {
+                "mode" : "노멀",
+                "price" : 57505626
+            },
+            {
+                "mode" : "하드",
+                "price" : 131095655
+            }
+        ],
+        "reward_item" : [
+            {
+                "name" : "나비날개 물방울석(노멀, 하드)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%85%E1%85%AE%E1%84%89%E1%85%B5%E1%84%83%E1%85%B3/%E1%84%82%E1%85%A1%E1%84%87%E1%85%B5%E1%84%82%E1%85%A1%E1%86%AF%E1%84%80%E1%85%A2%20%E1%84%86%E1%85%AE%E1%86%AF%E1%84%87%E1%85%A1%E1%86%BC%E1%84%8B%E1%85%AE%E1%86%AF%E1%84%89%E1%85%A5%E1%86%A8.png?raw=true",
+                "description" : "나비날개 물방울석 1개와 아케인리버 물방울석 9개를 판타즈마 코인 1개로 교환할 수 있다."
+            },
+            {
+                "name" : "트와일라이트 마크(노멀, 하드)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%85%E1%85%AE%E1%84%89%E1%85%B5%E1%84%83%E1%85%B3/%E1%84%90%E1%85%B3%E1%84%8B%E1%85%AA%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3%20%E1%84%86%E1%85%A1%E1%84%8F%E1%85%B3.png?raw=true",
+                "description" : "여명의 보스 세트"
+            },
+            {
+                "name" : "강력한 환생의 불꽃(이지, 노멀)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A1%E1%86%BC%E1%84%85%E1%85%A7%E1%86%A8%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%92%E1%85%AA%E1%86%AB%E1%84%89%E1%85%A2%E1%86%BC%E1%84%8B%E1%85%B4%20%E1%84%87%E1%85%AE%E1%86%AF%E1%84%81%E1%85%A9%E1%86%BE.png?raw=true"
+            },
+            {
+                "name" : "영원한 환생의 불꽃(이지, 노멀, 하드)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8B%E1%85%AF%E1%86%AB%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%92%E1%85%AA%E1%86%AB%E1%84%89%E1%85%A2%E1%86%BC%E1%84%8B%E1%85%B4%20%E1%84%87%E1%85%AE%E1%86%AF%E1%84%81%E1%85%A9%E1%86%BE.png?raw=true"
+            },
+            {
+                "name" : "검은 환생의 불꽃(하드)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A5%E1%86%B7%E1%84%8B%E1%85%B3%E1%86%AB%20%E1%84%92%E1%85%AA%E1%86%AB%E1%84%89%E1%85%A2%E1%86%BC%E1%84%8B%E1%85%B4%20%E1%84%87%E1%85%AE%E1%86%AF%E1%84%81%E1%85%A9%E1%86%BE.png?raw=true"
+            },
+            {
+                "name" : "놀라운 긍정의 혼돈 주문서 60%(하드)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%82%E1%85%A9%E1%86%AF%E1%84%85%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%AB%20%E1%84%80%E1%85%B3%E1%86%BC%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%8B%E1%85%B4%20%E1%84%92%E1%85%A9%E1%86%AB%E1%84%83%E1%85%A9%E1%86%AB%20%E1%84%8C%E1%85%AE%E1%84%86%E1%85%AE%E1%86%AB%E1%84%89%E1%85%A5%2060_.png?raw=true"
+            },
+            {
+                "name" : "아케인셰이드 방어구 상자(하드)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%8B%E1%85%A1%E1%84%8F%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A8%E1%84%8B%E1%85%B5%E1%84%83%E1%85%B3%20%E1%84%87%E1%85%A1%E1%86%BC%E1%84%8B%E1%85%A5%E1%84%80%E1%85%AE%20%E1%84%89%E1%85%A1%E1%86%BC%E1%84%8C%E1%85%A1.png?raw=true"
+            },
+            {
+                "name" : "아케인셰이드 무기 상자(하드)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%8B%E1%85%A1%E1%84%8F%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A8%E1%84%8B%E1%85%B5%E1%84%83%E1%85%B3%20%E1%84%86%E1%85%AE%E1%84%80%E1%85%B5%20%E1%84%89%E1%85%A1%E1%86%BC%E1%84%8C%E1%85%A1.png?raw=true"
+            },
+            {
+                "name" : "루시드로이드(하드)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%85%E1%85%AE%E1%84%89%E1%85%B5%E1%84%83%E1%85%B3/%E1%84%85%E1%85%AE%E1%84%89%E1%85%B5%E1%84%83%E1%85%B3%E1%84%85%E1%85%A9%E1%84%8B%E1%85%B5%E1%84%83%E1%85%B3.png?raw=true"
+            },
+            {
+                "name" : "몽환의 벨트(하드)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%85%E1%85%AE%E1%84%89%E1%85%B5%E1%84%83%E1%85%B3/%E1%84%86%E1%85%A9%E1%86%BC%E1%84%92%E1%85%AA%E1%86%AB%E1%84%8B%E1%85%B4%20%E1%84%87%E1%85%A6%E1%86%AF%E1%84%90%E1%85%B3.png?raw=true",
+                "description" : "칠흑의 보스 세트"
+            }
+        ]
+    },
+    {
+        "name" : "윌",
+        "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3_jpg/%E1%84%8B%E1%85%B1%E1%86%AF-min.jpg?raw=true",
+        "mode_level" : [
+            {
+                "mode" : "이지",
+                "level" : 235
+            },
+            {
+                "mode" : "노멀",
+                "level" : 250
+            },
+            {
+                "mode" : "하드",
+                "level" : 250
+            }
+        ],
+        "force" : {
+            "type" : "아케인 포스",
+            "mode_force" : [
+                {
+                    "mode" : "이지",
+                    "force" : 560
+                },
+                {
+                    "mode" : "노멀",
+                    "force" : 760
+                },
+                {
+                    "mode" : "하드",
+                    "force" : 760
+                }
+            ]
+        },
+        "reward_price" : [
+            {
+                "mode" : "이지",
+                "price" : 52139127
+            },
+            {
+                "mode" : "노멀",
+                "price" : 66311463
+            },
+            {
+                "mode" : "하드",
+                "price" : 145038483
+            }
+        ],
+        "reward_item" : [
+            {
+                "name" : "코브웹 물방울석(노멀, 하드)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%8B%E1%85%B1%E1%86%AF/%E1%84%8F%E1%85%A9%E1%84%87%E1%85%B3%E1%84%8B%E1%85%B0%E1%86%B8%20%E1%84%86%E1%85%AE%E1%86%AF%E1%84%87%E1%85%A1%E1%86%BC%E1%84%8B%E1%85%AE%E1%86%AF%E1%84%89%E1%85%A5%E1%86%A8.png?raw=true",
+                "description" : "코브웹 물방울석 1개와 태초의 물방울석 9개를 아라크노 코인 1개로 교환할 수 있다."
+            },
+            {
+                "name" : "트와일라이트 마크(노멀, 하드)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%85%E1%85%AE%E1%84%89%E1%85%B5%E1%84%83%E1%85%B3/%E1%84%90%E1%85%B3%E1%84%8B%E1%85%AA%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3%20%E1%84%86%E1%85%A1%E1%84%8F%E1%85%B3.png?raw=true",
+                "description" : "여명의 보스 세트"
+            },
+            {
+                "name" : "강력한 환생의 불꽃(이지, 노멀)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A1%E1%86%BC%E1%84%85%E1%85%A7%E1%86%A8%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%92%E1%85%AA%E1%86%AB%E1%84%89%E1%85%A2%E1%86%BC%E1%84%8B%E1%85%B4%20%E1%84%87%E1%85%AE%E1%86%AF%E1%84%81%E1%85%A9%E1%86%BE.png?raw=true"
+            },
+            {
+                "name" : "영원한 환생의 불꽃(이지, 노멀, 하드)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8B%E1%85%AF%E1%86%AB%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%92%E1%85%AA%E1%86%AB%E1%84%89%E1%85%A2%E1%86%BC%E1%84%8B%E1%85%B4%20%E1%84%87%E1%85%AE%E1%86%AF%E1%84%81%E1%85%A9%E1%86%BE.png?raw=true"
+            },
+            {
+                "name" : "검은 환생의 불꽃(하드)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A5%E1%86%B7%E1%84%8B%E1%85%B3%E1%86%AB%20%E1%84%92%E1%85%AA%E1%86%AB%E1%84%89%E1%85%A2%E1%86%BC%E1%84%8B%E1%85%B4%20%E1%84%87%E1%85%AE%E1%86%AF%E1%84%81%E1%85%A9%E1%86%BE.png?raw=true"
+            },
+            {
+                "name" : "놀라운 긍정의 혼돈 주문서 60%(하드)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%82%E1%85%A9%E1%86%AF%E1%84%85%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%AB%20%E1%84%80%E1%85%B3%E1%86%BC%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%8B%E1%85%B4%20%E1%84%92%E1%85%A9%E1%86%AB%E1%84%83%E1%85%A9%E1%86%AB%20%E1%84%8C%E1%85%AE%E1%84%86%E1%85%AE%E1%86%AB%E1%84%89%E1%85%A5%2060_.png?raw=true"
+            },
+            {
+                "name" : "아케인셰이드 방어구 상자(하드)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%8B%E1%85%A1%E1%84%8F%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A8%E1%84%8B%E1%85%B5%E1%84%83%E1%85%B3%20%E1%84%87%E1%85%A1%E1%86%BC%E1%84%8B%E1%85%A5%E1%84%80%E1%85%AE%20%E1%84%89%E1%85%A1%E1%86%BC%E1%84%8C%E1%85%A1.png?raw=true"
+            },
+            {
+                "name" : "아케인셰이드 무기 상자(하드)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%8B%E1%85%A1%E1%84%8F%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A8%E1%84%8B%E1%85%B5%E1%84%83%E1%85%B3%20%E1%84%86%E1%85%AE%E1%84%80%E1%85%B5%20%E1%84%89%E1%85%A1%E1%86%BC%E1%84%8C%E1%85%A1.png?raw=true"
+            },
+            {
+                "name" : "거울세계의 코어 젬스톤(하드)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%8B%E1%85%B1%E1%86%AF/%E1%84%80%E1%85%A5%E1%84%8B%E1%85%AE%E1%86%AF%E1%84%89%E1%85%A6%E1%84%80%E1%85%A8%E1%84%8B%E1%85%B4%20%E1%84%8F%E1%85%A9%E1%84%8B%E1%85%A5%20%E1%84%8C%E1%85%A6%E1%86%B7%E1%84%89%E1%85%B3%E1%84%90%E1%85%A9%E1%86%AB.png?raw=true",
+                "description" : "스파이더 인 미러 스킬 코어를 획득 가능하다."
+            },
+            {
+                "name" : "저주받은 마도서 선택 상자(하드)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%8B%E1%85%B1%E1%86%AF/%E1%84%8C%E1%85%A5%E1%84%8C%E1%85%AE%E1%84%87%E1%85%A1%E1%86%AE%E1%84%8B%E1%85%B3%E1%86%AB%20%E1%84%86%E1%85%A1%E1%84%83%E1%85%A9%E1%84%89%E1%85%A5%20%E1%84%89%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A2%E1%86%A8%20%E1%84%89%E1%85%A1%E1%86%BC%E1%84%8C%E1%85%A1.png?raw=true",
+                "description" : "칠흑의 보스 세트\n원하는 종류의 마도서를 선택할 수 있다."
+            }
+        ]
+    },
+    {
+        "name" : "더스크",
+        "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3_jpg/%E1%84%83%E1%85%A5%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3-min.jpg?raw=true",
+        "mode_level" : [
+            {
+                "mode" : "노멀",
+                "level" : 255
+            },
+            {
+                "mode" : "카오스",
+                "level" : 255
+            }
+        ],
+        "force" : {
+            "type" : "아케인 포스",
+            "mode_force" : [
+                {
+                    "mode" : "노멀",
+                    "force" : 730
+                },
+                {
+                    "mode" : "카오스",
+                    "force" : 730
+                }
+            ]
+        },
+        "reward_price" : [
+            {
+                "mode" : "노멀",
+                "price" : 71054562
+            },
+            {
+                "mode" : "카오스",
+                "price" : 160173752
+            }
+        ],
+        "reward_item" : [
+            {
+                "name" : "염원의 불꽃(노멀, 카오스)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%83%E1%85%A5%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3/%E1%84%8B%E1%85%A7%E1%86%B7%E1%84%8B%E1%85%AF%E1%86%AB%20%E1%84%87%E1%85%AE%E1%86%AF%E1%84%81%E1%85%A9%E1%86%BE.png?raw=true",
+                "description" : "검은 마법사 보스 입장 재료를 만들 수 있다."
+            },
+            {
+                "name" : "에스텔라 이어링(노멀, 카오스)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%83%E1%85%A5%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3/%E1%84%8B%E1%85%A6%E1%84%89%E1%85%B3%E1%84%90%E1%85%A6%E1%86%AF%E1%84%85%E1%85%A1%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A5%E1%84%85%E1%85%B5%E1%86%BC.png?raw=true",
+                "description" : "여명의 보스 세트"
+            },
+            {
+                "name" : "영원한 환생의 불꽃(노멀, 카오스)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8B%E1%85%AF%E1%86%AB%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%92%E1%85%AA%E1%86%AB%E1%84%89%E1%85%A2%E1%86%BC%E1%84%8B%E1%85%B4%20%E1%84%87%E1%85%AE%E1%86%AF%E1%84%81%E1%85%A9%E1%86%BE.png?raw=true"
+            },
+            {
+                "name" : "검은 환생의 불꽃(노멀, 카오스)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A5%E1%86%B7%E1%84%8B%E1%85%B3%E1%86%AB%20%E1%84%92%E1%85%AA%E1%86%AB%E1%84%89%E1%85%A2%E1%86%BC%E1%84%8B%E1%85%B4%20%E1%84%87%E1%85%AE%E1%86%AF%E1%84%81%E1%85%A9%E1%86%BE.png?raw=true"
+            },
+            {
+                "name" : "놀라운 긍정의 혼돈 주문서 60%(카오스)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%82%E1%85%A9%E1%86%AF%E1%84%85%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%AB%20%E1%84%80%E1%85%B3%E1%86%BC%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%8B%E1%85%B4%20%E1%84%92%E1%85%A9%E1%86%AB%E1%84%83%E1%85%A9%E1%86%AB%20%E1%84%8C%E1%85%AE%E1%84%86%E1%85%AE%E1%86%AB%E1%84%89%E1%85%A5%2060_.png?raw=true"
+            },
+            {
+                "name" : "아케인셰이드 방어구 상자(카오스)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%8B%E1%85%A1%E1%84%8F%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A8%E1%84%8B%E1%85%B5%E1%84%83%E1%85%B3%20%E1%84%87%E1%85%A1%E1%86%BC%E1%84%8B%E1%85%A5%E1%84%80%E1%85%AE%20%E1%84%89%E1%85%A1%E1%86%BC%E1%84%8C%E1%85%A1.png?raw=true"
+            },
+            {
+                "name" : "아케인셰이드 무기 상자(카오스)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%8B%E1%85%A1%E1%84%8F%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A8%E1%84%8B%E1%85%B5%E1%84%83%E1%85%B3%20%E1%84%86%E1%85%AE%E1%84%80%E1%85%B5%20%E1%84%89%E1%85%A1%E1%86%BC%E1%84%8C%E1%85%A1.png?raw=true"
+            },
+            {
+                "name" : "거대한 공포(카오스)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%83%E1%85%A5%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3/%E1%84%80%E1%85%A5%E1%84%83%E1%85%A2%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%80%E1%85%A9%E1%86%BC%E1%84%91%E1%85%A9.png?raw=true",
+                "description" : "칠흑의 보스 세트"
+            }
+        ]
+    },
+    {
+        "name" : "진 힐라",
+        "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3_jpg/%E1%84%8C%E1%85%B5%E1%86%AB%20%E1%84%92%E1%85%B5%E1%86%AF%E1%84%85%E1%85%A1-min.jpg?raw=true",
+        "mode_level" : [
+            {
+                "mode" : "노멀",
+                "level" : 250
+            },
+            {
+                "mode" : "하드",
+                "level" : 250
+            }
+        ],
+        "force" : {
+            "type" : "아케인 포스",
+            "mode_force" : [
+                {
+                    "mode" : "노멀",
+                    "force" : 900
+                },
+                {
+                    "mode" : "하드",
+                    "force" : 900
+                }
+            ]
+        },
+        "reward_price" : [
+            {
+                "mode" : "노멀",
+                "price" : 148112376
+            },
+            {
+                "mode" : "카오스",
+                "price" : 190159452
+            }
+        ],
+        "reward_item" : [
+            {
+                "name" : "데이브레이크 펜던트(노멀, 하드)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%8C%E1%85%B5%E1%86%AB%20%E1%84%92%E1%85%B5%E1%86%AF%E1%84%85%E1%85%A1/%E1%84%83%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%87%E1%85%B3%E1%84%85%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8F%E1%85%B3%20%E1%84%91%E1%85%A6%E1%86%AB%E1%84%83%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3.png?raw=true",
+                "description" : "여명의 보스 세트"
+            },
+            {
+                "name" : "영원한 환생의 불꽃(노멀, 하드)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8B%E1%85%AF%E1%86%AB%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%92%E1%85%AA%E1%86%AB%E1%84%89%E1%85%A2%E1%86%BC%E1%84%8B%E1%85%B4%20%E1%84%87%E1%85%AE%E1%86%AF%E1%84%81%E1%85%A9%E1%86%BE.png?raw=true"
+            },
+            {
+                "name" : "검은 환생의 불꽃(노멀, 하드)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A5%E1%86%B7%E1%84%8B%E1%85%B3%E1%86%AB%20%E1%84%92%E1%85%AA%E1%86%AB%E1%84%89%E1%85%A2%E1%86%BC%E1%84%8B%E1%85%B4%20%E1%84%87%E1%85%AE%E1%86%AF%E1%84%81%E1%85%A9%E1%86%BE.png?raw=true"
+            },
+            {
+                "name" : "놀라운 긍정의 혼돈 주문서 60%(노멀, 하드)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%82%E1%85%A9%E1%86%AF%E1%84%85%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%AB%20%E1%84%80%E1%85%B3%E1%86%BC%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%8B%E1%85%B4%20%E1%84%92%E1%85%A9%E1%86%AB%E1%84%83%E1%85%A9%E1%86%AB%20%E1%84%8C%E1%85%AE%E1%84%86%E1%85%AE%E1%86%AB%E1%84%89%E1%85%A5%2060_.png?raw=true"
+            },
+            {
+                "name" : "아케인셰이드 방어구 상자(노멀, 하드)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%8B%E1%85%A1%E1%84%8F%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A8%E1%84%8B%E1%85%B5%E1%84%83%E1%85%B3%20%E1%84%87%E1%85%A1%E1%86%BC%E1%84%8B%E1%85%A5%E1%84%80%E1%85%AE%20%E1%84%89%E1%85%A1%E1%86%BC%E1%84%8C%E1%85%A1.png?raw=true"
+            },
+            {
+                "name" : "아케인셰이드 무기 상자(노멀, 하드)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%8B%E1%85%A1%E1%84%8F%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A8%E1%84%8B%E1%85%B5%E1%84%83%E1%85%B3%20%E1%84%86%E1%85%AE%E1%84%80%E1%85%B5%20%E1%84%89%E1%85%A1%E1%86%BC%E1%84%8C%E1%85%A1.png?raw=true"
+            },
+            {
+                "name" : "어두운 힘의 기운(하드)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%8C%E1%85%B5%E1%86%AB%20%E1%84%92%E1%85%B5%E1%86%AF%E1%84%85%E1%85%A1/%E1%84%8B%E1%85%A5%E1%84%83%E1%85%AE%E1%84%8B%E1%85%AE%E1%86%AB%20%E1%84%92%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%B4%20%E1%84%80%E1%85%B5%E1%84%8B%E1%85%AE%E1%86%AB.png?raw=true",
+                "description" : "검은 마법사 보스 입장 재료인 운명의 파편을 만들 수 있다."
+            },
+            {
+                "name" : "고통의 근원(카오스)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%8C%E1%85%B5%E1%86%AB%20%E1%84%92%E1%85%B5%E1%86%AF%E1%84%85%E1%85%A1/%E1%84%80%E1%85%A9%E1%84%90%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%B4%20%E1%84%80%E1%85%B3%E1%86%AB%E1%84%8B%E1%85%AF%E1%86%AB.png?raw=true",
+                "description" : "칠흑의 보스 세트"
+            }
+        ]
+    },
+    {
+        "name" : "듄켈",
+        "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3_jpg/%E1%84%83%E1%85%B2%E1%86%AB%E1%84%8F%E1%85%A6%E1%86%AF-min.jpg?raw=true",
+        "mode_level" : [
+            {
+                "mode" : "노멀",
+                "level" : 265
+            },
+            {
+                "mode" : "하드",
+                "level" : 265
+            }
+        ],
+        "force" : {
+            "type" : "아케인 포스",
+            "mode_force" : [
+                {
+                    "mode" : "노멀",
+                    "force" : 850
+                },
+                {
+                    "mode" : "하드",
+                    "force" : 850
+                }
+            ]
+        },
+        "reward_price" : [
+            {
+                "mode" : "노멀",
+                "price" : 76601412
+            },
+            {
+                "mode" : "하드",
+                "price" : 168609280
+            }
+        ],
+        "reward_item" : [
+            {
+                "name" : "염원의 불꽃(노멀, 하드)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%83%E1%85%A5%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3/%E1%84%8B%E1%85%A7%E1%86%B7%E1%84%8B%E1%85%AF%E1%86%AB%20%E1%84%87%E1%85%AE%E1%86%AF%E1%84%81%E1%85%A9%E1%86%BE.png?raw=true",
+                "description" : "검은 마법사 보스 입장 재료를 만들 수 있다."
+            },
+            {
+                "name" : "에스텔라 이어링(노멀, 하드)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%83%E1%85%A5%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3/%E1%84%8B%E1%85%A6%E1%84%89%E1%85%B3%E1%84%90%E1%85%A6%E1%86%AF%E1%84%85%E1%85%A1%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A5%E1%84%85%E1%85%B5%E1%86%BC.png?raw=true",
+                "description" : "여명의 보스 세트"
+            },
+            {
+                "name" : "영원한 환생의 불꽃(노멀, 하드)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8B%E1%85%AF%E1%86%AB%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%92%E1%85%AA%E1%86%AB%E1%84%89%E1%85%A2%E1%86%BC%E1%84%8B%E1%85%B4%20%E1%84%87%E1%85%AE%E1%86%AF%E1%84%81%E1%85%A9%E1%86%BE.png?raw=true"
+            },
+            {
+                "name" : "검은 환생의 불꽃(노멀, 하드)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A5%E1%86%B7%E1%84%8B%E1%85%B3%E1%86%AB%20%E1%84%92%E1%85%AA%E1%86%AB%E1%84%89%E1%85%A2%E1%86%BC%E1%84%8B%E1%85%B4%20%E1%84%87%E1%85%AE%E1%86%AF%E1%84%81%E1%85%A9%E1%86%BE.png?raw=true"
+            },
+            {
+                "name" : "놀라운 긍정의 혼돈 주문서 60%(하드)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%82%E1%85%A9%E1%86%AF%E1%84%85%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%AB%20%E1%84%80%E1%85%B3%E1%86%BC%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%8B%E1%85%B4%20%E1%84%92%E1%85%A9%E1%86%AB%E1%84%83%E1%85%A9%E1%86%AB%20%E1%84%8C%E1%85%AE%E1%84%86%E1%85%AE%E1%86%AB%E1%84%89%E1%85%A5%2060_.png?raw=true"
+            },
+            {
+                "name" : "아케인셰이드 방어구 상자(하드)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%8B%E1%85%A1%E1%84%8F%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A8%E1%84%8B%E1%85%B5%E1%84%83%E1%85%B3%20%E1%84%87%E1%85%A1%E1%86%BC%E1%84%8B%E1%85%A5%E1%84%80%E1%85%AE%20%E1%84%89%E1%85%A1%E1%86%BC%E1%84%8C%E1%85%A1.png?raw=true"
+            },
+            {
+                "name" : "아케인셰이드 무기 상자(하드)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%8B%E1%85%A1%E1%84%8F%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A8%E1%84%8B%E1%85%B5%E1%84%83%E1%85%B3%20%E1%84%86%E1%85%AE%E1%84%80%E1%85%B5%20%E1%84%89%E1%85%A1%E1%86%BC%E1%84%8C%E1%85%A1.png?raw=true"
+            },
+            {
+                "name" : "커맨더 포스 이어링(하드)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%83%E1%85%B2%E1%86%AB%E1%84%8F%E1%85%A6%E1%86%AF/%E1%84%8F%E1%85%A5%E1%84%86%E1%85%A2%E1%86%AB%E1%84%83%E1%85%A5%20%E1%84%91%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A5%E1%84%85%E1%85%B5%E1%86%BC.png?raw=true",
+                "description" : "칠흑의 보스 세트"
+            }
+        ]
+    },
+    {
+        "name" : "검은 마법사",
+        "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3_jpg/%E1%84%80%E1%85%A5%E1%86%B7%E1%84%86%E1%85%A1-min.jpg?raw=true",
+        "mode_level" : [
+            {
+                "mode" : "하드",
+                "level" : 265
+            },
+            {
+                "mode" : "익스트림",
+                "level" : 275
+            }
+        ],
+        "force" : {
+            "type" : "아케인 포스",
+            "mode_force" : [
+                {
+                    "mode" : "하드",
+                    "force" : 1320
+                },
+                {
+                    "mode" : "익스트림",
+                    "force" : 1320
+                }
+            ]
+        },
+        "reward_price" : [
+            {
+                "mode" : "노멀",
+                "price" : 1418809857
+            },
+            {
+                "mode" : "하드",
+                "price" : 5675239428
+            }
+        ],
+        "reward_item" : [
+            {
+                "name" : "봉인된 제네시스 상자(하드)(퀘스트)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A5%E1%86%B7%E1%84%8B%E1%85%B3%E1%86%AB%E1%84%86%E1%85%A1%E1%84%87%E1%85%A5%E1%86%B8%E1%84%89%E1%85%A1/%E1%84%87%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%83%E1%85%AC%E1%86%AB%20%E1%84%8C%E1%85%A6%E1%84%82%E1%85%A6%E1%84%89%E1%85%B5%E1%84%89%E1%85%B3%20%E1%84%86%E1%85%AE%E1%84%80%E1%85%B5%20%E1%84%89%E1%85%A1%E1%86%BC%E1%84%8C%E1%85%A1.png?raw=true",
+                "description" : "제네시스 무기를 얻을 수 있다."
+            },
+            {
+                "name" : "검은 마법사의 편린(하드)(퀘스트)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A5%E1%86%B7%E1%84%8B%E1%85%B3%E1%86%AB%E1%84%86%E1%85%A1%E1%84%87%E1%85%A5%E1%86%B8%E1%84%89%E1%85%A1/%E1%84%80%E1%85%A5%E1%86%B7%E1%84%8B%E1%85%B3%E1%86%AB%20%E1%84%86%E1%85%A1%E1%84%87%E1%85%A5%E1%86%B8%E1%84%89%E1%85%A1%E1%84%8B%E1%85%B4%20%E1%84%91%E1%85%A7%E1%86%AB%E1%84%85%E1%85%B5%E1%86%AB.png?raw=true",
+                "description" : "제네시스 무기의 봉인을 풀기 위해 사용되는 재료이다."
+            },
+            {
+                "name" : "영원한 환생의 불꽃(하드, 익스트림)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8B%E1%85%AF%E1%86%AB%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%92%E1%85%AA%E1%86%AB%E1%84%89%E1%85%A2%E1%86%BC%E1%84%8B%E1%85%B4%20%E1%84%87%E1%85%AE%E1%86%AF%E1%84%81%E1%85%A9%E1%86%BE.png?raw=true"
+            },
+            {
+                "name" : "검은 환생의 불꽃(하드, 익스트림)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A5%E1%86%B7%E1%84%8B%E1%85%B3%E1%86%AB%20%E1%84%92%E1%85%AA%E1%86%AB%E1%84%89%E1%85%A2%E1%86%BC%E1%84%8B%E1%85%B4%20%E1%84%87%E1%85%AE%E1%86%AF%E1%84%81%E1%85%A9%E1%86%BE.png?raw=true"
+            },
+            {
+                "name" : "놀라운 긍정의 혼돈 주문서 60%(하드, 익스트림)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%82%E1%85%A9%E1%86%AF%E1%84%85%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%AB%20%E1%84%80%E1%85%B3%E1%86%BC%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%8B%E1%85%B4%20%E1%84%92%E1%85%A9%E1%86%AB%E1%84%83%E1%85%A9%E1%86%AB%20%E1%84%8C%E1%85%AE%E1%84%86%E1%85%AE%E1%86%AB%E1%84%89%E1%85%A5%2060_.png?raw=true"
+            },
+            {
+                "name" : "아케인셰이드 방어구 상자(하드, 익스트림)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%8B%E1%85%A1%E1%84%8F%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A8%E1%84%8B%E1%85%B5%E1%84%83%E1%85%B3%20%E1%84%87%E1%85%A1%E1%86%BC%E1%84%8B%E1%85%A5%E1%84%80%E1%85%AE%20%E1%84%89%E1%85%A1%E1%86%BC%E1%84%8C%E1%85%A1.png?raw=true"
+            },
+            {
+                "name" : "아케인셰이드 무기 상자(하드, 익스트림)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%8B%E1%85%A1%E1%84%8F%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A8%E1%84%8B%E1%85%B5%E1%84%83%E1%85%B3%20%E1%84%86%E1%85%AE%E1%84%80%E1%85%B5%20%E1%84%89%E1%85%A1%E1%86%BC%E1%84%8C%E1%85%A1.png?raw=true"
+            },
+            {
+                "name" : "창세의 뱃지(하드, 익스트림)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A5%E1%86%B7%E1%84%8B%E1%85%B3%E1%86%AB%E1%84%86%E1%85%A1%E1%84%87%E1%85%A5%E1%86%B8%E1%84%89%E1%85%A1/%E1%84%8E%E1%85%A1%E1%86%BC%E1%84%89%E1%85%A6%E1%84%8B%E1%85%B4%20%E1%84%87%E1%85%A2%E1%86%BA%E1%84%8C%E1%85%B5.png?raw=true",
+                "description" : "칠흑의 보스 세트"
+            },
+            {
+                "name" : "악몽의 조각(익스트림)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A5%E1%86%B7%E1%84%8B%E1%85%B3%E1%86%AB%E1%84%86%E1%85%A1%E1%84%87%E1%85%A5%E1%86%B8%E1%84%89%E1%85%A1/%E1%84%8B%E1%85%A1%E1%86%A8%E1%84%86%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%B4%20%E1%84%8C%E1%85%A9%E1%84%80%E1%85%A1%E1%86%A8.png?raw=true",
+                "description" : "몽환의 벨트에 익셉셔널 강화를 할 수 있는 재료이다."
+            }
+        ]
+    },
+    {
+        "name" : "세렌",
+        "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3_jpg/%E1%84%89%E1%85%A6%E1%84%85%E1%85%A6%E1%86%AB-min.jpg?raw=true",
+        "mode_level" : [
+            {
+                "mode" : "노멀",
+                "level" : 275
+            },
+            {
+                "mode" : "하드",
+                "level" : 275
+            },
+            {
+                "mode" : "익스트림",
+                "level" : 275
+            }
+        ],
+        "force" : {
+            "type" : "어센틱 포스",
+            "mode_force" : [
+                {
+                    "mode" : "노멀",
+                    "force" : 150
+                },
+                {
+                    "mode" : "하드",
+                    "force" : 150
+                },
+                {
+                    "mode" : "익스트림",
+                    "force" : 150
+                }
+            ]
+        },
+        "reward_price" : [
+            {
+                "mode" : "노멀",
+                "price" : 196904752
+            },
+            {
+                "mode" : "하드",
+                "price" : 267825621
+            },
+            {
+                "mode" : "익스트림",
+                "price" : 1071302484
+            }
+        ],
+        "reward_item" : [
+            {
+                "name" : "데이브레이크 펜던트(노멀, 하드, 익스트림)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%8C%E1%85%B5%E1%86%AB%20%E1%84%92%E1%85%B5%E1%86%AF%E1%84%85%E1%85%A1/%E1%84%83%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%87%E1%85%B3%E1%84%85%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8F%E1%85%B3%20%E1%84%91%E1%85%A6%E1%86%AB%E1%84%83%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3.png?raw=true",
+                "description" : "여명의 보스 세트"
+            },
+            {
+                "name" : "영원한 환생의 불꽃(노멀, 하드, 익스트림)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8B%E1%85%AF%E1%86%AB%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%92%E1%85%AA%E1%86%AB%E1%84%89%E1%85%A2%E1%86%BC%E1%84%8B%E1%85%B4%20%E1%84%87%E1%85%AE%E1%86%AF%E1%84%81%E1%85%A9%E1%86%BE.png?raw=true"
+            },
+            {
+                "name" : "검은 환생의 불꽃(노멀, 하드, 익스트림)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A5%E1%86%B7%E1%84%8B%E1%85%B3%E1%86%AB%20%E1%84%92%E1%85%AA%E1%86%AB%E1%84%89%E1%85%A2%E1%86%BC%E1%84%8B%E1%85%B4%20%E1%84%87%E1%85%AE%E1%86%AF%E1%84%81%E1%85%A9%E1%86%BE.png?raw=true"
+            },
+            {
+                "name" : "놀라운 긍정의 혼돈 주문서 60%(노멀, 하드, 익스트림)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%82%E1%85%A9%E1%86%AF%E1%84%85%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%AB%20%E1%84%80%E1%85%B3%E1%86%BC%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%8B%E1%85%B4%20%E1%84%92%E1%85%A9%E1%86%AB%E1%84%83%E1%85%A9%E1%86%AB%20%E1%84%8C%E1%85%AE%E1%84%86%E1%85%AE%E1%86%AB%E1%84%89%E1%85%A5%2060_.png?raw=true"
+            },
+            {
+                "name" : "미트라의 코어 젬스톤(하드, 익스트림)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%89%E1%85%A6%E1%84%85%E1%85%A6%E1%86%AB/%E1%84%86%E1%85%B5%E1%84%90%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B4%20%E1%84%8F%E1%85%A9%E1%84%8B%E1%85%A5%20%E1%84%8C%E1%85%A6%E1%86%B7%E1%84%89%E1%85%B3%E1%84%90%E1%85%A9%E1%86%AB.png?raw=true",
+                "description" : "크레스트 오브 더 솔라 스킬 코어를 획득 가능하다."
+            },
+            {
+                "name" : "미트라의 분노 선택 상자(하드, 익스트림)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%89%E1%85%A6%E1%84%85%E1%85%A6%E1%86%AB/%E1%84%86%E1%85%B5%E1%84%90%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B4%20%E1%84%87%E1%85%AE%E1%86%AB%E1%84%82%E1%85%A9%20%E1%84%89%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A2%E1%86%A8%20%E1%84%89%E1%85%A1%E1%86%BC%E1%84%8C%E1%85%A1.png?raw=true",
+                "description" : "칠흑의 보스 세트\n원하는 종류의 미트라의 분노를 선택할 수 있다."
+            },
+            {
+                "name" : "그라비티 모듈(익스트림)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%89%E1%85%A6%E1%84%85%E1%85%A6%E1%86%AB/%E1%84%80%E1%85%B3%E1%84%85%E1%85%A1%E1%84%87%E1%85%B5%E1%84%90%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%B2%E1%86%AF.png?raw=true",
+                "description" : "루즈 컨트롤 머신 마크에 익셉셔널 강화를 할 수 있는 재료이다."
+            }
+        ]
+    },
+    {
+        "name" : "칼로스",
+        "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3_jpg/%E1%84%8F%E1%85%A1%E1%86%AF%E1%84%85%E1%85%A9%E1%84%89%E1%85%B3-min.jpg?raw=true",
+        "mode_level" : [
+            {
+                "mode" : "카오스",
+                "level" : 275
+            }
+        ],
+        "force" : {
+            "type" : "어센틱 포스",
+            "mode_force" : [
+                {
+                    "mode" : "카오스",
+                    "force" : 250
+                }
+            ]
+        },
+        "reward_price" : [
+            {
+                "mode" : "카오스",
+                "price" : 300000000
+            }
+        ],
+        "reward_item" : [
+            {
+                "name" : "영원한 환생의 불꽃(카오스)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8B%E1%85%AF%E1%86%AB%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%92%E1%85%AA%E1%86%AB%E1%84%89%E1%85%A2%E1%86%BC%E1%84%8B%E1%85%B4%20%E1%84%87%E1%85%AE%E1%86%AF%E1%84%81%E1%85%A9%E1%86%BE.png?raw=true"
+            },
+            {
+                "name" : "검은 환생의 불꽃(카오스)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A5%E1%86%B7%E1%84%8B%E1%85%B3%E1%86%AB%20%E1%84%92%E1%85%AA%E1%86%AB%E1%84%89%E1%85%A2%E1%86%BC%E1%84%8B%E1%85%B4%20%E1%84%87%E1%85%AE%E1%86%AF%E1%84%81%E1%85%A9%E1%86%BE.png?raw=true"
+            },
+            {
+                "name" : "놀라운 긍정의 혼돈 주문서 60%(카오스)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%82%E1%85%A9%E1%86%AF%E1%84%85%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%AB%20%E1%84%80%E1%85%B3%E1%86%BC%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%8B%E1%85%B4%20%E1%84%92%E1%85%A9%E1%86%AB%E1%84%83%E1%85%A9%E1%86%AB%20%E1%84%8C%E1%85%AE%E1%84%86%E1%85%AE%E1%86%AB%E1%84%89%E1%85%A5%2060_.png?raw=true"
+            },
+            {
+                "name" : "남겨진 칼로스의 의지(카오스)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%8F%E1%85%A1%E1%86%AF%E1%84%85%E1%85%A9%E1%84%89%E1%85%B3/%E1%84%82%E1%85%A1%E1%86%B7%E1%84%80%E1%85%A7%E1%84%8C%E1%85%B5%E1%86%AB%20%E1%84%8F%E1%85%A1%E1%86%AF%E1%84%85%E1%85%A9%E1%84%89%E1%85%B3%E1%84%8B%E1%85%B4%20%E1%84%8B%E1%85%B4%E1%84%8C%E1%85%B5.png?raw=true",
+                "description" : "조각 10개를 모아 에테르넬 세트(모자, 상의, 하의)로 교활할 수 있다."
+            }
+        ]
+    },
+    {
+        "name" : "카링",
+        "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3_jpg/%E1%84%8F%E1%85%A1%E1%84%85%E1%85%B5%E1%86%BC-min.jpg?raw=true",
+        "mode_level" : [
+            {
+                "mode" : "노멀",
+                "level" : 285
+            }
+        ],
+        "force" : {
+            "type" : "어센틱 포스",
+            "mode_force" : [
+                {
+                    "mode" : "노멀",
+                    "force" : 330
+                }
+            ]
+        },
+        "reward_price" : [
+            {
+                "mode" : "카오스",
+                "price" : 350000000
+            }
+        ],
+        "reward_item" : [
+            {
+                "name" : "영원한 환생의 불꽃(노멀)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8B%E1%85%AF%E1%86%AB%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%92%E1%85%AA%E1%86%AB%E1%84%89%E1%85%A2%E1%86%BC%E1%84%8B%E1%85%B4%20%E1%84%87%E1%85%AE%E1%86%AF%E1%84%81%E1%85%A9%E1%86%BE.png?raw=true"
+            },
+            {
+                "name" : "검은 환생의 불꽃(노멀)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A5%E1%86%B7%E1%84%8B%E1%85%B3%E1%86%AB%20%E1%84%92%E1%85%AA%E1%86%AB%E1%84%89%E1%85%A2%E1%86%BC%E1%84%8B%E1%85%B4%20%E1%84%87%E1%85%AE%E1%86%AF%E1%84%81%E1%85%A9%E1%86%BE.png?raw=true"
+            },
+            {
+                "name" : "놀라운 긍정의 혼돈 주문서 60%(노멀)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%86%B8%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%82%E1%85%A9%E1%86%AF%E1%84%85%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%AB%20%E1%84%80%E1%85%B3%E1%86%BC%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%8B%E1%85%B4%20%E1%84%92%E1%85%A9%E1%86%AB%E1%84%83%E1%85%A9%E1%86%AB%20%E1%84%8C%E1%85%AE%E1%84%86%E1%85%AE%E1%86%AB%E1%84%89%E1%85%A5%2060_.png?raw=true"
+            },
+            {
+                "name" : "카링로이드(노멀)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%8F%E1%85%A1%E1%84%85%E1%85%B5%E1%86%BC/%E1%84%8F%E1%85%A1%E1%84%85%E1%85%B5%E1%86%BC%E1%84%85%E1%85%A9%E1%84%8B%E1%85%B5%E1%84%83%E1%85%B3.png?raw=true"
+            },
+            {
+                "name" : "뒤엉킨 흉수의 고리(노멀)",
+                "image_url" : "https://github.com/yusw10/iOS-MSG-Data/blob/main/%E1%84%87%E1%85%A9%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A6%E1%86%B7/%E1%84%8F%E1%85%A1%E1%84%85%E1%85%B5%E1%86%BC/%E1%84%83%E1%85%B1%E1%84%8B%E1%85%A5%E1%86%BC%E1%84%8F%E1%85%B5%E1%86%AB%20%E1%84%92%E1%85%B2%E1%86%BC%E1%84%89%E1%85%AE%E1%84%8B%E1%85%B4%20%E1%84%80%E1%85%A9%E1%84%85%E1%85%B5.png?raw=true",
+                "description" : "조각 10개를 모아 에테르넬 세트(상의, 하의, 어깨)로 교활할 수 있다."
+            }
+        ]
+    }
+]

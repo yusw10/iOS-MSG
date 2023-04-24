@@ -14,7 +14,6 @@ final class MainViewController: ContentViewController {
         case jobList = "jobList"
         case bossInfo = "bossInfo"
         case weeklyBossCheckList = "weeklyBossCheckList"
-        case itemInfo = "itemInfo"
         case webViewInfo = "webViewInfo"
     }
     
@@ -135,8 +134,6 @@ extension MainViewController: UICollectionViewDelegate {
         case .weeklyBossCheckList:
             let weeklyBossCalculatorViewController = WeeklyBossCharacterListViewController()
             containerViewController?.pushListViewController(weeklyBossCalculatorViewController)
-        case .itemInfo:
-            print("itemInfoView")
         case .webViewInfo:
             let webViewListController = WebViewListViewController()
             containerViewController?.pushViewController(webViewListController)

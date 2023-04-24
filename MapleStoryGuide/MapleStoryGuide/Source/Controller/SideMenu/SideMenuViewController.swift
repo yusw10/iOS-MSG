@@ -14,7 +14,6 @@ enum SideMenuList: String, CaseIterable {
     case jobInfo = "jobInfo"
     case bossInfo = "bossInfo"
     case weeklyBossList = "weeklyBossList"
-    case itemInfo = "itemInfo"
 }
 
 final class SideMenuViewController: UIViewController {

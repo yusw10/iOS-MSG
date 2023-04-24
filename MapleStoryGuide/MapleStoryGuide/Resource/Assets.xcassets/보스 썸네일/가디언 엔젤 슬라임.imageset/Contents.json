@@ -2,17 +2,17 @@
   "images" : [
     {
       "filename" : "가디언 엔젤 슬라임 1.png",
-      "idiom" : "universal",
+      "idiom" : "iphone",
       "scale" : "1x"
     },
     {
       "filename" : "가디언 엔젤 슬라임 2.png",
-      "idiom" : "universal",
+      "idiom" : "iphone",
       "scale" : "2x"
     },
     {
       "filename" : "가디언 엔젤 슬라임 3.png",
-      "idiom" : "universal",
+      "idiom" : "iphone",
       "scale" : "3x"
     }
   ],
